@@ -1,0 +1,234 @@
+<!--
+templateType: global_partial
+label: Website header
+-->
+
+<div class="headerOuterWrapper">
+	<header class="header">
+		<div class="topSection">
+			<div class="page-center">
+				<div class="topInnerWrap">
+					{% module "feature_menu" path="@hubspot/menu" , id=186056714542 , label="Feature Menu",flyouts="false"%}
+				</div>
+			</div>
+		</div>
+		<div class="mainSection">
+			<div class="page-center">
+				<div class="mainInnerWrap">
+					<div class="logoWrap">
+						{% set header_image = get_asset_url('../../templates/images/Roadie.png') %}
+						{% module "header_logo" path="@hubspot/linked_image", link="/", label="Header Logo",
+             img={src="{{header_image}}", width=440, override_inherited_src= true, alt="Roadie"} %}
+					</div>
+					<div class="menuWrapper">
+						<nav class="navWrapper">
+							{% module "main_menu" path="@hubspot/menu" , id=186054008611 , label="Main Menu",flyouts="true"%}
+						</nav>
+						<div class="btnWrapper">
+							{% module "get_started_button" path="@hubspot/button" label="Get Started Button" button_text="Get Started" link={ "url": { "type": "EXTERNAL", "href": "www.hubspot.com", "content_id": null }, "open_in_new_tab": false, "no_follow": false }%}
+						</div>
+					</div>
+					<div class="navTrigger">
+						<span class="trigger_item"></span>
+						<span class="trigger_item"></span>
+						<span class="trigger_item"></span>
+					</div>
+				</div>
+				<div class="menuMobileWrapper">
+					<nav class="navWrapper">
+						{% module "main_menu" path="@hubspot/menu" , id=186054008611 , label="Main Menu",flyouts="false"%}
+					</nav>
+					<div class="btnWrapper">
+						{% module "get_started_button" path="@hubspot/button" label="Get Started Button" button_text="Get Started" link={ "url": { "type": "EXTERNAL", "href": "www.hubspot.com", "content_id": null }, "open_in_new_tab": false, "no_follow": false }%}
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+</div>
+
+
+{% require_css %}
+<style>
+	header.header {
+		position: relative;
+		z-index: 101;
+	}
+	header.header .topSection {
+		padding-top: 10px;
+		padding-bottom: 14px;
+		background-color: #fff;
+	}
+	header.header .topInnerWrap {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+	}
+	header.header .topInnerWrap .hs-menu-wrapper ul {
+		margin: 0;
+		list-style: none;
+		padding: 0;
+		display: flex;
+		align-items: center;
+		gap: 30px;
+	}
+	header.header .topInnerWrap .hs-menu-wrapper ul li {
+		margin: 0;
+		letter-spacing: normal;
+		line-height: 1em;
+		font-size: 14px;
+	}
+	header.header .topInnerWrap .hs-menu-wrapper ul li a {
+		padding: 0;
+		max-width: unset;
+		text-overflow: unset;
+		white-space: normal;
+		overflow:unset;
+		letter-spacing:1px;
+		color: #000;
+		cursor: pointer;
+	}
+	header.header .mainInnerWrap {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 20px;
+	}
+
+	header.header .mainInnerWrap .logoWrap a {
+		display: block;
+		max-width: 220px;
+	}
+
+	header.header .mainInnerWrap .menuWrapper {
+		display: flex;
+		align-items: center;
+		gap: 50px;
+		width: 64.436%;
+		justify-content: flex-end;
+	}
+	header.header .navWrapper .hs-menu-wrapper>ul {
+		margin: 0;
+		padding: 0;
+	}
+	header.header .navWrapper .hs-menu-wrapper>ul li {
+		margin: 0;
+		letter-spacing: unset;
+	}
+	header.header .navWrapper .hs-menu-wrapper>ul {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	header.header .menuWrapper .navWrapper {
+		display: flex;
+		flex: 1;
+	}
+	header.header .menuWrapper .navWrapper * {
+		width: 100%;
+	}
+	.hs-menu-wrapper.hs-menu-flow-horizontal>ul:before,
+	.hs-menu-wrapper.hs-menu-flow-horizontal>ul:after{
+		display:none;
+	}
+	.hs-menu-wrapper.hs-menu-wrapper>ul li.hs-menu-depth-1{
+		float:unset;
+	}
+	header.header .navWrapper .hs-menu-wrapper>ul li{
+		margin:0;
+	}
+	header.header .navWrapper .hs-menu-wrapper>ul li a {
+		padding: 0;
+		max-width: unset;
+		text-overflow: unset;
+		white-space: normal;
+		overflow:unset;
+		color: #000;
+		letter-spacing:1px;
+		font-weight:500;
+		font-size:15px;
+		position:relative;
+		cursor: pointer;
+	}
+	@media(min-width:992px){
+		header.header .menuMobileWrapper,
+		header.header .navTrigger{
+			display:none;
+		}
+	}
+	@media(max-width:991px){
+		header.header .mainInnerWrap .menuWrapper{
+			display:none;
+		}
+		.navTrigger {
+			width: 30px;
+			height: 25px;
+			position:relative;
+			display:flex;
+			align-items:center;
+			justify-content:center;
+			cursor: pointer;
+		}
+		.navTrigger .trigger_item {
+			height: 3px;
+			width: 80%;
+			background-color: #000;
+			display: block;
+			position: absolute;
+			transition: all .4s ease-in-out;
+		}
+		.navTrigger .trigger_item:first-child {
+			top: 3px;
+		}
+		.navTrigger .trigger_item:nth-child(2) {
+			top: 11px;
+		}
+		.navTrigger .trigger_item:last-child {
+			top: 19px;
+		}
+		.cm_active .trigger_item:first-child {
+			top: 10px;
+			transform: rotate(45deg);
+		}
+		.cm_active .trigger_item:nth-child(2) {
+			opacity: 0;
+			visibility:hidden;
+		}
+		.cm_active .trigger_item:last-child {
+			top: 10px;
+			transform: rotate(-45deg);
+		}
+		header.header .menuMobileWrapper {
+			display: none;
+			padding: 15px 0;
+		}
+		header.header .navWrapper .hs-menu-wrapper>ul {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+		
+		header.header .navWrapper .hs-menu-wrapper>ul ul.hs-menu-children-wrapper{
+			position: static;
+		}
+		header.header .navWrapper .hs-menu-wrapper>ul ul.hs-menu-children-wrapper{
+			display: flex;
+			flex-direction: column;
+		}
+		header.header .navWrapper .hs-menu-wrapper ul,
+		header.header .navWrapper .hs-menu-wrapper>ul ul.hs-menu-children-wrapper{
+			gap: 10px;
+		}
+		
+	}
+</style>
+{% end_require_css %}
+{% require_js %}
+<script>
+	$(".navTrigger").click(function(){
+		$(this).toggleClass("cm_active");
+		$('.menuMobileWrapper').toggleClass("cm_active");
+		$('.menuMobileWrapper').slideToggle();
+	});
+</script>
+{% end_require_js %}
