@@ -6,10 +6,43 @@ $white: #fff;
 $gray1: #edf0f2;
 $gray2: #cbd6e2;
 $gray3: #7C98B6;
-$gradient1: linear-gradient(-45deg, $black 0%, $action2 50%);
-$font1: 'Montserrat';
-$baseFontSize: 16rem;
-$baseLineHeight: 1.61803398875; // Golden ratio
+
+// ===================
+$DarkTeal: #004F50;
+$MidTeal: #008383;
+$MidTeal2: #008283;
+$BrightTeal: #00BBBB;
+$Mustard: #F3B120;
+$Ketchup: #EF4C35;
+$Denim: #334C72;
+$Brown: #351C15;
+$Brown2: #351C13;
+$LightestTeal: #F2F7F7;
+$CoolGray: #EAEAEA;
+$Dark: #000000;
+$white: #ffffff;
+$gradient1: linear-gradient(85.86deg, $DarkTeal 0%, $BrightTeal 81.96%);
+$gradient2: linear-gradient(87.13deg, $DarkTeal 0%, $BrightTeal 95.22%);
+$gradient3: linear-gradient(88.07deg, $DarkTeal 0%, $BrightTeal 96.73%);
+//=====================
+
+
+// ===================
+$containerSize : 1260rem;
+$containerInnerSpacing : 10rem;
+// ===================
+
+
+// ===================
+$font1: "Gibson", sans-serif;
+$font2: "Helvetica", sans-serif;
+$baseFontSize: 18rem;
+$baseLineHeight: 1.66666667;
+$baseColor: $Dark;
+$baseFontWeight: 400;
+// ===================
+
+// ===================
 // Border Radius
 $border1: 4rem;
 $border2: 5rem;

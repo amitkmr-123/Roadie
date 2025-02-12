@@ -1,22 +1,45 @@
 {% set moduleName = 'u4m-accordion' %}
-{% include "../partials/u4-module-includes.html" %}
-  <div class='intro'>
-    <div class="heading">
-      {% if module.include_heading %}
-      <h2>{{ module.heading }}</h2>
-      {% endif %}
-      {% if module.include_copy %}
-      <p>{{ module.copy }}</p>
-      {% endif %}     
+
+  {% include "../partials/u4-module-includes.html" %}
+  
+  
+  <div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}">
+  
+    {{ macros.introGroup(module.intro_content, module.module_settings) }}
+    <div class="accordionInr">
+      <div class="accItems">
+        {% for item in module.accordion %}
+        <div class="accItem {% if loop.first %}active{% endif %}">
+          <div class="accTtl accTtl{{ loop.index }}">
+            {% if item.title %}
+            <h4>{{ item.title }}</h4>
+            {% endif %}
+            {% if item.icon_image.src %}
+            <style>
+              .{{ name }} .accTtl{{ loop.index }} h4:after{
+                content:"";
+                background:url({{ item.icon_image.src }}) no-repeat;
+              }
+            </style>
+            {% endif %}
+          </div>
+          <div class="accContent" style="{% if loop.first %}display:block;{% else %}display:none;{% endif %}">
+            {% if item.content %}
+            <div class="cntInr">
+              {{ item.content }}
+            </div>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
     </div>
   </div>
-  <div class='accordions'>
-  {# Using details.js as a polyfill for browsers that don't suppose details/open #}
-    {% for accordion in module.accordions %}
-    <details>
-      <summary>{{ accordion.summary }}</summary>
-      <div>{{ accordion.detail }}</div>
-    </details>
-    {% endfor %}
-  </div>
-</section>
+  </section>
+  
+  
+  {# button group popup modal#}
+  {% if module.intro_content.include_button %}
+  {{macros.buttonGroup(module.intro_content.button_group, true)}}
+  {% endif %}
+  

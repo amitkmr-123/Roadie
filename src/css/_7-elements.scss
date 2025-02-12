@@ -15,14 +15,24 @@ html {
   opacity: 1;
 }
 
+@font-face {
+  font-family: "Gibson";
+  src: url("{{ get_asset_url('../fonts/u4m-modules.eot') }}") format("embedded-opentype"),
+  url("{{ get_asset_url('../fonts/u4m-modules.woff') }}") format("woff"),
+  url("{{ get_asset_url('../fonts/u4m-modules.ttf') }}") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+}
+
 /* make html visible after Firefox flash in hack */
 body {
   font-family: $font1;
   font-size: $baseFontSize;
   line-height: $baseLineHeight;
-  color: $black;
+  color: $Dark;
   font-weight: normal;
-  margin-top: 78rem;
+  letter-spacing: .5rem;
 
   &.hide-header {
     margin-top: 0;
@@ -297,9 +307,7 @@ div#hs-eu-cookie-confirmation.hs-cookie-notification-position-bottom.can-use-gra
 }
 
 // default p size
-p {
-  @include b3;
-}
+
 
 a {
   @include link
@@ -308,6 +316,14 @@ a {
 blockquote,
 blockquote p {
   @include blockquote;
+}
+
+blockquote:before {
+  content: '“';
+}
+
+blockquote:after {
+  content: '”';
 }
 
 em {
@@ -319,7 +335,6 @@ strong {
 }
 
 ul {
-  @include b3;
   list-style: disc;
   padding-left: 40rem;
   margin-top: 0;
@@ -475,4 +490,32 @@ a[href='javascript:;'] {
 //
 section[class*='u4m-'] {
   scroll-margin-top: 150px;
+}
+
+.bodystyle1 {
+  @include b1;
+}
+
+.bodystyle2 {
+  @include b2;
+}
+
+.bodystyle3 {
+  @include b3;
+}
+
+.bodystyle4 {
+  @include b4;
+}
+
+.gradient1 {
+  background-image: $gradient1;
+}
+
+.gradient2 {
+  background-image: $gradient2;
+}
+
+.gradient3 {
+  background-image: $gradient3;
 }

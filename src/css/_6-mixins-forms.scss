@@ -1,7 +1,7 @@
 // *********************************************************************************************************************************************************************
 @mixin form {
-  background-color: rgba($gray1, 1);
-  padding: 20rem 30rem;
+  background-color: $white;
+  padding: 49rem 50rem;
   max-width: 765rem;
   margin: 30rem auto 30rem auto;
   float: none;
@@ -44,7 +44,7 @@
           label {
             color: red;
             font-size: 18rem;
-            text-align: center;
+            text-align: left;
             padding: 10rem 0 0;
             margin: 20rem 0 0;
             display: block;
@@ -58,11 +58,12 @@
 
     .hs-form-field {
       >label {
-        font-size: 12rem;
-        font-weight: bold;
-        line-height: 1.2;
-        letter-spacing: 1rem;
+        font-size: 14rem;
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: 2rem;
         pointer-events: auto;
+        color: $DarkTeal;
       }
     }
 
@@ -71,16 +72,18 @@
       input[type="text"],
       input[type="number"],
       input[type="tel"],
-      input[type="email"] {
-        border: 1rem solid transparent;
-        border-radius: 4rem;
-        margin-top: 2rem;
-        margin-bottom: 20rem;
-        font-size: 16rem; // Note anything below 16rem will trigger the zoom feature on iOS
-        background-color: $white;
+      input[type="email"],
+      input[type="file"] {
+        border: none;
+        border-radius: 0;
+        margin-bottom: 26rem;
+        font-size: 16rem;
         padding: 16rem;
         width: 100%;
         appearance: none;
+        background-color: $LightestTeal;
+        border: none;
+        outline: none;
 
         &.error,
         &.invalid {
@@ -106,28 +109,17 @@
         background-color: $white;
       }
 
-      input[type="file"] {
-        font-size: 16rem;
-        font-family: $font1;
-        background-color: transparent;
-        position: relative;
-        font-weight: bold;
-        margin-bottom: 23rem;
-      }
-
       select {
-        appearance: none;
-        background: url('//cdn2.hubspot.net/hubfs/302335/select-arrow.png') no-repeat;
-        background-size: 13rem 8rem;
-        background-position: 97% 51%;
-        border: 0;
-        border-radius: 4rem;
-        margin-top: 2rem;
-        margin-bottom: 20rem;
-        font-size: 16rem; // Note anything below 16rem will trigger the zoom feature on iOS
-        background-color: $white;
+        margin: 0;
+        background-color: $LightestTeal;
+        border: none;
+        border-radius: 0;
+        font-size: 16rem;
+        margin-bottom: 26rem;
         padding: 16rem;
-        // Note anything below 16rem will trigger the zoom feature on iOS
+        width: 100%;
+
+
       }
 
       &+.hs-error-msgs {
@@ -135,7 +127,7 @@
         width: 100%;
         padding-left: 0;
         list-style: none;
-        text-align: center;
+        text-align: left;
         margin: 0rem 0 20rem;
         padding: 0;
         animation: fadeIn1 .3s ease;

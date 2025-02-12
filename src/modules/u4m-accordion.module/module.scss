@@ -1,70 +1,86 @@
 @import "../../css/_module-imports";
 
-section.u4m-accordion {
-
-  .intro {
-    @include center;
-    max-width: 768rem;
-    text-align: center;
-
-    h2 {
-      @include h2;
-    }
-
-    p {
-      @include b2;
-    }
+.u4m-accordion.dnd_padd {
+  &.reverse-text .accordionInr .accItems .accItem .cntInr {
+    color: $white;
   }
 
-  .accordions {
-    @include center;
-    margin: 50rem auto;
+  .accordionInr {
+    .accItems {
+      padding: 13px 0;
 
-    details {
-      border-top: 1rem solid $gray2;
-      transition: background-color .2s;
-      cursor: pointer;
+      .accItem {
+        padding-bottom: 20px;
 
-      summary {
-        @include b2;
-        font-weight: bold;
-        margin: 0;
-        padding: 20rem 40rem 20rem 20rem;
-        position: relative;
-        list-style: none; // detail uses list style for summary, like ul > li
+        &.active .accTtl {
 
-        &:after {
-          content: '+';
-          font-size: 30rem;
-          font-weight: normal;
-          line-height: 1;
-          position: absolute;
-          right: 5%;
-          top: 50%;
-          transform: translateY(-50%);
-          transition: transform .2s ease-in-out;
-        }
-      }
 
-      // open = 'active' state
-      &[open] {
-        summary {
-          &:after {
-            transform: translateY(-50%) rotate(45deg);
+          h4:before {
+            display: inline;
+            content: "- ";
+            font-size: 32px;
           }
         }
-      }
 
-      &:hover {
-        background-color: $gray1;
-      }
+        .cntInr {
+          padding: 30px 40px 0 45px;
 
-      &:last-child {
-        border-bottom: 1rem solid $gray2;
-      }
+          font-size: 14px;
+          line-height: 1.7em;
 
-      div {
-        padding: 20rem;
+          p:last-child {
+            margin-bottom: 0;
+          }
+
+          @include tabletvert {
+            padding: 30px 20px 0 25px;
+          }
+        }
+
+        .accTtl {
+          position: relative;
+          padding: 20px 3em 20px 25px;
+          background-color: $white;
+          filter: drop-shadow($shadow3);
+          cursor: pointer;
+
+          h4 {
+            font-weight: 600;
+
+            margin: auto;
+            letter-spacing: normal;
+            line-height: 1;
+
+            &:before {
+              position: relative;
+              display: inline;
+              font-size: 30px;
+              font-weight: 700;
+              line-height: 20px;
+              top: unset;
+              content: "+ ";
+            }
+
+            &:after {
+              content: "";
+              display: block;
+              position: absolute;
+              right: 20px;
+              width: 2em;
+              height: 2em;
+              top: 50%;
+              transform: translateY(-50%);
+            }
+          }
+        }
+
+        &:first-child .accTtl {
+          border-top-left-radius: 30px;
+        }
+
+        &:last-child .accTtl {
+          border-bottom-right-radius: 30px;
+        }
       }
     }
   }
