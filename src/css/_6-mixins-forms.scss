@@ -39,18 +39,44 @@
         margin-bottom: 20rem;
 
         li {
-          margin-bottom: 0;
+          margin-top: 15px;
+          position: relative;
+          text-align: center;
+          background: red;
+          display: inline-block;
+          color: white;
+          border-radius: 5rem;
+          padding: 5rem 8rem;
+          line-height: 1.2;
+
+          &:before {
+            border-style: solid;
+            border-width: 0 8rem 8rem 8rem;
+            bottom: 100%;
+            border-color: transparent transparent red transparent;
+            position: absolute;
+            height: 8rem;
+            width: 0rem;
+            content: "";
+            left: 0;
+            right: 0;
+            margin: auto;
+          }
 
           label {
-            color: red;
-            font-size: 18rem;
-            text-align: left;
-            padding: 10rem 0 0;
-            margin: 20rem 0 0;
-            display: block;
-            flex: 0 0 100%;
-            font-weight: normal;
-            text-transform: none;
+            font-size: 12rem;
+            font-family: $font1;
+            text-transform: uppercase;
+            letter-spacing: 1rem;
+            display: inline-block;
+            font-weight: bold;
+            line-height: 1.4;
+            margin-bottom: 0;
+            margin-top: 1rem;
+
+            @include phone {
+              font-size: 12rem;
+            }
           }
         }
       }
