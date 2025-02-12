@@ -519,3 +519,28 @@ section[class*='u4m-'] {
 .gradient3 {
   background-image: $gradient3;
 }
+
+.hs-button {
+  @include button;
+}
+
+.hs-sec-btn {
+  @include buttonSecond;
+}
+
+.reverse-text a.hs-sec-btn {
+  color: $white;
+}
+
+.reverse-text .hs-sec-btn .icon .inner {
+  border-color: $white;
+}
+
+.reverse-text .hs-sec-btn:hover .icon .inner {
+  border-color: $Mustard;
+  background-color: $Mustard;
+}
+
+.reverse-text .hs-sec-btn:hover .icon .inner svg {
+  fill: $Brown;
+}
