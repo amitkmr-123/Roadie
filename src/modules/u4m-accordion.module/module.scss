@@ -1,86 +1,108 @@
 @import "../../css/_module-imports";
 
-.u4m-accordion.dnd_padd {
-  &.reverse-text .accordionInr .accItems .accItem .cntInr {
-    color: $white;
+
+.u4m-accordion {
+  .intro_content {
+    .intro__inner {
+      margin-bottom: 54px;
+    }
   }
 
-  .accordionInr {
-    .accItems {
-      padding: 13px 0;
+  .btmCntt {
+    .inner {
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
 
-      .accItem {
-        padding-bottom: 20px;
+    .pd {
+      .title {
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+        align-items: center;
+        border: none;
+        padding: 0;
+        padding-bottom: 32px;
+        padding: 0;
+        padding: 0;
+        position: relative;
+        transition: all .3s ease;
 
-        &.active .accTtl {
-
-
-          h4:before {
-            display: inline;
-            content: "- ";
-            font-size: 32px;
-          }
+        h4 {
+          margin: 0;
+          padding-right: 50px;
         }
 
-        .cntInr {
-          padding: 30px 40px 0 45px;
+        .icon {
+          width: 30px;
+          height: 30px;
+          position: absolute;
+          right: 0;
+          transition: all .3s ease;
 
-          font-size: 14px;
-          line-height: 1.7em;
-
-          p:last-child {
-            margin-bottom: 0;
-          }
-
-          @include tabletvert {
-            padding: 30px 20px 0 25px;
+          svg {
+            fill: $Brown;
           }
         }
+      }
 
-        .accTtl {
-          position: relative;
-          padding: 20px 3em 20px 25px;
-          background-color: $white;
-          filter: drop-shadow($shadow3);
-          cursor: pointer;
-
-          h4 {
-            font-weight: 600;
-
-            margin: auto;
-            letter-spacing: normal;
-            line-height: 1;
-
-            &:before {
-              position: relative;
-              display: inline;
-              font-size: 30px;
-              font-weight: 700;
-              line-height: 20px;
-              top: unset;
-              content: "+ ";
-            }
-
-            &:after {
-              content: "";
-              display: block;
-              position: absolute;
-              right: 20px;
-              width: 2em;
-              height: 2em;
-              top: 50%;
-              transform: translateY(-50%);
+      .content {
+        .cnt {
+          p {
+            &:last-child {
+              margin: 0;
             }
           }
+
+          margin-bottom: 10px;
         }
 
-        &:first-child .accTtl {
-          border-top-left-radius: 30px;
-        }
+        display: none;
+        padding-top: 29px;
+      }
 
-        &:last-child .accTtl {
-          border-bottom-right-radius: 30px;
+      .btn {
+        a {
+          margin: 0;
         }
+      }
+
+      padding: 23px 40px;
+      transition: all .3s ease;
+
+      .title.active {
+        padding-bottom: 32px;
+        border-bottom: 1px solid $BrightTeal;
+      }
+
+      @include tabletvert {
+        padding: 23px;
+      }
+    }
+
+    .pd.accActive {
+      padding: 34px 40px 40px 40px;
+      box-shadow: 2px 2px 20px rgba($Dark, .15);
+
+      .title {
+        &.active {
+
+          .icon {
+            transform: rotate(45deg);
+
+            svg {
+              path {
+                fill: $Brown;
+              }
+            }
+          }
+        }
+      }
+
+      @include tabletvert {
+        padding: 23px;
       }
     }
   }

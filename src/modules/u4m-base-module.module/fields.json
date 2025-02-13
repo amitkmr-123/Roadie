@@ -971,13 +971,32 @@
     "required" : false,
     "locked" : false,
     "display" : "select",
-    "choices" : [ [ "theme", "Theme" ], [ "full_width", "Full Width" ] ],
+    "choices" : [ [ "theme", "Theme" ], [ "full_width", "Full Width" ], [ "custom", "Custom" ] ],
     "multiple" : false,
     "reordering_enabled" : true,
     "preset" : null,
     "type" : "choice",
     "display_width" : null,
     "default" : "theme"
+  }, {
+    "id" : "5fbb592a-9b7b-dc7c-802a-2b8df6f1aeb6",
+    "name" : "custom_container_size",
+    "label" : "Custom Container Size",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_overrides.container_size",
+      "controlling_value_regex" : "custom",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "text",
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 1260
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -1014,6 +1033,7 @@
       },
       "select_gradient" : "gradient3"
     },
-    "container_size" : "theme"
+    "container_size" : "theme",
+    "custom_container_size" : 1260
   }
 } ]
