@@ -761,3 +761,30 @@ section[class*='u4m-'] {
 .white_bg {
   background-color: $white;
 }
+
+.fill-LightestTeal_clr {
+  fill: $LightestTeal;
+}
+
+.fill-white_clr {
+  fill: $white
+}
+
+.section_decoration {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+
+  svg {
+    display: block;
+    width: 100%;
+  }
+}
+
+.btm_curves.section_decoration {
+  bottom: 0;
+  top: auto;
+  transform: rotate(180deg);
+}
