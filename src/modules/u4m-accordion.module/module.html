@@ -7,7 +7,9 @@
 		<div class="inner">
 			{% for item in module.accordion_items_group %}
 			<div class="items">
-				<div class="pd">
+				<div class="pd {{ module.module_settings.accordion_background_settings.select_color }} {% if module.module_settings.accordion_background_settings.dark_theme %}
+light_theme
+{% endif %}" {% if module.module_settings.accordion_background_settings.select_color == 'custom'%}style="background-color:{{ module.module_settings.accordion_background_settings.custom_color.rgba }}"{% endif %} >
 					{% if item.title %}
 					<div class="title">
 						<h4>
@@ -29,6 +31,11 @@
 					</div>
 					{% endif %}
 					<div class="content">
+							{% if item.include_eyebrow_text %}
+						<div class="eyebrow_text">
+							{{ item.eyebrow_text }}
+						</div>
+							{% endif %}
 						{% if item.content %}
 						<div class="bodystyle3 cnt">
 							{{ item.content }}

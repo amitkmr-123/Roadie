@@ -4,9 +4,7 @@
 .u4m-accordion {
   .intro_content {
     .intro__inner {
-      .intro_desc {
-        margin-bottom: 54px;
-      }
+      margin-bottom: 54px;
     }
   }
 
@@ -19,6 +17,11 @@
     }
 
     .pd {
+      .eyebrow_text {
+        @include eyebrow;
+        color: $DarkTeal;
+      }
+
       .title {
         display: flex;
         justify-content: space-between;
@@ -35,6 +38,7 @@
         h4 {
           margin: 0;
           padding-right: 50px;
+          color: $Dark;
         }
 
         .icon {
@@ -52,10 +56,13 @@
 
       .content {
         .cnt {
+          color: $Dark;
+
           p {
             &:last-child {
               margin: 0;
             }
+
           }
 
           margin-bottom: 10px;
@@ -68,6 +75,15 @@
       .btn {
         a {
           margin: 0;
+
+          &.hs-sec-btn {
+            color: $Brown2;
+
+            .inner {
+              align-items: center;
+              border: 1.5px solid $Brown2;
+            }
+          }
         }
       }
 
@@ -81,6 +97,35 @@
 
       @include tabletvert {
         padding: 23px;
+      }
+
+      &.light_theme {
+        .title {
+          h4 {
+            color: $white;
+          }
+        }
+
+        .eyebrow_text {
+          color: $white;
+        }
+
+        .content {
+          .cnt {
+            color: $white;
+          }
+        }
+
+        .btn {
+          a.hs-sec-btn {
+            color: $white;
+
+            .inner {
+              background-color: $Mustard;
+              border-color: $Mustard;
+            }
+          }
+        }
       }
     }
 

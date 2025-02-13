@@ -366,6 +366,36 @@
     "display_width" : null,
     "default" : "Title of Accordion Slide Goes Here"
   }, {
+    "id" : "0c41b525-1a55-30f1-ee5b-3a73a5e5a15a",
+    "name" : "include_eyebrow_text",
+    "label" : "Include Eyebrow Text",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "46fbbab5-01f3-86fd-e370-8bd20148bead",
+    "name" : "eyebrow_text",
+    "label" : "Eyebrow Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "accordion_items_group.include_eyebrow_text",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "REMOTE ANOTHER OPTIONAL TAG"
+  }, {
     "id" : "63d984e3-2523-24f7-98fd-4539abe67890",
     "name" : "content",
     "label" : "Content",
@@ -507,6 +537,8 @@
   "display_width" : null,
   "default" : [ {
     "title" : "Title of Accordion Slide Goes Here",
+    "include_eyebrow_text" : false,
+    "eyebrow_text" : "REMOTE ANOTHER OPTIONAL TAG",
     "content" : "<p>Vivamus consequat, nibh vitae congue vestibulum, tortor lorem hendrerit risus, ut hendrerit leo est in tellus. Mauris et nulla id nibh ullamcorper blandit. Sed est risus, convallis nec viverra et, pellentesque vulputate massa. Duis vitae suscipit odio, non egestas nisi. Proin pretium hendrerit turpis.</p>",
     "button_group" : {
       "button_type" : "std",
@@ -524,6 +556,8 @@
     }
   }, {
     "title" : "Title of Accordion Slide Goes Here",
+    "include_eyebrow_text" : false,
+    "eyebrow_text" : "REMOTE ANOTHER OPTIONAL TAG",
     "content" : "<p>Vivamus consequat, nibh vitae congue vestibulum, tortor lorem hendrerit risus, ut hendrerit leo est in tellus. Mauris et nulla id nibh ullamcorper blandit. Sed est risus, convallis nec viverra et, pellentesque vulputate massa. Duis vitae suscipit odio, non egestas nisi. Proin pretium hendrerit turpis.</p>",
     "button_group" : {
       "button_type" : "std",
@@ -541,6 +575,8 @@
     }
   }, {
     "title" : "Title of Accordion Slide Goes Here",
+    "include_eyebrow_text" : false,
+    "eyebrow_text" : "REMOTE ANOTHER OPTIONAL TAG",
     "content" : "<p>Vivamus consequat, nibh vitae congue vestibulum, tortor lorem hendrerit risus, ut hendrerit leo est in tellus. Mauris et nulla id nibh ullamcorper blandit. Sed est risus, convallis nec viverra et, pellentesque vulputate massa. Duis vitae suscipit odio, non egestas nisi. Proin pretium hendrerit turpis.</p>",
     "button_group" : {
       "button_type" : "std",
@@ -726,6 +762,86 @@
         "curves_type" : "type1"
       }
     }
+  }, {
+    "id" : "20d5824b-5e15-fb3d-c14a-b9777584d2bc",
+    "name" : "accordion_background_settings",
+    "label" : "Accordion Background Settings",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_overrides.enable_overrides",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "35e85817-cc63-e3e8-a71a-a5cd540b0438",
+      "name" : "select_color",
+      "label" : "Select Color",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "module_overrides.background_settings.background_type",
+        "controlling_value_regex" : "color",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "DarkTeal_bg", "Dark Teal" ], [ "MidTeal_bg", "Mid Teal" ], [ "BrightTeal_bg", "Bright Teal" ], [ "Mustard_bg", "Mustard" ], [ "Ketchup_bg", "Ketchup" ], [ "Denim_bg", "Denim" ], [ "Brown_bg", "Brown" ], [ "LightestTeal_bg", "Lightest Teal" ], [ "CoolGray_bg", "Cool Gray" ], [ "Dark_bg", "Black" ], [ "white_bg", "White" ], [ "custom", "Custom" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : ""
+    }, {
+      "id" : "d2c4b1d9-a597-a53f-c2e7-e5681f19c3a1",
+      "name" : "custom_color",
+      "label" : "Custom Color",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "module_settings.accordion_background_settings.select_color",
+        "controlling_value_regex" : "custom",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : null,
+        "opacity" : null
+      }
+    }, {
+      "id" : "6673470b-c8a1-759c-615c-095636d40eb2",
+      "name" : "dark_theme",
+      "label" : "Dark Theme",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : false
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : true,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "select_color" : "",
+      "custom_color" : {
+        "color" : null,
+        "opacity" : null
+      },
+      "dark_theme" : false
+    }
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -745,6 +861,14 @@
       "bottom_curves_group" : {
         "curves_type" : "type1"
       }
+    },
+    "accordion_background_settings" : {
+      "select_color" : "",
+      "custom_color" : {
+        "color" : null,
+        "opacity" : null
+      },
+      "dark_theme" : false
     }
   }
 }, {

@@ -14,9 +14,11 @@
         .innerCnt {
           .intro_content {
             text-align: left;
+            margin-bottom: 0;
 
             .intro_btn_wrap {
               justify-content: flex-start;
+              margin-top: 42px;
             }
 
             .intro__inner {
@@ -29,10 +31,6 @@
               .intro_title {
                 margin-bottom: 13px;
               }
-            }
-
-            .intro_desc {
-              margin-bottom: 22px;
             }
           }
 
