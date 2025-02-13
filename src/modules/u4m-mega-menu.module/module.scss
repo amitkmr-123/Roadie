@@ -1,0 +1,233 @@
+@import "../../css/_module-imports";
+
+
+.cmMegaMenuWrap {
+    display: flex;
+    align-items: center;
+
+    .mainMenuWrap {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        column-gap: 10px;
+
+        @include midlaptop {
+            gap: 0;
+        }
+
+    }
+
+    .menuItem {
+
+        margin: 0;
+
+        >a {
+            color: $Dark;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 15px;
+            line-height: 1;
+            padding: 10px 20px;
+            border-radius: 22px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: transparent;
+
+            @include midlaptop {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .cmTrigger {
+                svg {
+                    color: $Dark;
+                    fill: $Dark;
+                    display: inline-block;
+                    vertical-align: middle;
+                    transition: all 0.3s ease;
+
+                    path {
+                        color: $Dark;
+                        fill: $Dark;
+                    }
+                }
+            }
+        }
+
+        &:hover {
+            &>a {
+                background-color: $white;
+                border-color: $MidTeal;
+
+                .cmTrigger {
+                    svg {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+
+            .cmSecondLevel {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+    }
+
+    .cmSecondLevel {
+        position: absolute;
+        opacity: 0;
+        z-index: 100;
+        visibility: hidden;
+        padding: 50px;
+        background-color: $white;
+        transition: all 0.3s ease;
+        box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.15);
+        min-width: 346px;
+        left: auto;
+        right: 0;
+        top: calc(100% + 23px);
+
+        &.single_column {
+            width: 346px;
+        }
+
+        &.two_column {
+            width: 650px;
+
+            &.cmsingleTitle {
+                width: 412px;
+            }
+        }
+
+        .cmSecondLevelInner {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -25px;
+            row-gap: 43px;
+
+            .secondMenuiItem {
+                width: 50%;
+                padding: 0 25px;
+                display: flex;
+                gap: 15px;
+                position: relative;
+                align-items: flex-start;
+
+                .cmImageWrap {
+                    width: 30px;
+                    flex-shrink: 0;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                .overlayLink {
+                    position: absolute;
+                    top: 0;
+                    width: calc(100% - 50px);
+                    height: 100%;
+                }
+
+                .cmCntWrap {
+                    display: flex;
+                    flex-wrap: wrap;
+                    row-gap: 5px;
+                    flex-direction: column;
+
+                    h6 {
+                        font-size: 16rem;
+                        margin-bottom: 0;
+                    }
+
+                    p {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .menuItem_1 {
+        .cmSecondLevel {
+            &.two_column {
+                width: 744px;
+            }
+        }
+    }
+
+    .cmSecondLevel {
+        &.single_column {
+            .secondMenuiItem {
+                width: 100%;
+            }
+        }
+    }
+
+    .menuItem_1 {
+        .cmSecondLevel {
+            &.two_column {
+                left: 0;
+                right: auto;
+            }
+        }
+    }
+
+    .menuItem_2 {
+        .cmSecondLevel {
+            &.two_column {
+                left: 0;
+                right: auto;
+            }
+        }
+    }
+
+    .cmSecondLevel {
+        &.cmsingleTitle {
+            .cmSecondLevelInner {
+                row-gap: 30px;
+            }
+        }
+    }
+
+    .cmSecondLevel {
+        &.cmsingleTitle {
+            .cmSecondLevelInner {
+                .secondMenuiItem {
+                    gap: 0;
+                }
+            }
+        }
+
+        .secondMenuiItem {
+            .cmCntWrap {
+                width: 100%;
+            }
+        }
+    }
+
+    .cmSecondLevel {
+        &:after {
+            content: "";
+            width: 100%;
+            height: 22px;
+            display: block;
+            position: absolute;
+            top: -23px;
+            left: 0;
+        }
+    }
+
+    .mainMenuWrap {
+        @include tabletMid {
+            flex-direction: column;
+        }
+    }
+}

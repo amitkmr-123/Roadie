@@ -13,7 +13,61 @@ label: Footer
 			</div>
 			<div class="bottomSection">
 				<div class="socialWrapper">
-					Social Share
+					{% module "social_share" path="../../modules/u4m-social-share", label="Social Share",
+					items=[ {
+          "icon" : {
+            "name" : "X Twitter",
+            "type" : "REGULAR",
+            "unicode" : "e61b"
+          },
+          "image" : {
+            "loading" : "lazy",
+            "size_type" : "auto",
+            "src" : ""
+          },
+          "link" : "https://x.com/",
+          "select_icon_type" : "icon"
+        }, {
+          "icon" : {
+            "name" : "LinkedIn In",
+            "type" : "REGULAR",
+            "unicode" : "f0e1"
+          },
+          "image" : {
+            "loading" : "lazy",
+            "size_type" : "auto",
+            "src" : ""
+          },
+          "link" : "https://www.linkedin.com/",
+          "select_icon_type" : "icon"
+        }, {
+          "icon" : {
+            "name" : "Instagram",
+            "type" : "REGULAR",
+            "unicode" : "f16d"
+          },
+          "image" : {
+            "loading" : "lazy",
+            "size_type" : "auto",
+            "src" : ""
+          },
+          "link" : "https://www.instagram.com/",
+          "select_icon_type" : "icon"
+        }, {
+          "icon" : {
+            "name" : "Facebook",
+            "type" : "REGULAR",
+            "unicode" : "f09a"
+          },
+          "image" : {
+            "loading" : "lazy",
+            "size_type" : "auto",
+            "src" : ""
+          },
+          "link" : "https://www.facebook.com/",
+          "select_icon_type" : "icon"
+        } ] 
+				%}
 				</div>
 				<div class="privacyWrapper">
 					<div class="ftrContent">
@@ -100,12 +154,10 @@ label: Footer
 		gap: 60px;
 		margin-bottom:0;
 	}
-
 	footer.footer .navWrapper .hs-menu-wrapper >ul >li {
 		margin: 0;
 		letter-spacing: 1px;
 	}
-
 	footer.footer .navWrapper .hs-menu-wrapper >ul >li >a {
 		padding: 0;
 		color: #fff;
@@ -118,18 +170,15 @@ label: Footer
 		line-height: 2.134;
 		margin-bottom: 18px;
 	}
-
 	footer.footer .navWrapper .hs-menu-wrapper ul ul {
 		padding: 0;
 		margin: 0;
 	}
-
 	footer.footer .navWrapper .hs-menu-wrapper ul ul li {
 		margin: 0;
 		font-size: 15px;
 		line-height: 1.867;
 	}
-
 	footer.footer .navWrapper .hs-menu-wrapper ul ul.hs-menu-children-wrapper li a {
 		padding: 0;
 		max-width: unset;
@@ -140,21 +189,29 @@ label: Footer
 		vertical-align: middle;
 		color: rgba(255, 255, 255, .7);
 	}
-
 	footer.footer .navWrapper .hs-menu-wrapper ul ul li:not(:last-child) {
 		margin-bottom: 2px;
 	}
-
 	footer.footer  .topSection {
 		margin-bottom: 66px;
 	}
 	footer.footer .hs-menu-wrapper ul li a{
 		cursor:pointer;
 	}
+	footer.footer .bottomSection {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		gap: 22px;
+	}
+	footer.footer .socialWrap .cmIcon a svg{
+		fill:#fff;
+		color:fff;
+	}
 	@media (max-width:991px){
 		footer.footer .navWrapper .hs-menu-wrapper >ul{
 			flex-direction: column;
-			gap: 20px;
+			gap: 15px;
 		}
 		footer.footer .privacyMenuWrap,
 		footer.footer .privacyWrapper .hs-menu-wrapper ul {
@@ -171,6 +228,12 @@ label: Footer
 		}
 		footer.footer .topSection {
 			margin-bottom: 30px;
+		}
+		footer.footer .socialWrap {
+			justify-content: center;
+		}
+		footer.footer .navWrapper .hs-menu-wrapper >ul >li >a{
+			margin-bottom:5px;
 		}
 	}
 </style>
