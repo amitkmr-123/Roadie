@@ -4,108 +4,113 @@
 .u4m-alternating-content {
   overflow: hidden;
 
-  .flex_row {
-    margin: 0 -15px;
-    align-items: center;
-    flex-wrap: nowrap;
+  .main-wrpp {
+    .flex_row {
+      margin: 0 -15px;
+      align-items: center;
+      flex-wrap: nowrap;
 
-    .inner {
-      .intro_content {
-        text-align: left;
+      .leftCnt {
+        .innerCnt {
+          .intro_content {
+            text-align: left;
 
-        .intro_btn_wrap {
-          justify-content: flex-start;
-        }
+            .intro_btn_wrap {
+              justify-content: flex-start;
+            }
 
-        .intro__inner {
-          margin: 0;
+            .intro__inner {
+              margin: 0;
 
-          .eyebrow_text {
-            margin-bottom: 22px;
+              .eyebrow_text {
+                margin-bottom: 22px;
+              }
+
+              .intro_title {
+                margin-bottom: 13px;
+              }
+            }
+
+            .intro_desc {
+              margin-bottom: 22px;
+            }
           }
 
-          .intro_title {
-            margin-bottom: 13px;
+          padding-right: 70px;
+
+          @include midlaptop {
+            padding-right: 0px;
           }
         }
-
-        .intro_desc {
-          margin-bottom: 22px;
-        }
       }
 
-      padding-right: 70px;
-
-      @include midlaptop {
-        padding-right: 0px;
-      }
-    }
-
-    .img-col {
-      img {
-        width: 100%;
-        object-fit: cover;
-      }
-    }
-
-    .rightCnt {
-      flex-shrink: 0;
-
-      .embedVideo {
-        padding-bottom: 56.6%;
-        position: relative;
-
-        iframe.iframe_video {
-          position: absolute;
-          top: 0;
-          right: 0;
-          left: 0;
+      .img-col {
+        img {
           width: 100%;
-          height: 100%;
+          object-fit: cover;
         }
       }
 
-      @include tabletMid {
-        width: 55% !important;
+      .rightCnt {
+        flex-shrink: 0;
+
+        .embedVideo {
+          padding-bottom: 56.6%;
+          position: relative;
+
+          iframe.iframe_video {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        @include tabletMid {
+          width: 55% !important;
+        }
+
+        @include tabletvert {
+          width: 100% !important;
+          order: 2;
+        }
       }
 
       @include tabletvert {
-        width: 100% !important;
+        flex-wrap: wrap;
+      }
+
+      @include tabletvert {
+        margin: 0;
+      }
+    }
+
+    .flex_row.left {
+      .col.leftCnt {
         order: 2;
-      }
-    }
 
-    @include tabletvert {
-      flex-wrap: wrap;
-    }
+        .inner {
+          padding-left: 70px;
+          padding-right: 0;
 
-    @include tabletvert {
-      margin: 0;
-    }
-  }
+          @include midlaptop {
+            padding-right: 0px;
+            padding-left: 0px;
+          }
+        }
 
-  .flex_row.left {
-    .col.leftCnt {
-      order: 2;
+        @include tabletMid {
+          width: 45%;
+        }
 
-      .inner {
-        padding-left: 70px;
-        padding-right: 0;
-
-        @include midlaptop {
-          padding-right: 0px;
-          padding-left: 0px;
+        @include tabletvert {
+          width: 100%;
+          order: 1;
         }
       }
-
-      @include tabletMid {
-        width: 45%;
-      }
-
-      @include tabletvert {
-        width: 100%;
-        order: 1;
-      }
     }
+
   }
 }

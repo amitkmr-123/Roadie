@@ -218,3 +218,95 @@
   margin-bottom: 22rem;
   color: $DarkTeal;
 }
+
+
+
+
+// 
+
+//heading styles
+@mixin size60 {
+  font-size: 60rem;
+  line-height: 1;
+
+  @include tablet {
+    font-size: 48rem;
+  }
+
+  @include phone {
+    font-size: 38rem;
+  }
+}
+
+@mixin size50 {
+  font-size: 50rem;
+  line-height: 1;
+
+  @include tablet {
+    font-size: 38rem;
+  }
+
+  @include phone {
+    font-size: 32rem;
+  }
+}
+
+
+@mixin size30 {
+  font-size: 30rem;
+  line-height: 1;
+
+  @include tablet {
+    font-size: 29rem;
+  }
+
+  @include phone {
+    font-size: 24rem;
+  }
+}
+
+
+@mixin size24 {
+  font-size: 24rem;
+  line-height: 1;
+
+  @include tablet {
+    font-size: 20rem;
+  }
+
+}
+
+@mixin size22 {
+  font-size: 22rem;
+  line-height: 1;
+
+  @include tablet {
+    font-size: 18rem;
+  }
+}
+
+
+@mixin size20 {
+  font-size: 20rem;
+  line-height: 1;
+
+  @include tablet {
+    font-size: 16rem;
+  }
+}
+
+
+@mixin size18 {
+  font-size: 18rem;
+  line-height: 1;
+}
+
+@mixin size16 {
+  font-size: 16rem;
+  line-height: 1;
+}
+
+@mixin size14 {
+  font-size: 16rem;
+  line-height: 1;
+}

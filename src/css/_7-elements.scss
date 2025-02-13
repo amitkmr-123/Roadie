@@ -617,7 +617,7 @@ section[class*='u4m-'] {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 10px 36px;
+  gap: 10px 20px;
   align-items: center;
 }
 
@@ -651,6 +651,10 @@ section[class*='u4m-'] {
 
     p:last-child {
       margin: 0;
+    }
+
+    .intro_btn_wrap {
+      margin-top: 42px;
     }
   }
 
