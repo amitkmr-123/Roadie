@@ -1,75 +1,179 @@
 {% set moduleName = 'u4m-animated-stats' %}
-  {% set bgImageMax = 1920 %}
-  
-  {% include "../partials/u4-module-includes.html" %}
-  <h2 class="heading">{{ module.animated_stats_heading }}</h2>
-  {% if module.include_intro %}
-  <div class="intro">{{ module.intro_text }}</div>
-  {% endif %}
-  <div class="statistics items-{{module.items_per_row}}">
-    {% for item in module.statistic_group %}
-    <div class="statistics__item">
-      {% if item.include_image %}
-      <div class="image">
-        <img loading="lazy" src="{{ item.image_field.src }}" width="80" alt="{{ item.image_field.alt }}">
-      </div>
-      {% endif %}
-      {% if item.show_top_caption %}<span class="caption ">{{ item.top_caption }}</span>{% endif %}
-      {% if item.show_currency_label %}<span class="currency">{{ item.currency_label }}</span>{% endif %}        
-      <span class="number {% unless item.disable_animation %}count{% endunless %}">{{ item.numeric_stat }}</span>
-      {% if item.show_stat_unit %}<span class="unit">{{ item.stat_unit }}</span>{% endif %}
-      {% if item.show_bottom_caption %}<span class="caption ">{{ item.bottom_caption }}</span>{% endif %}
-    </div>
-    {% endfor %}
-  </div>
-  </section>
-  
-  
-  
-  
-  {% require_js %}
-  <script>
-    {
-      const onScroll = (entries, obs) => {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) entry.target.classList.remove('is-in-viewport');
-          else {
-            entry.target.classList.add('is-in-viewport');
-  
-            $('.count').each(function () {
-              $(this).prop('Counter',0).animate({
-                Counter: $(this).text()
-              }, {
-                duration: 4000,
-                easing: 'swing',
-                step: function (now) {
-                  // $(this).text(Math.ceil(now));
-                  $(this).text(Math.ceil(now).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
-                  $(this).removeClass( "count" )
-                }
-              });
-            });
-  
-          }
-        });
-      };
-  
-      const options = {
-        threshold: .75 // 50% of element in view
-      }
-  
-      const observer = new IntersectionObserver(onScroll, options);
-      document.querySelectorAll("section.{{moduleName}}.{{name}}").forEach(section => observer.observe(section));
-  
-                                }
-  
-  
-  </script>
-  {% end_require_js %}
-  
-  
-  
-  
-  
-  
-  
+{% include "../partials/u4-module-includes.html" %}
+
+
+{{macros.topCurves(module.module_settings)}}
+
+{#======#}
+<div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}" {% if module.module_overrides.container_size == "custom" %} style="max-width:{{ module.module_overrides.custom_container_size }}rem" {% endif %}>
+
+
+	<div class="flex_row">
+		<div class="col6 content_col">
+		<div class="content_col_inner">
+		{{ macros.introGroup(module.intro_content, module.module_settings) }}
+
+		<div class="stats_group">
+			<div class="flex_row stats_row">
+
+				{% for item in module.stats_group %}
+				<div class="stt_item col4 col">
+					<div class="icon_box ">
+
+						{% if item.icon_type == "image"%}
+						{% if item.image.src %}
+						<span class="img_icon icon_wrap">
+							<img src="{{ item.image.src }}" alt="{{ item.image.alt }}">
+						</span>
+						{% endif %}
+						{% endif %}
+
+						{% if item.icon_type == "icon"%}
+						<span class="text_icon icon_wrap">
+							{% icon
+								name="{{ item.icon.name }}"
+								style="{{ item.icon.type }}"
+								unicode="{{ item.icon.unicode }}"
+								icon_set="{{ item.icon.icon_set }}"
+							%}				
+						</span>
+						{% endif %}
+
+						{% if item.icon_type == "custom_class"%}
+						<span class="text_icon icon_wrap {{ item.custom_class }}">
+						</span>
+						{% endif %}
+					</div>
+
+					<div class="stat {{ item.item_settings.select_color }}_clr">
+						{{ item.prefix }}<span class="counter">{{ item.number }}</span>{{ item.suffix }}
+					</div>
+					<div class="stat_label">
+						{{ item.label_text }}
+					</div>
+				</div>
+				{% endfor %}			
+
+			</div>
+		</div>
+		</div>
+		</div>
+
+
+		<div class="col6 img_col">
+
+			<div class="media_bg">
+
+				{% if module.module_overrides.image_column_background_settings.background_type == "color" %}
+				<div class="bg_color bg_overlay {{ module.module_overrides.image_column_background_settings.select_color }}">
+				</div>
+				{% endif %}
+
+				{% if module.module_overrides.image_column_background_settings.background_type == "image" %}
+				<div class="bg_image bg_overlay" style="background-image: url({{ module.module_overrides.image_column_background_settings.background_image.src }})">
+				</div>
+				{% endif %}
+
+				{% if module.module_overrides.image_column_background_settings.background_type == "gradient" %}
+				<div class="bg_gradient bg_overlay {{ module.module_overrides.image_column_background_settings.select_gradient }}">
+				</div>
+				{% endif %}
+			</div>
+
+
+			<div class="img_col_inner">
+				{% if module.image_column.image_type == "image" %}
+				{% if module.image_column.image.src %}
+				<img src="{{ module.image_column.image.src }}" alt="{{ module.image_column.image.alt }}">
+				{% endif %}
+				{% endif %}
+
+				{% if module.image_column.image_type == "svg" %}
+				<div class="svg_wrap">
+					{{ module.image_column.animated_svg }}
+				</div>
+				{% endif %}
+
+			</div>
+		</div>
+	</div>
+
+
+</div>
+{#======#}
+
+
+{{macros.bottomCurves(module.module_settings)}}
+
+</section>
+
+{% set content_spacing = module.module_overrides.content_group_spacing %}
+{% set image_spacing = module.module_overrides.image_group_spacing %}
+
+
+{% require_css%}
+<style>
+	{% if  module.module_overrides.background_settings.select_color == 'custom'%}
+	.{{name}} .bg_overlay.custom{
+		background-color:{{ module.module_overrides.background_settings.custom_color.rgba }};
+	}
+	{% endif %}	 
+
+	{% if module.module_overrides.image_column_background_settings.background_type == "color" %}
+	{% if module.module_overrides.image_column_background_settings.select_color == "custom" %}
+	.{{name}}.img_col .bg_color.custom{
+		background-color: {{ module.module_overrides.image_column_background_settings.custom_color.rgba }}
+	}
+	{% endif %}	 
+	{% endif %}	 
+
+
+	.{{name}} .content_col{
+		padding-top:	{{ content_spacing.spacing.top }}px;
+		padding-bottom:	{{ content_spacing.spacing.bottom }}px;
+		padding-left:	{{ content_spacing.spacing.left }}px;
+		padding-right:	{{ content_spacing.spacing.right }}px;
+	}
+
+	.{{name}} .img_col{
+		padding-top:	{{ image_spacing.spacing.top }}px;
+		padding-bottom:	{{ image_spacing.spacing.bottom }}px;
+		padding-left:	{{ image_spacing.spacing.left }}px;
+		padding-right:	{{ image_spacing.spacing.right }}px;
+	}
+
+	@media(max-width: 767px){
+
+		{% if content_spacing.change_mobile_spacing %}
+		.{{name}} .content_col{
+			padding-top:	{{ content_spacing.mobile_spacing.top }}px;
+			padding-bottom:	{{ content_spacing.mobile_spacing.bottom }}px;
+			padding-left:	{{ content_spacing.mobile_spacing.left }}px;
+			padding-right:	{{ content_spacing.mobile_spacing.right }}px;
+		}
+		{% endif %}
+
+		{% if image_spacing.change_mobile_spacing %}
+		.{{name}} .img_col{
+			padding-top:	{{ image_spacing.mobile_spacing.top }}px;
+			padding-bottom:	{{ image_spacing.mobile_spacing.bottom }}px;
+			padding-left:	{{ image_spacing.mobile_spacing.left }}px;
+			padding-right:	{{ image_spacing.mobile_spacing.right }}px;
+		}
+		{% endif %}
+	}
+
+
+</style>
+{% end_require_css%}
+
+{% require_js %}
+<script>
+	$(document).ready(function(){
+		$('.counter').counterUp({
+			delay: 10,
+			time: 1000
+		});
+	})
+</script>
+{% end_require_js %}

@@ -1,77 +1,112 @@
 @import "../../css/_module-imports";
 section.u4m-animated-stats {
-  margin-top: 100rem;
-  margin-bottom: 100rem;
+  padding: 0;
+
   &.reverse-text {
-    color: $white;
+    .eyebrow_text {
+      color: $BrightTeal;
+    }
   }
-  .heading {
-    @include center;
-    @include h2;
+
+  .eyebrow_text {
+    text-transform: uppercase;
+  }
+
+  .img_col {
+    position: relative;
+  }
+
+  .stt_item {
     text-align: center;
   }
-  .intro {
-    @include center;
+
+  .stt_item .stat {
+    @include size50;
+    line-height: 1.1;
+    font-weight: 600;
+    letter-spacing: 0.5px;
   }
-  div.statistics {
-    @include center;
+
+  .stat_label {
+    @include size16;
+    margin: 0;
+    color: inherit;
+    line-height: 1.25;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+  }
+
+  .stats_group {
+    margin-top: 50px;
+  }
+
+  .content_col {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
-    &.items-four {
-      div.statistics__item {
-        flex-basis: calc(25% - 40rem);
-        @include tablet {
-          flex-basis: calc(50% - 40rem);
-        }
-        @include phone {
-          flex: 0 0 100%;
-        }
-      }
+    flex-direction: column;
+
+    .content_col_inner {
+      margin: auto;
     }
-    div.statistics__item {
-      text-align: center;
-      margin: 20rem;
-      flex-basis: calc(33.333% - 40rem);
-      flex-grow: 0;
-      flex-shrink: 0;
-      @include tablet {
-        flex-basis: calc(50% - 40rem);
-      }
-      @include phone {
-        flex: 0 0 100%;
-      }
-      .image {
-        min-height: 70rem;
-        img {
-          max-width: 80rem;
-          text-align: center;
-          margin: 0 auto;
-          display: block;
-        }
-      }
-      .count,
-      .number {
-        font-size: 50rem;
-        font-weight: bold;
-      }
-      .currency {
-        padding-right: 5rem;
-        //vertical-align: text-bottom;
-        font-size: 50rem;
-        font-weight: bold;
-      }
-      .unit {
-        padding-left: 5rem;
-        //vertical-align: text-bottom;
-        font-size: 50rem;
-        font-weight: bold;
-      }
-      .caption {
-        display: block;
-        font-weight: bold;
-      }
+  }
+
+  .img_col {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .img_col_inner {
+      margin: auto;
+    }
+  }
+
+  .icon_box {
+    margin-bottom: 13px;
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    .text_icon {
+      font-size: 30px;
+    }
+    svg {
+      width: 1em;
+      height: 1em;
+      display: block;
+      fill: currentColor;
+    }
+  }
+  .img_col_inner {
+    position: relative;
+    z-index: 4;
+  }
+
+  .flex_row.stats_row {
+    row-gap: 20px;
+  }
+
+  .stt_item {
+    @include laptop {
+      width: 50%;
+    }
+
+    @include navbreak {
+      width: 33.33%;
+    }
+
+    @include tabletMid {
+      width: 50%;
+    }
+
+    @include tabletvert {
+      width: 100%;
+    }
+  }
+
+  .col6 {
+    @include navbreak {
+      width: 100%;
     }
   }
 }
