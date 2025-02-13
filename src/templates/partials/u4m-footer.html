@@ -1,0 +1,177 @@
+<!--
+templateType: global_partial
+label: Footer
+-->
+
+<footer class="footer">
+	<div class="page-center">
+		<div class="ftrInner">
+			<div class="topSection">
+				<div class="navWrapper">
+					{% module "main_menu" path="@hubspot/menu" , id=186059726127 , label="Footer Main Menu",flyouts="false"%}
+				</div>
+			</div>
+			<div class="bottomSection">
+				<div class="socialWrapper">
+					Social Share
+				</div>
+				<div class="privacyWrapper">
+					<div class="ftrContent">
+						{% module_block module "copyright" path="@hubspot/rich_text" label="Copyright content" %}
+						{% module_attribute "html" %}
+						<p>
+							©{{year}} Roadie. All rights reserved.
+						</p>
+						{% end_module_attribute %}
+						{% end_module_block %}
+					</div>
+					<div class="privacyMenuWrap">
+						{% module "privacy_menu" path="@hubspot/menu" , id=186060006663 , label="Privacy Menu",flyouts="false"%}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="flaotImage">
+		{% set float_image = get_asset_url('../../templates/images/Footer-Roadie.png') %}
+		{% module "flaot_logo" path="@hubspot/linked_image", label="Footer Sticky Image",
+             img={src="{{float_image}}", width=182, override_inherited_src= true, alt="Roadie"} %}
+	</div>
+</footer>
+
+{% require_css %}
+<style>
+	footer.footer{
+		position:relative;
+		z-index:99;
+		padding: 82px 0 39px 0 ;
+		background-color:#351C13;
+	}
+	footer.footer .navWrapper .hs-menu-wrapper ul ul.hs-menu-children-wrapper {
+		position: unset;
+	}
+	.flaotImage {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		z-index: 1;
+	}
+	footer.footer .ftrInner {
+		position: relative;
+		z-index: 9;
+	}
+	footer.footer .privacyWrapper {
+		display: flex;
+		align-items: center;
+		gap: 15px;
+		flex-wrap: wrap;
+	}
+	footer.footer .privacyWrapper .ftrContent p:last-of-type {
+		margin: 0;
+	}
+	footer.footer .privacyWrapper .ftrContent p {
+		font-size: 15px;
+		color: #fff;
+	}
+	footer.footer .privacyWrapper .hs-menu-wrapper ul {
+		margin: 0;
+		padding: 0;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+	footer.footer .privacyWrapper .hs-menu-wrapper ul li {
+		margin: 0;
+		font-size: 15px;
+	}
+	footer.footer .privacyWrapper .hs-menu-wrapper ul li a {
+		padding: 0;
+		vertical-align: middle;
+		max-width: unset;
+		overflow: auto;
+		text-overflow: unset;
+		white-space: normal;
+		cursor:pointer;
+		color: rgba(255, 255, 255, .7)
+	}
+	footer.footer .navWrapper .hs-menu-wrapper >ul {
+		display: flex;
+		align-items: flex-start;
+		gap: 60px;
+		margin-bottom:0;
+	}
+
+	footer.footer .navWrapper .hs-menu-wrapper >ul >li {
+		margin: 0;
+		letter-spacing: 1px;
+	}
+
+	footer.footer .navWrapper .hs-menu-wrapper >ul >li >a {
+		padding: 0;
+		color: #fff;
+		font-size: 15px;
+		font-weight: 600;
+		max-width: unset;
+		overflow: auto;
+		text-overflow: unset;
+		white-space: normal;
+		line-height: 2.134;
+		margin-bottom: 18px;
+	}
+
+	footer.footer .navWrapper .hs-menu-wrapper ul ul {
+		padding: 0;
+		margin: 0;
+	}
+
+	footer.footer .navWrapper .hs-menu-wrapper ul ul li {
+		margin: 0;
+		font-size: 15px;
+		line-height: 1.867;
+	}
+
+	footer.footer .navWrapper .hs-menu-wrapper ul ul.hs-menu-children-wrapper li a {
+		padding: 0;
+		max-width: unset;
+		text-overflow: unset;
+		overflow: auto;
+		width: auto;
+		white-space: normal;
+		vertical-align: middle;
+		color: rgba(255, 255, 255, .7);
+	}
+
+	footer.footer .navWrapper .hs-menu-wrapper ul ul li:not(:last-child) {
+		margin-bottom: 2px;
+	}
+
+	footer.footer  .topSection {
+		margin-bottom: 66px;
+	}
+	footer.footer .hs-menu-wrapper ul li a{
+		cursor:pointer;
+	}
+	@media (max-width:991px){
+		footer.footer .navWrapper .hs-menu-wrapper >ul{
+			flex-direction: column;
+			gap: 20px;
+		}
+		footer.footer .privacyMenuWrap,
+		footer.footer .privacyWrapper .hs-menu-wrapper ul {
+			width:100%;
+		}
+		footer.footer .privacyWrapper .hs-menu-wrapper ul{
+			flex-direction: column;
+		}
+		footer.footer .navWrapper .hs-menu-wrapper >ul li,
+		footer.footer .privacyWrapper .ftrContent,
+		footer.footer .privacyWrapper .hs-menu-wrapper ul li {
+			width: 100%;
+			text-align: center;
+		}
+		footer.footer .topSection {
+			margin-bottom: 30px;
+		}
+	}
+</style>
+{% end_require_css %}
