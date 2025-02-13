@@ -1,19 +1,6 @@
 {% set moduleName = 'u4m-accordion' %}
 {% include "../partials/u4-module-includes.html" %}
-{% if module.module_settings.curves_group.include_top_section_curves %}
-<div class="top_curves section_decoration">
-	{% if module.module_settings.curves_group.top_curves_group.curves_type == "type1" %}
-	<svg width="1440" height="90" viewBox="0 0 1440 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-		<path class="fill-{{ module.module_settings.curves_group.theme_color }}" d="M1440 90V0H0V17.5188C864 -33.6153 1311 64.7816 1440 90Z"/>
-	</svg> 
-	{% endif %}	 
-	{% if module.module_settings.curves_group.top_curves_group.curves_type == "type2" %}
-	<svg width="1440" height="90" viewBox="0 0 1440 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-		<path  class="fill-{{ module.module_settings.curves_group.theme_color }}" d="M0 90V0H1440V17.5188C576 -33.6153 129 64.7816 0 90Z"/>
-	</svg> 
-	{% endif %}	 
-</div>
-{% endif %}
+{{macros.topCurves(module.module_settings)}}
 <div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}" {% if module.module_overrides.container_size == "custom" %} style="max-width:{{ module.module_overrides.custom_container_size }}rem" {% endif %}>
 	{{ macros.introGroup(module.intro_content, module.module_settings) }}
 	<div class="btmCntt">
@@ -90,25 +77,12 @@
 		</div>
 	</div>
 </div>
-{% if module.module_settings.curves_group.include_bottom_section_curves %}
-<div class="btm_curves  section_decoration">
-	{% if module.module_settings.curves_group.bottom_curves_group.curves_type == "type1" %}
-	<svg width="1440" height="90" viewBox="0 0 1440 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-		<path  class="fill-{{ module.module_settings.curves_group.theme_color }}" d="M0 90V0H1440V17.5188C576 -33.6153 129 64.7816 0 90Z"/>
-	</svg>  
-	{% endif %}	 
-	{% if module.module_settings.curves_group.bottom_curves_group.curves_type == "type2" %}
-	<svg width="1440" height="90" viewBox="0 0 1440 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-		<path class="fill-{{ module.module_settings.curves_group.theme_color }}" d="M1440 90V0H0V17.5188C864 -33.6153 1311 64.7816 1440 90Z"/>
-	</svg> 
-	{% endif %}	 
-</div>
-{% endif %}
+{{macros.bottomCurves(module.module_settings)}}
 </section>
 
 {% if  module.module_overrides.background_settings.select_color == 'custom'%}
 <style>
-	.bg_overlay.custom{
+	.{{name}} .bg_overlay.custom{
 		background-color:{{ module.module_overrides.background_settings.custom_color.rgba }};
 	}
 </style>
