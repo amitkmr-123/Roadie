@@ -631,7 +631,7 @@ section[class*='u4m-'] {
   margin-bottom: 0;
 
   .intro__inner {
-    margin-bottom: 22px;
+    margin-bottom: 0px;
   }
 
   .eyebrow_text {
@@ -647,7 +647,7 @@ section[class*='u4m-'] {
   }
 
   .intro_desc {
-    margin-bottom: 0px;
+    margin-bottom: 22px;
 
     p:last-child {
       margin: 0;
@@ -784,7 +784,7 @@ section[class*='u4m-'] {
 }
 
 .btm_curves.section_decoration {
-  bottom: 0;
+  bottom: -1px;
   top: auto;
   transform: rotate(180deg);
 }
