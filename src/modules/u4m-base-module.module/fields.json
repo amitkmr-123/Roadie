@@ -85,7 +85,7 @@
     "show_emoji_picker" : false,
     "type" : "text",
     "display_width" : null,
-    "default" : "Frequently Asked Questions"
+    "default" : "Main Heading"
   }, {
     "id" : "2f10bd6e-cf85-1cf6-5a4f-fa75e1e78238",
     "name" : "include_content",
@@ -211,7 +211,7 @@
       "visibility" : {
         "controlling_field" : null,
         "controlling_field_path" : "intro_content.button_group.button_type",
-        "controlling_value_regex" : "std|popup_content",
+        "controlling_value_regex" : "std",
         "property" : null,
         "operator" : "MATCHES_REGEX",
         "access" : null
@@ -308,7 +308,7 @@
     "eyebrow_text" : "Eyebrow Text",
     "include_heading" : true,
     "heading_size" : "h2",
-    "heading" : "Frequently Asked Questions",
+    "heading" : "Main Heading",
     "include_content" : true,
     "content_style" : "themeStyle",
     "content" : "<p>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</p>",
