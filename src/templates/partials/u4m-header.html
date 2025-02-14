@@ -3,7 +3,7 @@ templateType: global_partial
 label: Website header
 -->
 <div class="headerOuterWrapper">
-	<header class="header">
+	<header class="header globalHeader">
 		<div class="topSection">
 			<div class="page-center">
 				<div class="topInnerWrap">
@@ -12,16 +12,17 @@ label: Website header
 			</div>
 		</div>
 		<div class="mainSection">
-			<div class="page-center">
-				<div class="mainInnerWrap">
-					<div class="logoWrap">
-						{% set header_image = get_asset_url('../../templates/images/Roadie.png') %}
-						{% module "header_logo" path="@hubspot/linked_image", link="/", label="Header Logo",
+			<div class="mainInnerSection">
+				<div class="page-center">
+					<div class="mainInnerWrap">
+						<div class="logoWrap">
+							{% set header_image = get_asset_url('../../templates/images/Roadie.png') %}
+							{% module "header_logo" path="@hubspot/linked_image", link="/", label="Header Logo",
              img={src="{{header_image}}", width=440, override_inherited_src= true, alt="Roadie"} %}
-					</div>
-					<div class="menuWrapper">
-						<nav class="navWrapper">
-							{% module "mega_menu" path="../../modules/u4m-mega-menu", label="Mega Menu",
+						</div>
+						<div class="menuWrapper">
+							<nav class="navWrapper">
+								{% module "mega_menu" path="../../modules/u4m-mega-menu", label="Mega Menu",
 							first_level_menu=[ {
           "enable_second_level_menu" : true,
           "enable_single_title_menu_style" : false,
@@ -532,206 +533,19 @@ label: Website header
           "select_second_level_menu_style" : "single_column"
         } ]
 							%}
-						</nav>
-						<div class="btnWrapper">
-							{% module "get_started_button" path="@hubspot/button" label="Get Started Button" button_text="Get Started" link={ "url": { "type": "EXTERNAL", "href": "www.hubspot.com", "content_id": null }, "open_in_new_tab": false, "no_follow": false }%}
+							</nav>
+							<div class="btnWrapper">
+								{% module "get_started_button" path="@hubspot/button" label="Get Started Button" button_text="Get Started" link={ "url": { "type": "EXTERNAL", "href": "www.hubspot.com", "content_id": null }, "open_in_new_tab": false, "no_follow": false }%}
+							</div>
 						</div>
-					</div>
-					<div class="navTrigger">
-						<span class="trigger_item"></span>
-						<span class="trigger_item"></span>
-						<span class="trigger_item"></span>
+						<div class="navTrigger">
+							<span class="trigger_item"></span>
+							<span class="trigger_item"></span>
+							<span class="trigger_item"></span>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</header>
 </div>
-
-
-{% require_css %}
-<style>
-	header.header {
-		position: relative;
-		z-index: 101;
-	}
-	header.header .topSection {
-		padding-top: 10px;
-		padding-bottom: 14px;
-		background-color: #fff;
-	}
-	header.header .topInnerWrap {
-		display: flex;
-		align-items: center;
-		justify-content: flex-end;
-	}
-	header.header .topInnerWrap .hs-menu-wrapper ul {
-		margin: 0;
-		list-style: none;
-		padding: 0;
-		display: flex;
-		align-items: center;
-		gap: 30px;
-	}
-	header.header .topInnerWrap .hs-menu-wrapper ul li {
-		margin: 0;
-		letter-spacing: normal;
-		line-height: 1em;
-		font-size: 14px;
-	}
-	header.header .topInnerWrap .hs-menu-wrapper ul li a {
-		padding: 0;
-		max-width: unset;
-		text-overflow: unset;
-		white-space: normal;
-		overflow:unset;
-		letter-spacing:1px;
-		color: #000;
-		cursor: pointer;
-	}
-	header.header .mainInnerWrap {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		flex-wrap: wrap;
-		column-gap: 20px;
-	}
-
-	header.header .mainInnerWrap .logoWrap a {
-		display: block;
-		max-width: 220px;
-	}
-
-	header.header .mainInnerWrap .menuWrapper {
-		display: flex;
-		align-items: center;
-		gap: 30px;
-		justify-content: flex-end;
-	}
-	.hs-menu-wrapper.hs-menu-flow-horizontal>ul:before,
-	.hs-menu-wrapper.hs-menu-flow-horizontal>ul:after{
-		display:none;
-	}
-	.hs-menu-wrapper.hs-menu-wrapper>ul li.hs-menu-depth-1{
-		float:unset;
-	}
-	header.header .menuWrapper .navWrapper,
-	header.header .menuWrapper .navWrapper >* {
-		width: 100%;
-	}
-
-	header.header .cmMegaMenuWrap {
-		justify-content: flex-end;
-	}
-	header.header .btnWrapper .hs-button {
-		white-space: nowrap;
-		margin:0;
-	}
-	header.header .menuWrapper .navWrapper {
-		width: calc(100% - 172px);
-	}
-	header.header .mainSection {
-		padding-top: 30px;
-		padding-bottom: 22px;
-	}
-
-	@media(min-width:992px){
-		header.header .navTrigger{
-			display:none;
-		}
-		header.header .mainInnerWrap .menuWrapper{
-			position:relative;
-		}
-	}
-	@media(max-width:1200px){
-		header.header .mainInnerWrap .menuWrapper{
-			gap: 20px;
-		}
-		header.header .menuWrapper .navWrapper {
-			width: calc(100% - 142px);
-		}
-	}
-	@media(max-width:991px){
-		header.header .mainInnerWrap .menuWrapper {
-			order: 3;
-			display:none;
-			width: 100%;
-			padding-top: 20px;
-		}
-		.navTrigger {
-			width: 30px;
-			height: 25px;
-			position:relative;
-			display:flex;
-			align-items:center;
-			justify-content:center;
-			cursor: pointer;
-		}
-		.navTrigger .trigger_item {
-			height: 3px;
-			width: 80%;
-			background-color: #000;
-			display: block;
-			position: absolute;
-			transition: all .4s ease-in-out;
-		}
-		.navTrigger .trigger_item:first-child {
-			top: 3px;
-		}
-		.navTrigger .trigger_item:nth-child(2) {
-			top: 11px;
-		}
-		.navTrigger .trigger_item:last-child {
-			top: 19px;
-		}
-		.cm_active .trigger_item:first-child {
-			top: 10px;
-			transform: rotate(45deg);
-		}
-		.cm_active .trigger_item:nth-child(2) {
-			opacity: 0;
-			visibility:hidden;
-		}
-		.cm_active .trigger_item:last-child {
-			top: 10px;
-			transform: rotate(-45deg);
-		}
-		
-		.childTrigger {
-			position: absolute;
-			top: 0;
-			right: 0;
-			width: 40px;
-			display: flex;
-			align-items: center;
-			height: 25px;
-			justify-content: center;
-			z-index: 1;
-			cursor: pointer;
-		}
-		.childTrigger svg {
-			display: inline-block;
-			width: 13px;
-		}
-	}
-</style>
-{% end_require_css %}
-{% require_js %}
-<script>
-	$(".navTrigger").click(function(){
-		$(this).toggleClass("cm_active");
-		$('.menuWrapper').toggleClass("cm_active");
-		$('.menuWrapper').slideToggle();
-	});
-	$('.menuMobileWrapper .hs-item-has-children > a').after('<div class="childTrigger"><svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 1.16667L1.20833 0L4.16667 2.95833L5 3.9445L5.83333 2.95833L8.79167 0L10 1.16667L5 6.16667L0 1.16667Z" fill="black"/></svg></div>');
-	$('.childTrigger').click(function() {
-		$(this).parent().siblings('.hs-item-has-children').find('.child-trigger').removeClass('childOpen');
-		$(this).parent().siblings('.hs-item-has-children').find('.hs-menu-children-wrapper').slideUp();
-		$(this).next('.hs-menu-children-wrapper').slideToggle();
-		$(this).next('.hs-menu-children-wrapper').children('.hs-item-has-children').find('.hs-menu-children-wrapper').slideUp();
-		$(this).next('.hs-menu-children-wrapper').children('.hs-item-has-children').find('.child-trigger').removeClass('childOpen');
-		$(this).toggleClass('childOpen');
-		return false;
-	});
-</script>
-{% end_require_js %}

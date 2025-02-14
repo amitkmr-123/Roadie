@@ -31,3 +31,25 @@ window.addEventListener('scroll', function () {
     document.body.classList.remove('page-scrolled');
   }
 });
+
+// Header------
+
+$(".navTrigger").click(function(){
+	$(this).toggleClass("cm_active");
+	$('.menuWrapper').toggleClass("cm_active");
+	$('.menuWrapper').slideToggle();
+});
+$(window).scroll(function(){
+	if ($(this).scrollTop() > 40) {
+		$('header.globalHeader').addClass('stickyHeader');
+	} else {
+		$('header.globalHeader').removeClass('stickyHeader');
+	}
+});
+
+$('header.header .topInnerWrap .hs-menu-wrapper ul li').each(function() {
+  var aText = $(this).children("a").text().toLowerCase().replace(/\s/g, "-");
+  $(this).addClass( aText );
+});
+
+// ------

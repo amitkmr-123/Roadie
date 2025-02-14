@@ -1,0 +1,22 @@
+<!--
+templateType: global_partial
+label: Header no navigation 
+-->
+<div class="headerOuterWrapper">
+	<header class="header lpHeader">
+		<div class="mainSection">
+			<div class="mainInnerSection">
+				<div class="page-center">
+					<div class="mainInnerWrap">
+						<div class="logoWrap">
+							{% set header_image = get_asset_url('../../templates/images/Roadie.png') %}
+							{% module "header_logo" path="@hubspot/linked_image", link="/", label="Header Logo",
+             img={src="{{header_image}}", width=440, override_inherited_src= true, alt="Roadie"} %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+</div>
+

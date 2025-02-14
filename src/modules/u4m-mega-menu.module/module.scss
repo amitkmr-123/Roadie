@@ -60,24 +60,25 @@
             }
         }
 
-        &:hover {
-            &>a {
-                background-color: $white;
-                border-color: $MidTeal;
+        @include tabletMidmin {
+            &:hover {
+                &>a {
+                    background-color: $white;
+                    border-color: $MidTeal;
 
-                .cmTrigger {
-                    svg {
-                        transform: rotate(180deg);
+                    .cmTrigger {
+                        svg {
+                            transform: rotate(180deg);
+                        }
                     }
                 }
-            }
 
-            .cmSecondLevel {
-                opacity: 1;
-                visibility: visible;
+                .cmSecondLevel {
+                    opacity: 1;
+                    visibility: visible;
+                }
             }
         }
-
     }
 
     .cmSecondLevel {
@@ -96,13 +97,16 @@
 
         &.single_column {
             width: 346px;
+            max-width: 100%;
         }
 
         &.two_column {
             width: 650px;
+            max-width: 100%;
 
             &.cmsingleTitle {
                 width: 412px;
+                max-width: 100%;
             }
         }
 
@@ -134,6 +138,7 @@
                     top: 0;
                     width: calc(100% - 50px);
                     height: 100%;
+                    z-index: 1;
                 }
 
                 .cmCntWrap {
@@ -141,10 +146,12 @@
                     flex-wrap: wrap;
                     row-gap: 5px;
                     flex-direction: column;
+                    position: relative;
 
                     h6 {
                         font-size: 16rem;
                         margin-bottom: 0;
+                        color: $Brown2;
                     }
 
                     p {
@@ -159,6 +166,7 @@
         .cmSecondLevel {
             &.two_column {
                 width: 744px;
+                max-width: 100%;
             }
         }
     }
@@ -208,7 +216,7 @@
 
         .secondMenuiItem {
             .cmCntWrap {
-                width: 100%;
+                flex: 1;
             }
         }
     }
@@ -229,5 +237,182 @@
         @include tabletMid {
             flex-direction: column;
         }
+    }
+
+    .cmsingleTitle {
+        .cmCntWrap {
+            .hoverIcon {
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                display: flex;
+                width: 22px;
+                height: 22px;
+                transition: all 0.3s ease;
+                opacity: 0;
+                visibility: hidden;
+                border-radius: 50%;
+                border: 2px solid $Brown2;
+                align-items: center;
+                justify-content: center;
+
+                svg {
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 12px;
+                    height: auto;
+                    color: $Brown2;
+                    fill: $Brown2;
+
+                    path {
+                        color: inherit;
+                        fill: inherit;
+                    }
+                }
+            }
+        }
+    }
+
+    .cmSecondLevel {
+        &.cmsingleTitle {
+            .secondMenuiItem {
+                .cmCntWrap {
+                    h6 {
+                        padding-right: 23px;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .cmsingleTitle {
+        .secondMenuiItem {
+            &:hover {
+                .hoverIcon {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+
+    @include tabletMidmin {
+        .cmMbTrigger {
+            display: none;
+        }
+    }
+
+    @include tabletMid {
+        .mainMenuWrap {
+            gap: 15px;
+        }
+
+        .menuItem {
+            width: 100%;
+            position: relative;
+
+
+            .cmTrigger {
+                display: none;
+            }
+        }
+
+        .cmSecondLevel {
+            position: static;
+            opacity: 1;
+            visibility: visible;
+            width: 100%;
+            min-width: auto;
+        }
+
+        .menuItem_1 {
+            .cmSecondLevel {
+                &.two_column {
+                    width: 100%;
+                }
+            }
+        }
+
+        .cmSecondLevel {
+            &.two_column {
+                width: 100%;
+            }
+        }
+
+        .cmSecondLevel {
+            &.two_column {
+                &.cmsingleTitle {
+                    width: 100%;
+                }
+            }
+        }
+
+        .cmSecondLevel {
+            &.single_column {
+                width: 100%;
+            }
+        }
+
+        span.cmMbTrigger {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 35px;
+            z-index: 1;
+            cursor: pointer;
+        }
+
+        span.cmMbTrigger {
+            svg {
+                width: 13px;
+                height: auto;
+                display: inline-block;
+                vertical-align: middle;
+                color: $Dark;
+                fill: $Dark;
+            }
+        }
+
+        .cmSecondLevel {
+            display: none;
+            transition: unset;
+        }
+
+        .cmSecondLevel {
+            &:after {
+                display: none;
+            }
+        }
+    }
+
+    @include tabletvert {
+        .cmSecondLevel {
+            padding: 25px;
+        }
+    }
+
+    @include phone {
+        .cmSecondLevel {
+            .cmCntWrap {
+                p {
+                    font-size: 14rem;
+                }
+            }
+
+            .cmSecondLevelInner {
+                row-gap: 30px;
+
+                .secondMenuiItem {
+                    width: 100%;
+                }
+            }
+        }
+
     }
 }

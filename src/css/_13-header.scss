@@ -1,0 +1,268 @@
+header.header {
+    position: relative;
+    z-index: 101;
+
+    .topSection {
+        padding-top: 10px;
+        padding-bottom: 14px;
+        background-color: $white;
+    }
+
+    .topInnerWrap {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        .hs-menu-wrapper {
+            ul {
+                margin: 0;
+                list-style: none;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                column-gap: 30px;
+                row-gap: 10px;
+                flex-wrap: wrap;
+
+                .login {
+                    a {
+                        position: relative;
+
+                        &:after {
+                            content: "";
+                            background-image: url("{{ get_asset_url('../templates/images/Avatar.png') }}");
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            background-position: center;
+                            width: 16px;
+                            display: block;
+                            height: 16px;
+                            margin-right: 5px;
+                            top: 0;
+                            position: absolute;
+                            right: 100%;
+                        }
+                    }
+                }
+
+                li {
+                    margin: 0;
+                    letter-spacing: normal;
+                    line-height: 1.1em;
+                    font-size: 14px;
+                    width: auto;
+
+                    a {
+                        padding: 0;
+                        max-width: unset;
+                        text-overflow: unset;
+                        white-space: nowrap;
+                        overflow: unset;
+                        letter-spacing: 1px;
+                        color: $Dark;
+                        cursor: pointer;
+                        width: auto;
+                    }
+                }
+            }
+        }
+    }
+
+    .mainInnerWrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        column-gap: 20px;
+
+        .logoWrap {
+            a {
+                display: block;
+                max-width: 220px;
+            }
+        }
+
+        .menuWrapper {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            justify-content: flex-end;
+        }
+    }
+
+    .menuWrapper {
+        .navWrapper {
+            width: 100%;
+            width: calc(100% - 172px);
+
+            >* {
+                width: 100%;
+            }
+        }
+    }
+
+    .cmMegaMenuWrap {
+        justify-content: flex-end;
+    }
+
+    .btnWrapper {
+        .hs-button {
+            white-space: nowrap;
+            margin: 0;
+        }
+    }
+
+    .mainInnerSection {
+        padding-top: 30px;
+        padding-bottom: 22px;
+    }
+
+    @include tabletMidmin {
+        .navTrigger {
+            display: none;
+        }
+
+        .mainSection {
+            position: relative;
+        }
+
+        .mainInnerWrap {
+            .menuWrapper {
+                position: relative;
+            }
+        }
+
+        .mainInnerSection {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            left: 0;
+        }
+
+        .stickyHeader {
+            .mainInnerSection {
+                position: fixed;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                background: rgba(255, 255, 255, .15);
+            }
+        }
+    }
+
+    @include midlaptop {
+        .mainInnerWrap {
+            .menuWrapper {
+                gap: 20px;
+            }
+        }
+
+        .menuWrapper {
+            .navWrapper {
+                width: calc(100% - 142px);
+            }
+        }
+    }
+
+    @include tabletMid {
+        .mainInnerSection {
+            padding-top: 22px;
+        }
+
+        .mainInnerWrap {
+            .menuWrapper {
+                order: 3;
+                display: none;
+                width: 100%;
+                padding-top: 20px;
+            }
+        }
+
+        .navTrigger {
+            width: 30px;
+            height: 25px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+            .trigger_item {
+                height: 3px;
+                width: 80%;
+                background-color: $Dark;
+                display: block;
+                position: absolute;
+                transition: all .4s ease-in-out;
+            }
+
+            .trigger_item {
+                &:first-child {
+                    top: 3px;
+                }
+
+                &:nth-child(2) {
+                    top: 11px;
+                }
+
+                &:last-child {
+                    top: 19px;
+                }
+            }
+
+        }
+
+        .cm_active {
+            .trigger_item {
+                &:first-child {
+                    top: 10px;
+                    transform: rotate(45deg);
+                }
+
+                &:nth-child(2) {
+                    opacity: 0;
+                    visibility: hidden;
+                }
+
+                &:last-child {
+                    top: 10px;
+                    transform: rotate(-45deg);
+                }
+            }
+
+        }
+
+        .btnWrapper {
+            margin-top: 15px;
+        }
+
+        .cmMegaMenuWrap {
+            justify-content: unset;
+        }
+
+        .menuWrapper {
+            .navWrapper {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.hs-menu-wrapper.hs-menu-flow-horizontal {
+    >ul {
+        &:before {
+            display: none;
+        }
+
+        &:after {
+            display: none;
+        }
+    }
+}
+
+.hs-menu-wrapper.hs-menu-wrapper {
+    >ul {
+        li.hs-menu-depth-1 {
+            float: unset;
+        }
+    }
+}

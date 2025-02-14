@@ -26,6 +26,9 @@
 					{% endif %}
 				</a>
 				{% endif %}
+				{% if item.enable_second_level_menu %}
+					<span class="cmMbTrigger"><svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 1.16667L1.20833 0L4.16667 2.95833L5 3.9445L5.83333 2.95833L8.79167 0L10 1.16667L5 6.16667L0 1.16667Z" fill="black"/></svg></span>
+					{% endif %}
 			{% if item.enable_second_level_menu %}
 			<div class="cmSecondLevel {{ item.select_second_level_menu_style }} {% if item.enable_single_title_menu_style %}cmsingleTitle{% endif %}">
 				<div class="cmSecondLevelInner">
@@ -55,9 +58,9 @@
 						<h6>
 							{{ item2.title }}
 						</h6>
-						<span class="hoverIcon"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<circle cx="11" cy="11" r="10.25" stroke="#351C13" stroke-width="1.5"/>
-							</svg>
+						<span class="hoverIcon"><svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M7.5 9.5L6.45 8.4125L9.1125 5.75H0V4.25H9.1125L6.45 1.5875L7.5 0.5L12 5L7.5 9.5Z" />
+						</svg>
 						</span>
 						{% endif %}
 					</div>

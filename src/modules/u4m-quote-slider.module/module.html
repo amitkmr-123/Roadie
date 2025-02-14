@@ -1,0 +1,98 @@
+{% set moduleName = 'cmQuoteSlider' %}
+{% include "../partials/u4-module-includes.html" %}
+
+{{macros.topCurves(module.module_settings)}}
+
+<div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}" {% if module.module_overrides.container_size == "custom" %} style="max-width:{{ module.module_overrides.custom_container_size }}rem" {% endif %}>
+	{{ macros.introGroup(module.intro_content, module.module_settings) }}
+
+	<div class="cmQuoteSliderWrap">
+		<div id="splide" class="splide quoteItemWrap">
+			<div class="splide__track quoteTrack">
+				<div class="splide__list quoteList">
+					{% for item in module.items %}
+					<div class="splide__slide quoteItem quoteItem_{{loop.index}} {{ module.module_settings.select_color }}">
+						<div class="quoteItemInner">
+							{% if item.enable_image %}
+							{% if item.image.src %}
+							<div class="imageWrapper">
+								<div class="cmImage" style="background-image:url({{ item.image.src }});"></div>
+							</div>
+							{% endif %}
+							{% endif %}
+							{% if item.quote %}
+							<div class="conteWrapper">
+								{% if item.quote %}
+								<div class="quoteText">
+									<div class="cmQuote">{{ item.quote }}</div>
+								</div>
+								{% endif %}
+								{% if item.member_name || item.designation %}
+								<div class="adminWrap">
+									{% if item.member_name %}
+									<h6 class="cmName">{{ item.member_name }}</h6>
+									{% endif %}
+									{% if item.designation %}
+									<p class="cmDesignation">
+										{{ item.designation }}
+									</p>
+									{% endif %}
+								</div>
+								{% endif %}
+							</div>
+							{% endif %}
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+{{macros.bottomCurves(module.module_settings)}}
+</section>
+
+{% require_css %}
+<style>
+	{% if  module.module_overrides.background_settings.select_color == 'custom'%}
+	.{{name}} .bg_overlay.custom{
+		background-color:{{ module.module_overrides.background_settings.custom_color.rgba }};
+	}
+	{% endif %}	
+	{% if  module.module_settings.select_color == 'custom'%}
+	.cmQuoteSlider.{{name}} .quoteItem{
+		background-color:{{ module.module_settings.custom_color.rgba }};
+	}
+	{% endif %}
+</style>
+{% end_require_css %}
+
+{% require_js %}
+<script>
+	document.addEventListener( 'DOMContentLoaded', function () {
+		new Splide('#splide', {
+			type: 'loop',
+			perPage: 1,
+			focus: 'center',
+			autoplay: true,
+			interval: 8000,
+			flickMaxPages: 3,
+			updateOnMove: true,
+			pagination: false,
+			padding: '10%',
+			throttle: 300,
+			breakpoints: {
+				1440: {
+					perPage: 1,
+					padding: '30%'
+				}
+			}
+		}).mount();
+	});
+</script>
+
+{% end_require_js %}
+
+
