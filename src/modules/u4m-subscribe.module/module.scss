@@ -1,73 +1,143 @@
 @import "../../css/_module-imports";
-section.u4m-subscribe {
-  background-color: $black;
-  color: $white;
-  padding: 50px 0;
-  margin: 0 20px 20px;
-  border-radius: 5px;
-  overflow: hidden;
-  div.inner {
-    @include center;
-    display: flex;
-    align-items: center;
-    .left,
-    .right {
-      flex: 1;
-      form {
-        @include form;
+
+.u4m-subscribe {
+  .innerCntt {
+    .flex_row {
+      margin: 0 -15px;
+      align-items: flex-end;
+
+      .intro_content {
         margin: 0;
-        padding: 0;
-        max-width: unset;
-        overflow: unset;
-        background: transparent;
-        display: flex;
-        margin-left: 50px;
-        // Email Input
-        .hs-email {
-          flex: 1;
-          position: relative;
-          >label {
+        text-align: left;
+        max-width: 100%;
+      }
+
+      .intro_btn_wrap {
+        justify-self: start;
+      }
+
+      .form-title {
+        &:empty {
+          margin: 0;
+        }
+      }
+
+      .frm {
+        form {
+          padding: 0;
+          background: transparent;
+          margin: 0;
+
+          input.hs-button {
             position: absolute;
-            z-index: 2;
-            top: -20px;
+            right: 0;
+            top: 3px;
+            right: 3px;
+            top: 40%;
           }
-          input[type='email'].hs-input {
-            margin-bottom: 0;
-            margin-top: 0;
-            line-height: 1;
-          }
-        }
-        // Submit Button
-        input[type='submit'].hs-button {
-          flex: auto;
-          margin: 0 0 0 5px;
-          line-height: 1.65;
-          &:hover {
-            opacity: .95;
-            background-color: $action1;
-          }
-          @include tablet {
-            width: 100%;
-            margin: 10px 0 0;
+
+          .hs_email {
+            input.hs-input {
+              border-radius: 0 22px 22px 0;
+              margin: 0;
+            }
           }
         }
-        @include tablet {
-          flex-direction: column;
+
+        position: relative;
+        padding-left: 0;
+      }
+    }
+
+    .flex_row.custom_width {
+      .col.leftCntt {
+        width: 60%;
+
+        .intro_content {
+          padding-right: 70px;
         }
-        @include tabletvert {
-          margin: 50px 0 0;
+      }
+
+      .col.rightCntt {
+        width: 40%;
+      }
+    }
+  }
+
+  overflow: hidden;
+
+  .innerCntt {
+    .flex_row {
+      .frm {
+        form {
+          .hs_error_rollup {
+            display: none;
+          }
+
+          .input+.hs-error-msgs {
+            position: absolute;
+            top: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+.u4m-subscribe.reverse-text {
+  .innerCntt {
+    .flex_row {
+      .frm {
+        form {
+          .hs-form-field {
+            >label {
+              color: $white;
+            }
+          }
+
+          .hs_error_rollup {
+            display: none;
+          }
+
+          .input+.hs-error-msgs {
+            position: absolute;
+            top: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include tabletMid {
+  .u4m-cta-row {
+    .innerCntt {
+      .flex_row.custom_width {
+        .col.leftCntt {
+          width: 100%;
+          padding: 0;
+
+          .intro_content {
+            padding: 0;
+          }
+        }
+
+        .col.rightCntt {
+          width: 100%;
           padding: 0;
         }
       }
-      @include tabletvert {
-        width: 100%;
+
+      .flex_row {
+        gap: 26px;
+        margin: 0;
+
+        .frm {
+          form {
+            max-width: 100%;
+          }
+        }
       }
     }
-    @include tabletvert {
-      flex-direction: column;
-    }
-  }
-  @include tabletvert {
-    padding: 20px 0;
   }
 }

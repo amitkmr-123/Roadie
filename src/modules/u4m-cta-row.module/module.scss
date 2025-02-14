@@ -12,6 +12,10 @@
         max-width: 100%;
       }
 
+      .intro_btn_wrap {
+        justify-self: start;
+      }
+
       .form-title {
         &:empty {
           margin: 0;

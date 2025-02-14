@@ -10,40 +10,6 @@
 				{{ macros.introGroup(module.intro_content, module.module_settings) }}
 			</div>
 			<div class="col rightCntt">
-				{% if  module.right_content_group.content_type == "btn"%}
-				{% if module.right_content_group.button_group.button_type =="std"%}
-				{% set href = module.right_content_group.button_group.link.url.href %}
-				{% if module.right_content_group.button_group.link.url.type is equalto "EMAIL_ADDRESS" %}
-				{% set href = "mailto:" + href %}
-				{% endif %}
-				<a
-					 {% if module.right_content_group.button_group.link.url.type is equalto "CALL_TO_ACTION"  %}
-					 href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
-					 {% else %}
-					 href="{{ href|escape_url }}"
-					 {% endif %}
-					 {% if module.right_content_group.button_group.link.open_in_new_tab %}
-					 target="_blank"
-					 {% endif %}
-					 {% if module.right_content_group.button_group.link.rel %}
-					 rel="{{ module.right_content_group.button_group.link.rel|escape_attr }}"
-					 {% endif %}
-					 class="{{ module.right_content_group.button_group.button_style  ? module.right_content_group.button_group.button_style  : "hs-button" }} {{module.right_content_group.button_group.button_theme}}" >
-					<span> {{ module.right_content_group.button_group.button_text }} </span>
-					{% if module.right_content_group.button_group.button_style   == "hs-sec-btn"%}
-					<div class="icon">
-						<div class="inner">
-							<svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10" fill="currentColor">
-								<path d="M7.5 9.5L6.45 8.4125L9.1125 5.75H0V4.25H9.1125L6.45 1.5875L7.5 0.5L12 5L7.5 9.5Z"/>
-							</svg>
-						</div>
-					</div>
-					{% endif %}
-				</a>
-				{% elif module.right_content_group.button_group.button_type =="cta"%}
-				{% cta guid="{{ module.right_content_group.button_group.cta }}" %}
-				{% endif %}
-				{% elif module.right_content_group.content_type == "form"%}
 				<div class="frm">
 					{% form
 	form_to_use="{{ module.right_content_group.select_form.form_id }}"
@@ -54,7 +20,6 @@
 	gotowebinar_webinar_key="{{ module.right_content_group.select_form.gotowebinar_webinar_key }}"
 %}
 				</div>
-				{% endif %}
 			</div>
 		</div>
 	</div>

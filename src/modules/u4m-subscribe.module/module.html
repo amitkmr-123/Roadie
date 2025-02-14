@@ -1,48 +1,59 @@
 {% set moduleName = 'u4m-subscribe' %}
 {% include "../partials/u4-module-includes.html" %}
-  <div class="inner">
-    <div class="left">
-      {{ '<h3>{{ module.headline_text }}</h3>' if module.headline_text }}
-      {{ '<p>{{ module.subtext }}</p>' if module.include_subtext }}
-    </div>
-    <div class="right"
-         data-blog-id='{{ content_group_id }}'>
-      {% if module.select_blog %}
-      {% blog_subscribe "blog_subscribe"
-        select_blog='{{ module.select_blog }}',
-        title='{{ module.title }}',
-        no_title=True,
-        response_message='{{ module.response_message }}'
-      %}
-      {% else %}
 
-        {# Sample form for styling until a form is set or created #}
-        <form disabled class='sample-form hs-form'>
-          <div class="hs_email hs-email hs-fieldtype-text field hs-form-field">
-            <label id="label-email-dummy" 
-              class="" 
-              placeholder="Enter your Email" for="email-dummy">
-              <span>Email</span>
-              <span class="hs-form-required">*</span>
-            </label>
-            <div class="input">
-              <input id="email-dummy"  
-                      title='Please setup a subscribe recipient in the Subscripton Settings. For more information, check the module help text.'
-                      name="email"
-                      required="" placeholder="Placeholder Subscription Form" type="email" class="hs-input" inputmode="email" autocomplete="email" value="">
-            </div>
-            {#
-              <ul class="no-list hs-error-msgs inputs-list" role="alert"><li><label class="hs-error-msg">Email must be formatted correctly.</label></li></ul>
-              #}
-          </div>
-          <div class="hs_submit hs-submit">
-              <div class="actions">
-                <input type="submit" class="hs-button primary large" value="Subscribe">
-              </div>
-          </div>
-        </form>
-      {% endif %}
-      
-    </div>  
-  </div>
+{{macros.topCurves(module.module_settings)}}
+
+<div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}" {% if module.module_overrides.container_size == "custom" %} style="max-width:{{ module.module_overrides.custom_container_size }}rem" {% endif %}>
+	<div class="innerCntt">
+		<div class="flex_row custom_width">
+			<div class="col leftCntt">
+				{{ macros.introGroup(module.intro_content, module.module_settings) }}
+			</div>
+			<div class="col rightCntt">
+				{% if module.right_content_group.button_group.button_type =="std"%}
+				{% set href = module.right_content_group.button_group.link.url.href %}
+				{% if module.right_content_group.button_group.link.url.type is equalto "EMAIL_ADDRESS" %}
+				{% set href = "mailto:" + href %}
+				{% endif %}
+				<a
+					 {% if module.right_content_group.button_group.link.url.type is equalto "CALL_TO_ACTION"  %}
+					 href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+					 {% else %}
+					 href="{{ href|escape_url }}"
+					 {% endif %}
+					 {% if module.right_content_group.button_group.link.open_in_new_tab %}
+					 target="_blank"
+					 {% endif %}
+					 {% if module.right_content_group.button_group.link.rel %}
+					 rel="{{ module.right_content_group.button_group.link.rel|escape_attr }}"
+					 {% endif %}
+					 class="{{ module.right_content_group.button_group.button_style  ? module.right_content_group.button_group.button_style  : "hs-button" }} {{module.right_content_group.button_group.button_theme}}" >
+					<span> {{ module.right_content_group.button_group.button_text }} </span>
+					{% if module.right_content_group.button_group.button_style   == "hs-sec-btn"%}
+					<div class="icon">
+						<div class="inner">
+							<svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10" fill="currentColor">
+								<path d="M7.5 9.5L6.45 8.4125L9.1125 5.75H0V4.25H9.1125L6.45 1.5875L7.5 0.5L12 5L7.5 9.5Z"/>
+							</svg>
+						</div>
+					</div>
+					{% endif %}
+				</a>
+				{% elif module.right_content_group.button_group.button_type =="cta"%}
+				{% cta guid="{{ module.right_content_group.button_group.cta }}" %}
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+
+{{macros.bottomCurves(module.module_settings)}}
 </section>
+
+{% if  module.module_overrides.background_settings.select_color == 'custom'%}
+<style>
+	.{{name}} .bg_overlay.custom{
+		background-color:{{ module.module_overrides.background_settings.custom_color.rgba }};
+	}
+</style>
+{% endif %}	 
