@@ -1,80 +1,106 @@
 {% set moduleName = 'u4m-cards' %}
-  {% set imageMax = 300 %}
-  {% set imageFillMax = 720 %}
-  {% set bgImageMax = 1920 %}
-    
-  {# sample lazy load bg <div class="lazy" data-bg="{{ resize_image_url(item.card_image.src, 0,0,imageMax) }}"></div> #}
-    
-    {% include "../partials/u4-module-includes.html" %}
-    
-      {% if module.include_heading %}
-        <h2 class="heading">{{ module.cards_heading }}</h2>
-      {% endif %}
-      
-      {% if module.include_subheading %}
-        <h3 class="subheading">{{ module.cards_subheading }}</h3>
-      {% endif %}
+{% include "../partials/u4-module-includes.html" %}
 
-      {% if module.include_link %}
-        <div class="link">
-        {% set href = module.link_field.url.href %}
-        {% if module.link_field.url.type is equalto "EMAIL_ADDRESS" %}
-          {% set href = "mailto:" + href %}
-        {% endif %}
-        <a href="{{ href }}"
-          {% if module.link_field.open_in_new_tab %}target="_blank"{% endif %}
-          {% if module.link_field.rel %}rel="{{ module.link_field.rel }}"{% endif %}
-          >
-          {{ module.link_text }}
-        </a>
-        </div>
-      {% endif %}
+{{macros.topCurves(module.module_settings)}}
 
-      <div class="wrapper {{ module.cards_per_row }} {% if module.landscape_cards %}landscape{% endif %}">
-        {% for item in module.card %}
-        <div class="card" >
-          
-          {% if item.dynamic_card %}
-            {# Dynamic Card #}
-            {% set pageSelector = content_by_id(item.dynamic_page_field) %}
-          
-            {% if item.include_card_image %}
-              <div class="image filled lazy" {% if pageSelector.featured_image %} data-bg="{{ resize_image_url(pageSelector.featured_image, 0,0,imageFillMax) }}" {% endif %}></div>
-            {% endif %}
-            <div class="content">
-              {% set pageTitle = pageSelector.html_title|split(' | ') %}
-              
-              <span class="title">{{ pageTitle[0] }}</span>
-              {% if pageSelector.meta_description %}<span class="teaser">{{ pageSelector.meta_description|truncate(200) }}</span>{% endif %}
-              <span class="url"><a href="{{ pageSelector.url }}">{{ item.dynamic_page_button_text }}</a></span>
-            </div>      
-          {% else %} 
-            {# Manual Card #}
-            {% if item.include_card_image %}
-              {% if item.fill_image_area %}
-                <div class="image filled">
-                  <img src="{{ resize_image_url(item.card_image.src, 0,0,imageFillMax) }}" alt="{{item.card_image.alt}}" lazy>
-                </div>
-              {% else %}
-                <div class="image">
-                  {% if item.card_image.src %} <img class="{% if item.image_on_left %}left{% endif %}" loading="lazy" src="{{ item.card_image.src }}" width="70" alt="{{ item.card_image.alt }}">{% endif %}
-                </div>
-              {% endif %}
-            {% endif %}
-            <div class="content">
-              {% if item.include_type %}<span class="type">{{ item.type }}</span>{% endif %}
-              <span class="title">{{ item.resource_title }}</span>
-              {% if item.show_teaser_text %}<span class="teaser">{{ item.teaser_text|truncate(200) }}</span>{% endif %}
-              {% if item.link_type == "cta" %}
-              <span class="cta">{% cta guid="{{ item.call_to_action }}" %}</span>
-              {% elif item.link_type == "url" %}
-              <span class="url"><a href="{{ item.link.href }}" {% if item.open_in_new_window %}target="_blank"{% endif %}>{{ item.link_text }}</a></span>
-              {% else %}
-              <!-- No link -->
-              {% endif %}   
-            </div>      
-          {% endif %}      
-        </div>
-        {% endfor %}
-      </div>
-    </section>
+<div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}" {% if module.module_overrides.container_size == "custom" %} style="max-width:{{ module.module_overrides.custom_container_size }}rem" {% endif %}>
+	{{ macros.introGroup(module.intro_content, module.module_settings) }}
+	<div class="cardsInner">
+		<div class="cards flex_row {{ module.module_settings.cards_items_group.card_type }} {% if module.module_settings.cards_items_group.card_type == "twoCol"%}col6_row {% elif module.module_settings.cards_items_group.card_type == "full_width"%}{{ module.module_settings.cards_items_group.column_count }}_row{% endif %}" >
+			{% for item in module.cards_content_group %}
+			<div class="items {% if module.module_settings.cards_items_group.card_type == "twoCol"%}col6 {% elif module.module_settings.cards_items_group.card_type == "full_width"%}{{ module.module_settings.cards_items_group.column_count }}{% endif %}	" >
+				<div class="pdd">
+					{% if module.module_settings.cards_items_group.card_type == "twoCol"%}
+					{% if item.left_image.src %}
+					<div class="left_bg" style="background-image:url({{ item.left_image.src}});">
+					</div>
+					{% endif %}
+					{% endif %}
+					<div class="innerCntt intro_content">
+						{% if item.include_border %}
+						<div class="bdr"></div>
+						{% endif %}
+						{% if not item.include_border %}
+						<div class="topIcon">
+							{% if item.image_field.src %}
+							{% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
+							{% if item.image_field.size_type == 'auto' %}
+							{% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+							{% elif item.image_field.size_type == 'auto_custom_max' %}
+							{% set sizeAttrs = 'width="{{ item.image_field.max_width|escape_attr }}" height="{{ item.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+							{% endif %}
+							{% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
+							<img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+							{% endif %}
+						</div>
+						{% endif %}
+						{% if item.include_eyebrow_text%}
+						<div class="eyebrow_text">
+							{{ item.eyebrow_text }}
+						</div>
+						{% endif %}
+						{% if item.include_heading %}
+						<{{item.heading_size}} class="intro_title 		{% if item.include_heading_border %}hd_border{% endif %}">{{ item.heading }}</{{item.heading_size}}>
+							{% endif %}
+							{% if item.include_content %}
+							<div class="intro_desc {{ item.content_style }} {{item.select_content_bg_color}}">
+						{{ item.content }}
+					</div>
+					{% endif %}
+					{% if item.include_button %}
+					<div class="intro_btn_wrap">
+						<div class="btn_item">
+							{% if item.button_group.button_type  == "std" %}
+							{% set href = item.button_group.link.url.href %}
+							{% if item.button_group.link.url.type is equalto "EMAIL_ADDRESS" %}
+							{% set href = "mailto:" + href %}
+							{% endif %}
+							<a class="{{ item.button_group.button_style ? item.button_group.button_style : "hs-button" }} {{item.button_group.button_theme}}"
+								 {% if item.button_group.link.url.type is equalto "CALL_TO_ACTION"  %}
+								 href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+								 {% else %}
+								 href="{{ href|escape_url }}"
+								 {% endif %}
+								 {% if item.button_group.link.open_in_new_tab %}
+								 target="_blank"
+								 {% endif %}
+								 {% if item.button_group.link.rel %}
+								 rel="{{ item.button_group.link.rel|escape_attr }}"
+								 {% endif %}>
+								<span>{{ item.button_group.button_text }}</span>
+								{% if item.button_group.button_style  == "hs-sec-btn"%}
+								<div class="icon">
+									<div class="inner">
+										<svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10" fill="currentColor">
+											<path d="M7.5 9.5L6.45 8.4125L9.1125 5.75H0V4.25H9.1125L6.45 1.5875L7.5 0.5L12 5L7.5 9.5Z"/>
+										</svg>
+									</div>
+								</div>
+								{% endif %} 
+							</a>
+							{% endif %}
+							{% if item.button_group.button_type == "cta" %}
+							{% cta guid="{{ item.button_group.cta }}" %}
+							{% endif %}
+						</div>
+					</div>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+</div>
+
+{{macros.bottomCurves(module.module_settings)}}
+</section>
+
+{% if  module.module_overrides.background_settings.select_color == 'custom'%}
+<style>
+	.{{name}} .bg_overlay.custom{
+		background-color:{{ module.module_overrides.background_settings.custom_color.rgba }};
+	}
+</style>
+{% endif %}	 
+

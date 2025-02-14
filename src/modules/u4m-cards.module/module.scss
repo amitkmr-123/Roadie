@@ -1,100 +1,220 @@
 @import "../../css/_module-imports";
 
-section.u4m-cards {
-  margin-top: 100rem;
-  margin-bottom: 100rem;
 
-  &.reverse-text {
+.u4m-cards {
+  .intro_content {
+    margin-bottom: 67rem;
+  }
 
-    h2.heading,
-    h3.subheading {
-      color: $white;
+  .items {
+    .pdd {
+      display: flex;
+      height: 100%;
+      flex-wrap: wrap;
     }
   }
 
-  .heading {
-    @include center;
-    @include h2;
-    text-align: center;
-  }
+  .cards.flex_row.twoCol {
+    row-gap: 67px;
+    margin: 0 -33.5px;
 
-  .subheading {
-    @include center;
-    max-width: 1000rem;
-    @include b2;
-    font-weight: normal;
-    text-align: center;
-  }
+    .items {
+      padding: 0 33.5px;
 
-  .link {
-    text-align: center;
+      .left_bg {
+        height: auto;
+        width: 250px;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
 
-    a {
-      @include button;
-    }
-  }
+      .innerCntt {
+        margin: 0;
+        flex: 1;
+        max-width: 100%;
+        text-align: left;
+        padding: 45px 40px 48px 40px;
 
-  .wrapper {
-    @include center;
-    max-width: 1280rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    @include phone {
-      display: block;
-    }
-
-    &.landscape {
-      div.card {
-        flex-direction: row;
-
-        @include tabletvert {
-          flex-direction: column;
+        .topIcon {
+          margin-bottom: 18px;
         }
 
-        div.image.filled {
-          min-width: 200rem;
+        .intro_title {
+          margin-bottom: 10px;
         }
 
-        div.content {
-          @include phone {
-            margin-bottom: 0;
+        .intro_btn_wrap {
+          margin-top: 20px;
+          justify-content: flex-start;
 
-            span.teaser {
-              margin-bottom: 0;
-            }
+          a.hs-sec-btn {
+            margin: 0;
+          }
+        }
+
+        .intro_desc.bodystyle2 {
+          line-height: 1.62500;
+        }
+      }
+
+      .pdd {
+        box-shadow: 2px 2px 20px rgba($Dark, 0.1);
+      }
+
+      .bdr {
+        border: 2px solid #F3B120;
+        width: 80px;
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  overflow: hidden;
+
+  .cards.flex_row.full_width {
+    margin: 0 -20px;
+    margin: 0 -40px;
+    row-gap: 80px;
+
+    .items {
+      padding: 0 40px;
+    }
+
+    .pdd {
+      .innerCntt {
+        max-width: 100%;
+        margin: 0;
+        text-align: left;
+
+        .topIcon {
+          margin-bottom: 20px;
+        }
+
+        .intro_title {
+          margin-bottom: 12px;
+        }
+
+        .intro_btn_wrap {
+          margin-top: 24px;
+          justify-content: flex-start;
+        }
+
+        .bdr {
+          border: 2px solid $Mustard;
+          width: 80px;
+          margin-bottom: 25px;
+        }
+      }
+    }
+  }
+}
+
+@include midlaptop {
+
+  .u4m-cards {
+    .cards.flex_row.twoCol {
+      .items {
+        .innerCntt {
+          padding: 30px;
+        }
+
+        .left_bg {
+          width: 200px;
+        }
+
+        padding: 0 20px;
+      }
+
+      margin: 0 -20px;
+      row-gap: 20px;
+    }
+  }
+
+}
+
+@include tabletMid {
+
+  .u4m-cards {
+    .cards.flex_row.twoCol {
+      .items {
+        .innerCntt {
+          padding: 30px;
+        }
+
+        .left_bg {
+          width: 200px;
+        }
+
+        padding: 0 20px;
+        width: 100%;
+      }
+
+      margin: 0 -20px;
+    }
+  }
+
+}
+
+@include tabletvert {
+  .u4m-cards {
+    .cards.flex_row.full_width {
+      row-gap: 40px;
+      margin: 0;
+
+      .pdd {
+        .innerCntt {
+          text-align: center;
+
+          .intro_btn_wrap {
+            justify-content: center;
+          }
+
+          .bdr {
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
+      }
+
+      .items {
+        padding: 0;
+      }
+    }
+
+    .cards.flex_row.twoCol {
+      row-gap: 40px;
+      margin: 0;
+
+      .items {
+        padding: 0;
+      }
+    }
+  }
+}
+
+@include phone {
+  .u4m-cards {
+    .cards.flex_row.full_width {
+      .pdd {
+        .innerCntt {
+          .intro_btn_wrap {
+            justify-content: center;
           }
         }
       }
     }
 
-    div.card {
-      @include card;
-    }
-
-    &.two {
-      div.card {
-        flex-basis: calc(50% - 40rem);
-      }
-    }
-
-    &.three {
-      div.card {
-        flex-basis: calc(33.333% - 40rem);
-
-        @include tablet {
-          flex-basis: calc(50% - 40rem);
+    .cards.flex_row.twoCol {
+      .items {
+        .innerCntt {
+          width: 100%;
+          flex: unset;
+          padding: 30px;
         }
-      }
-    }
 
-    &.four {
-      div.card {
-        flex-basis: calc(25% - 40rem);
-
-        @include tablet {
-          flex-basis: calc(50% - 40rem);
+        .left_bg {
+          min-height: 300px;
+          width: 100%;
         }
       }
     }
