@@ -1,66 +1,59 @@
-{% set moduleName = 'u4m-pricing-cards' %}
-  {% set imageMax = 300 %}
-  {% set imageFillMax = 720 %}
-  {% set bgImageMax = 1920 %}
-  
-  {# sample lazy load bg <div class="lazy" data-bg="{{ resize_image_url(item.card_image.src, 0,0,imageMax) }}"></div> #}
-  
-  
-  {% include "../partials/u4-module-includes.html" %}
-  
-  
-  <div class="intro">
-    {% if module.cards_heading %}
-    <h2 class="heading">{{ module.cards_heading }}</h2>
-    {% endif %}
-  
-    {% if module.include_subheading %}
-    <p class="subheading">{{ module.cards_subheading }}</p>
-    {% endif %}
-  
-  </div>
-  
-  <div class="wrapper">
-    {% for item in module.card %}
-    <div data-aos="fade-up" class="card">
-      {% if item.title %}<span class="title {% if item.popular_label %}popular-label{% endif %}">{{ item.title }}</span>{% endif %}
-      <div class="content">
-        <div class="price-container">
-          {% if item.price %}<span class="price">{{ item.price }}{% if item.price_frequency %}<span class="price-frequency">{{ item.price_frequency }}</span>{% endif %}</span>{% endif %}
-  
-          {% if item.description %}<span class="teaser">{{ item.description }}</span>{% endif %}
-          <!-- Link under description -->
-          <div class="top-link">
-            {% if item.top_link_group.link_type == "cta" %}
-            <span class="top-link-cta">{% cta guid="{{ item.top_link_group.call_to_action }}" %}</span>
-            {% elif item.top_link_group.link_type == "url" %}
-            <span class="top-link-url"><a href="{{ item.top_link_group.link.href }}" {% if item.top_link_group.open_in_new_window %}target="_blank"{% endif %}>{{ item.top_link_group.link_text }}</a></span>
-            {% else %}
-            <!-- No link -->
-            {% endif %} 
-          </div>
-        </div>
-        <span class="list-title">{{ item.list_title }}</span>
-  
-        <ul>
-          {% for item2 in item.bulleted_list %}
-          {% if item2.bullet_point_type == "check" %}
-          <li><span><img src="https://302335.fs1.hubspotusercontent-na1.net/hubfs/302335/icon-yes.svg" alt="Check"></span>
-            {{ item2.list_item_text }}
-          </li>
-          {% elif item2.bullet_point_type == "minus" %}
-          <li class="excluded-reports"><span><img src="https://302335.fs1.hubspotusercontent-na1.net/hubfs/302335/icon-no.svg" alt="No"></span>
-            {{ item2.list_item_text }}
-          </li>
-  
-          {% endif %}
-          {% endfor %}
-        </ul>
-  
-      </div>
-  
-    </div>
-    {% endfor %}
-  </div>
-  
-  </section>
+{% set moduleName = 'u4-pricing-cards' %}
+{% include "../partials/u4-module-includes.html" %}
+
+{{macros.topCurves(module.module_settings)}}
+{% set icon ='<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><g clip-path="url(#clip0_446_8518)"><path d="M13.8826 6.77899L7.92698 12.3376L6.12826 10.5389C5.96545 10.376 5.70191 10.376 5.5391 10.5389C5.37629 10.7017 5.37629 10.9652 5.5391 11.128L7.62255 13.2115C7.70395 13.2925 7.81026 13.3334 7.91732 13.3334C8.02437 13.3334 8.12139 13.2962 8.20168 13.2215L14.4517 7.38822C14.62 7.23136 14.629 6.96745 14.4721 6.79943C14.3152 6.63105 14.0513 6.62212 13.8833 6.77899H13.8826Z" fill="#008383"/><path d="M17.0709 2.9291C15.1822 1.04005 12.6709 0 10.0002 0C7.32943 0 4.81777 1.04005 2.9291 2.9291C1.04005 4.81777 0 7.32906 0 10.0002C0 12.6713 1.04005 15.1822 2.9291 17.0713C4.81777 18.9599 7.32906 20.0004 10.0002 20.0004C12.6713 20.0004 15.1822 18.9603 17.0713 17.0713C18.9603 15.1822 20.0004 12.6713 20.0004 10.0002C20.0004 7.32906 18.9603 4.81814 17.0713 2.9291H17.0709ZM16.4817 16.4817C14.7503 18.2132 12.4483 19.1666 9.99981 19.1666C7.55134 19.1666 5.24933 18.2132 3.51826 16.4817C1.78682 14.7503 0.83338 12.4483 0.83338 9.99981C0.83338 7.55134 1.78682 5.24933 3.51826 3.51789C5.2497 1.78682 7.55171 0.83338 10.0002 0.83338C12.4487 0.83338 14.7507 1.78682 16.4821 3.51826C18.2135 5.2497 19.167 7.55171 19.167 10.0002C19.167 12.4487 18.2135 14.7507 16.4821 16.4821L16.4817 16.4817Z" fill="#008383"/></g><defs><clipPath id="clip0_446_8518"><rect width="20" height="20" fill="white"/></clipPath></defs></svg>'%}
+
+<div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}" {% if module.module_overrides.container_size == "custom" %} style="max-width:{{ module.module_overrides.custom_container_size }}rem" {% endif %}>
+	{{ macros.introGroup(module.intro_content, module.module_settings) }}
+
+	<div class="pricingItems">
+		<div class="flex_row">
+			{% for item in module.card_items %}
+			<div class="pricingItem">
+				<div class="pricingtp {{ item.select_title_gradient }}">
+					<div class="pricingttl">
+						<h3>{{ item.title }}</h3>
+					</div>
+				</div>
+				<div class="pricingbtm {{ module.module_overrides.cards_background_settings.select_color }} {% if module.module_overrides.cards_background_settings.dark_theme %}darkTheme{% endif %}">
+					<div class="pricingCon">
+						<div class="pricingDesc">
+							{{ item.content }}
+						</div>
+						<div class="pricingBtn">
+							{{ macros.singlebuttonGroup(item.button_group)}}
+						</div>
+					</div>
+					<div class="pricingftrs">
+						<ul>
+							{% for item2 in item.featured_items %}
+							<li>{{ icon }}<span>{{ item2.text }}</span></li>
+							{% endfor %}
+						</ul>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+
+{{macros.bottomCurves(module.module_settings)}}
+</section>
+
+
+{% require_css %}
+<style>
+	{% if  module.module_overrides.background_settings.select_color == 'custom'%}
+	.{{name}} .bg_overlay.custom{
+		background-color:{{ module.module_overrides.background_settings.custom_color.rgba }};
+	}
+	{% endif %}	 
+	{% if  module.module_overrides.cards_background_settings.select_color == 'custom'%}
+	.{{name}} .pricingbtm.custom{
+		background-color:{{ module.module_overrides.cards_background_settings.custom_color.rgba }};
+	}
+	{% endif %}	 
+</style>
+{% end_require_css %}
