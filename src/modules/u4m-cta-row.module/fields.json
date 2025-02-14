@@ -85,7 +85,7 @@
     "show_emoji_picker" : false,
     "type" : "text",
     "display_width" : null,
-    "default" : "Want to learn more?"
+    "default" : "Sign up for the latest news from Roadie"
   }, {
     "id" : "2f10bd6e-cf85-1cf6-5a4f-fa75e1e78238",
     "name" : "include_content",
@@ -308,7 +308,7 @@
     "eyebrow_text" : "Eyebrow Text",
     "include_heading" : true,
     "heading_size" : "h2",
-    "heading" : "Want to learn more?",
+    "heading" : "Sign up for the latest news from Roadie",
     "include_content" : true,
     "content_style" : "themeStyle",
     "content" : "<p>Fusce congue maximus eleifend. Aenean consectetur dapibus posuereate al. Nunc nisl odio, malesuada vel nulla non, tincidunt ultrices aliquam dolor.</p>",
