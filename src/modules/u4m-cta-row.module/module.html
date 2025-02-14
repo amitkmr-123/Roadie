@@ -1,36 +1,72 @@
 {% set moduleName = 'u4m-cta-row' %}
-  {% set bgImageMax = 1920 %}
-    
-  {% include "../partials/u4-module-includes.html" %}
-    <div class="inner {% if module.center_content %}centered{% endif %}">
-      <div class="copy">
-        {% if module.include_heading %}<h2 class="heading">{{ module.cta_row_heading }}</h2>{% endif %}
-        {% if module.include_text %}
-          <p class="text">{{ module.text }}</p>
-        {% endif %}
-        <div class="cta">
-          {% if module.use_normal_link %}
-            {% set href = module.link_field.url.href %}
-            {% if module.link_field.url.type is equalto "EMAIL_ADDRESS" %}
-              {% set href = "mailto:" + href %}
-            {% endif %}
-            <a href="{{ href }}"
-              {% if module.link_field.open_in_new_tab %}target="_blank"{% endif %}
-              {% if module.link_field.rel %}rel="{{ module.link_field.rel }}"{% endif %}
-              >
-              {{ module.link_text }}
-            </a>
-          {% else %}
-            {% cta guid="{{ module.call_to_action }}" %}
-          {% endif %}        
-        </div>
-      </div>
-  
-      {% if module.include_image %}
-          <div class="image">
-            <img loading="lazy" src="{{ module.image.src }}" width="400" alt="{{ module.image.alt }}">
-          </div>
-      {% endif %}
-  
-    </div>
-  </section>
+{% include "../partials/u4-module-includes.html" %}
+
+{{macros.topCurves(module.module_settings)}}
+
+<div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}" {% if module.module_overrides.container_size == "custom" %} style="max-width:{{ module.module_overrides.custom_container_size }}rem" {% endif %}>
+	<div class="innerCntt">
+		<div class="flex_row custom_width">
+			<div class="col leftCntt">
+				{{ macros.introGroup(module.intro_content, module.module_settings) }}
+			</div>
+			<div class="col rightCntt">
+				{% if  module.right_content_group.content_type == "btn"%}
+				{% if module.right_content_group.button_group.button_type =="std"%}
+				{% set href = module.right_content_group.button_group.link.url.href %}
+				{% if module.right_content_group.button_group.link.url.type is equalto "EMAIL_ADDRESS" %}
+				{% set href = "mailto:" + href %}
+				{% endif %}
+				<a
+					 {% if module.right_content_group.button_group.link.url.type is equalto "CALL_TO_ACTION"  %}
+					 href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+					 {% else %}
+					 href="{{ href|escape_url }}"
+					 {% endif %}
+					 {% if module.right_content_group.button_group.link.open_in_new_tab %}
+					 target="_blank"
+					 {% endif %}
+					 {% if module.right_content_group.button_group.link.rel %}
+					 rel="{{ module.right_content_group.button_group.link.rel|escape_attr }}"
+					 {% endif %}
+					 class="{{ module.right_content_group.button_group.button_style  ? module.right_content_group.button_group.button_style  : "hs-button" }} {{module.right_content_group.button_group.button_theme}}" >
+					<span> {{ module.right_content_group.button_group.button_text }} </span>
+					{% if module.right_content_group.button_group.button_style   == "hs-sec-btn"%}
+					<div class="icon">
+						<div class="inner">
+							<svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10" fill="currentColor">
+								<path d="M7.5 9.5L6.45 8.4125L9.1125 5.75H0V4.25H9.1125L6.45 1.5875L7.5 0.5L12 5L7.5 9.5Z"/>
+							</svg>
+						</div>
+					</div>
+					{% endif %}
+				</a>
+				{% elif module.right_content_group.button_group.button_type =="cta"%}
+				{% cta guid="{{ module.right_content_group.button_group.cta }}" %}
+				{% endif %}
+				{% elif module.right_content_group.content_type == "form"%}
+				<div class="frm">
+					{% form
+	form_to_use="{{ module.right_content_group.select_form.form_id }}"
+	response_response_type="{{ module.right_content_group.select_form.response_type }}"
+	response_message="{{ module.right_content_group.select_form.message }}"
+	response_redirect_id="{{ module.right_content_group.select_form.redirect_id }}"
+	response_redirect_url="{{module.right_content_group.select_form.redirect_url}}"
+	gotowebinar_webinar_key="{{ module.right_content_group.select_form.gotowebinar_webinar_key }}"
+%}
+				</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+
+{{macros.bottomCurves(module.module_settings)}}
+</section>
+
+{% if  module.module_overrides.background_settings.select_color == 'custom'%}
+<style>
+	.{{name}} .bg_overlay.custom{
+		background-color:{{ module.module_overrides.background_settings.custom_color.rgba }};
+	}
+</style>
+{% endif %}	 
