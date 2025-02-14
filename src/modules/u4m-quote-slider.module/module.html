@@ -7,6 +7,8 @@
 	{{ macros.introGroup(module.intro_content, module.module_settings) }}
 
 	<div class="cmQuoteSliderWrap">
+	<div class="leftOverlay"></div>
+	<div class="rightOverlay"></div>
 		<div id="splide" class="splide quoteItemWrap">
 			<div class="splide__track quoteTrack">
 				<div class="splide__list quoteList">
@@ -81,12 +83,11 @@
 			flickMaxPages: 3,
 			updateOnMove: true,
 			pagination: false,
-			padding: '10%',
+			padding: '15%',
 			throttle: 300,
 			breakpoints: {
-				1440: {
-					perPage: 1,
-					padding: '30%'
+				1024: {
+					padding: '10%'
 				}
 			}
 		}).mount();

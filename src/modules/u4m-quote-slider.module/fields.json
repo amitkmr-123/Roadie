@@ -384,14 +384,18 @@
     "display_width" : null,
     "default" : {
       "size_type" : "auto",
-      "src" : "",
-      "alt" : null,
-      "loading" : "lazy"
+      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Roadie-u4m/images/member.jpg",
+      "alt" : "Member",
+      "loading" : "lazy",
+      "width" : 600,
+      "height" : 900,
+      "max_width" : 600,
+      "max_height" : 900
     }
   }, {
     "id" : "9d4fe49b-1991-b08d-d29c-9e053c0951a3",
     "name" : "quote",
-    "label" : "quote",
+    "label" : "Quote Text",
     "required" : false,
     "locked" : false,
     "type" : "richtext",
@@ -431,9 +435,13 @@
     "enable_image" : true,
     "image" : {
       "size_type" : "auto",
-      "src" : "",
-      "alt" : null,
-      "loading" : "lazy"
+      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Roadie-u4m/images/member.jpg",
+      "alt" : "Member",
+      "loading" : "lazy",
+      "width" : 600,
+      "height" : 900,
+      "max_width" : 600,
+      "max_height" : 900
     },
     "quote" : "<p><span>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.”</span></p>",
     "member_name" : "Firstname Lastname",
@@ -442,9 +450,13 @@
     "enable_image" : true,
     "image" : {
       "size_type" : "auto",
-      "src" : "",
-      "alt" : null,
-      "loading" : "lazy"
+      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Roadie-u4m/images/member.jpg",
+      "alt" : "Member",
+      "loading" : "lazy",
+      "width" : 600,
+      "height" : 900,
+      "max_width" : 600,
+      "max_height" : 900
     },
     "quote" : "<p><span>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.”</span></p>",
     "member_name" : "Firstname Lastname",
@@ -453,9 +465,13 @@
     "enable_image" : true,
     "image" : {
       "size_type" : "auto",
-      "src" : "",
-      "alt" : null,
-      "loading" : "lazy"
+      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Roadie-u4m/images/member.jpg",
+      "alt" : "Member",
+      "loading" : "lazy",
+      "width" : 600,
+      "height" : 900,
+      "max_width" : 600,
+      "max_height" : 900
     },
     "quote" : "<p><span>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.”</span></p>",
     "member_name" : "Firstname Lastname",
