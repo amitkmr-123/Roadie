@@ -101,8 +101,22 @@
 
       &.light_theme {
         .title {
+          &.active {
+            border-color: $white;
+          }
+
           h4 {
             color: $white;
+          }
+
+          .icon {
+            svg {
+              fill: $white;
+
+              path {
+                fill: $white !important;
+              }
+            }
           }
         }
 
@@ -121,8 +135,20 @@
             color: $white;
 
             .inner {
-              background-color: $Mustard;
-              border-color: $Mustard;
+              background-color: transparent;
+              border-color: $white;
+            }
+
+            &:hover {
+              .inner {
+                background-color: $Mustard;
+                color: $Brown2;
+                border-color: $Mustard;
+
+                svg {
+                  fill: $Brown2;
+                }
+              }
             }
           }
         }
