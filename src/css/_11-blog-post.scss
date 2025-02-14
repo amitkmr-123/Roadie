@@ -1,5 +1,4 @@
 section.u4m-blog-post {
-
   /*****************************************/
   /* .hero                                 */
   /*****************************************/
@@ -35,7 +34,8 @@ section.u4m-blog-post {
       max-width: 1000rem;
 
       //margin: 50rem auto 50rem auto;
-      span.date {}
+      span.date {
+      }
 
       h1.title {
         @include h1;
@@ -54,7 +54,7 @@ section.u4m-blog-post {
           background-size: cover;
           background-position: 50%;
           margin: 5rem 10rem 0 0;
-          background-image: url('https://302335.fs1.hubspotusercontent-na1.net/hubfs/302335/default-avatar.png');
+          background-image: url("https://302335.fs1.hubspotusercontent-na1.net/hubfs/302335/default-avatar.png");
         }
 
         div.author-link {
@@ -78,7 +78,6 @@ section.u4m-blog-post {
     max-width: 1000rem;
 
     div.content {
-
       p,
       ul,
       ol {
@@ -126,7 +125,8 @@ section.u4m-blog-post {
       }
     }
 
-    div.topics {}
+    div.topics {
+    }
   }
 
   /*****************************************/
@@ -150,7 +150,7 @@ section.u4m-blog-post {
       div.avatar {
         width: 100rem;
         height: 100rem;
-        background-image: url('https://302335.fs1.hubspotusercontent-na1.net/hubfs/302335/default-avatar.png');
+        background-image: url("https://302335.fs1.hubspotusercontent-na1.net/hubfs/302335/default-avatar.png");
         background-size: cover;
         background-position: 50%;
         border-radius: 50%;
@@ -219,6 +219,135 @@ section.u4m-blog-post {
         .hs-button {
           @include button;
         }
+      }
+    }
+  }
+}
+
+.hs-blog-id-186165251397 .headerOuterWrapper {
+  display: none;
+}
+
+.cmBlogPost {
+  .postBanner {
+    min-height: 485px;
+    position: relative;
+    .postBnrimgWrap {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      right: 0;
+      top: 0;
+      .postBannerimg {
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+    .leftSec {
+      width: 50%;
+      padding-top: 62px;
+      .leftSecLogo {
+        margin-bottom: 30px;
+      }
+      .bannerTtl {
+        margin-bottom: 27px;
+        h2 {
+          margin: 0;
+        }
+      }
+      .bannerMeta {
+        display: flex;
+        gap: 21px;
+        align-items: center;
+        a {
+          color: inherit;
+        }
+      }
+      .bannerAuthor {
+        font-size: 15px;
+        line-height: 1.6;
+        color: $Dark;
+        a {
+          color: inherit;
+        }
+      }
+      .bannerTag {
+        @include eyebrow;
+        @include size14;
+        margin: 0;
+      }
+    }
+  }
+
+  .postBodySec {
+    background-color: $LightestTeal;
+    padding-top: 103px;
+    padding-bottom: 84px;
+    .contentWrap {
+      max-width: 739px;
+      margin: 0 auto;
+    }
+    .postSocial {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      text-align: center;
+      width: 47px;
+      float: left;
+      position: sticky;
+      top: 110px;
+      @include tabletMid {
+        position: static;
+        float: none;
+        max-width: 786px;
+        margin: 0 auto;
+        text-align: left;
+        width: 100%;
+        flex-direction: row;
+        column-gap: 17px;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .share_text {
+        @include size14;
+        margin-bottom: 22px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        color: $Brown;
+
+        @include tabletMid {
+          margin-bottom: 0;
+        }
+      }
+      a {
+        line-height: 1;
+        &:not(:last-child) {
+          margin-bottom: 17px;
+          @include tabletMid {
+            margin-bottom: 0;
+          }
+        }
+      }
+      svg {
+        max-width: 21px;
+        width: 100%;
+        height: 24px;
+        fill: $DarkTeal;
+        @include tabletMid {
+          height: 15px;
+          max-width: 100%;
+        }
+      }
+    }
+  }
+  .blog-comments {
+    form {
+      margin: 0;
+      .hs-button {
+        margin-top: 20rem;
       }
     }
   }

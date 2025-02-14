@@ -15,13 +15,13 @@
 @import "libraries/_slick";
 // github.com/kenwheeler/slick - 1.9
 @import "libraries/_slick-theme";
-// 
+//
 @import "libraries/_splide";
 // github.com/dimsemenov/Magnific-Popup - 1.1.0
 @import "libraries/_magnific-popup";
 // https://animista.net/ */
 @import "libraries/_animista";
-// Base 
+// Base
 @import "_1-variables";
 @import "_2-mixins-utility";
 @import "_3-mixins-typography";
@@ -37,9 +37,6 @@
 @import "_13-header";
 @import "_14-footer";
 @include remScalling;
-
-
-
 
 // * {
 //     border: 1px solid red;

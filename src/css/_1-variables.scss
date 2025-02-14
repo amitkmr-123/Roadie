@@ -1,37 +1,36 @@
 // Colors - For transparency use rgba($action1, 0.5) = 50% opaque
-$action1: #733BF7;
+$action1: #733bf7;
 $action2: #00a4bd;
 $black: #33475b;
 $white: #fff;
 $gray1: #edf0f2;
 $gray2: #cbd6e2;
-$gray3: #7C98B6;
+$gray3: #7c98b6;
 
 // ===================
-$DarkTeal: #004F50;
+$DarkTeal: #004f50;
 $MidTeal: #008383;
 $MidTeal2: #008283;
-$BrightTeal: #00BBBB;
-$Mustard: #F3B120;
-$Ketchup: #EF4C35;
-$Denim: #334C72;
-$Brown: #351C15;
-$Brown2: #351C13;
-$LightestTeal: #F2F7F7;
-$CoolGray: #EAEAEA;
+$BrightTeal: #00bbbb;
+$Mustard: #f3b120;
+$Ketchup: #ef4c35;
+$Denim: #334c72;
+$Brown: #351c15;
+$Brown2: #351c13;
+$LightestTeal: #f2f7f7;
+$CoolGray: #eaeaea;
 $Dark: #000000;
 $white: #ffffff;
 $gradient1: linear-gradient(85.86deg, $DarkTeal 0%, $BrightTeal 81.96%);
 $gradient2: linear-gradient(87.13deg, $DarkTeal 0%, $BrightTeal 95.22%);
-$gradient3: linear-gradient(88.07deg, $BrightTeal 0%, $DarkTeal 96.73%);
+$gradient3: linear-gradient(71.76deg, $DarkTeal 35.65%, $BrightTeal 100.86%);
+
 //=====================
 
-
 // ===================
-$containerSize : 1260rem;
-$containerInnerSpacing : 10rem;
+$containerSize: 1260rem;
+$containerInnerSpacing: 10rem;
 // ===================
-
 
 // ===================
 $font1: "Gibson", sans-serif;
@@ -53,6 +52,6 @@ $shadow2: 0 5rem 25rem 0 rgba($black, 0.2);
 $shadow3: 0 10rem 50rem 0 rgba($black, 0.3);
 $textShadow1: 0 0 4rem rgba($black, 0.3);
 // Animation
-$animation1: .1s ease-in;
-$animation2: .25s ease-in;
+$animation1: 0.1s ease-in;
+$animation2: 0.25s ease-in;
 $animation3: 1s ease-in;

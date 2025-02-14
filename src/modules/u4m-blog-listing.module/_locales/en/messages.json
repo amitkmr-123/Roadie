@@ -1,0 +1,657 @@
+{
+  "background_settings.background_type.choices.color" : {
+    "message" : "Color",
+    "description" : "",
+    "placeholders" : null
+  },
+  "background_settings.background_type.choices.gradient" : {
+    "message" : "Gradient",
+    "description" : "",
+    "placeholders" : null
+  },
+  "background_settings.background_type.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "background_settings.background_type.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "background_settings.background_type.label" : {
+    "message" : "Background Type",
+    "description" : "",
+    "placeholders" : null
+  },
+  "background_settings.background_type.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "background_settings.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "background_settings.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "background_settings.label" : {
+    "message" : "Background Settings",
+    "description" : "",
+    "placeholders" : null
+  },
+  "background_settings.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "background_settings.select_color.choices.dark_jungle_bg" : {
+    "message" : "Dark Jungle",
+    "description" : "",
+    "placeholders" : null
+  },
+  "background_settings.select_color.choices.fern_green_bg" : {
+    "message" : "Fern Green",
+    "description" : "",
+    "placeholders" : null
+  },
+  "background_settings.select_color.choices.frostee_bg" : {
+    "message" : "Frostee",
+    "description" : "",
+    "placeholders" : null
+  },
+  "background_settings.select_color.choices.l2l_green_bg" : {
+    "message" : "L2L Green",
+    "description" : "",
+    "placeholders" : null
+  },
+  "background_settings.select_color.choices.lime_green_bg" : {
+    "message" : "Lime Green",
+    "description" : "",
+    "placeholders" : null
+  },
+  "background_settings.select_color.choices.menthol_bg" : {
+    "message" : "Menthol",
+    "description" : "",
+    "placeholders" : null
+  },
+  "background_settings.select_color.choices.mint_cream_bg" : {
+    "message" : "Mint Cream",
+    "description" : "",
+    "placeholders" : null
+  },
+  "background_settings.select_color.choices.mystic_green_bg" : {
+    "message" : "Mystic Green",
+    "description" : "",
+    "placeholders" : null
+  },
+  "background_settings.select_color.choices.prismic_mango_bg" : {
+    "message" : "Prismic Mango",
+    "description" : "",
+    "placeholders" : null
+  },
+  "background_settings.select_color.choices.prismic_mint_bg" : {
+    "message" : "Prismic Mint",
+    "description" : "",
+    "placeholders" : null
+  },
+  "background_settings.select_color.choices.white_bg" : {
+    "message" : "White",
+    "description" : "",
+    "placeholders" : null
+  },
+  "background_settings.select_color.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "background_settings.select_color.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "background_settings.select_color.label" : {
+    "message" : "Select Color",
+    "description" : "",
+    "placeholders" : null
+  },
+  "background_settings.select_color.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "background_settings.select_gradient.choices.gradient1" : {
+    "message" : "Gradient 1",
+    "description" : "",
+    "placeholders" : null
+  },
+  "background_settings.select_gradient.choices.gradient2" : {
+    "message" : "Gradient 2",
+    "description" : "",
+    "placeholders" : null
+  },
+  "background_settings.select_gradient.choices.gradient3" : {
+    "message" : "Gradient 3",
+    "description" : "",
+    "placeholders" : null
+  },
+  "background_settings.select_gradient.choices.gradient4" : {
+    "message" : "Gradient 4",
+    "description" : "",
+    "placeholders" : null
+  },
+  "background_settings.select_gradient.choices.gradient5" : {
+    "message" : "Gradient 5",
+    "description" : "",
+    "placeholders" : null
+  },
+  "background_settings.select_gradient.choices.gradient6" : {
+    "message" : "Gradient 6",
+    "description" : "",
+    "placeholders" : null
+  },
+  "background_settings.select_gradient.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "background_settings.select_gradient.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "background_settings.select_gradient.label" : {
+    "message" : "Select Gradient",
+    "description" : "",
+    "placeholders" : null
+  },
+  "background_settings.select_gradient.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "blog_listing.description.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "blog_listing.description.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "blog_listing.description.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "blog_listing.description.label" : {
+    "message" : "Tag copy",
+    "description" : null,
+    "placeholders" : null
+  },
+  "blog_listing.description.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "blog_listing.featured_image.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "blog_listing.featured_image.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "blog_listing.featured_image.label" : {
+    "message" : "Featured Image",
+    "description" : "",
+    "placeholders" : null
+  },
+  "blog_listing.featured_image.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "blog_listing.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "blog_listing.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "blog_listing.label" : {
+    "message" : "Blog Listing",
+    "description" : "",
+    "placeholders" : null
+  },
+  "blog_listing.name" : {
+    "message" : "u4m-blog-listing",
+    "description" : "",
+    "placeholders" : null
+  },
+  "blog_listing.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "blog_listing.read_more.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "blog_listing.read_more.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "blog_listing.read_more.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "blog_listing.read_more.label" : {
+    "message" : "Description copy",
+    "description" : null,
+    "placeholders" : null
+  },
+  "blog_listing.read_more.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "blog_listing.read_more_text.default" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "blog_listing.read_more_text.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "blog_listing.read_more_text.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "blog_listing.read_more_text.label" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "blog_listing.read_more_text.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "blog_listing.read_more_text.validation_regex" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "blog_listing.tag.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "blog_listing.tag.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "blog_listing.tag.label" : {
+    "message" : "Tag",
+    "description" : "",
+    "placeholders" : null
+  },
+  "blog_listing.tag.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "blog_listing.title.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "blog_listing.title.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "blog_listing.title.label" : {
+    "message" : "Title",
+    "description" : "",
+    "placeholders" : null
+  },
+  "blog_listing.title.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "u4m-blog-listing",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.content_types.blog_posts.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.content_types.blog_posts.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.content_types.blog_posts.label" : {
+    "message" : "Blog posts",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.content_types.blog_posts.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.content_types.case_studies.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.content_types.case_studies.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.content_types.case_studies.label" : {
+    "message" : "Case studies",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.content_types.case_studies.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.content_types.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.content_types.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.content_types.knowledge_articles.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.content_types.knowledge_articles.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.content_types.knowledge_articles.label" : {
+    "message" : "Knowledge articles",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.content_types.knowledge_articles.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.content_types.label" : {
+    "message" : "Search results include",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.content_types.landing_pages.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.content_types.landing_pages.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.content_types.landing_pages.label" : {
+    "message" : "Landing pages",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.content_types.landing_pages.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.content_types.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.content_types.website_pages.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.content_types.website_pages.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.content_types.website_pages.label" : {
+    "message" : "Website pages",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.content_types.website_pages.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.field_label.default" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.field_label.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.field_label.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.field_label.label" : {
+    "message" : "Label text",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.field_label.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.field_label.validation_regex" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.include_search_button.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.include_search_button.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.include_search_button.label" : {
+    "message" : "Include search button",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.include_search_button.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.label" : {
+    "message" : "Site Search",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.name" : {
+    "message" : "u4m-blog-listing",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.placeholder.default" : {
+    "message" : "Search...",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.placeholder.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.placeholder.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.placeholder.label" : {
+    "message" : "Placeholder text",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.placeholder.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.placeholder.validation_regex" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.results.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.results.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.results.label" : {
+    "message" : "Results",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.results.path_id.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.results.path_id.inline_help_text" : {
+    "message" : "This is where people will go when they click to search their search term. Make sure to choose a page that contains the search results module.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.results.path_id.label" : {
+    "message" : "Search results page",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.results.path_id.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.results.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.results.use_custom_search_results_template.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.results.use_custom_search_results_template.inline_help_text" : {
+    "message" : "Turn this setting on to use a custom search results page instead of the default global search results page.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.results.use_custom_search_results_template.label" : {
+    "message" : "Use custom search results page",
+    "description" : "",
+    "placeholders" : null
+  },
+  "site_search.results.use_custom_search_results_template.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "title.default" : {
+    "message" : "All Posts",
+    "description" : null,
+    "placeholders" : null
+  },
+  "title.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "title.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "title.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "title.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "title.validation_regex" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  }
+}
