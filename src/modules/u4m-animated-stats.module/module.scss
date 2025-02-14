@@ -84,29 +84,41 @@ section.u4m-animated-stats {
 
   .flex_row.stats_row {
     row-gap: 20px;
+    justify-content: center;
   }
 
-  .stt_item {
-    @include laptop {
-      width: 50%;
-    }
+  .stats_group {
+    .col4 {
+      @include laptop {
+        width: 50%;
+      }
 
+      @include navbreak {
+        width: 33.33%;
+      }
+
+      @include tabletMid {
+        width: 50%;
+      }
+
+      @include tabletvert {
+        width: 100%;
+      }
+    }
+  }
+
+  .img_col,
+  .content_col {
     @include navbreak {
-      width: 33.33%;
-    }
-
-    @include tabletMid {
-      width: 50%;
-    }
-
-    @include tabletvert {
       width: 100%;
     }
   }
 
-  .col6 {
-    @include navbreak {
-      width: 100%;
+  .flex_row {
+    .img_col,
+    .content_col {
+      padding-left: 20rem;
+      padding-right: 20rem;
     }
   }
 }

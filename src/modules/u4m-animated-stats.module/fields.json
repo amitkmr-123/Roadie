@@ -835,6 +835,20 @@
         "curves_type" : "type1"
       }
     }
+  }, {
+    "id" : "b2dacd25-67f9-fb4b-7b16-b2779476b650",
+    "name" : "statc_count_in_row",
+    "label" : "Statc Count in Row",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "col12", "One" ], [ "col6", "Two" ], [ "col4", "Three" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "col4"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -854,7 +868,8 @@
       "bottom_curves_group" : {
         "curves_type" : "type1"
       }
-    }
+    },
+    "statc_count_in_row" : "col4"
   }
 }, {
   "id" : "module_overrides",

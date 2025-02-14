@@ -14,10 +14,10 @@
 		{{ macros.introGroup(module.intro_content, module.module_settings) }}
 
 		<div class="stats_group">
-			<div class="flex_row stats_row">
+			<div class="flex_row stats_row {{ module.module_settings.statc_count_in_row }}_row">
 
 				{% for item in module.stats_group %}
-				<div class="stt_item col4 col">
+				<div class="stt_item {{ module.module_settings.statc_count_in_row }} col">
 					<div class="icon_box ">
 
 						{% if item.icon_type == "image"%}

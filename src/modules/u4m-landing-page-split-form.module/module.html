@@ -1,0 +1,174 @@
+<div class="split_form_wrapper outer{{name}} {% if module.include_form %}formAdded{% endif %} {% if module.intro_content.include_logo %}logoAdded{% endif %}">
+
+
+	<div class="outer_bg_wrap">
+		{% if module.module_overrides.bottom_group_background_settings.background_type == "color" %}
+		<div class="bg_overlay bg_color {{ module.module_overrides.bottom_group_background_settings.select_color }}"></div>
+		{% endif %}
+
+
+		{% if module.module_overrides.bottom_group_background_settings.background_type == "color"
+  %}
+		<div class="bg_overlay bg_color {{ module.module_overrides.bottom_group_background_settings.select_color }}"></div>
+		{% endif %}
+
+		{% if module.module_overrides.bottom_group_background_settings.background_type == "gradient" %}
+		<div class="bg_overlay bg_color {{ module.module_overrides.bottom_group_background_settings.select_gradient }}" ></div>
+		{% endif %}
+
+		{% if module.module_overrides.bottom_group_background_settings.background_type == "image" %}
+		<div class="bg_overlay bg_image {% if module.module_overrides.bottom_group_background_settings.include_overlay_gradient %}{{ module.module_overrides.bottom_group_background_settings.select_gradient }}{% endif %}"></div>
+		{% endif %}
+	</div>
+
+
+
+	{% set moduleName = 'u4m-split-form-wrapper' %}
+	{% include "../partials/u4-module-includes.html" %}
+
+
+	{{macros.topCurves(module.module_settings)}}
+
+	{#======#}
+	<div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}" {% if module.module_overrides.container_size == "custom" %} style="max-width:{{ module.module_overrides.custom_container_size }}rem" {% endif %}>
+
+		{% if module.intro_content.include_logo %}
+		<div class="logo_wrap">
+			{% if module.intro_content.logo_group.logo.src %}
+			{% set href = module.intro_content.logo_group.link.url.href %}
+			{% if module.intro_content.logo_group.link.url.type is equalto "EMAIL_ADDRESS" %}
+			{% set href = "mailto:" + href %}
+			{% endif %}
+			<a
+				 {% if module.intro_content.logo_group.link.url.type is equalto "CALL_TO_ACTION"  %}
+				 href="{{ href }}"
+				 {% else %}
+				 href="{{ href }}"
+				 {% endif %}
+				 {% if module.intro_content.logo_group.link.open_in_new_tab %}
+				 target="_blank"
+				 {% endif %}
+				 {% if module.intro_content.logo_group.link.rel %}
+				 rel="{{ module.intro_content.logo_group.link.rel }}"
+				 {% endif %}
+				 >
+
+				<img src="{{ module.intro_content.logo_group.logo.src }}" alt="{{ module.intro_content.logo_group.logo.alt }}">
+			</a>
+			{% endif %}
+		</div>
+		{% endif %}
+
+
+		<div class="flex_row">
+			<div class="left_column top_content_colmn  {% if not module.include_form %}no-form-column {% endif %}">
+				{{ macros.introGroup(module.intro_content, module.module_settings) }}
+			</div>
+
+			<div class="form_column ">
+				<div class="form_column_inner">
+
+					{% if module.form_group.select_form.form_id %}              
+
+					<div class="form_content">
+						{{ module.form_group.form_content }}
+					</div>
+
+					<div class="form_box">
+						<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+						<script>
+							hbspt.forms.create({
+								region: "na1",
+								portalId: "{{ hub_id }}",
+								css: "",
+								target: ".form_column_inner",
+								formId: "{{ module.form_group.select_form.form_id }}",
+								onFormReady: function($form) {
+								$('.form_column .hs-button').click(function(){
+									setTimeout(function(){
+										var formHeight = $('.form_column_inner').outerHeight();
+										var calcHeight = formHeight + 200;
+										$('.split_form_wrapper.formAdded').css('min-height', calcHeight);
+									}, 200);
+									console.log('form_column call')
+								});    }
+
+
+							}); 
+						</script>
+
+
+					</div>
+					{% endif %}
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+	{{macros.bottomCurves(module.module_settings)}}
+	</section>
+
+
+{% require_css%}
+<style>
+	{% if  module.module_overrides.background_settings.select_color == 'custom'%}
+	.{{name}} .bg_overlay.custom{
+		background-color:{{ module.module_overrides.background_settings.custom_color.rgba }};
+	}
+	{% endif %}	 
+
+</style>
+{% end_require_css%}
+
+{# ============================================ #}
+{% if module.bottom_group.content %}
+<div class="split_form_bottom dnd_padd bottom{{name}} {% if module.module_overrides.bottom_group_dark_theme %}reverse-text{% endif %}">
+
+
+
+	<div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.bottom_group_background_settings.container_size }}" {% if module.module_overrides.bottom_group_background_settings.container_size == "custom" %} style="max-width:{{ module.module_overrides.bottom_group_background_settings.custom_container_size }}rem" {% endif %}>
+
+		<div class="flex_row">
+			<div class="left_column bottom_content_colmn  {% if not module.include_form %}no-form-column {% endif %}">
+				{{ module.bottom_group.content }}
+			</div>
+		</div>
+	</div>
+</div>
+{% endif %}	 
+
+
+
+{% require_css%}
+<style>
+	{% if  module.module_overrides.bottom_group_background_settings.select_color == 'custom'%}
+	.outer{{name}} .bg_overlay.custom{
+		background-color:{{ module.module_overrides.bottom_group_background_settings.custom_color.rgba }};
+	}
+	{% endif %}	 
+
+</style>
+{% end_require_css%}
+
+
+{% require_js %}
+<script>
+	$(document).ready(function(){
+		function checkHeight(){
+			var formHeight = $('.form_column_inner').outerHeight();
+			var calcHeight = formHeight + 200;
+			$('.split_form_wrapper.formAdded').css('min-height',calcHeight);
+			console.log('checkHeight call')
+		}
+
+		$(window).on("load resize", function() {
+			setTimeout(function(){
+				checkHeight();
+			}, 200)
+		});
+		$('.split_form_wrapper.formAdded').parents('body').addClass('formsec');
+	});
+</script>
+{% end_require_js %}
+
