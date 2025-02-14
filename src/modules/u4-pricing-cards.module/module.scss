@@ -1,0 +1,73 @@
+@import "../../css/_module-imports";
+.u4-pricing-cards {
+    .intro_content {
+        max-width: 542rem;
+    }
+
+    .pricingItems {
+        .flex_row {
+            gap: 20px;
+
+            .pricingItem {
+                width: 100%;
+                @include tabletvertmin {
+                    width: calc((100% - 20px) / 2);
+                }
+                @include tabletMidmin {
+                    width: calc((100% - 40px) / 3);
+                }
+                .pricingtp {
+                    padding: 35px 50px;
+                    .pricingttl {
+                        h3 {
+                            color: $white;
+                            margin: 0;
+                        }
+                    }
+                }
+                .pricingbtm {
+                    .pricingCon {
+                        border-bottom: 1px solid $CoolGray;
+                        padding: 42px 50px 46px;
+                    }
+                    .pricingftrs {
+                        padding: 50px 50px 72px;
+                        ul {
+                            margin: 0;
+                            padding: 0;
+                            list-style: none;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 10px;
+                            li {
+                                padding: 0;
+                                letter-spacing: 0;
+                                display: flex;
+                                align-items: flex-start;
+                                gap: 10px;
+                                svg {
+                                    width: 100%;
+                                    height: 20px;
+                                    max-width: 20px;
+                                    position: relative;
+                                    top: 6px;
+                                }
+                                span {
+                                    font-size: 15px;
+                                    line-height: 1.6;
+                                    letter-spacing: 0.5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .ttlgradient1 {
+        background: linear-gradient(88.07deg, $DarkTeal 0%, $BrightTeal 96.73%);
+    }
+    .ttlgradient2 {
+        background: linear-gradient(90.61deg, $DarkTeal 1.06%, $BrightTeal 100%);
+    }
+}
