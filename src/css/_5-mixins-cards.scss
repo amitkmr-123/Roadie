@@ -408,17 +408,21 @@
     }
     .itemContent {
       .itemtag {
-        a {
+        > * {
           @include size14;
           text-transform: uppercase;
           font-weight: 600;
           letter-spacing: 2px;
+          color: $DarkTeal;
         }
       }
       .itemTtl {
         h4 {
           line-height: 1.25;
           margin-bottom: 8rem;
+          a {
+            color: inherit;
+          }
         }
       }
       .itemdesc {

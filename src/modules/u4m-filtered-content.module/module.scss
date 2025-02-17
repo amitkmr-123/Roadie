@@ -1,265 +1,105 @@
 @import "../../css/_module-imports";
 
 section.u4m-filtered-content {
-  padding: 100rem 0;
-
-  .heading {
-    @include h2;
+  padding: 50rem 0;
+  .topSec {
+    margin-bottom: 52px;
     text-align: center;
   }
+  .site-search-wrap {
+    margin-bottom: 54px;
 
-  .featured {
-    @include center;
-    margin-bottom: 50rem;
-
-    .card {
-      @include featuredCard;
-    }
-  }
-
-  .filters {
-    @include center;
-
-    form.multi-filter {
-      @include form;
-      max-width: 1240rem;
-
-      fieldset {
-        max-width: none;
-        border: 0;
-        padding: 0;
-        margin: 0 0 20rem;
-        position: relative;
-
-        &:last-child {
-          margin: 0;
-        }
-
-        .icon {
-          width: 15rem;
-          position: absolute;
-          top: 50%;
-          right: 20rem;
-          transform: translateY(-50%);
-        }
-
-        &.buttons {
-          button {
-            @include buttonSmall;
-            margin-right: 20rem;
-            margin-bottom: 0;
-          }
-
-          button.mixitup-control-active {
-            background-color: $black;
-          }
-        }
-
-        &.selects {
-          select {
-            border: 1rem solid rgba(0, 0, 0, 0);
-            border-radius: $border1;
-            margin-top: 2rem;
-            font-size: $baseFontSize;
-            background-color: $white;
-            padding: 10rem 15rem;
-            width: 100%;
-            -moz-appearance: none;
-            appearance: none;
-          }
-        }
-
-        &.checkboxes {
-          label {
-            display: inline-block;
-            margin: 0 10px;
-
-            input {
-              margin: 0 10px 0 0;
-            }
-          }
-        }
-
-        &.search {
-          margin: 20rem 0;
-
-          input {
-            border: 1rem solid rgba(0, 0, 0, 0);
-            border-radius: $border1;
-            margin-top: 2rem;
-            font-size: $baseFontSize;
-            background-color: $white;
-            padding: 10rem 15rem;
-            width: 100%;
-            appearance: none;
-          }
-        }
-      }
-
-      &.mixitup-sorting {
-        display: flex;
-
-        fieldset {
-          flex: auto;
-          margin: 0;
-          display: flex;
-        }
-
-        fieldset.selects {
-          flex-grow: 1;
-          display: flex;
-          align-items: center;
-
-          label {
-            white-space: nowrap;
-            margin: 0 10rem 0 0;
-          }
-        }
-
-        fieldset.buttons {
-          display: flex;
-          justify-content: center;
-          flex: 0 0 auto;
-
-          button {
-            margin: 0 0 0 10rem;
-            background-color: $action1;
-
-            svg {
-              filter: invert(1);
-            }
-
-            svg {
-              width: 20rem;
-              height: 20rem;
-            }
-
-            &:hover {
-              &:not(.active) {
-                background-color: $black;
-              }
-            }
-          }
-
-          button.active {
-            background-color: $black;
-            box-shadow: unset;
-          }
-        }
-      }
-    }
-  }
-
-  #container {
-    @include center;
-    padding: 0;
-    overflow: hidden;
-    display: flex;
-    flex-wrap: wrap;
-
-    .resource-card {
-      @include resourceCard;
-      position: relative;
-      top: 0;
-      transition: top .1s ease-in;
+    @include tabletvert {
+      margin-bottom: 40px;
     }
 
-    .resource-card[data-layout=row] {
+    .page-center {
       display: flex;
-      flex: 0 0 calc(100% - 40rem);
-      flex-direction: row;
-      transition: unset;
-
-      .link-wrap {
-        display: flex;
-        flex: 1;
-        height: unset;
-        transition: unset;
-
-        .image {
-          height: unset;
-          min-height: unset;
-          flex: 1 1 auto;
-          max-width: 30%;
-        }
-
-        .content {
-          flex: auto;
-        }
-      }
-    }
-  }
-
-
-  #mix-no-results {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    width: 100%;
-    display: none;
-  }
-
-  .pagination {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50rem;
-    /* Adjust the margin-top value */
-
-    button {
-      display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      border: 0;
-      background-color: $gray1;
-      color: $black;
-      min-height: 55rem;
-      min-width: 55rem;
-      padding: 0;
-      margin: 0 5rem;
-      font-weight: bold;
-      transition: .1s ease-in;
-      text-transform: uppercase;
-      font-size: 14rem;
-      line-height: 1.2;
-      letter-spacing: .25rem;
-      text-decoration: none;
-      cursor: pointer;
-      box-shadow: 0rem 1rem 12rem 0 rgba(51, 71, 91, .1);
+      column-gap: 30px;
 
-      @include phone {
-        min-height: 30rem;
-        min-width: 30rem;
-        font-size: 13rem;
+      @include tabletvert {
+        row-gap: 30px;
       }
 
-      &:hover {
-        background-color: $action1;
-        color: $white;
+      .search-col,
+      .tag-col {
+        max-width: 380px;
+        width: 100%;
       }
 
-      &.mixitup-control-active {
-        background-color: $action1;
-        color: $white;
+      .search-col {
+        .searchSec {
+          position: relative;
+          .resourceInput {
+            color: $Brown2;
+            border-radius: 0;
+            @include size18;
+            line-height: 1.667;
+            font-weight: 400;
+            padding: 10rem 40rem 10rem 20rem;
+            width: 100%;
+            appearance: none;
+            background-color: $LightestTeal;
+            border: none;
+            outline: none;
+            margin: 0;
+            &::placeholder {
+              color: $Brown2;
+            }
+          }
+          .searchbtn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: transparent;
+            border: 0;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      }
+
+      .tag-col {
+        select {
+          font-family: $font1;
+          @include size18;
+          line-height: 1.667;
+          color: $Brown2;
+          background-position: calc(100% - 20px);
+          background-repeat: no-repeat;
+          background-size: 10px;
+          border-radius: 0;
+          @include size18;
+          line-height: 1.667;
+          font-weight: 400;
+          padding: 10rem 40rem 10rem 20rem;
+          width: 100%;
+          appearance: none;
+          background-color: $LightestTeal;
+          border: none;
+          outline: none;
+          margin: 0;
+        }
       }
     }
   }
-
-  .pagination.paginate.mixitup-page-list-disabled {
-    display: none;
-  }
-
-  .pagination.loadmore {
-    text-align: center;
-
-    button {
-      @include button;
+  .listing-wrap {
+    .cardItems {
+      @include CardItems;
+      .statusCnt {
+        width: 100%;
+        text-align: center;
+      }
     }
-
-    button.hidden {
-      display: none;
+    .blog-pagination {
+      margin-top: 50px;
+      @include blogPagination;
     }
   }
 }
