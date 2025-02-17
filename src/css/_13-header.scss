@@ -1,6 +1,13 @@
 header.header {
     position: relative;
     z-index: 101;
+    transition: all .3s ease;
+
+    &.stickyHeader {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
 
     .topSection {
         padding-top: 10px;
@@ -133,13 +140,13 @@ header.header {
         }
 
         .mainInnerSection {
-            position: absolute;
-            top: 0;
+            position: fixed;
+            top: 39px;
             width: 100%;
             left: 0;
         }
 
-        .stickyHeader {
+        &.stickyHeader {
             .mainInnerSection {
                 position: fixed;
                 backdrop-filter: blur(10px);
@@ -166,6 +173,10 @@ header.header {
     @include tabletMid {
         .mainInnerSection {
             padding-top: 22px;
+        }
+
+        &.stickyHeader {
+            position: relative;
         }
 
         .mainInnerWrap {
@@ -263,6 +274,125 @@ header.header {
     >ul {
         li.hs-menu-depth-1 {
             float: unset;
+        }
+    }
+
+
+}
+
+.light_logo {
+    display: none;
+}
+
+
+.light_cnt {
+    .mainSection {
+        .mainInnerSection {
+            .menuItem {
+                >a {
+                    color: $white;
+
+
+
+                }
+
+                .cmTrigger {
+                    svg {
+                        fill: $white;
+                        color: $white;
+
+                        path {
+                            fill: $white;
+                            color: $white;
+                        }
+                    }
+
+                }
+
+                &:hover {
+                    >a {
+                        color: $Dark;
+                    }
+
+                    .cmTrigger {
+                        svg {
+                            fill: $Dark;
+                            color: $Dark;
+
+                            path {
+                                fill: $Dark;
+                                color: $Dark;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+
+    .stickyHeader {
+        .mainSection {
+            .mainInnerSection {
+                .menuItem {
+                    >a {
+                        color: $Dark;
+
+
+
+                    }
+
+                    .cmTrigger {
+                        svg {
+                            fill: $Dark;
+                            color: $white;
+
+                            path {
+                                fill: $Dark;
+                                color: $Dark;
+                            }
+                        }
+
+                    }
+
+                    &:hover {
+                        >a {
+                            color: $Dark;
+                        }
+
+                        .cmTrigger {
+                            svg {
+                                fill: $Dark;
+                                color: $Dark;
+
+                                path {
+                                    fill: $Dark;
+                                    color: $Dark;
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .light_logo {
+        display: block;
+    }
+
+    .dark_logo {
+        display: none;
+    }
+
+    .stickyHeader {
+        .light_logo {
+            display: none;
+        }
+
+        .dark_logo {
+            display: block;
         }
     }
 }

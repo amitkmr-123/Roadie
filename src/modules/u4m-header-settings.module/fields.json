@@ -1,0 +1,15 @@
+[ {
+  "id" : "99b62e01-61a3-c3e2-6110-2212696c0818",
+  "name" : "header_theme_type",
+  "label" : "Header Theme Type",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "light_cnt", "Light" ], [ "dark_cnt", "Dark" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "dark_cnt"
+} ]

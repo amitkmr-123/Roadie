@@ -16,9 +16,16 @@ label: Website header
 				<div class="page-center">
 					<div class="mainInnerWrap">
 						<div class="logoWrap">
-							{% set header_image = get_asset_url('../../templates/images/Roadie.png') %}
-							{% module "header_logo" path="@hubspot/linked_image", link="/", label="Header Logo",
+							<div class="dark_logo">
+								{% set header_image = get_asset_url('../../templates/images/Roadie.png') %}
+								{% module "header_logo" path="@hubspot/linked_image", link="/", label="Dark Header Logo",
              img={src="{{header_image}}", width=440, override_inherited_src= true, alt="Roadie"} %}
+							</div>
+							<div class="light_logo">
+								{% set light_header_image = get_asset_url('../../templates/images/Light-Logo.png') %}
+								{% module "light_header_logo" path="@hubspot/linked_image", link="/", label="Light Header Logo",
+             img={src="{{light_header_image}}", width=440, override_inherited_src= true, alt="Roadie"} %}
+							</div>
 						</div>
 						<div class="menuWrapper">
 							<nav class="navWrapper">
