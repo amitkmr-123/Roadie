@@ -1498,7 +1498,7 @@
         "suffix" : "px",
         "type" : "number",
         "display_width" : null,
-        "default" : 120
+        "default" : 76
       }, {
         "id" : "0820a715-00af-98bf-cdfc-1a8b464cc4b9",
         "name" : "bottom",
@@ -1510,7 +1510,7 @@
         "suffix" : "px",
         "type" : "number",
         "display_width" : null,
-        "default" : 120
+        "default" : 76
       }, {
         "id" : "03303b53-4753-029c-83e6-c9c7ab6dcd8a",
         "name" : "left",
@@ -1542,8 +1542,8 @@
       "type" : "group",
       "display_width" : null,
       "default" : {
-        "top" : 120,
-        "bottom" : 120,
+        "top" : 76,
+        "bottom" : 76,
         "left" : 80,
         "right" : 80
       }
@@ -1639,8 +1639,8 @@
     "display_width" : null,
     "default" : {
       "spacing" : {
-        "top" : 120,
-        "bottom" : 120,
+        "top" : 76,
+        "bottom" : 76,
         "left" : 80,
         "right" : 80
       },
@@ -1675,7 +1675,7 @@
         "suffix" : "px",
         "type" : "number",
         "display_width" : null,
-        "default" : 120
+        "default" : 76
       }, {
         "id" : "ec4556ca-14ca-8d5d-ca2c-5a1da19ad025",
         "name" : "bottom",
@@ -1687,7 +1687,7 @@
         "suffix" : "px",
         "type" : "number",
         "display_width" : null,
-        "default" : 120
+        "default" : 76
       }, {
         "id" : "c827af65-3d0a-ff06-d9c2-56047346c0c1",
         "name" : "left",
@@ -1719,8 +1719,8 @@
       "type" : "group",
       "display_width" : null,
       "default" : {
-        "top" : 120,
-        "bottom" : 120,
+        "top" : 76,
+        "bottom" : 76,
         "left" : 90,
         "right" : 90
       }
@@ -1816,8 +1816,8 @@
     "display_width" : null,
     "default" : {
       "spacing" : {
-        "top" : 120,
-        "bottom" : 120,
+        "top" : 76,
+        "bottom" : 76,
         "left" : 90,
         "right" : 90
       },
@@ -1884,8 +1884,8 @@
     "custom_container_size" : 1260,
     "content_group_spacing" : {
       "spacing" : {
-        "top" : 120,
-        "bottom" : 120,
+        "top" : 76,
+        "bottom" : 76,
         "left" : 80,
         "right" : 80
       },
@@ -1899,8 +1899,8 @@
     },
     "image_group_spacing" : {
       "spacing" : {
-        "top" : 120,
-        "bottom" : 120,
+        "top" : 76,
+        "bottom" : 76,
         "left" : 90,
         "right" : 90
       },

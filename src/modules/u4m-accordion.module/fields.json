@@ -797,7 +797,7 @@
       "preset" : null,
       "type" : "choice",
       "display_width" : null,
-      "default" : ""
+      "default" : "white_bg"
     }, {
       "id" : "d2c4b1d9-a597-a53f-c2e7-e5681f19c3a1",
       "name" : "custom_color",
@@ -835,7 +835,7 @@
     "type" : "group",
     "display_width" : null,
     "default" : {
-      "select_color" : "",
+      "select_color" : "white_bg",
       "custom_color" : {
         "color" : null,
         "opacity" : null
@@ -863,7 +863,7 @@
       }
     },
     "accordion_background_settings" : {
-      "select_color" : "",
+      "select_color" : "white_bg",
       "custom_color" : {
         "color" : null,
         "opacity" : null

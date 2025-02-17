@@ -1,4 +1,5 @@
 @import "../../css/_module-imports";
+
 section.u4m-animated-stats {
   padding: 0;
 
@@ -56,6 +57,8 @@ section.u4m-animated-stats {
     flex-direction: column;
 
     .img_col_inner {
+      max-width: 560px;
+      width: 100%;
       margin: auto;
     }
   }
@@ -70,6 +73,7 @@ section.u4m-animated-stats {
     .text_icon {
       font-size: 30px;
     }
+
     svg {
       width: 1em;
       height: 1em;
@@ -77,6 +81,7 @@ section.u4m-animated-stats {
       fill: currentColor;
     }
   }
+
   .img_col_inner {
     position: relative;
     z-index: 4;
@@ -115,6 +120,7 @@ section.u4m-animated-stats {
   }
 
   .flex_row {
+
     .img_col,
     .content_col {
       padding-left: 20rem;

@@ -10,6 +10,7 @@
 				{{ macros.introGroup(module.intro_content, module.module_settings) }}
 			</div>
 			<div class="col rightCntt">
+				{% if module.right_content_group.include_form %}
 				<div class="frm">
 					{% form
 	form_to_use="{{ module.right_content_group.select_form.form_id }}"
@@ -20,6 +21,7 @@
 	gotowebinar_webinar_key="{{ module.right_content_group.select_form.gotowebinar_webinar_key }}"
 %}
 				</div>
+				{% endif %}
 			</div>
 		</div>
 	</div>
