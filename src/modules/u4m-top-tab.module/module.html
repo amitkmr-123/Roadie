@@ -1,0 +1,93 @@
+{% set moduleName = 'u4m-top-tab' %}
+{% include "../partials/u4-module-includes.html" %}
+
+{{macros.topCurves(module.module_settings)}}
+
+<div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}" {% if module.module_overrides.container_size == "custom" %} style="max-width:{{ module.module_overrides.custom_container_size }}rem" {% endif %}>
+	<div class="top-section">
+		{{ macros.introGroup(module.intro_content, module.module_settings) }}
+	</div>
+	<div class="tabber_section">
+		<div class="tab-nav">
+			<ul>
+				{% for item in module.tab_items %}
+				<li class="{% if loop.first %}active{% endif %}">
+					<a href="javascript:void(0);" tab-id="tab{{ loop.index }}">
+						{{ item.tab_title }}
+					</a>
+					<div class="toggle_content">
+						<div class="tab_content {% if loop.first %}active{% endif %}">
+						<div class="row {{ module.module_overrides.card_background_settings.select_color }}">
+							<div class="img_section">
+								{% if item.image_field.src %}
+								{% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
+								{% if item.image_field.size_type == 'auto' %}
+								{% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+								{% elif item.image_field.size_type == 'auto_custom_max' %}
+								{% set sizeAttrs = 'width="{{ item.image_field.max_width|escape_attr }}" height="{{ item.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+								{% endif %}
+								{% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
+								<img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+								{% endif %}
+							</div>
+							<div class="right_content {% if module.module_overrides.card_background_settings.dark_theme %}dard_theme{% endif %}">
+								<div class="right_content_inner">
+									{{ macros.introGroup(item, module.module_settings) }}
+								</div>
+							</div>
+						</div>
+					</div>
+					</div>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="tab_content_wrapper">
+			{% for item in module.tab_items %}
+			<div class="tab_content {% if loop.first %}active{% endif %}"  content-id="tab{{ loop.index }}">
+				<div class="row {{ module.module_overrides.card_background_settings.select_color }}">
+					<div class="img_section">
+						{% if item.image_field.src %}
+						{% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
+						{% if item.image_field.size_type == 'auto' %}
+						{% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+						{% elif item.image_field.size_type == 'auto_custom_max' %}
+						{% set sizeAttrs = 'width="{{ item.image_field.max_width|escape_attr }}" height="{{ item.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+						{% endif %}
+						{% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
+						<img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+						{% endif %}
+					</div>
+					<div class="right_content {% if module.module_overrides.card_background_settings.dark_theme %}dard_theme{% endif %}">
+						<div class="right_content_inner">
+							{{ macros.introGroup(item, module.module_settings) }}
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+
+
+</div>
+
+{{macros.bottomCurves(module.module_settings)}}
+
+</section>
+
+{% if  module.module_overrides.background_settings.select_color == 'custom'%}
+<style>
+	.{{name}} .bg_overlay.custom{
+		background-color:{{ module.module_overrides.background_settings.custom_color.rgba }};
+	}
+</style>
+{% endif %}	 
+
+{% if  module.module_overrides.card_background_settings.select_color == 'custom'%}
+<style>
+	.{{name}} .tab_content_wrapper .row.custom{
+		background-color:{{ module.module_overrides.card_background_settings.custom_color.rgba }};
+	}
+</style>
+{% endif %}
