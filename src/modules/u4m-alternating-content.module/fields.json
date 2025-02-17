@@ -365,48 +365,19 @@
       "max_height" : 610
     }
   }, {
-    "id" : "db17d96d-0fa3-8f7e-7cb8-7fa2c5a2c7ea",
-    "name" : "change_image_width",
-    "label" : "Change Image Width",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "media_group.media_type",
-      "controlling_value_regex" : "img",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "display" : "checkbox",
-    "type" : "boolean",
-    "display_width" : null,
-    "default" : false
-  }, {
-    "id" : "fe011c15-3bf7-1bcb-d630-c65eadee106a",
-    "name" : "image_width",
-    "label" : "Image Width",
-    "required" : false,
-    "locked" : false,
-    "visibility" : {
-      "controlling_field" : null,
-      "controlling_field_path" : "media_group.change_image_width",
-      "controlling_value_regex" : "true",
-      "property" : null,
-      "operator" : "EQUAL",
-      "access" : null
-    },
-    "display" : "text",
-    "step" : 1,
-    "type" : "number",
-    "display_width" : null,
-    "default" : 590
-  }, {
     "id" : "cfc28662-4557-e221-28c7-cc0760d41520",
     "name" : "video_section",
     "label" : "Video Section",
     "required" : false,
     "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "media_group.media_type",
+      "controlling_value_regex" : "video",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
     "children" : [ {
       "id" : "12faaf86-c237-d1a5-c4b1-67d64d815968",
       "name" : "video_type",
@@ -427,7 +398,8 @@
       "reordering_enabled" : true,
       "preset" : null,
       "type" : "choice",
-      "display_width" : null
+      "display_width" : null,
+      "default" : "file"
     }, {
       "picker" : "video",
       "id" : "49f25941-4183-16ac-ebb9-7245494eac11",
@@ -473,9 +445,39 @@
     "type" : "group",
     "display_width" : null,
     "default" : {
+      "video_type" : "file",
       "video" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Roadie-u4m/video/big_buck_bunny_720p_1mbb.mp4",
       "embed_path" : "https://www.youtube.com/embed/9xwazD5SyVg"
     }
+  }, {
+    "id" : "db17d96d-0fa3-8f7e-7cb8-7fa2c5a2c7ea",
+    "name" : "change_image_width",
+    "label" : "Change Column Width",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "fe011c15-3bf7-1bcb-d630-c65eadee106a",
+    "name" : "image_width",
+    "label" : "Column Width",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "media_group.change_image_width",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "text",
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 590
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -494,12 +496,13 @@
       "max_width" : 590,
       "max_height" : 610
     },
-    "change_image_width" : false,
-    "image_width" : 590,
     "video_section" : {
+      "video_type" : "file",
       "video" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Roadie-u4m/video/big_buck_bunny_720p_1mbb.mp4",
       "embed_path" : "https://www.youtube.com/embed/9xwazD5SyVg"
-    }
+    },
+    "change_image_width" : false,
+    "image_width" : 590
   }
 }, {
   "id" : "fbc58b2b-b6db-82a2-8422-e7f6861ce34b",
