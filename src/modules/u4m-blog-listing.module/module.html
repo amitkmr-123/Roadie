@@ -1,163 +1,177 @@
 <div class='u4m-blog-listing'>
-	{% if module.title  %}
-	<div class="topSec">
-		<h2>{{ module.title }}</h2>
-	</div>
-	{% endif %}
-	<div class='site-search-wrap'>
-		<div class='page-center'>
-			<div class='search-col'>
-				{# Need help setting up site search?
+	<div class="page-center">
+		{% if blog_author %}
+		<div class="topSec">
+			<h2>Author: {{ blog_author.display_name }}</h2>
+		</div>
+		{% elif topic %}
+		<div class="topSec">
+			<h2>Tags: {{ topic|replace('-',' ')|capitalize }}</h2>
+		</div>
+		{% else %}
+		{% if module.title  %}
+		<div class="topSec">
+			<h2>{{ module.title }}</h2>
+		</div>
+		{% endif %}
+
+		{% endif %}
+
+		<div class='site-search-wrap'>
+			<div class='page-center'>
+				<div class='search-col'>
+					{# Need help setting up site search?
 			   Start here: https://knowledge.hubspot.com/articles/kcs_article/cos-general/how-do-i-set-up-a-results-page-for-my-search-field-in-hubspot #}
 
-				{% set search_page = module.site_search.results.use_custom_search_results_template is truthy and module.site_search.results.path_id ? content_by_id(module.site_search.results.path_id).absolute_url : site_settings.content_search_results_page_path %}
+					{% set search_page = module.site_search.results.use_custom_search_results_template is truthy and module.site_search.results.path_id ? content_by_id(module.site_search.results.path_id).absolute_url : site_settings.content_search_results_page_path %}
 
-				{% unless (search_page is string_containing "//") %}
-				{% set search_page = "/" ~ search_page %}
-				{% endunless %}
+					{% unless (search_page is string_containing "//") %}
+					{% set search_page = "/" ~ search_page %}
+					{% endunless %}
 
-				{% set search_page = search_page|regex_replace("http:", "") %}
+					{% set search_page = search_page|regex_replace("http:", "") %}
 
-				<div class="hs-search-field">
-					<div class="hs-search-field__bar">
-						<form data-hs-do-not-collect="true" action="{{ search_page|escape_url }}">
-							{% if module.site_search.field_label %}
-							<label for="term">{{ module.site_search.field_label|sanitize_html }}</label>
-							{% endif %}
-							<input type="text" class="hs-search-field__input" name="term" autocomplete="off" aria-label="{{ module.site_search.field_label|escape_attr || "Search" }}" placeholder="{{ module.site_search.placeholder|escape_attr }}">
+					<div class="hs-search-field">
+						<div class="hs-search-field__bar">
+							<form data-hs-do-not-collect="true" action="{{ search_page|escape_url }}">
+								{% if module.site_search.field_label %}
+								<label for="term">{{ module.site_search.field_label|sanitize_html }}</label>
+								{% endif %}
+								<input type="text" class="hs-search-field__input" name="term" autocomplete="off" aria-label="{{ module.site_search.field_label|escape_attr || "Search" }}" placeholder="{{ module.site_search.placeholder|escape_attr }}">
 
-							{% if module.site_search.content_types.website_pages %}
-							<input type="hidden" name="type" value="SITE_PAGE">
-							{% endif %}
-							{% if module.site_search.content_types.landing_pages %}
-							<input type="hidden" name="type" value="LANDING_PAGE">
-							{% endif %}
-							{% if module.site_search.content_types.blog_posts %}
-							<input type="hidden" name="type" value="BLOG_POST">
-							<input type="hidden" name="type" value="LISTING_PAGE">
-							{% endif %}
-							{% if module.site_search.content_types.knowledge_articles %}
-							<input type="hidden" name="type" value="KNOWLEDGE_ARTICLE">
-							{% endif %}
-							{% if module.site_search.content_types.case_studies %}
-							<input type="hidden" name="type" value="HS_CASE_STUDY">
-							{% endif %}
-							{% if module.site_search.include_search_button %}
-							<button aria-label="Search"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M0 6.29922C0 2.82065 2.82065 0 6.29923 0C9.7778 0 12.5985 2.82065 12.5985 6.29922C12.5985 7.78304 12.0805 9.15487 11.2196 10.2327L13.7953 12.8084C14.0682 13.0814 14.0682 13.5223 13.7953 13.7953C13.5223 14.0683 13.0814 14.0683 12.8084 13.7953L10.2327 11.2196C9.15487 12.0805 7.79004 12.5984 6.29923 12.5984C2.82065 12.5984 0 9.7778 0 6.29922ZM6.29923 1.39983C3.59056 1.39983 1.39983 3.59056 1.39983 6.29922C1.39983 9.00789 3.59056 11.1986 6.29923 11.1986C7.65006 11.1986 8.87487 10.6527 9.76377 9.76381C10.6527 8.87492 11.1986 7.65006 11.1986 6.29922C11.1986 3.59056 9.00789 1.39983 6.29923 1.39983Z" fill="#00161D"></path>
-								</svg></button>
-							{% endif %}
-						</form>
+								{% if module.site_search.content_types.website_pages %}
+								<input type="hidden" name="type" value="SITE_PAGE">
+								{% endif %}
+								{% if module.site_search.content_types.landing_pages %}
+								<input type="hidden" name="type" value="LANDING_PAGE">
+								{% endif %}
+								{% if module.site_search.content_types.blog_posts %}
+								<input type="hidden" name="type" value="BLOG_POST">
+								<input type="hidden" name="type" value="LISTING_PAGE">
+								{% endif %}
+								{% if module.site_search.content_types.knowledge_articles %}
+								<input type="hidden" name="type" value="KNOWLEDGE_ARTICLE">
+								{% endif %}
+								{% if module.site_search.content_types.case_studies %}
+								<input type="hidden" name="type" value="HS_CASE_STUDY">
+								{% endif %}
+								{% if module.site_search.include_search_button %}
+								<button aria-label="Search"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+									<path d="M16.6 18L10.3 11.7C9.8 12.1 9.225 12.4167 8.575 12.65C7.925 12.8833 7.23333 13 6.5 13C4.68333 13 3.14583 12.3708 1.8875 11.1125C0.629167 9.85417 0 8.31667 0 6.5C0 4.68333 0.629167 3.14583 1.8875 1.8875C3.14583 0.629167 4.68333 0 6.5 0C8.31667 0 9.85417 0.629167 11.1125 1.8875C12.3708 3.14583 13 4.68333 13 6.5C13 7.23333 12.8833 7.925 12.65 8.575C12.4167 9.225 12.1 9.8 11.7 10.3L18 16.6L16.6 18ZM6.5 11C7.75 11 8.8125 10.5625 9.6875 9.6875C10.5625 8.8125 11 7.75 11 6.5C11 5.25 10.5625 4.1875 9.6875 3.3125C8.8125 2.4375 7.75 2 6.5 2C5.25 2 4.1875 2.4375 3.3125 3.3125C2.4375 4.1875 2 5.25 2 6.5C2 7.75 2.4375 8.8125 3.3125 9.6875C4.1875 10.5625 5.25 11 6.5 11Z" fill="#351C15"/>
+									</svg></button>
+								{% endif %}
+							</form>
+						</div>
+						<ul class="hs-search-field__suggestions"></ul>
 					</div>
-					<ul class="hs-search-field__suggestions"></ul>
 				</div>
-			</div>
-			<div class="tag-col">
-				{% set my_topics = blog_topics(group.id, 50) %}
-				<select id="tinynav1" class="tinynav tinynav1" style="background-image: url({{ get_asset_url('../../templates/images/dropdownArrow.png') }});">
-					<option value="{{ group.absolute_url }}">Filter by Topic</option>
-					{% for item in my_topics %}
-					{% if item=="Featured"%}
-					{% else %}
-					<option value="{{ blog_tag_url(group.id, item.slug) }}" {% if content.absolute_url == blog_tag_url(group.id, item.slug) %} selected{% endif %}>{{ item|capitalize}}</option>
-					{% endif %}
-					{% endfor %}
-				</select>  
+				<div class="tag-col">
+					{% set my_topics = blog_topics(group.id, 50) %}
+					<select id="tinynav1" class="tinynav tinynav1" style="background-image: url({{ get_asset_url('../../templates/images/dropdownArrow.png') }});">
+						<option value="{{ group.absolute_url }}">Filter by Topic</option>
+						{% for item in my_topics %}
+						{% if item=="Featured"%}
+						{% else %}
+						<option value="{{ blog_tag_url(group.id, item.slug) }}" {% if content.absolute_url == blog_tag_url(group.id, item.slug) %} selected{% endif %}>{{ item|capitalize}}</option>
+						{% endif %}
+						{% endfor %}
+					</select>  
+				</div>
 			</div>
 		</div>
-	</div>
-	<div class='listing-wrap'>
-		<div class='page-center'>
-			<div class='cardItems flex-row'>
-				{% for content in contents %}
-				<div class="cardItem">
-					{% if module.blog_listing.featured_image %}
-					{% if content.featured_image %}
-					<div class="ItemImg">
-						<a href="{{content.absolute_url}}">
-							<div class="itemImgBg" style="background-image:url({{ content.featured_image }})"></div>
-						</a>
-					</div>
-					{% endif %}
-					{% endif %}
-					<div class="itemContent">
-						{% if module.blog_listing.tag %}
-						{% if content.topic_list %}
-						<div class="itemtag eyebrow_text">
-							{% set included_topics = content.topic_list | rejectattr("slug", "equalto", "featured") | list %}
-							{% for topic in included_topics %}
-							{% if loop.first %}
-							<a class="{{ topic.slug }}" href="{{ blog_tag_url(group.id, topic.slug) }}">{{ topic.name }}</a>
-							{% endif %}
-							{% endfor %}
+		<div class='listing-wrap'>
+			<div class='page-center'>
+				<div class='cardItems flex-row'>
+					{% for content in contents %}
+					<div class="cardItem">
+						{% if module.blog_listing.featured_image %}
+						{% if content.featured_image %}
+						<div class="ItemImg">
+							<a href="{{content.absolute_url}}">
+								<div class="itemImgBg" style="background-image:url({{ content.featured_image }})"></div>
+							</a>
 						</div>
 						{% endif %}
 						{% endif %}
-						{% if module.blog_listing.title %}
-						<div class="itemTtl">
-							<h4><a href="{{content.absolute_url}}">{{ content.name }}</a></h4>
-						</div>
-						{% endif %}
-						{% if module.blog_listing.description %}
-						<div class="itemdesc">
-							{{ content.post_list_content|striptags|truncatehtml(120, '...' , false) }}
-						</div>
-						{% endif %}
-					</div>
-					{% if module.blog_listing.read_more %}
-					<div class="itemBtn">
-						<a class="hs-sec-btn" href="{{content.absolute_url}}">
-							<span>Read More</span>
-							<div class="icon">
-								<div class="inner">
-									<svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10" fill="currentColor">
-										<path d="M7.5 9.5L6.45 8.4125L9.1125 5.75H0V4.25H9.1125L6.45 1.5875L7.5 0.5L12 5L7.5 9.5Z"/>
-									</svg>
-								</div>
+						<div class="itemContent">
+							{% if module.blog_listing.tag %}
+							{% if content.topic_list %}
+							<div class="itemtag">
+								{% set included_topics = content.topic_list | rejectattr("slug", "equalto", "featured") | list %}
+								{% for topic in included_topics %}
+								{% if loop.first %}
+								<a class="{{ topic.slug }}" href="{{ blog_tag_url(group.id, topic.slug) }}">{{ topic.name }}</a>
+								{% endif %}
+								{% endfor %}
 							</div>
-						</a>
+							{% endif %}
+							{% endif %}
+							{% if module.blog_listing.title %}
+							<div class="itemTtl">
+								<h4><a href="{{content.absolute_url}}">{{ content.name }}</a></h4>
+							</div>
+							{% endif %}
+							{% if module.blog_listing.description %}
+							<div class="itemdesc">
+								{{ content.post_list_content|striptags|truncatehtml(80, '...' , false) }}
+							</div>
+							{% endif %}
+						</div>
+						{% if module.blog_listing.read_more %}
+						<div class="itemBtn">
+							<a class="hs-sec-btn" href="{{content.absolute_url}}">
+								<span>Read More</span>
+								<div class="icon">
+									<div class="inner">
+										<svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10" fill="currentColor">
+											<path d="M7.5 9.5L6.45 8.4125L9.1125 5.75H0V4.25H9.1125L6.45 1.5875L7.5 0.5L12 5L7.5 9.5Z"/>
+										</svg>
+									</div>
+								</div>
+							</a>
+						</div>
+						{% endif %}
 					</div>
-					{% endif %}
+					{% endfor %}
 				</div>
-				{% endfor %}
-			</div>
-			<div class="blog-pagination">
-				{% set page_list = [-2, -1, 0, 1, 2] %}
-				{% if contents.total_page_count - current_page_num == 1 %}{% set offset = -1 %}
-				{% elif contents.total_page_count - current_page_num == 0 %}{% set offset = -2 %}
-				{% elif current_page_num == 2 %}{% set offset = 1 %}
-				{% elif current_page_num == 1 %}{% set offset = 2 %}
-				{% else %}{% set offset = 0 %}{% endif %}
+				<div class="blog-pagination">
+					{% set page_list = [-2, -1, 0, 1, 2] %}
+					{% if contents.total_page_count - current_page_num == 1 %}{% set offset = -1 %}
+					{% elif contents.total_page_count - current_page_num == 0 %}{% set offset = -2 %}
+					{% elif current_page_num == 2 %}{% set offset = 1 %}
+					{% elif current_page_num == 1 %}{% set offset = 2 %}
+					{% else %}{% set offset = 0 %}{% endif %}
 
-				{% if last_page_num %}<a class="prev-link" href="{{ blog_page_link(last_page_num) }}"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none">
-				<path d="M6.85403 0.145971L11.854 5.14597C11.9005 5.19241 11.9374 5.24755 11.9626 5.30825C11.9877 5.36895 12.0007 5.43401 12.0007 5.49972C12.0007 5.56543 11.9877 5.63049 11.9626 5.69119C11.9374 5.75189 11.9005 5.80704 11.854 5.85347L6.85403 10.8535C6.76021 10.9473 6.63296 11 6.50028 11C6.3676 11 6.24035 10.9473 6.14653 10.8535C6.05271 10.7597 6 10.6324 6 10.4997C6 10.367 6.05271 10.2398 6.14653 10.146L10.7934 5.49972L6.14653 0.853472C6.10007 0.807016 6.06322 0.751866 6.03808 0.69117C6.01294 0.630473 6 0.565419 6 0.499722C6 0.434024 6.01294 0.36897 6.03808 0.308273C6.06322 0.247577 6.10007 0.192427 6.14653 0.145971C6.19298 0.0995159 6.24813 0.0626669 6.30883 0.0375252C6.36953 0.0123835 6.43458 -0.000556946 6.50028 -0.000556946C6.56598 -0.000556946 6.63103 0.0123835 6.69173 0.0375252C6.75242 0.0626669 6.80757 0.0995159 6.85403 0.145971Z" fill="#2E2E2E"/>
-				<path d="M0.854028 0.145971L5.85403 5.14597C5.90052 5.19241 5.9374 5.24755 5.96256 5.30825C5.98772 5.36895 6.00067 5.43401 6.00067 5.49972C6.00067 5.56543 5.98772 5.63049 5.96256 5.69119C5.9374 5.75189 5.90052 5.80704 5.85403 5.85347L0.854028 10.8535C0.760208 10.9473 0.63296 11 0.500278 11C0.367596 11 0.240348 10.9473 0.146528 10.8535C0.0527074 10.7597 0 10.6324 0 10.4997C0 10.367 0.0527074 10.2398 0.146528 10.146L4.7934 5.49972L0.146528 0.853472C0.100073 0.807016 0.0632225 0.751866 0.0380812 0.69117C0.0129398 0.630473 0 0.565419 0 0.499722C0 0.434024 0.0129398 0.36897 0.0380812 0.308273C0.0632225 0.247577 0.100073 0.192427 0.146528 0.145971C0.192983 0.0995159 0.248133 0.0626669 0.30883 0.0375252C0.369526 0.0123835 0.434581 -0.000556946 0.500278 -0.000556946C0.565975 -0.000556946 0.63103 0.0123835 0.691726 0.0375252C0.752423 0.0626669 0.807573 0.0995159 0.854028 0.145971Z" fill="#2E2E2E"/>
-				</svg></a>{% endif %}
-				{% if contents.total_page_count > 5 %}
-				{% if current_page_num >= 4 %}
-				<a href="{{ blog_page_link(1) }}">1</a>
-				<a class="elipses" href="{% if current_page_num <= 5 %}{{ blog_page_link(1) }}{% else %}{{ blog_page_link(current_page_num - 5) }}{% endif %}">...</a>
-				{% endif %}
-				{% endif %}
+					{% if last_page_num %}<a class="prev-link" href="{{ blog_page_link(last_page_num) }}"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none">
+					<path d="M6.85403 0.145971L11.854 5.14597C11.9005 5.19241 11.9374 5.24755 11.9626 5.30825C11.9877 5.36895 12.0007 5.43401 12.0007 5.49972C12.0007 5.56543 11.9877 5.63049 11.9626 5.69119C11.9374 5.75189 11.9005 5.80704 11.854 5.85347L6.85403 10.8535C6.76021 10.9473 6.63296 11 6.50028 11C6.3676 11 6.24035 10.9473 6.14653 10.8535C6.05271 10.7597 6 10.6324 6 10.4997C6 10.367 6.05271 10.2398 6.14653 10.146L10.7934 5.49972L6.14653 0.853472C6.10007 0.807016 6.06322 0.751866 6.03808 0.69117C6.01294 0.630473 6 0.565419 6 0.499722C6 0.434024 6.01294 0.36897 6.03808 0.308273C6.06322 0.247577 6.10007 0.192427 6.14653 0.145971C6.19298 0.0995159 6.24813 0.0626669 6.30883 0.0375252C6.36953 0.0123835 6.43458 -0.000556946 6.50028 -0.000556946C6.56598 -0.000556946 6.63103 0.0123835 6.69173 0.0375252C6.75242 0.0626669 6.80757 0.0995159 6.85403 0.145971Z" fill="#2E2E2E"/>
+					<path d="M0.854028 0.145971L5.85403 5.14597C5.90052 5.19241 5.9374 5.24755 5.96256 5.30825C5.98772 5.36895 6.00067 5.43401 6.00067 5.49972C6.00067 5.56543 5.98772 5.63049 5.96256 5.69119C5.9374 5.75189 5.90052 5.80704 5.85403 5.85347L0.854028 10.8535C0.760208 10.9473 0.63296 11 0.500278 11C0.367596 11 0.240348 10.9473 0.146528 10.8535C0.0527074 10.7597 0 10.6324 0 10.4997C0 10.367 0.0527074 10.2398 0.146528 10.146L4.7934 5.49972L0.146528 0.853472C0.100073 0.807016 0.0632225 0.751866 0.0380812 0.69117C0.0129398 0.630473 0 0.565419 0 0.499722C0 0.434024 0.0129398 0.36897 0.0380812 0.308273C0.0632225 0.247577 0.100073 0.192427 0.146528 0.145971C0.192983 0.0995159 0.248133 0.0626669 0.30883 0.0375252C0.369526 0.0123835 0.434581 -0.000556946 0.500278 -0.000556946C0.565975 -0.000556946 0.63103 0.0123835 0.691726 0.0375252C0.752423 0.0626669 0.807573 0.0995159 0.854028 0.145971Z" fill="#2E2E2E"/>
+					</svg></a>{% endif %}
+					{% if contents.total_page_count > 5 %}
+					{% if current_page_num >= 4 %}
+					<a href="{{ blog_page_link(1) }}">1</a>
+					<a class="elipses" href="{% if current_page_num <= 5 %}{{ blog_page_link(1) }}{% else %}{{ blog_page_link(current_page_num - 5) }}{% endif %}">...</a>
+					{% endif %}
+					{% endif %}
 
-				{% for page in page_list %}
-				{% set this_page = current_page_num + page + offset %}
-				{% if this_page > 0 and this_page <= contents.total_page_count %}
-				<a {% if this_page == current_page_num %}class="active"{% endif %} href="{{ blog_page_link(this_page) }}">{{ this_page }}</a>
-				{% endif %}
-				{% endfor %}
+					{% for page in page_list %}
+					{% set this_page = current_page_num + page + offset %}
+					{% if this_page > 0 and this_page <= contents.total_page_count %}
+					<a {% if this_page == current_page_num %}class="active"{% endif %} href="{{ blog_page_link(this_page) }}">{{ this_page }}</a>
+					{% endif %}
+					{% endfor %}
 
-				{% if contents.total_page_count > 5 %}
-				{% if contents.total_page_count - current_page_num > 2 %}
-				<a class="elipses" href="{% if contents.total_page_count - current_page_num <= 5 %}{{ contents.total_page_count }}{% else %}{{ blog_page_link(current_page_num + 5) }}{% endif %}">...</a>
-				<a href="{{ blog_page_link(contents.total_page_count) }}">{{ contents.total_page_count }}</a>
-				{% endif %}
-				{% endif %}   
-				{% if next_page_num %}<a class="next-link" href="{{ blog_page_link(current_page_num + 1) }}"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none">
-				<path d="M6.85403 0.145971L11.854 5.14597C11.9005 5.19241 11.9374 5.24755 11.9626 5.30825C11.9877 5.36895 12.0007 5.43401 12.0007 5.49972C12.0007 5.56543 11.9877 5.63049 11.9626 5.69119C11.9374 5.75189 11.9005 5.80704 11.854 5.85347L6.85403 10.8535C6.76021 10.9473 6.63296 11 6.50028 11C6.3676 11 6.24035 10.9473 6.14653 10.8535C6.05271 10.7597 6 10.6324 6 10.4997C6 10.367 6.05271 10.2398 6.14653 10.146L10.7934 5.49972L6.14653 0.853472C6.10007 0.807016 6.06322 0.751866 6.03808 0.69117C6.01294 0.630473 6 0.565419 6 0.499722C6 0.434024 6.01294 0.36897 6.03808 0.308273C6.06322 0.247577 6.10007 0.192427 6.14653 0.145971C6.19298 0.0995159 6.24813 0.0626669 6.30883 0.0375252C6.36953 0.0123835 6.43458 -0.000556946 6.50028 -0.000556946C6.56598 -0.000556946 6.63103 0.0123835 6.69173 0.0375252C6.75242 0.0626669 6.80757 0.0995159 6.85403 0.145971Z" fill="#2E2E2E"/>
-				<path d="M0.854028 0.145971L5.85403 5.14597C5.90052 5.19241 5.9374 5.24755 5.96256 5.30825C5.98772 5.36895 6.00067 5.43401 6.00067 5.49972C6.00067 5.56543 5.98772 5.63049 5.96256 5.69119C5.9374 5.75189 5.90052 5.80704 5.85403 5.85347L0.854028 10.8535C0.760208 10.9473 0.63296 11 0.500278 11C0.367596 11 0.240348 10.9473 0.146528 10.8535C0.0527074 10.7597 0 10.6324 0 10.4997C0 10.367 0.0527074 10.2398 0.146528 10.146L4.7934 5.49972L0.146528 0.853472C0.100073 0.807016 0.0632225 0.751866 0.0380812 0.69117C0.0129398 0.630473 0 0.565419 0 0.499722C0 0.434024 0.0129398 0.36897 0.0380812 0.308273C0.0632225 0.247577 0.100073 0.192427 0.146528 0.145971C0.192983 0.0995159 0.248133 0.0626669 0.30883 0.0375252C0.369526 0.0123835 0.434581 -0.000556946 0.500278 -0.000556946C0.565975 -0.000556946 0.63103 0.0123835 0.691726 0.0375252C0.752423 0.0626669 0.807573 0.0995159 0.854028 0.145971Z" fill="#2E2E2E"/>
-				</svg></a>{% endif %}
+					{% if contents.total_page_count > 5 %}
+					{% if contents.total_page_count - current_page_num > 2 %}
+					<a class="elipses" href="{% if contents.total_page_count - current_page_num <= 5 %}{{ contents.total_page_count }}{% else %}{{ blog_page_link(current_page_num + 5) }}{% endif %}">...</a>
+					<a href="{{ blog_page_link(contents.total_page_count) }}">{{ contents.total_page_count }}</a>
+					{% endif %}
+					{% endif %}   
+					{% if next_page_num %}<a class="next-link" href="{{ blog_page_link(current_page_num + 1) }}"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="11" viewBox="0 0 12 11" fill="none">
+					<path d="M6.85403 0.145971L11.854 5.14597C11.9005 5.19241 11.9374 5.24755 11.9626 5.30825C11.9877 5.36895 12.0007 5.43401 12.0007 5.49972C12.0007 5.56543 11.9877 5.63049 11.9626 5.69119C11.9374 5.75189 11.9005 5.80704 11.854 5.85347L6.85403 10.8535C6.76021 10.9473 6.63296 11 6.50028 11C6.3676 11 6.24035 10.9473 6.14653 10.8535C6.05271 10.7597 6 10.6324 6 10.4997C6 10.367 6.05271 10.2398 6.14653 10.146L10.7934 5.49972L6.14653 0.853472C6.10007 0.807016 6.06322 0.751866 6.03808 0.69117C6.01294 0.630473 6 0.565419 6 0.499722C6 0.434024 6.01294 0.36897 6.03808 0.308273C6.06322 0.247577 6.10007 0.192427 6.14653 0.145971C6.19298 0.0995159 6.24813 0.0626669 6.30883 0.0375252C6.36953 0.0123835 6.43458 -0.000556946 6.50028 -0.000556946C6.56598 -0.000556946 6.63103 0.0123835 6.69173 0.0375252C6.75242 0.0626669 6.80757 0.0995159 6.85403 0.145971Z" fill="#2E2E2E"/>
+					<path d="M0.854028 0.145971L5.85403 5.14597C5.90052 5.19241 5.9374 5.24755 5.96256 5.30825C5.98772 5.36895 6.00067 5.43401 6.00067 5.49972C6.00067 5.56543 5.98772 5.63049 5.96256 5.69119C5.9374 5.75189 5.90052 5.80704 5.85403 5.85347L0.854028 10.8535C0.760208 10.9473 0.63296 11 0.500278 11C0.367596 11 0.240348 10.9473 0.146528 10.8535C0.0527074 10.7597 0 10.6324 0 10.4997C0 10.367 0.0527074 10.2398 0.146528 10.146L4.7934 5.49972L0.146528 0.853472C0.100073 0.807016 0.0632225 0.751866 0.0380812 0.69117C0.0129398 0.630473 0 0.565419 0 0.499722C0 0.434024 0.0129398 0.36897 0.0380812 0.308273C0.0632225 0.247577 0.100073 0.192427 0.146528 0.145971C0.192983 0.0995159 0.248133 0.0626669 0.30883 0.0375252C0.369526 0.0123835 0.434581 -0.000556946 0.500278 -0.000556946C0.565975 -0.000556946 0.63103 0.0123835 0.691726 0.0375252C0.752423 0.0626669 0.807573 0.0995159 0.854028 0.145971Z" fill="#2E2E2E"/>
+					</svg></a>{% endif %}
 
+				</div>
 			</div>
 		</div>
 	</div>
