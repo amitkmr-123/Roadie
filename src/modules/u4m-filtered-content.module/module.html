@@ -4,7 +4,7 @@
 {{macros.topCurves(module.module_settings)}}
 
 {% set table =  module.filtered_content.select_hubdb_table  %}
-{% set query = '-hs_created_at' %}
+{% set query = 'orderBy=-hs_created_at' %}
 {% set resouces = hubdb_table_rows(table,query) %}
 
 <div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}" {% if module.module_overrides.container_size == "custom" %} style="max-width:{{ module.module_overrides.custom_container_size }}rem" {% endif %}>

@@ -1,0 +1,191 @@
+{% set moduleName = 'u4m-listing-hero' %}
+{% include "../partials/u4-module-includes.html" %}
+
+{{macros.topCurves(module.module_settings)}}
+
+{% if module.feed_section.select_type=="blog" %}
+{% set rec_posts = blog_recent_posts(module.feed_section.select_blog, 5) %}
+{% elif module.feed_section.select_type=="hubdb" %}
+{% set table =  module.feed_section.select_table  %}
+{% set query = 'orderBy=-hs_created_at&limit=5' %}
+{% set resouces = hubdb_table_rows(table,query) %}
+{% endif %}
+
+
+<div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}" {% if module.module_overrides.container_size == "custom" %} style="max-width:{{ module.module_overrides.custom_container_size }}rem" {% endif %}>
+	{% if module.top_sec.logo.src %}
+	<div class="topSec">
+		<div class="logoimg">
+			<img src="{{ module.top_sec.logo.src }}" alt="{{ module.top_sec.logo.alt }}">
+		</div>
+	</div>
+	{% endif %}
+	<div class="btmSec">
+		<div class="flex_row">
+			<div class="leftCol">
+				{% if module.feed_section.select_type=="blog" %}
+				{% for rec_post in rec_posts %}
+				{% if loop.first %}
+				<div class="cardItem">
+					{% if rec_post.featured_image %}
+					<div class="ItemImg">
+						<a href="{{rec_post.absolute_url}}">
+							<div class="itemImgBg" style="background-image:url({{ rec_post.featured_image }})"></div>
+						</a>
+					</div>
+					{% endif %}
+					<div class="itemContent">
+						{% if rec_post.topic_list %}
+						<div class="itemtag">
+							{% set included_topics = rec_post.topic_list | rejectattr("slug", "equalto", "featured") | list %}
+							{% for topic in included_topics %}
+							{% if loop.first %}
+							<a class="{{ topic.slug }}" href="{{ blog_tag_url(group.id, topic.slug) }}">{{ topic.name }}</a>
+							{% endif %}
+							{% endfor %}
+						</div>
+						{% endif %}
+						<div class="itemTtl">
+							<h4><a href="{{rec_post.absolute_url}}">{{ rec_post.name }}</a></h4>
+						</div>
+						<div class="itemdesc">
+							{{ rec_post.post_list_content|striptags|truncatehtml(200, '...' , false) }}
+						</div>
+					</div>
+					<div class="itemBtn">
+						<a class="hs-sec-btn" href="{{rec_post.absolute_url}}">
+							<span>Read More</span>
+							<div class="icon">
+								<div class="inner">
+									<svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10" fill="currentColor">
+										<path d="M7.5 9.5L6.45 8.4125L9.1125 5.75H0V4.25H9.1125L6.45 1.5875L7.5 0.5L12 5L7.5 9.5Z"/>
+									</svg>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				{% endif %}
+				{% endfor %}
+				{% elif module.feed_section.select_type=="hubdb" %}
+				{% for row in resouces %}
+				{% if loop.first %}
+				<div class="cardItem">
+					{% if row.image.url %}
+					<div class="ItemImg">
+						<a href="{{row.link}}">
+							<div class="itemImgBg" style="background-image:url({{ row.image.url }})"></div>
+						</a>
+					</div>
+					{% endif %}
+					<div class="itemContent">
+						<div class="itemtag">
+							{% for topic in row.topics %}<span>{{ topic.name|upper|replace('-',' ') }}</span>{% endfor %}
+						</div>
+						<div class="itemTtl">
+							<h4><a class="restitle" href="{{row.link}}">{{ row.name }}</a></h4>
+						</div>
+						<div class="itemdesc">
+							{{ row.description|striptags|truncatehtml(100, '...' , false) }}
+						</div>
+					</div>
+					<div class="itemBtn">
+						<a class="hs-sec-btn" href="{{row.link}}">
+							<span>Read More</span>
+							<div class="icon">
+								<div class="inner">
+									<svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10" fill="currentColor">
+										<path d="M7.5 9.5L6.45 8.4125L9.1125 5.75H0V4.25H9.1125L6.45 1.5875L7.5 0.5L12 5L7.5 9.5Z"/>
+									</svg>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				{% endif %}
+				{% endfor %}
+				{% endif %}
+
+			</div>
+			<div class="rightCol">
+				{% if module.top_sec.title || module.top_sec.highlighted_text  %}
+				<div class="rightColttl">
+					<h3>{{ module.top_sec.title }}<span class="highlightedText">{{ module.top_sec.highlighted_text }}</span></h3>
+				</div>
+				{% endif %}
+				<div class="postItems">
+					{% if module.feed_section.select_type=="blog" %}
+					{% for rec_post in rec_posts %}
+					{% if loop.index >= 2 %}
+					<div class="postItem">
+						<div class="itemtags">
+							{% set included_topics = rec_post.topic_list | rejectattr("slug", "equalto", "featured") | list %}
+							{% for topic in included_topics %}
+							{% if loop.first %}
+							<a class="{{ topic.slug }}" href="{{ blog_tag_url(group.id, topic.slug) }}">{{ topic.name }}</a>
+							{% endif %}
+							{% endfor %}
+						</div>
+						<div class="itemttl">
+							<h6><a href="{{rec_post.absolute_url}}">{{ rec_post.name }}</a></h6>
+						</div>
+					</div>
+					{% endif %}
+					{% endfor %}
+					{% elif module.feed_section.select_type=="hubdb" %}
+					{% for row in resouces %}
+					{% if loop.index >= 2 %}
+					<div class="cardItem">
+						{% if row.image.url %}
+						<div class="ItemImg">
+							<a href="{{row.link}}">
+								<div class="itemImgBg" style="background-image:url({{ row.image.url }})"></div>
+							</a>
+						</div>
+						{% endif %}
+						<div class="itemContent">
+							<div class="itemtag">
+								{% for topic in row.topics %}<span>{{ topic.name|upper|replace('-',' ') }}</span>{% endfor %}
+							</div>
+							<div class="itemTtl">
+								<h4><a class="restitle" href="{{row.link}}">{{ row.name }}</a></h4>
+							</div>
+							<div class="itemdesc">
+								{{ row.description|striptags|truncatehtml(100, '...' , false) }}
+							</div>
+						</div>
+						<div class="itemBtn">
+							<a class="hs-sec-btn" href="{{row.link}}">
+								<span>Read More</span>
+								<div class="icon">
+									<div class="inner">
+										<svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10" fill="currentColor">
+											<path d="M7.5 9.5L6.45 8.4125L9.1125 5.75H0V4.25H9.1125L6.45 1.5875L7.5 0.5L12 5L7.5 9.5Z"/>
+										</svg>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					{% endif %}
+					{% endfor %}
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+</div>
+
+{{macros.bottomCurves(module.module_settings)}}
+</section>
+
+{% if  module.module_overrides.background_settings.select_color == 'custom'%}
+<style>
+	.{{name}} .bg_overlay.custom{
+		background-color:{{ module.module_overrides.background_settings.custom_color.rgba }};
+	}
+</style>
+{% endif %}	 
