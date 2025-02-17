@@ -37,6 +37,7 @@
             left: 53%;
             width: 75%;
             right: 0;
+            top: 0;
           }
         }
       }
@@ -45,6 +46,17 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
+      &.center {
+        justify-content: center;
+      }
+      &.right {
+        justify-content: flex-end;
+      }
+      &.without_img {
+        .left_content {
+          padding: 0;
+        }
+      }
       @include tabletvert {
         flex-direction: column-reverse;
       }
