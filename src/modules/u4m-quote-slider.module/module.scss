@@ -5,20 +5,11 @@
 
     .cmQuoteSliderWrap {
         position: relative;
+        padding-bottom: 20px;
     }
 
     .page-center {
         overflow: hidden;
-    }
-
-    .quoteList {
-        // column-gap: 40px;
-
-        .quoteItem {
-            box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.15);
-            margin-left: 20px;
-            margin-right: 20px;
-        }
     }
 
     .quoteTrack {
@@ -31,14 +22,38 @@
         @include navbreak {
             padding: 30rem;
         }
+
+        @include phone {
+            padding: 15rem;
+        }
     }
 
     .quoteItemInner {
         display: flex;
         height: 100%;
+        box-shadow: 2px 2px 20px rgba($Dark, 0.15);
+        margin: 0 20px;
 
-        @include phone {
+        @include tabletvert {
             flex-direction: column;
+        }
+
+        &.light_theme {
+            .cmQuote {
+                p {
+                    color: $white;
+                }
+            }
+
+            .adminWrap {
+                .cmName {
+                    color: $white;
+                }
+
+                .cmDesignation {
+                    color: $white;
+                }
+            }
         }
     }
 
@@ -63,11 +78,14 @@
             width: 190rem;
         }
 
-        @include phone {
+        @include tabletvert {
             width: 100%;
-            height: 200px;
+            height: 500px;
         }
 
+        @include phone {
+            height: 300px;
+        }
     }
 
     .cmQuote {
@@ -75,6 +93,7 @@
             font-size: 26rem;
             line-height: 1.616;
             letter-spacing: 1px;
+            color: $Dark;
 
             &:last-of-type {
                 margin: 0;
@@ -94,6 +113,8 @@
             line-height: 1.667;
             letter-spacing: 0.5rem;
             margin: 0;
+            margin-bottom: 3px;
+            color: $Dark;
         }
 
         .cmDesignation {
@@ -137,6 +158,7 @@
             height: 69rem;
             background-color: $Brown2;
             opacity: 1;
+            border: none;
 
             svg {
                 fill: $white;
@@ -159,10 +181,17 @@
         top: 0;
         height: 100%;
         left: -10rem;
-        width: 11.112%;
-        background: linear-gradient(270deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.6) 100%);
+        background: linear-gradient(270deg, rgba($white, 0.9) 0%, rgba($white, 0.6) 100%);
         transform: matrix(-1, 0, 0, 1, 0, 0);
         z-index: 1;
+        top: 0;
+        width: 16.1%;
+        z-index: 1;
+
+        @include tablet {
+            width: 15.7%;
+        }
+
     }
 
     .rightOverlay {
@@ -170,8 +199,18 @@
         top: 0;
         height: 100%;
         right: -10rem;
-        width: 11.112%;
-        background: linear-gradient(270deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.6) 100%);
+        background: linear-gradient(270deg, rgba($white, 0.9) 0%, rgba($white, 0.6) 100%);
         z-index: 1;
+        top: 0;
+        width: 16.1%;
+        z-index: 1;
+
+        @include tablet {
+            width: 15.7%;
+        }
+
     }
+
+
+
 }

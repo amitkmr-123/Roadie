@@ -532,6 +532,16 @@
       "opacity" : null
     }
   }, {
+    "id" : "027df02d-68ab-f5dc-e38b-2f70b0c49eb5",
+    "name" : "dark_theme",
+    "label" : "Dark Theme",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
     "id" : "cece8f3f-72ae-346f-f0cc-f587947b7b69",
     "name" : "include_curves",
     "label" : "Include Curves",
@@ -693,6 +703,7 @@
       "color" : null,
       "opacity" : null
     },
+    "dark_theme" : false,
     "include_curves" : false,
     "curves_group" : {
       "theme_color" : "LightestTeal_clr",

@@ -1,24 +1,28 @@
 @import "../../css/_module-imports";
 
 section.u4m-logo-trust-marks {
-    .intro_content {
-      margin-bottom: 0;
+  .page-center {
+    gap: 25px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .intro_content {
+    margin-bottom: 0;
+  }
+
+  .items.grayscale {
+    filter: grayscale(100%);
+  }
+
+  .logosType2 {
+    .logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      row-gap: 20px;
+      column-gap: 70px;
+      flex-wrap: wrap;
     }
-  
-    .items.grayscale {
-      filter: grayscale(100%);
-    }
-  
-    .logosType2 {
-      margin-top: 25px;
-      .logos {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        row-gap: 20px;
-        column-gap: 70px;
-        flex-wrap: wrap;
-    }
-    }
+  }
 }
- 

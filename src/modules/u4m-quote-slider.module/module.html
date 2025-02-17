@@ -13,8 +13,8 @@
 			<div class="splide__track quoteTrack">
 				<div class="splide__list quoteList">
 					{% for item in module.items %}
-					<div class="splide__slide quoteItem quoteItem_{{loop.index}} {{ module.module_settings.select_color }}">
-						<div class="quoteItemInner">
+					<div class="splide__slide  quoteItem quoteItem_{{loop.index}}">
+						<div class="quoteItemInner  {% if module.module_settings.dark_theme %} light_theme {% endif %} {{ module.module_settings.select_color }}">
 							{% if item.enable_image %}
 							{% if item.image.src %}
 							<div class="imageWrapper">
@@ -64,7 +64,7 @@
 	}
 	{% endif %}	
 	{% if  module.module_settings.select_color == 'custom'%}
-	.cmQuoteSlider.{{name}} .quoteItem{
+	.cmQuoteSlider.{{name}} .quoteItem .quoteItemInner{
 		background-color:{{ module.module_settings.custom_color.rgba }};
 	}
 	{% endif %}
@@ -76,20 +76,15 @@
 	document.addEventListener( 'DOMContentLoaded', function () {
 		new Splide('#splide', {
 			type: 'loop',
-			perPage: 1,
+			perPage:1.5,
 			focus: 'center',
 			autoplay: true,
 			interval: 8000,
 			flickMaxPages: 3,
 			updateOnMove: true,
 			pagination: false,
-			padding: '15%',
+			padding: '0',
 			throttle: 300,
-			breakpoints: {
-				1024: {
-					padding: '10%'
-				}
-			}
 		}).mount();
 	});
 </script>
