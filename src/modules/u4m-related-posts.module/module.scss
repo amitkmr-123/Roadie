@@ -1,0 +1,12 @@
+@import "../../css/_module-imports";
+
+section.u4m-related-posts {
+    .intro_content {
+        @include tabletMidmin {
+            margin-bottom: 75rem;
+        }
+    }
+    .cardItems {
+        @include CardItems;
+    }
+}

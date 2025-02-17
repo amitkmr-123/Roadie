@@ -17,9 +17,10 @@ html {
 
 @font-face {
   font-family: "Gibson";
-  src: url("{{ get_asset_url('../fonts/u4m-modules.eot') }}") format("embedded-opentype"),
-  url("{{ get_asset_url('../fonts/u4m-modules.woff') }}") format("woff"),
-  url("{{ get_asset_url('../fonts/u4m-modules.ttf') }}") format("truetype");
+  src:
+    url("{{ get_asset_url('../fonts/u4m-modules.eot') }}") format("embedded-opentype"),
+    url("{{ get_asset_url('../fonts/u4m-modules.woff') }}") format("woff"),
+    url("{{ get_asset_url('../fonts/u4m-modules.ttf') }}") format("truetype");
   font-style: normal;
   font-weight: 400;
   font-display: block;
@@ -32,7 +33,7 @@ body {
   line-height: $baseLineHeight;
   color: $Dark;
   font-weight: normal;
-  letter-spacing: .5rem;
+  letter-spacing: 0.5rem;
 
   &.hide-header {
     margin-top: 0;
@@ -150,11 +151,11 @@ div.hs_cos_wrapper_widget section.bottom-margin-medium {
   margin-bottom: 100rem;
 
   @include tabletvert {
-    margin-bottom: 75rem
+    margin-bottom: 75rem;
   }
 
   @include phone {
-    margin-bottom: 50rem
+    margin-bottom: 50rem;
   }
 }
 
@@ -230,11 +231,11 @@ div.hs_cos_wrapper_widget section.bottom-padding-medium {
   padding-bottom: 100rem;
 
   @include tabletvert {
-    padding-bottom: 75rem
+    padding-bottom: 75rem;
   }
 
   @include phone {
-    padding-bottom: 50rem
+    padding-bottom: 50rem;
   }
 }
 
@@ -277,7 +278,7 @@ div.video-popup {
 div#hs-eu-cookie-confirmation.hs-cookie-notification-position-bottom.can-use-gradients {
   box-shadow: 2rem -1rem 5rem 0rem rgba(0, 0, 0, 0.05);
   border: 0;
-  background-color: rgba($white, .9);
+  background-color: rgba($white, 0.9);
 
   div#hs-eu-cookie-confirmation-inner {
     background-color: rgba($white, 0);
@@ -308,9 +309,8 @@ div#hs-eu-cookie-confirmation.hs-cookie-notification-position-bottom.can-use-gra
 
 // default p size
 
-
 a {
-  @include link
+  @include link;
 }
 
 blockquote,
@@ -319,11 +319,11 @@ blockquote p {
 }
 
 blockquote:before {
-  content: '“';
+  content: "“";
 }
 
 blockquote:after {
-  content: '”';
+  content: "”";
 }
 
 em {
@@ -342,7 +342,6 @@ ul {
 }
 
 ol {
-  @include b3;
   list-style: decimal;
   padding-left: 40rem;
   margin-top: 0;
@@ -371,9 +370,10 @@ button {
 
 /* Forms */
 form {
-  margin-bottom: 30rem
+  @include form;
+  margin-bottom: 30rem;
 }
-
+  
 ::-webkit-input-placeholder {
   color: $gray3;
   opacity: 1;
@@ -434,11 +434,11 @@ code {
   border-radius: 0;
 }
 
-pre>code {
+pre > code {
   display: block;
   padding: 1rem 15rem;
   white-space: pre;
-  margin-bottom: 30rem
+  margin-bottom: 30rem;
 }
 
 pre {
@@ -470,7 +470,7 @@ td:last-child {
 }
 
 table {
-  margin-bottom: 30rem
+  margin-bottom: 30rem;
 }
 
 table th {
@@ -482,12 +482,12 @@ table td {
   font-size: 14rem;
 }
 
-a[href='javascript:;'] {
+a[href="javascript:;"] {
   cursor: default;
 }
 
 //
-section[class*='u4m-'] {
+section[class*="u4m-"] {
   scroll-margin-top: 150px;
 }
 
@@ -519,7 +519,7 @@ section[class*='u4m-'] {
   background-image: $gradient3;
 }
 
-// 
+//
 .bg_overlay {
   position: absolute;
   top: 0;
@@ -539,12 +539,12 @@ section[class*='u4m-'] {
   position: relative;
 }
 
-.bg_overlay~*:not(.bg_overlay) {
+.bg_overlay ~ *:not(.bg_overlay) {
   position: relative;
   z-index: 2;
 }
 
-// 
+//
 
 .hs-button {
   @include button;
@@ -610,7 +610,7 @@ section[class*='u4m-'] {
   }
 }
 
-// 
+//
 .intro_btn_wrap {
   display: flex;
   justify-content: center;
@@ -622,7 +622,6 @@ section[class*='u4m-'] {
 .intro_btn_wrap {
   margin-top: 20px;
 }
-
 
 .intro_content {
   text-align: center;
@@ -656,8 +655,6 @@ section[class*='u4m-'] {
     p:last-child {
       margin: 0;
     }
-
-
   }
 
   &.right {
@@ -697,7 +694,6 @@ section[class*='u4m-'] {
   }
 }
 
-
 .reverse-text {
   color: $white;
 
@@ -730,7 +726,7 @@ section[class*='u4m-'] {
 }
 
 .BrightTeal_bg {
-  background-color: $BrightTeal
+  background-color: $BrightTeal;
 }
 
 .Mustard_bg {
@@ -770,7 +766,7 @@ section[class*='u4m-'] {
 }
 
 .fill-white_clr {
-  fill: $white
+  fill: $white;
 }
 
 .section_decoration {
@@ -792,7 +788,6 @@ section[class*='u4m-'] {
   transform: rotate(180deg);
 }
 
-
 .DarkTeal_clr {
   color: $DarkTeal;
 }
@@ -802,7 +797,7 @@ section[class*='u4m-'] {
 }
 
 .BrightTeal_clr {
-  color: $BrightTeal
+  color: $BrightTeal;
 }
 
 .Mustard_clr {

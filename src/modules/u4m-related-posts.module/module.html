@@ -1,0 +1,76 @@
+{% set moduleName = 'u4m-related-posts' %}
+{% include "../partials/u4-module-includes.html" %}
+
+{{macros.topCurves(module.module_settings)}}
+
+<div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}" {% if module.module_overrides.container_size == "custom" %} style="max-width:{{ module.module_overrides.custom_container_size }}rem" {% endif %}>
+	{{ macros.introGroup(module.intro_content, module.module_settings) }}
+
+
+	<div class="cardItems flex_row">
+		{% set max_posts = module.number_of_posts %}{# Set the max number of related posts to be output to the page here #}
+		{% set post_list = [] %}
+		{% for topic in content.topic_list %}
+		{% set post_list = post_list + blog_recent_topic_posts(group.id, topic.slug, max_posts + 1 ) %}
+		{% if loop.last %}
+		{% set post_list = post_list|sort(true, false, 'publish_date')|unique('name') %}
+		{% set i = 0 %}
+		{% for post in post_list %}
+		{% if content.absolute_url != post.absolute_url and i < max_posts %}
+		<div class="cardItem">
+			{% if post.featured_image %}
+			<div class="ItemImg">
+				<a href="{{post.absolute_url}}">
+					<div class="itemImgBg" style="background-image:url({{ post.featured_image }})"></div>
+				</a>
+			</div>
+			{% endif %}
+			<div class="itemContent">
+				{% if post.topic_list %}
+				<div class="itemtag">
+					{% for topic in post.topic_list %}
+					{% if loop.first %}
+					<a href="{{ blog_tag_url(group.id, topic.slug) }}">{{ topic.name }}</a>
+					{% endif %}
+					{% endfor %}
+				</div>
+				{% endif %}
+				<div class="itemTtl">
+					<h4><a href="{{post.absolute_url}}">{{ post.name }}</a></h4>
+				</div>
+				<div class="itemdesc">
+					{{ post.post_list_content|striptags|truncatehtml(80, '...' , false) }}
+				</div>
+			</div>
+			<div class="itemBtn">
+				<a class="hs-sec-btn" href="{{post.absolute_url}}">
+					<span>Read More</span>
+					<div class="icon">
+						<div class="inner">
+							<svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10" fill="currentColor">
+								<path d="M7.5 9.5L6.45 8.4125L9.1125 5.75H0V4.25H9.1125L6.45 1.5875L7.5 0.5L12 5L7.5 9.5Z"/>
+							</svg>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+		{% set i = i + 1 %}
+		{% endif %}
+		{% endfor %}
+		{% endif %}
+		{% endfor %}
+	</div>
+
+</div>
+
+{{macros.bottomCurves(module.module_settings)}}
+</section>
+
+{% if  module.module_overrides.background_settings.select_color == 'custom'%}
+<style>
+	.{{name}} .bg_overlay.custom{
+		background-color:{{ module.module_overrides.background_settings.custom_color.rgba }};
+	}
+</style>
+{% endif %}	 
