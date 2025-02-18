@@ -1,7 +1,8 @@
 @import "../../css/_module-imports";
 
 .u4m-blog-listing {
-  padding: 50rem 0;
+  padding: 50rem 0 90rem;
+  position: relative;
   .topSec {
     margin-bottom: 52px;
     text-align: center;
@@ -120,13 +121,17 @@
     }
   }
   .listing-wrap {
-    padding-bottom: 50px;
     .cardItems {
       @include CardItems;
     }
     .blog-pagination {
-      margin-top: 50px;
-      @include blogPagination;
+      text-align: center;
+      a {
+        margin-top: 40px;
+        @include tabletvertmin {
+          margin-top: 80px;
+        }
+      }
     }
   }
 }

@@ -145,7 +145,7 @@
     "display" : "checkbox",
     "type" : "boolean",
     "display_width" : null,
-    "default" : false
+    "default" : true
   }, {
     "id" : "41681ab5-b066-2644-baaf-b8da71246f62",
     "name" : "curves_group",
@@ -230,7 +230,7 @@
       "display" : "checkbox",
       "type" : "boolean",
       "display_width" : null,
-      "default" : false
+      "default" : true
     }, {
       "id" : "60b3ea2f-9e95-1646-7330-1fbd63f6614a",
       "name" : "bottom_curves_group",
@@ -280,7 +280,7 @@
       "top_curves_group" : {
         "curves_type" : "type1"
       },
-      "include_bottom_section_curves" : false,
+      "include_bottom_section_curves" : true,
       "bottom_curves_group" : {
         "curves_type" : "type1"
       }
@@ -292,14 +292,14 @@
   "type" : "group",
   "display_width" : null,
   "default" : {
-    "include_curves" : false,
+    "include_curves" : true,
     "curves_group" : {
       "theme_color" : "LightestTeal_clr",
       "include_top_section_curves" : false,
       "top_curves_group" : {
         "curves_type" : "type1"
       },
-      "include_bottom_section_curves" : false,
+      "include_bottom_section_curves" : true,
       "bottom_curves_group" : {
         "curves_type" : "type1"
       }
@@ -562,7 +562,7 @@
     "step" : 1,
     "type" : "number",
     "display_width" : null,
-    "default" : 40
+    "default" : 90
   }, {
     "id" : "custom_bottom_padding_mobile",
     "name" : "custom_bottom_padding_mobile",
@@ -581,7 +581,7 @@
     "step" : 1,
     "type" : "number",
     "display_width" : null,
-    "default" : 40
+    "default" : 90
   }, {
     "id" : "3eccf45d-b0dc-4bac-42a0-f923e4405158",
     "name" : "reverse_text",
@@ -789,8 +789,8 @@
     "custom_top_padding" : 40,
     "custom_top_padding_mobile" : 50,
     "bottom_padding" : "bottom-padding-custom",
-    "custom_bottom_padding" : 40,
-    "custom_bottom_padding_mobile" : 40,
+    "custom_bottom_padding" : 90,
+    "custom_bottom_padding_mobile" : 90,
     "reverse_text" : false,
     "background_settings" : {
       "background_type" : "color",

@@ -18,6 +18,11 @@
   "categories" : [ "functionality" ],
   "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
   "module_id" : 186052637076,
+  "js_assets" : [ {
+    "autoload" : true,
+    "path" : "../../js/masonry.pkgd.min.js",
+    "name" : "masonry.pkgd.min.js"
+  } ],
   "label" : "Blog Listing",
   "icon" : "../../../mV0_d-web-default-modules_hubspot/img/icon/edited-search-1.svg",
   "is_available_for_new_content" : true
