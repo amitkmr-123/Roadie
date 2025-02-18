@@ -6,6 +6,10 @@
 -->
 {% extends './base.html' %}
 
+
+{% block header %}
+{% global_partial path='./partials/u4m-header-no-navigation.html' %}
+{% endblock header %}
 {% block body %}
   <main id="main-content">
   {% dnd_area "Roadie_dnd_area" %}
@@ -20,3 +24,6 @@
   {% end_dnd_area %}  
   </main>
 {% endblock body %}
+{% block footer %}
+{% global_partial path='./partials/u4m-footer-no-navigation.html' %}
+{% endblock footer %}

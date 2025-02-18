@@ -5,16 +5,18 @@
     .page-center {
       .tabber_section {
         .tab-nav {
-          > ul {
-            > li {
+          >ul {
+            >li {
               &.active {
                 a {
                   color: $white;
                   border-color: $white;
                 }
               }
-              > a {
+
+              >a {
                 color: $white;
+
                 &:hover {
                   color: $white;
                 }
@@ -25,16 +27,19 @@
       }
     }
   }
+
   .page-center {
     .top-section {
       .intro_content {
         margin-bottom: 37px;
       }
     }
+
     .tabber_section {
       .tab-nav {
         margin: 0 0 30px;
-        > ul {
+
+        >ul {
           padding: 0;
           margin: 0;
           list-style: none;
@@ -42,14 +47,17 @@
           flex-wrap: wrap;
           justify-content: center;
           gap: 20px;
+
           @include tabletMid {
             display: block;
           }
-          > li {
+
+          >li {
             &.active {
-              > a {
+              >a {
                 border-color: $MidTeal;
-                color: $DarkTeal;
+                color: $DarkTeal !important;
+
                 @include tabletMid {
                   &:after {
                     content: "−";
@@ -61,29 +69,38 @@
                 }
               }
             }
+
             margin: 0;
+
             @include tabletMid {
               margin-bottom: 15px;
+
               &:first-child {
                 .toggle_content {
                   display: block;
                 }
               }
             }
+
             .toggle_content {
               display: none;
+
               @include tabletMidmin {
                 display: none !important;
               }
+
               .tab_content {
                 padding: 20px 0;
+
                 .img_section {
                   margin-bottom: 30px;
                 }
+
                 .right_content {
                   @include tabletMid {
                     padding: 0 15px 30px;
                   }
+
                   &.dard_theme {
                     .right_content_inner {
                       .intro_content {
@@ -91,14 +108,17 @@
                           .eyebrow_text {
                             color: $white;
                           }
+
                           .intro_title {
                             color: $white;
                           }
+
                           .intro_desc {
                             p {
                               color: $white;
                             }
                           }
+
                           .intro_btn_wrap {
                             .hs-sec-btn {
                               color: $white;
@@ -108,24 +128,30 @@
                       }
                     }
                   }
+
                   .intro_content {
                     margin: 0 auto;
+
                     .eyebrow_text {
                       margin-bottom: 23px;
                       color: $DarkTeal;
                     }
+
                     h3.intro_title {
                       margin-bottom: 10px;
                       color: $Dark;
                     }
+
                     .intro_desc {
                       p {
                         font-size: 16px;
                         color: $Dark;
                       }
                     }
+
                     .intro_btn_wrap {
                       margin-top: 28px;
+
                       .hs-sec-btn {
                         color: $Brown2;
                       }
@@ -134,24 +160,28 @@
                 }
               }
             }
-            > a {
+
+            >a {
               &:hover {
-                color: $DarkTeal;
+                color: $Dark;
               }
+
               padding: 8px 20px;
               display: inline-block;
               font-size: 15px;
               line-height: 1.73;
-              color: $Brown2;
+              color: rgba($Brown2, 0.8);
               border: 1px solid transparent;
               border-radius: 22px;
               font-weight: 600;
+
               @include tabletMid {
                 display: flex;
                 text-align: center;
                 justify-content: space-between;
                 text-align: center;
                 align-items: center;
+
                 &:after {
                   content: "+";
                   position: relative;
@@ -164,25 +194,32 @@
           }
         }
       }
+
       .tab_content_wrapper {
         @include tabletMid {
           display: none;
         }
+
         .tab_content {
           &.active {
             display: block;
           }
+
           display: none;
+
           .row {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.15);
+
             .img_section {
               width: 50%;
             }
+
             .right_content {
               width: 50%;
+
               &.dard_theme {
                 .right_content_inner {
                   .intro_content {
@@ -190,20 +227,25 @@
                       .eyebrow_text {
                         color: $white;
                       }
+
                       h3.intro_title {
                         color: $white;
                       }
+
                       .intro_desc {
                         p {
                           color: $white;
                         }
                       }
+
                       .intro_btn_wrap {
                         .hs-sec-btn {
                           color: $white;
+
                           .icon {
                             .inner {
                               border-color: $white;
+
                               svg {
                                 fill: $white;
                               }
@@ -215,31 +257,39 @@
                   }
                 }
               }
+
               .right_content_inner {
                 padding: 0 86px;
+
                 @include midlaptop {
                   padding: 40px;
                 }
+
                 .intro_content {
                   text-align: left;
+
                   .intro__inner {
                     .eyebrow_text {
                       margin-bottom: 23px;
                       color: $DarkTeal;
                     }
+
                     .intro_title {
                       margin-bottom: 10px;
                       color: $Dark;
                     }
+
                     .intro_desc {
                       p {
                         font-size: 16px;
                         color: $Dark;
                       }
                     }
+
                     .intro_btn_wrap {
                       margin-top: 28px;
                       justify-content: flex-start;
+
                       a.hs-sec-btn {
                         font-weight: 600;
                         align-items: center;

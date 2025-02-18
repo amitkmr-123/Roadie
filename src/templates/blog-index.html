@@ -7,12 +7,28 @@
 
 {% block body %}
 <main id="main-content" class="body-container-wrapper">
-	{% dnd_area 'dnd_area_blog' label='Main Content' class="main-dnd-area" %} {%
-  dnd_section full_width=true %} 
+	{% dnd_area 'dnd_area__blog' label='Main Content' class="main-dnd-area" %}
+	{% dnd_section full_width=true %} 
 	{% dnd_column padding={
   "default":{ "left":"0", "right":"0" } } %} 
 	{% dnd_row %} 
+	{% dnd_module path='../modules/u4m-listing-banner' %} 
+	{% end_dnd_module %} 
+	{% end_dnd_row %}
+	{% dnd_row %} 
+	{% dnd_module path='../modules/u4m-card-slider' %} 
+	{% end_dnd_module %} 
+	{% end_dnd_row %}
+	{% dnd_row %} 
 	{% dnd_module path='../modules/u4m-blog-listing' %} 
+	{% end_dnd_module %} 
+	{% end_dnd_row %}
+	{% dnd_row %} 
+	{% dnd_module path='../modules/u4m-card-slider' %} 
+	{% end_dnd_module %} 
+	{% end_dnd_row %}
+	{% dnd_row %} 
+	{% dnd_module path='../modules/u4m-cta-row' %} 
 	{% end_dnd_module %} 
 	{% end_dnd_row %}
 	{% end_dnd_column %} 
