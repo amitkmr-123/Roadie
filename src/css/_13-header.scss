@@ -393,8 +393,14 @@ header.header {
 
 }
 
+.no-banner .headerOuterWrapper {
+    min-height: 145px;
+}
+
 @include tabletMid {
-    .headerOuterWrapper {
+
+    .headerOuterWrapper,
+    .no-banner .headerOuterWrapper {
         min-height: auto !important;
     }
 
