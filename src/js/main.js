@@ -53,3 +53,21 @@ $('header.header .topInnerWrap .hs-menu-wrapper ul li').each(function() {
 });
 
 // ------
+
+
+
+var banner = document.querySelector('.u4m-hero');
+if (banner) {
+  document.body.classList.remove("no-banner");
+}
+else{
+  document.body.classList.add("no-banner");
+}
+
+function headerHeight() {
+  var elm = $('header.header').outerHeight(true);
+  $(' .no-banner .headerOuterWrapper').css('min-height', elm);
+}
+$(window).on('load resize', function () {
+  headerHeight();
+});

@@ -16,6 +16,7 @@
   }
 
   div.legal-consent-container {
+
     p,
     .hs-form-booleancheckbox label {
       @include b6;
@@ -82,7 +83,7 @@
     }
 
     .hs-form-field {
-      > label {
+      >label {
         font-size: 14rem;
         font-weight: 600;
         line-height: 1;
@@ -93,6 +94,7 @@
     }
 
     .input {
+
       input[type="text"],
       input[type="number"],
       input[type="tel"],
@@ -144,7 +146,7 @@
         width: 100%;
       }
 
-      & + .hs-error-msgs {
+      &+.hs-error-msgs {
         position: relative;
         width: 100%;
         padding-left: 0;
@@ -326,6 +328,7 @@
     .form-columns-1,
     .form-columns-2,
     .form-columns-3 {
+
       .input,
       select {
         margin-right: 0;
@@ -345,7 +348,7 @@
     }
 
     .form-columns-2 {
-      & > div {
+      &>div {
         width: calc(50% - 10rem);
 
         &:last-of-type {

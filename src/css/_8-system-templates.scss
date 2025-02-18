@@ -72,14 +72,112 @@ section.u4m-password-prompt {
     text-align: left;
 
     input {
-      border: 1rem solid transparent;
+      border: none;
+      border-radius: 0;
+      margin-bottom: 26rem;
+      font-size: 16rem;
+      padding: 16rem;
+      width: 100%;
+      appearance: none;
+      background-color: $LightestTeal;
+      border: none;
+      outline: none;
+      min-height: 50px;
+
+      &.error,
+      &.invalid {
+        border: 1rem solid red;
+      }
+
+      &::placeholder {
+        color: rgba($gray3, 1);
+      }
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      padding: 10px !important;
+      min-height: auto;
+      align-items: center;
+      margin: 0 !important;
+      width: auto;
+    }
+
+    input select {
+      border: 0;
       border-radius: 4rem;
       margin-top: 2rem;
       margin-bottom: 20rem;
-      font-size: 16rem !important;
-      padding: 16rem !important;
-      width: 100% !important;
+      font-size: 16rem; // Note anything below 16rem will trigger the zoom feature on iOS
       background-color: $white;
+    }
+
+    select {
+      margin: 0;
+      background-color: $LightestTeal;
+      border: none;
+      border-radius: 0;
+      font-size: 16rem;
+      margin-bottom: 26rem;
+      padding: 16rem;
+      width: 100%;
+    }
+
+    .hs-error-msgs {
+      position: relative;
+      width: 100%;
+      padding-left: 0;
+      list-style: none;
+      text-align: left;
+      margin: 0rem 0 20rem;
+      padding: 0;
+      animation: fadeIn1 0.3s ease;
+
+      @include phone {
+        position: relative;
+      }
+
+      li {
+        position: relative;
+        text-align: center;
+        background: red;
+        display: inline-block;
+        color: white;
+        border-radius: 5rem;
+        padding: 5rem 8rem;
+        line-height: 1.2;
+
+        &:before {
+          border-style: solid;
+          border-width: 0 8rem 8rem 8rem;
+          bottom: 100%;
+          border-color: transparent transparent red transparent;
+          position: absolute;
+          height: 8rem;
+          width: 0rem;
+          content: "";
+          left: 0;
+          right: 0;
+          margin: auto;
+        }
+
+        label {
+          font-size: 12rem;
+          font-family: $font1;
+          text-transform: uppercase;
+          letter-spacing: 1rem;
+          display: inline-block;
+          font-weight: bold;
+          line-height: 1.4;
+          margin-bottom: 0;
+          margin-top: 1rem;
+          color: $white;
+
+          @include phone {
+            font-size: 12rem;
+          }
+        }
+      }
     }
 
     input#hs-login-widget-remember {
