@@ -66,13 +66,15 @@
 			</div>
 
 			<div class="form_column ">
+
+				{% if module.include_form %}
 				<div class="form_column_inner">
 
+					<div class="form_content">
+{{ module.form_group.form_content }}
+					</div>
 					{% if module.form_group.select_form.form_id %}              
 
-					<div class="form_content">
-						{{ module.form_group.form_content }}
-					</div>
 
 					<div class="form_box">
 						<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
@@ -81,7 +83,7 @@
 								region: "na1",
 								portalId: "{{ hub_id }}",
 								css: "",
-								target: ".form_column_inner",
+								target: ".form_box",
 								formId: "{{ module.form_group.select_form.form_id }}",
 								onFormReady: function($form) {
 								$('.form_column .hs-button').click(function(){
@@ -101,6 +103,8 @@
 					</div>
 					{% endif %}
 				</div>
+
+				{% endif %}
 			</div>
 
 		</div>
@@ -130,7 +134,7 @@
 	<div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.bottom_group_background_settings.container_size }}" {% if module.module_overrides.bottom_group_background_settings.container_size == "custom" %} style="max-width:{{ module.module_overrides.bottom_group_background_settings.custom_container_size }}rem" {% endif %}>
 
 		<div class="flex_row">
-			<div class="left_column bottom_content_colmn  {% if not module.include_form %}no-form-column {% endif %}">
+			<div class="left_column bottom_content_colmn  {{ module.bottom_group.content_style }} {% if not module.include_form %}no-form-column {% endif %}">
 				{{ module.bottom_group.content }}
 			</div>
 		</div>

@@ -1,4 +1,5 @@
 section.u4m-blog-post {
+
   /*****************************************/
   /* .hero                                 */
   /*****************************************/
@@ -34,8 +35,7 @@ section.u4m-blog-post {
       max-width: 1000rem;
 
       //margin: 50rem auto 50rem auto;
-      span.date {
-      }
+      span.date {}
 
       h1.title {
         @include h1;
@@ -78,6 +78,7 @@ section.u4m-blog-post {
     max-width: 1000rem;
 
     div.content {
+
       p,
       ul,
       ol {
@@ -125,8 +126,7 @@ section.u4m-blog-post {
       }
     }
 
-    div.topics {
-    }
+    div.topics {}
   }
 
   /*****************************************/
@@ -228,62 +228,77 @@ section.u4m-blog-post {
   .postBanner {
     min-height: 485px;
     position: relative;
+
     @include tabletvert {
       min-height: auto;
     }
+
     .postBnrimgWrap {
       position: absolute;
       width: 50%;
       height: 100%;
       right: 0;
       top: 0;
+
       @include tabletvert {
         position: static;
         width: 100%;
       }
+
       .postBannerimg {
         height: 100%;
         width: 100%;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+
         @include tabletvert {
           padding-bottom: 56.66%;
         }
       }
     }
+
     .leftSec {
       width: 50%;
       padding-top: 62px;
+
       @include tabletvert {
         width: 100%;
         margin-bottom: 40px;
       }
+
       .leftSecLogo {
         margin-bottom: 30px;
       }
+
       .bannerTtl {
         margin-bottom: 27px;
+
         h2 {
           margin: 0;
         }
       }
+
       .bannerMeta {
         display: flex;
         gap: 21px;
         align-items: center;
+
         a {
           color: inherit;
         }
       }
+
       .bannerAuthor {
         font-size: 15px;
         line-height: 1.6;
         color: $Dark;
+
         a {
           color: inherit;
         }
       }
+
       .bannerTag {
         @include eyebrow;
         @include size14;
@@ -296,20 +311,25 @@ section.u4m-blog-post {
     background-color: $LightestTeal;
     padding-top: 103px;
     padding-bottom: 84px;
+
     @include tabletvert {
       padding-top: 50px;
       padding-bottom: 50px;
     }
+
     .contentWrap {
       max-width: 739px;
       margin: 0 auto;
+
       .postbodyWrap {
         .postbody {
           margin-bottom: 47px;
+
           a {
             text-decoration: underline;
           }
         }
+
         .postTags {
           @include b3;
           margin-bottom: 0;
@@ -317,17 +337,20 @@ section.u4m-blog-post {
           align-items: center;
           gap: 10px;
           flex-wrap: wrap;
+
           a {
             @include eyebrow;
             margin: 0;
             display: inline-block;
-            & + a {
+
+            &+a {
               margin-left: 5px;
             }
           }
         }
       }
     }
+
     .postSocial {
       display: flex;
       flex-direction: column;
@@ -336,7 +359,8 @@ section.u4m-blog-post {
       width: 54px;
       float: left;
       position: sticky;
-      top: 150px;
+      top: 160px;
+
       @include tabletMid {
         position: static;
         float: none;
@@ -349,6 +373,7 @@ section.u4m-blog-post {
         align-items: center;
         margin-bottom: 20px;
       }
+
       .share_text {
         @include size14;
         margin-bottom: 22px;
@@ -360,20 +385,25 @@ section.u4m-blog-post {
           margin-bottom: 0;
         }
       }
+
       a {
         line-height: 1;
+
         &:not(:last-child) {
           margin-bottom: 17px;
+
           @include tabletMid {
             margin-bottom: 0;
           }
         }
       }
+
       svg {
         max-width: 24px;
         width: 100%;
         height: 24px;
         fill: $DarkTeal;
+
         @include tabletMid {
           height: 20px;
           max-width: 100%;
@@ -381,10 +411,13 @@ section.u4m-blog-post {
       }
     }
   }
+
   .blog-comments {
     margin-top: 30rem;
+
     form {
       margin: 0;
+
       .hs-button {
         margin-top: 20rem;
       }

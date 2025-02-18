@@ -101,6 +101,7 @@ section.u4m-password-prompt {
       align-items: center;
       margin: 0 !important;
       width: auto;
+      appearance: auto !important;
     }
 
     input select {
@@ -250,4 +251,8 @@ section.u4m-subscriptions-confirmation {
     margin-top: 30rem;
     font-weight: bold;
   }
+}
+
+.systems-page .hs-form-field:has(label:empty) {
+  display: none;
 }

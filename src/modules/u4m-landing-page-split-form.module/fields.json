@@ -117,7 +117,7 @@
     "preset" : null,
     "type" : "choice",
     "display_width" : null,
-    "default" : "themeStyle"
+    "default" : "bodystyle1"
   }, {
     "id" : "0dc03814-a33d-3284-f2d6-b130f633f03d",
     "name" : "content",
@@ -306,7 +306,7 @@
     "display" : "checkbox",
     "type" : "boolean",
     "display_width" : null,
-    "default" : true
+    "default" : false
   }, {
     "id" : "2e87d05d-537f-f784-58a6-6ab3ad662b5e",
     "name" : "logo_group",
@@ -401,7 +401,7 @@
     "heading_size" : "h2",
     "heading" : "Animated Stats",
     "include_content" : true,
-    "content_style" : "themeStyle",
+    "content_style" : "bodystyle1",
     "content" : "<h1>Landing Page <span>Headline</span> Goes Right Here</h1>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>",
     "include_button" : false,
     "button_group" : [ {
@@ -431,7 +431,7 @@
         "no_follow" : false
       }
     } ],
-    "include_logo" : true,
+    "include_logo" : false,
     "logo_group" : {
       "logo" : {
         "size_type" : "auto",
@@ -529,6 +529,28 @@
   "required" : false,
   "locked" : false,
   "children" : [ {
+    "id" : "7a7a2ff9-c9ec-635f-b9ac-d22eb930c7a3",
+    "name" : "content_style",
+    "label" : "Content Style",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "intro_content.include_content",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "themeStyle", "Theme" ], [ "bodystyle1", "Body Style 1" ], [ "bodystyle2", "Body Style 2" ], [ "bodystyle3", "Body Style 3" ], [ "bodystyle4", "Body Style 4" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "bodystyle2"
+  }, {
     "id" : "4400c500-6e4f-5708-f7c9-c475fc78d0ae",
     "name" : "content",
     "label" : "Content",
@@ -536,7 +558,7 @@
     "locked" : false,
     "type" : "richtext",
     "display_width" : null,
-    "default" : "<h2>Another Headline Here</h2>\n<p>Etiam nec feugiat lectus, pretium maximus tellus. Ut in arcu arcu. Ut id condimentum elit. Maecenas massa odio, rutrum eu felis a, malesuada scelerisque nisi. In vitae urna tincidunt, maximus lacus nec, euismod nulla. Sed varius varius.</p>\n<ul>\n<li>Massa felis a, malesuada scelerisque nisi</li>\n<li>In vitae urna tincidunt, maximus lacus nec</li>\n<li>Meuismod nulla. Sed varius varius.</li>\n</ul>"
+    "default" : "<h3>Another Headline Here</h3>\n<p>Etiam nec feugiat lectus, pretium maximus tellus. Ut in arcu arcu. Ut id condimentum elit. Maecenas massa odio, rutrum eu felis a, malesuada scelerisque nisi. In vitae urna tincidunt, maximus lacus nec, euismod nulla. Sed varius varius.</p>\n<ul>\n<li>Massa felis a, malesuada scelerisque nisi</li>\n<li>In vitae urna tincidunt, maximus lacus nec</li>\n<li>Meuismod nulla. Sed varius varius.</li>\n</ul>"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -544,7 +566,8 @@
   "type" : "group",
   "display_width" : null,
   "default" : {
-    "content" : "<h2>Another Headline Here</h2>\n<p>Etiam nec feugiat lectus, pretium maximus tellus. Ut in arcu arcu. Ut id condimentum elit. Maecenas massa odio, rutrum eu felis a, malesuada scelerisque nisi. In vitae urna tincidunt, maximus lacus nec, euismod nulla. Sed varius varius.</p>\n<ul>\n<li>Massa felis a, malesuada scelerisque nisi</li>\n<li>In vitae urna tincidunt, maximus lacus nec</li>\n<li>Meuismod nulla. Sed varius varius.</li>\n</ul>"
+    "content_style" : "bodystyle2",
+    "content" : "<h3>Another Headline Here</h3>\n<p>Etiam nec feugiat lectus, pretium maximus tellus. Ut in arcu arcu. Ut id condimentum elit. Maecenas massa odio, rutrum eu felis a, malesuada scelerisque nisi. In vitae urna tincidunt, maximus lacus nec, euismod nulla. Sed varius varius.</p>\n<ul>\n<li>Massa felis a, malesuada scelerisque nisi</li>\n<li>In vitae urna tincidunt, maximus lacus nec</li>\n<li>Meuismod nulla. Sed varius varius.</li>\n</ul>"
   }
 }, {
   "id" : "fbc58b2b-b6db-82a2-8422-e7f6861ce34b",
