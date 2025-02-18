@@ -228,6 +228,7 @@ section.u4m-blog-post {
   .postBanner {
     min-height: 485px;
     position: relative;
+    z-index: 1;
 
     @include tabletvert {
       min-height: auto;

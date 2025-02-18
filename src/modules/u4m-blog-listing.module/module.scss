@@ -1,8 +1,11 @@
 @import "../../css/_module-imports";
 
 .u4m-blog-listing {
-  padding: 50rem 0 90rem;
+  padding: 110rem 0 90rem;
   position: relative;
+  @include tabletvert {
+    padding: 50rem 0;
+  }
   .topSec {
     margin-bottom: 52px;
     text-align: center;
