@@ -22,6 +22,10 @@
                                     white-space: normal;
                                     vertical-align: middle;
                                     color: rgba($white, .7);
+
+                                    &:hover {
+                                        color: $white;
+                                    }
                                 }
                             }
                         }
@@ -121,7 +125,11 @@
                         text-overflow: unset;
                         white-space: normal;
                         cursor: pointer;
-                        color: rgba(255, 255, 255, .7);
+                        color: rgba($white, .7);
+
+                        &:hover {
+                            color: $white;
+                        }
                     }
                 }
             }

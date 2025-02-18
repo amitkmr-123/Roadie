@@ -125,6 +125,11 @@ header.header {
     }
 
     @include tabletMidmin {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+
         .navTrigger {
             display: none;
         }
@@ -139,21 +144,10 @@ header.header {
             }
         }
 
-        .mainInnerSection {
-            position: fixed;
-            top: 39px;
-            width: 100%;
-            left: 0;
+        &.stickyHeader {
+            background-color: $white;
         }
 
-        &.stickyHeader {
-            .mainInnerSection {
-                position: fixed;
-                backdrop-filter: blur(10px);
-                -webkit-backdrop-filter: blur(10px);
-                background: rgba(255, 255, 255, .15);
-            }
-        }
     }
 
     @include midlaptop {
@@ -284,59 +278,13 @@ header.header {
     display: none;
 }
 
-
-.light_cnt {
-    .mainSection {
-        .mainInnerSection {
-            .menuItem {
-                >a {
-                    color: $white;
-
-
-
-                }
-
-                .cmTrigger {
-                    svg {
-                        fill: $white;
-                        color: $white;
-
-                        path {
-                            fill: $white;
-                            color: $white;
-                        }
-                    }
-
-                }
-
-                &:hover {
-                    >a {
-                        color: $Dark;
-                    }
-
-                    .cmTrigger {
-                        svg {
-                            fill: $Dark;
-                            color: $Dark;
-
-                            path {
-                                fill: $Dark;
-                                color: $Dark;
-                            }
-                        }
-
-                    }
-                }
-            }
-        }
-    }
-
-    .stickyHeader {
+@include tabletMidmin {
+    .light_cnt {
         .mainSection {
             .mainInnerSection {
                 .menuItem {
                     >a {
-                        color: $Dark;
+                        color: $white;
 
 
 
@@ -344,12 +292,12 @@ header.header {
 
                     .cmTrigger {
                         svg {
-                            fill: $Dark;
+                            fill: $white;
                             color: $white;
 
                             path {
-                                fill: $Dark;
-                                color: $Dark;
+                                fill: $white;
+                                color: $white;
                             }
                         }
 
@@ -376,23 +324,76 @@ header.header {
                 }
             }
         }
-    }
 
-    .light_logo {
-        display: block;
-    }
+        .stickyHeader {
+            .mainSection {
+                .mainInnerSection {
+                    .menuItem {
+                        >a {
+                            color: $Dark;
 
-    .dark_logo {
-        display: none;
-    }
 
-    .stickyHeader {
+
+                        }
+
+                        .cmTrigger {
+                            svg {
+                                fill: $Dark;
+                                color: $white;
+
+                                path {
+                                    fill: $Dark;
+                                    color: $Dark;
+                                }
+                            }
+
+                        }
+
+                        &:hover {
+                            >a {
+                                color: $Dark;
+                            }
+
+                            .cmTrigger {
+                                svg {
+                                    fill: $Dark;
+                                    color: $Dark;
+
+                                    path {
+                                        fill: $Dark;
+                                        color: $Dark;
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         .light_logo {
-            display: none;
+            display: block;
         }
 
         .dark_logo {
-            display: block;
+            display: none;
         }
+
+        .stickyHeader {
+            .light_logo {
+                display: none;
+            }
+
+            .dark_logo {
+                display: block;
+            }
+        }
+    }
+}
+
+@include tabletMid {
+    .headerOuterWrapper {
+        min-height: auto !important;
     }
 }
