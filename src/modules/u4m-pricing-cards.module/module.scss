@@ -18,6 +18,9 @@
                 }
                 .pricingtp {
                     padding: 35px 50px;
+                    @include tabletvert {
+                        padding: 35px 20px;
+                    }
                     .pricingttl {
                         h3 {
                             color: $white;
@@ -36,6 +39,9 @@
                     .pricingCon {
                         border-bottom: 1px solid $CoolGray;
                         padding: 42px 50px 46px;
+                        @include tabletvert {
+                            padding: 42px 20px 46px;
+                        }
                         .pricingDesc {
                             margin-bottom: 22px;
                             p {
@@ -45,6 +51,9 @@
                     }
                     .pricingftrs {
                         padding: 50px 50px 72px;
+                        @include tabletvert {
+                            padding: 50px 20px 72px;
+                        }
                         ul {
                             margin: 0;
                             padding: 0;

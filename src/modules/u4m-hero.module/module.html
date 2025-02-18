@@ -4,8 +4,8 @@
 {{ macros.topCurves(module.module_settings) }}
 
 <div class="page-center {% if module.media_section.full_width_image %}full_width_img{% endif %}  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}" {% if module.module_overrides.container_size == "custom" %} style="max-width:{{ module.module_overrides.custom_container_size }}rem" {% endif %}>
-	<div class="row {% if not module.module_settings.include_media_section %}without_img{% endif %}">
-		<div class="left_content {% if not module.module_settings.include_media_section %}without_img{% endif %}">
+	<div class="row {{ module.module_settings.intro_content_alignment }} {% if not module.module_settings.include_media_section %}without_img{% endif %}">
+		<div class="left_content">
 			{{ macros.introGroup(module.intro_content, module.module_settings) }}
 		</div>
 		{% if module.module_settings.include_media_section %}

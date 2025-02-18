@@ -7,13 +7,12 @@
 	{{ macros.introGroup(module.intro_content, module.module_settings) }}
 
 	<div class="cmQuoteSliderWrap">
-	<div class="leftOverlay"></div>
-	<div class="rightOverlay"></div>
 		<div id="splide" class="splide quoteItemWrap">
 			<div class="splide__track quoteTrack">
 				<div class="splide__list quoteList">
 					{% for item in module.items %}
 					<div class="splide__slide  quoteItem quoteItem_{{loop.index}}">
+					<div class="rightOverlay"></div>
 						<div class="quoteItemInner  {% if module.module_settings.dark_theme %} light_theme {% endif %} {{ module.module_settings.select_color }}">
 							{% if item.enable_image %}
 							{% if item.image.src %}
@@ -85,6 +84,16 @@
 			pagination: false,
 			padding: '0',
 			throttle: 300,
+			breakpoints: {
+			991: {
+				perPage: 1.2,
+				snap: true
+			},
+			768: {
+				perPage: 1.2,
+				snap: true
+			}
+		}
 		}).mount();
 	});
 </script>
