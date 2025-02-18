@@ -49,7 +49,7 @@
 							<h4><a href="{{rec_post.absolute_url}}">{{ rec_post.name }}</a></h4>
 						</div>
 						<div class="itemdesc">
-							{{ rec_post.post_list_content|striptags|truncatehtml(200, '...' , false) }}
+							{{ rec_post.post_list_content|striptags|truncatehtml(150, '...' , false) }}
 						</div>
 					</div>
 					<div class="itemBtn">
@@ -86,7 +86,7 @@
 							<h4><a class="restitle" href="{{row.link}}">{{ row.name }}</a></h4>
 						</div>
 						<div class="itemdesc">
-							{{ row.description|striptags|truncatehtml(100, '...' , false) }}
+							{{ row.description|striptags|truncatehtml(150, '...' , false) }}
 						</div>
 					</div>
 					<div class="itemBtn">
@@ -110,10 +110,10 @@
 			<div class="rightCol">
 				{% if module.top_sec.title || module.top_sec.highlighted_text  %}
 				<div class="rightColttl">
-					<h3>{{ module.top_sec.title }}<span class="highlightedText">{{ module.top_sec.highlighted_text }}</span></h3>
+					<h3>{{ module.top_sec.title }} <span class="highlightedText">{{ module.top_sec.highlighted_text }}</span></h3>
 				</div>
 				{% endif %}
-				<div class="postItems">
+				<div class="postItems flex_row">
 					{% if module.feed_section.select_type=="blog" %}
 					{% for rec_post in rec_posts %}
 					{% if loop.index >= 2 %}
@@ -135,36 +135,12 @@
 					{% elif module.feed_section.select_type=="hubdb" %}
 					{% for row in resouces %}
 					{% if loop.index >= 2 %}
-					<div class="cardItem">
-						{% if row.image.url %}
-						<div class="ItemImg">
-							<a href="{{row.link}}">
-								<div class="itemImgBg" style="background-image:url({{ row.image.url }})"></div>
-							</a>
+					<div class="postItem">
+						<div class="itemtags">
+							{% for topic in row.topics %}<span>{{ topic.name|upper|replace('-',' ') }}</span>{% endfor %}
 						</div>
-						{% endif %}
-						<div class="itemContent">
-							<div class="itemtag">
-								{% for topic in row.topics %}<span>{{ topic.name|upper|replace('-',' ') }}</span>{% endfor %}
-							</div>
-							<div class="itemTtl">
-								<h4><a class="restitle" href="{{row.link}}">{{ row.name }}</a></h4>
-							</div>
-							<div class="itemdesc">
-								{{ row.description|striptags|truncatehtml(100, '...' , false) }}
-							</div>
-						</div>
-						<div class="itemBtn">
-							<a class="hs-sec-btn" href="{{row.link}}">
-								<span>Read More</span>
-								<div class="icon">
-									<div class="inner">
-										<svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10" fill="currentColor">
-											<path d="M7.5 9.5L6.45 8.4125L9.1125 5.75H0V4.25H9.1125L6.45 1.5875L7.5 0.5L12 5L7.5 9.5Z"/>
-										</svg>
-									</div>
-								</div>
-							</a>
+						<div class="itemttl">
+							<h6><a href="{{row.link}}">{{ row.name }}</a></h6>
 						</div>
 					</div>
 					{% endif %}

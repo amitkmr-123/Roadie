@@ -16,10 +16,12 @@
     "type" : "image",
     "display_width" : null,
     "default" : {
-      "size_type" : "auto",
-      "src" : "",
-      "alt" : null,
-      "loading" : "lazy"
+      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Roadie-u4m/images/listinglogo.png",
+      "alt" : "Logo",
+      "width" : 302,
+      "height" : 79,
+      "max_width" : 302,
+      "max_height" : 79
     }
   }, {
     "id" : "1f3846d1-94a5-3361-e377-509390358834",
@@ -53,10 +55,12 @@
   "display_width" : null,
   "default" : {
     "logo" : {
-      "size_type" : "auto",
-      "src" : "",
-      "alt" : null,
-      "loading" : "lazy"
+      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Roadie-u4m/images/listinglogo.png",
+      "alt" : "Logo",
+      "width" : 302,
+      "height" : 79,
+      "max_width" : 302,
+      "max_height" : 79
     },
     "title" : "TLDR",
     "highlighted_text" : "Fast Lane"
@@ -133,20 +137,6 @@
   "required" : false,
   "locked" : false,
   "children" : [ {
-    "id" : "0a83880d-e7a4-265e-44f8-4237a6ba4090",
-    "name" : "intro_content_alignment",
-    "label" : "Intro Content Alignment",
-    "required" : false,
-    "locked" : false,
-    "display" : "select",
-    "choices" : [ [ "left", "Left" ], [ "right", "Right" ], [ "center", "Center" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice",
-    "display_width" : null,
-    "default" : "center"
-  }, {
     "id" : "cece8f3f-72ae-346f-f0cc-f587947b7b69",
     "name" : "include_curves",
     "label" : "Include Curves",
@@ -302,7 +292,6 @@
   "type" : "group",
   "display_width" : null,
   "default" : {
-    "intro_content_alignment" : "center",
     "include_curves" : false,
     "curves_group" : {
       "theme_color" : "LightestTeal_clr",
@@ -472,7 +461,7 @@
     "step" : 1,
     "type" : "number",
     "display_width" : null,
-    "default" : 50
+    "default" : 40
   }, {
     "id" : "module_overrides.top_padding",
     "name" : "top_padding",
@@ -494,7 +483,7 @@
     "preset" : null,
     "type" : "choice",
     "display_width" : null,
-    "default" : "top-padding-default"
+    "default" : "top-padding-custom"
   }, {
     "id" : "custom_top_padding",
     "name" : "custom_top_padding",
@@ -513,7 +502,7 @@
     "step" : 1,
     "type" : "number",
     "display_width" : null,
-    "default" : 100
+    "default" : 40
   }, {
     "id" : "custom_top_padding_mobile",
     "name" : "custom_top_padding_mobile",
@@ -554,7 +543,7 @@
     "preset" : null,
     "type" : "choice",
     "display_width" : null,
-    "default" : "bottom-padding-default"
+    "default" : "bottom-padding-custom"
   }, {
     "id" : "custom_bottom_padding",
     "name" : "custom_bottom_padding",
@@ -573,7 +562,7 @@
     "step" : 1,
     "type" : "number",
     "display_width" : null,
-    "default" : 100
+    "default" : 40
   }, {
     "id" : "custom_bottom_padding_mobile",
     "name" : "custom_bottom_padding_mobile",
@@ -592,7 +581,7 @@
     "step" : 1,
     "type" : "number",
     "display_width" : null,
-    "default" : 50
+    "default" : 40
   }, {
     "id" : "3eccf45d-b0dc-4bac-42a0-f923e4405158",
     "name" : "reverse_text",
@@ -795,13 +784,13 @@
     "custom_top_margin_mobile" : 50,
     "bottom_margin" : "bottom-margin-none",
     "custom_bottom_margin" : 100,
-    "custom_bottom_margin_mobile" : 50,
-    "top_padding" : "top-padding-default",
-    "custom_top_padding" : 100,
+    "custom_bottom_margin_mobile" : 40,
+    "top_padding" : "top-padding-custom",
+    "custom_top_padding" : 40,
     "custom_top_padding_mobile" : 50,
-    "bottom_padding" : "bottom-padding-default",
-    "custom_bottom_padding" : 100,
-    "custom_bottom_padding_mobile" : 50,
+    "bottom_padding" : "bottom-padding-custom",
+    "custom_bottom_padding" : 40,
+    "custom_bottom_padding_mobile" : 40,
     "reverse_text" : false,
     "background_settings" : {
       "background_type" : "color",
