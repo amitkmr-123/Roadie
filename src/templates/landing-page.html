@@ -13,10 +13,23 @@
 {% block body %}
   <main id="main-content">
   {% dnd_area "Roadie_dnd_area" %}
-    {% dnd_section %}
+    {% dnd_section full_width=true  %}
       {% dnd_column %}
         {% dnd_row %}
-          {% dnd_module path='../modules/u4m-landing-page-overlap', label='Landing Page Overlap' width="12" %}
+          {% dnd_module path='../modules/u4m-landing-page-split-form', label='Landing Page Overlap' width="12" %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+        {% dnd_row %}
+          {% dnd_module
+            path="../modules/u4m-logo-trust-marks",
+            offset=0,
+            width=12,
+            module_overrides={
+              "background_settings" : {
+                "select_color" : "LightestTeal_bg"
+              }
+            }
+          %}
           {% end_dnd_module %}
         {% end_dnd_row %}
       {% end_dnd_column %}

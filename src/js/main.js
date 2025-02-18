@@ -34,33 +34,33 @@ window.addEventListener('scroll', function () {
 
 // Header------
 
-$(".navTrigger").click(function(){
-	$(this).toggleClass("cm_active");
-	$('.menuWrapper').toggleClass("cm_active");
-	$('.menuWrapper').slideToggle();
+$(".navTrigger").click(function () {
+  $(this).toggleClass("cm_active");
+  $('.menuWrapper').toggleClass("cm_active");
+  $('.menuWrapper').slideToggle();
 });
-$(window).scroll(function(){
-	if ($(this).scrollTop() > 40) {
-		$('header.globalHeader').addClass('stickyHeader');
-	} else {
-		$('header.globalHeader').removeClass('stickyHeader');
-	}
+$(window).scroll(function () {
+  if ($(this).scrollTop() > 40) {
+    $('header.globalHeader').addClass('stickyHeader');
+  } else {
+    $('header.globalHeader').removeClass('stickyHeader');
+  }
 });
 
-$('header.header .topInnerWrap .hs-menu-wrapper ul li').each(function() {
+$('header.header .topInnerWrap .hs-menu-wrapper ul li').each(function () {
   var aText = $(this).children("a").text().toLowerCase().replace(/\s/g, "-");
-  $(this).addClass( aText );
+  $(this).addClass(aText);
 });
 
 // ------
 
 
 
-var banner = document.querySelector('.u4m-hero');
+var banner = document.querySelector('.u4m-hero, .split_form_wrapper');
 if (banner) {
   document.body.classList.remove("no-banner");
 }
-else{
+else {
   document.body.classList.add("no-banner");
 }
 
