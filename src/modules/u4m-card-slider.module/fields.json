@@ -13,7 +13,7 @@
     "display" : "checkbox",
     "type" : "boolean",
     "display_width" : null,
-    "default" : false
+    "default" : true
   }, {
     "id" : "5baff6ad-02e1-6b84-3429-260a0ded7ef6",
     "name" : "eyebrow_text",
@@ -33,7 +33,7 @@
     "show_emoji_picker" : false,
     "type" : "text",
     "display_width" : null,
-    "default" : "Eyebrow Text"
+    "default" : "OPTIONAL EYEBROW"
   }, {
     "id" : "e1a83e2f-f82a-c168-4ab5-d2e59735e581",
     "name" : "include_heading",
@@ -85,7 +85,7 @@
     "show_emoji_picker" : false,
     "type" : "text",
     "display_width" : null,
-    "default" : "Related Posts"
+    "default" : "Customer Success Stories Headline"
   }, {
     "id" : "2f10bd6e-cf85-1cf6-5a4f-fa75e1e78238",
     "name" : "include_content",
@@ -95,7 +95,7 @@
     "display" : "checkbox",
     "type" : "boolean",
     "display_width" : null,
-    "default" : false
+    "default" : true
   }, {
     "id" : "88e2784a-4cb2-624f-1493-1e017330f5bb",
     "name" : "content_style",
@@ -134,7 +134,7 @@
     },
     "type" : "richtext",
     "display_width" : null,
-    "default" : "<p>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</p>"
+    "default" : "<p>Donec varius est in erat congue pellentesque. Nullam volutpat tempus ligula, eu rhoncus quam. Sed finibus lacus magna, eu laoreet justo tempus vel. Nullam a diam tortor.</p>"
   }, {
     "id" : "4a517c8a-8c15-a721-dca5-db7b58a8c2a7",
     "name" : "include_button",
@@ -144,7 +144,7 @@
     "display" : "checkbox",
     "type" : "boolean",
     "display_width" : null,
-    "default" : false
+    "default" : true
   }, {
     "id" : "3d861e2f-6981-78b6-57a8-d59863169561",
     "name" : "button_group",
@@ -155,7 +155,7 @@
       "min" : null,
       "max" : 2,
       "sorting_label_field" : "43e0936c-b29a-7bd7-61e3-b4671077ba62",
-      "default" : 2
+      "default" : 1
     },
     "visibility" : {
       "controlling_field" : null,
@@ -200,7 +200,7 @@
       "preset" : null,
       "type" : "choice",
       "display_width" : null,
-      "default" : "hs-button"
+      "default" : "hs-sec-btn"
     }, {
       "id" : "105bbd69-dccc-fd6b-3d3d-3f4063128744",
       "name" : "button_text",
@@ -220,7 +220,7 @@
       "show_emoji_picker" : false,
       "type" : "text",
       "display_width" : null,
-      "default" : "Button"
+      "default" : "View All Customer Stories"
     }, {
       "id" : "f1ccd7fd-a18d-1262-3c67-476cdf5424cd",
       "name" : "link",
@@ -272,21 +272,8 @@
     "display_width" : null,
     "default" : [ {
       "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_text" : "Button",
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    }, {
-      "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_text" : "Button",
+      "button_style" : "hs-sec-btn",
+      "button_text" : "View All Customer Stories",
       "link" : {
         "url" : {
           "content_id" : null,
@@ -304,32 +291,19 @@
   "type" : "group",
   "display_width" : null,
   "default" : {
-    "include_eyebrow_text" : false,
-    "eyebrow_text" : "Eyebrow Text",
+    "include_eyebrow_text" : true,
+    "eyebrow_text" : "OPTIONAL EYEBROW",
     "include_heading" : true,
     "heading_size" : "h2",
-    "heading" : "Related Posts",
-    "include_content" : false,
+    "heading" : "Customer Success Stories Headline",
+    "include_content" : true,
     "content_style" : "themeStyle",
-    "content" : "<p>Commodo sint nulla mollit in culpa esse voluptate commodo mollit nulla elit consectetur qui culpa eu.</p>",
-    "include_button" : false,
+    "content" : "<p>Donec varius est in erat congue pellentesque. Nullam volutpat tempus ligula, eu rhoncus quam. Sed finibus lacus magna, eu laoreet justo tempus vel. Nullam a diam tortor.</p>",
+    "include_button" : true,
     "button_group" : [ {
       "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_text" : "Button",
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    }, {
-      "button_type" : "std",
-      "button_style" : "hs-button",
-      "button_text" : "Button",
+      "button_style" : "hs-sec-btn",
+      "button_text" : "View All Customer Stories",
       "link" : {
         "url" : {
           "content_id" : null,
@@ -342,16 +316,477 @@
     } ]
   }
 }, {
-  "id" : "dd9605b2-9cc9-58fc-b3e5-10c821e8aff7",
-  "name" : "number_of_posts",
-  "label" : "Number of Posts",
+  "id" : "6ba34308-d7fb-5236-2712-1729a98178f0",
+  "name" : "select_content_type",
+  "label" : "Select Content Type",
   "required" : false,
   "locked" : false,
-  "display" : "text",
-  "step" : 1,
-  "type" : "number",
+  "display" : "select",
+  "choices" : [ [ "blog", "Blog Feed" ], [ "hubdb", "Hubdb Feed" ], [ "custom", "Custom Cards" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
   "display_width" : null,
-  "default" : 3
+  "default" : "blog"
+}, {
+  "id" : "3c399003-c5ad-6781-fc99-0098146161d7",
+  "name" : "blog_cards",
+  "label" : "Blog Cards",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "select_content_type",
+    "controlling_value_regex" : "blog",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "children" : [ {
+    "id" : "1454fa85-bdb8-532b-1ea2-24f0176960ab",
+    "name" : "feed_type",
+    "label" : "Feed Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "recent", "Recent" ], [ "tag", "Tag" ], [ "post_by_title", "Post by Title" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "recent"
+  }, {
+    "id" : "2050cf36-ea5e-de44-6b6f-6e5fc0bf4d01",
+    "name" : "select_blog",
+    "label" : "Select Blog",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "blog_cards.feed_type",
+      "controlling_value_regex" : "recent|tag",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "blog",
+    "display_width" : null
+  }, {
+    "id" : "17854384-7df6-013c-f404-45041865ea18",
+    "name" : "select_tag",
+    "label" : "Select Tag",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "blog_cards.feed_type",
+      "controlling_value_regex" : "tag",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "tag_value" : "NAME",
+    "type" : "tag",
+    "display_width" : null
+  }, {
+    "id" : "71b1098d-1c79-19bf-54c7-f3cfb6a7df08",
+    "name" : "number_of_posts",
+    "label" : "Number of Posts",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "blog_cards.feed_type",
+      "controlling_value_regex" : "recent|tag|related",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "text",
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 3
+  }, {
+    "id" : "58b0874c-1da3-81a6-050a-68c49b13622a",
+    "name" : "blog_feed",
+    "label" : "Blog Feed",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : "f32f0099-4c33-918f-314c-6bc4b0c350fa",
+      "default" : 3
+    },
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "blog_cards.feed_type",
+      "controlling_value_regex" : "post_by_title",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "f32f0099-4c33-918f-314c-6bc4b0c350fa",
+      "name" : "select_post",
+      "label" : "Select Post",
+      "required" : false,
+      "locked" : false,
+      "type" : "page",
+      "display_width" : null
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ { }, { }, { } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "feed_type" : "recent",
+    "number_of_posts" : 3,
+    "blog_feed" : [ { }, { }, { } ]
+  }
+}, {
+  "id" : "c0ba2792-2f10-9441-7fde-3ee143c34b3b",
+  "name" : "resources",
+  "label" : "Resources",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "select_content_type",
+    "controlling_value_regex" : "hubdb",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "children" : [ {
+    "id" : "1556d35e-b968-6957-95a3-69b7475f2307",
+    "name" : "resource_type",
+    "label" : "Resource Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "recent", "Recent" ], [ "category", "Category" ], [ "post_by_title", "Post by Title" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "recent"
+  }, {
+    "id" : "625d41a6-f394-5073-3da4-77332c2c9941",
+    "name" : "resource_table",
+    "label" : "Resource Table",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "resources.resource_type",
+      "controlling_value_regex" : "recent|category",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "type" : "hubdbtable",
+    "display_width" : null,
+    "default" : 109528608
+  }, {
+    "id" : "b8c1d54c-d5f2-2707-92a2-c5dbd0dba128",
+    "name" : "category_name",
+    "label" : "Category Name",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "resources.resource_type",
+      "controlling_value_regex" : "category",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "7511a560-d0d8-3193-b209-795a0afc18ba",
+    "name" : "count",
+    "label" : "Count",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "resources.resource_type",
+      "controlling_value_regex" : "recent|category",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    },
+    "display" : "text",
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 2
+  }, {
+    "id" : "14cda9ed-b852-e1b7-f7c7-f392c3b8bb04",
+    "name" : "resources_items",
+    "label" : "Resources Items",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : null
+    },
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "resources.resource_type",
+      "controlling_value_regex" : "post_by_title",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "eda9ede8-5a02-6bdb-f09d-5de620b31bd5",
+      "name" : "select_row",
+      "label" : "Select row",
+      "required" : false,
+      "locked" : false,
+      "table_name_or_id" : "109528608",
+      "columns_to_fetch" : [ "image", "topics", "name", "link", "description" ],
+      "type" : "hubdbrow",
+      "display_width" : null,
+      "default" : {
+        "id" : null
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ ]
+  }, {
+    "id" : "aa02bf26-692a-1574-9c49-079b1b543c11",
+    "name" : "read_more_text",
+    "label" : "Read More Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Read More"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "resource_type" : "recent",
+    "resource_table" : 109528608,
+    "count" : 2,
+    "resources_items" : [ ],
+    "read_more_text" : "Read More"
+  }
+}, {
+  "id" : "7b862919-9794-5825-4dcf-5dc04d540def",
+  "name" : "items",
+  "label" : "Custom Items",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "a3e855cb-45da-60f9-fb66-9c59b7c3060b",
+    "default" : 3
+  },
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "select_content_type",
+    "controlling_value_regex" : "custom",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "children" : [ {
+    "id" : "7f0f6f5c-d3bf-dd3e-5369-7fa1c337d273",
+    "name" : "image",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Roadie-u4m/images/member.jpg",
+      "alt" : "Member",
+      "loading" : "lazy",
+      "width" : 600,
+      "height" : 900,
+      "max_width" : 600,
+      "max_height" : 900
+    }
+  }, {
+    "id" : "a3e855cb-45da-60f9-fb66-9c59b7c3060b",
+    "name" : "topic",
+    "label" : "Topic",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Success Story"
+  }, {
+    "id" : "746fc7f1-5862-1873-bc5d-f887728ebadd",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "New “Paw-sibilities”: Roadie Brings Home Delivery to the Challenging Raw Dog Food Market"
+  }, {
+    "id" : "9d4fe49b-1991-b08d-d29c-9e053c0951a3",
+    "name" : "content",
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p>It’s no surprise that dog owners will do anything for their pooches, and for customers of Raw Dog Food and Company, that once meant rearranging their entire day to pick up their raw dog food deliveries.</p>"
+  }, {
+    "id" : "af0ba7b3-753c-5a29-2d01-7f751b76698d",
+    "name" : "button_text",
+    "label" : "Button Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Read More"
+  }, {
+    "id" : "c1d7155a-765e-32e5-64e3-8f5b30b19012",
+    "name" : "link_field",
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Roadie-u4m/images/member.jpg",
+      "alt" : "Member",
+      "loading" : "lazy",
+      "width" : 600,
+      "height" : 900,
+      "max_width" : 600,
+      "max_height" : 900
+    },
+    "topic" : "Success Story",
+    "title" : "New “Paw-sibilities”: Roadie Brings Home Delivery to the Challenging Raw Dog Food Market",
+    "button_text" : "Read More",
+    "content" : "<p>It’s no surprise that dog owners will do anything for their pooches, and for customers of Raw Dog Food and Company, that once meant rearranging their entire day to pick up their raw dog food deliveries.</p>",
+    "link_field" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Roadie-u4m/images/member.jpg",
+      "alt" : "Member",
+      "loading" : "lazy",
+      "width" : 600,
+      "height" : 900,
+      "max_width" : 600,
+      "max_height" : 900
+    },
+    "topic" : "Success Story",
+    "title" : "New “Paw-sibilities”: Roadie Brings Home Delivery to the Challenging Raw Dog Food Market",
+    "button_text" : "Read More",
+    "content" : "<p>It’s no surprise that dog owners will do anything for their pooches, and for customers of Raw Dog Food and Company, that once meant rearranging their entire day to pick up their raw dog food deliveries.</p>",
+    "link_field" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Roadie-u4m/images/member.jpg",
+      "alt" : "Member",
+      "loading" : "lazy",
+      "width" : 600,
+      "height" : 900,
+      "max_width" : 600,
+      "max_height" : 900
+    },
+    "topic" : "Success Story",
+    "title" : "New “Paw-sibilities”: Roadie Brings Home Delivery to the Challenging Raw Dog Food Market",
+    "button_text" : "Read More",
+    "content" : "<p>It’s no surprise that dog owners will do anything for their pooches, and for customers of Raw Dog Food and Company, that once meant rearranging their entire day to pick up their raw dog food deliveries.</p>",
+    "link_field" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ]
 }, {
   "id" : "fbc58b2b-b6db-82a2-8422-e7f6861ce34b",
   "name" : "module_settings",
@@ -359,20 +794,6 @@
   "required" : false,
   "locked" : false,
   "children" : [ {
-    "id" : "0a83880d-e7a4-265e-44f8-4237a6ba4090",
-    "name" : "intro_content_alignment",
-    "label" : "Intro Content Alignment",
-    "required" : false,
-    "locked" : false,
-    "display" : "select",
-    "choices" : [ [ "left", "Left" ], [ "right", "Right" ], [ "center", "Center" ] ],
-    "multiple" : false,
-    "reordering_enabled" : true,
-    "preset" : null,
-    "type" : "choice",
-    "display_width" : null,
-    "default" : "center"
-  }, {
     "id" : "cece8f3f-72ae-346f-f0cc-f587947b7b69",
     "name" : "include_curves",
     "label" : "Include Curves",
@@ -381,7 +802,7 @@
     "display" : "checkbox",
     "type" : "boolean",
     "display_width" : null,
-    "default" : true
+    "default" : false
   }, {
     "id" : "41681ab5-b066-2644-baaf-b8da71246f62",
     "name" : "curves_group",
@@ -419,7 +840,7 @@
       "display" : "checkbox",
       "type" : "boolean",
       "display_width" : null,
-      "default" : true
+      "default" : false
     }, {
       "id" : "effed571-3e40-bc17-0ee6-a42ac8d19caa",
       "name" : "top_curves_group",
@@ -512,7 +933,7 @@
     "display_width" : null,
     "default" : {
       "theme_color" : "LightestTeal_clr",
-      "include_top_section_curves" : true,
+      "include_top_section_curves" : false,
       "top_curves_group" : {
         "curves_type" : "type1"
       },
@@ -521,6 +942,18 @@
         "curves_type" : "type1"
       }
     }
+  }, {
+    "id" : "eb6aa03d-fad0-3a34-ac0e-91bbd9c1af7d",
+    "name" : "inactive_cards_overlay_color",
+    "label" : "Inactive Cards Overlay Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 60
+    }
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -528,11 +961,10 @@
   "type" : "group",
   "display_width" : null,
   "default" : {
-    "intro_content_alignment" : "center",
-    "include_curves" : true,
+    "include_curves" : false,
     "curves_group" : {
       "theme_color" : "LightestTeal_clr",
-      "include_top_section_curves" : true,
+      "include_top_section_curves" : false,
       "top_curves_group" : {
         "curves_type" : "type1"
       },
@@ -540,6 +972,10 @@
       "bottom_curves_group" : {
         "curves_type" : "type1"
       }
+    },
+    "inactive_cards_overlay_color" : {
+      "color" : "#ffffff",
+      "opacity" : 60
     }
   }
 }, {
@@ -720,7 +1156,7 @@
     "preset" : null,
     "type" : "choice",
     "display_width" : null,
-    "default" : "top-padding-custom"
+    "default" : "top-padding-default"
   }, {
     "id" : "custom_top_padding",
     "name" : "custom_top_padding",
@@ -739,7 +1175,7 @@
     "step" : 1,
     "type" : "number",
     "display_width" : null,
-    "default" : 90
+    "default" : 100
   }, {
     "id" : "custom_top_padding_mobile",
     "name" : "custom_top_padding_mobile",
@@ -799,7 +1235,7 @@
     "step" : 1,
     "type" : "number",
     "display_width" : null,
-    "default" : 113
+    "default" : 100
   }, {
     "id" : "custom_bottom_padding_mobile",
     "name" : "custom_bottom_padding_mobile",
@@ -988,7 +1424,7 @@
     "preset" : null,
     "type" : "choice",
     "display_width" : null,
-    "default" : "theme"
+    "default" : "full_width"
   }, {
     "id" : "5fbb592a-9b7b-dc7c-802a-2b8df6f1aeb6",
     "name" : "custom_container_size",
@@ -1022,11 +1458,11 @@
     "bottom_margin" : "bottom-margin-none",
     "custom_bottom_margin" : 100,
     "custom_bottom_margin_mobile" : 50,
-    "top_padding" : "top-padding-custom",
-    "custom_top_padding" : 90,
+    "top_padding" : "top-padding-default",
+    "custom_top_padding" : 100,
     "custom_top_padding_mobile" : 50,
     "bottom_padding" : "bottom-padding-default",
-    "custom_bottom_padding" : 113,
+    "custom_bottom_padding" : 100,
     "custom_bottom_padding_mobile" : 50,
     "reverse_text" : false,
     "background_settings" : {
@@ -1044,7 +1480,7 @@
       },
       "select_gradient" : "gradient3"
     },
-    "container_size" : "theme",
+    "container_size" : "full_width",
     "custom_container_size" : 1260
   }
 } ]
