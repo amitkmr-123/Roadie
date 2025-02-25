@@ -1,5 +1,4 @@
 section.u4m-blog-post {
-
   /*****************************************/
   /* .hero                                 */
   /*****************************************/
@@ -35,7 +34,8 @@ section.u4m-blog-post {
       max-width: 1000rem;
 
       //margin: 50rem auto 50rem auto;
-      span.date {}
+      span.date {
+      }
 
       h1.title {
         @include h1;
@@ -78,7 +78,6 @@ section.u4m-blog-post {
     max-width: 1000rem;
 
     div.content {
-
       p,
       ul,
       ol {
@@ -126,7 +125,8 @@ section.u4m-blog-post {
       }
     }
 
-    div.topics {}
+    div.topics {
+    }
   }
 
   /*****************************************/
@@ -304,6 +304,7 @@ section.u4m-blog-post {
         @include eyebrow;
         @include size14;
         margin: 0;
+        text-transform: uppercase;
       }
     }
   }
@@ -344,7 +345,7 @@ section.u4m-blog-post {
             margin: 0;
             display: inline-block;
 
-            &+a {
+            & + a {
               margin-left: 5px;
             }
           }

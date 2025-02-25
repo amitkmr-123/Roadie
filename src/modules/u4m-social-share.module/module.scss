@@ -1,0 +1,30 @@
+@import "../../css/_module-imports";
+.socialWrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+    .cmIcon {
+        a {
+            display: flex;
+            max-width: 20px;
+            height: auto;
+            align-items: center;
+            svg {
+                width: 100%;
+                display: inline-block;
+                height: auto;
+                vertical-align: middle;
+            }
+            img {
+                width: 100%;
+            }
+            > *:not(img) {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+}

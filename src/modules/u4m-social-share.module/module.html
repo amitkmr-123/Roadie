@@ -1,0 +1,24 @@
+<div class="socialWrap {{name}}">
+  {% for item in module.items %}
+  <div class="cmIcon items-{{loop.index}}">
+    {% if item.select_icon_type == "icon" %}
+    <a href="{{ item.link }}" target="_blank">
+      {% icon name="{{ item.icon.name }}" style="{{ item.icon.type }}"
+      unicode="{{ item.icon.unicode }}" icon_set="{{ item.icon.icon_set }}" %}
+    </a>
+    {% elif item.select_icon_type == "image" %} {% if item.image.src %}
+    <a href="{{ item.link }}" target="_blank">
+      {% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{
+      item.image.loading|escape_attr }}"' : '' %}
+      <img
+        src="{{ item.image.src }}"
+        alt="{{ item.image.alt }}"
+        {{
+        loadingAttr
+        }}
+      />
+    </a>
+    {% endif %} {% endif %}
+  </div>
+  {% endfor %}
+</div>

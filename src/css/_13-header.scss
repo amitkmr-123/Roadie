@@ -1,7 +1,7 @@
 header.header {
     position: relative;
     z-index: 101;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
 
     &.stickyHeader {
         position: fixed;
@@ -102,7 +102,7 @@ header.header {
             width: 100%;
             width: calc(100% - 172px);
 
-            >* {
+            > * {
                 width: 100%;
             }
         }
@@ -147,7 +147,6 @@ header.header {
         &.stickyHeader {
             background-color: $white;
         }
-
     }
 
     @include midlaptop {
@@ -197,7 +196,7 @@ header.header {
                 background-color: $Dark;
                 display: block;
                 position: absolute;
-                transition: all .4s ease-in-out;
+                transition: all 0.4s ease-in-out;
             }
 
             .trigger_item {
@@ -213,7 +212,6 @@ header.header {
                     top: 19px;
                 }
             }
-
         }
 
         .cm_active {
@@ -233,7 +231,6 @@ header.header {
                     transform: rotate(-45deg);
                 }
             }
-
         }
 
         .btnWrapper {
@@ -253,7 +250,7 @@ header.header {
 }
 
 .hs-menu-wrapper.hs-menu-flow-horizontal {
-    >ul {
+    > ul {
         &:before {
             display: none;
         }
@@ -265,13 +262,11 @@ header.header {
 }
 
 .hs-menu-wrapper.hs-menu-wrapper {
-    >ul {
+    > ul {
         li.hs-menu-depth-1 {
             float: unset;
         }
     }
-
-
 }
 
 .light_logo {
@@ -283,11 +278,8 @@ header.header {
         .mainSection {
             .mainInnerSection {
                 .menuItem {
-                    >a {
+                    > a {
                         color: $white;
-
-
-
                     }
 
                     .cmTrigger {
@@ -300,11 +292,10 @@ header.header {
                                 color: $white;
                             }
                         }
-
                     }
 
                     &:hover {
-                        >a {
+                        > a {
                             color: $Dark;
                         }
 
@@ -318,7 +309,6 @@ header.header {
                                     color: $Dark;
                                 }
                             }
-
                         }
                     }
                 }
@@ -329,11 +319,8 @@ header.header {
             .mainSection {
                 .mainInnerSection {
                     .menuItem {
-                        >a {
+                        > a {
                             color: $Dark;
-
-
-
                         }
 
                         .cmTrigger {
@@ -346,11 +333,10 @@ header.header {
                                     color: $Dark;
                                 }
                             }
-
                         }
 
                         &:hover {
-                            >a {
+                            > a {
                                 color: $Dark;
                             }
 
@@ -364,7 +350,6 @@ header.header {
                                         color: $Dark;
                                     }
                                 }
-
                             }
                         }
                     }
@@ -390,7 +375,6 @@ header.header {
             }
         }
     }
-
 }
 
 .no-banner .headerOuterWrapper {
@@ -398,12 +382,10 @@ header.header {
 }
 
 @include tabletMid {
-
     .headerOuterWrapper,
     .no-banner .headerOuterWrapper {
         min-height: auto !important;
     }
-
 }
 
 .headerOverlay {
@@ -415,4 +397,9 @@ header.header {
     pointer-events: none;
     z-index: 1;
     width: 100%;
+}
+
+.headerOverlay + .body-container-wrapper {
+    position: relative;
+    z-index: 2;
 }

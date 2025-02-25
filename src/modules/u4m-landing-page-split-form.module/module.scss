@@ -32,7 +32,6 @@
       .form_column_inner {
         @include form;
         max-width: 100%;
-
         .form_content {
           color: $Dark;
 
@@ -46,12 +45,15 @@
           margin: 0;
           padding: 0;
           max-width: 100%;
+          color: $black;
 
-          input:not([type="image"]):not([type="submit"]):not([type="button"]):not([type="radio"]):not([type="checkbox"]):not([type="file"]) {
+          input:not([type="image"]):not([type="submit"]):not([type="button"]):not([type="radio"]):not(
+              [type="checkbox"]
+            ):not([type="file"]) {
             padding: 16rem;
           }
 
-          .hs-form-field>label {
+          .hs-form-field > label {
             text-transform: uppercase;
           }
 
@@ -62,10 +64,14 @@
           .hs-form__virality-link {
             margin-top: 12px;
           }
+          .hs-form-radio {
+            input {
+              top: 0 !important;
+            }
+          }
         }
 
         div.legal-consent-container {
-
           p,
           .hs-form-booleancheckbox label {
             font-size: 13rem;
@@ -145,7 +151,6 @@
           color: $BrightTeal;
         }
       }
-
     }
   }
 

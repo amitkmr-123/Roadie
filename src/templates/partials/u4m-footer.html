@@ -4,92 +4,52 @@ label: Footer
 -->
 
 <footer class="footer">
-	<div class="page-center">
-		<div class="ftrInner">
-			<div class="topSection">
-				<div class="navWrapper">
-					{% module "main_menu" path="@hubspot/menu" , id=186059726127 , label="Footer Main Menu",flyouts="false"%}
-				</div>
-			</div>
-			<div class="bottomSection">
-				<div class="socialWrapper">
-					{% module "social_share" path="../../modules/u4m-social-share", label="Social Share",
-					items=[ {
-          "icon" : {
-            "name" : "X Twitter",
-            "type" : "REGULAR",
-            "unicode" : "e61b"
-          },
-          "image" : {
-            "loading" : "lazy",
-            "size_type" : "auto",
-            "src" : ""
-          },
-          "link" : "https://x.com/",
-          "select_icon_type" : "icon"
-        }, {
-          "icon" : {
-            "name" : "LinkedIn In",
-            "type" : "REGULAR",
-            "unicode" : "f0e1"
-          },
-          "image" : {
-            "loading" : "lazy",
-            "size_type" : "auto",
-            "src" : ""
-          },
-          "link" : "https://www.linkedin.com/",
-          "select_icon_type" : "icon"
-        }, {
-          "icon" : {
-            "name" : "Instagram",
-            "type" : "REGULAR",
-            "unicode" : "f16d"
-          },
-          "image" : {
-            "loading" : "lazy",
-            "size_type" : "auto",
-            "src" : ""
-          },
-          "link" : "https://www.instagram.com/",
-          "select_icon_type" : "icon"
-        }, {
-          "icon" : {
-            "name" : "Facebook",
-            "type" : "REGULAR",
-            "unicode" : "f09a"
-          },
-          "image" : {
-            "loading" : "lazy",
-            "size_type" : "auto",
-            "src" : ""
-          },
-          "link" : "https://www.facebook.com/",
-          "select_icon_type" : "icon"
-        } ] 
-				%}
-				</div>
-				<div class="privacyWrapper">
-					<div class="ftrContent">
-						{% module_block module "copyright" path="@hubspot/rich_text" label="Copyright content" %}
-						{% module_attribute "html" %}
-						<p>
-							©{{year}} Roadie. All rights reserved.
-						</p>
-						{% end_module_attribute %}
-						{% end_module_block %}
-					</div>
-					<div class="privacyMenuWrap">
-						{% module "privacy_menu" path="@hubspot/menu" , id=186060006663 , label="Privacy Menu",flyouts="false"%}
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="flaotImage">
-		{% set float_image = get_asset_url('../../templates/images/Footer-Roadie.png') %}
-		{% module "flaot_logo" path="@hubspot/linked_image", label="Footer Sticky Image",
-             img={src="{{float_image}}", width=182, override_inherited_src= true, alt="Roadie"} %}
-	</div>
+  <div class="page-center">
+    <div class="ftrInner">
+      <div class="topSection">
+        <div class="navWrapper">
+          {% module "main_menu" path="@hubspot/menu" , id=186574374468 ,
+          label="Footer Main Menu",flyouts="false"%}
+        </div>
+      </div>
+      <div class="bottomSection">
+        <div class="socialWrapper">
+          {% module "social_share" path="../../modules/u4m-social-share",
+          label="Social Share", items=[ { "icon" : { "name" : "X Twitter",
+          "type" : "REGULAR", "unicode" : "e61b" }, "image" : { "loading" :
+          "lazy", "size_type" : "auto", "src" : "" }, "link" : "https://x.com/",
+          "select_icon_type" : "icon" }, { "icon" : { "name" : "LinkedIn In",
+          "type" : "REGULAR", "unicode" : "f0e1" }, "image" : { "loading" :
+          "lazy", "size_type" : "auto", "src" : "" }, "link" :
+          "https://www.linkedin.com/", "select_icon_type" : "icon" }, { "icon" :
+          { "name" : "Instagram", "type" : "REGULAR", "unicode" : "f16d" },
+          "image" : { "loading" : "lazy", "size_type" : "auto", "src" : "" },
+          "link" : "https://www.instagram.com/", "select_icon_type" : "icon" },
+          { "icon" : { "name" : "Facebook", "type" : "REGULAR", "unicode" :
+          "f09a" }, "image" : { "loading" : "lazy", "size_type" : "auto", "src"
+          : "" }, "link" : "https://www.facebook.com/", "select_icon_type" :
+          "icon" } ] %}
+        </div>
+        <div class="privacyWrapper">
+          <div class="ftrContent">
+            {% module_block module "copyright" path="@hubspot/rich_text"
+            label="Copyright content" %} {% module_attribute "html" %}
+            <p>©{{year}} Roadie. All rights reserved.</p>
+            {% end_module_attribute %} {% end_module_block %}
+          </div>
+          <div class="privacyMenuWrap">
+            {% module "privacy_menu" path="@hubspot/menu" , id=186574904603 ,
+            label="Privacy Menu",flyouts="false"%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flaotImage">
+    {% set float_image =
+    get_asset_url('../../templates/images/Footer-Roadie.png') %} {% module
+    "flaot_logo" path="@hubspot/linked_image", label="Footer Sticky Image",
+    img={src="{{float_image}}", width=182, override_inherited_src= true,
+    alt="Roadie"} %}
+  </div>
 </footer>
-

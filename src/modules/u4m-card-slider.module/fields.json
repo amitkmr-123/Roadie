@@ -499,7 +499,7 @@
     },
     "type" : "hubdbtable",
     "display_width" : null,
-    "default" : 109528608
+    "default" : 110082091
   }, {
     "id" : "b8c1d54c-d5f2-2707-92a2-c5dbd0dba128",
     "name" : "category_name",
@@ -564,7 +564,7 @@
       "label" : "Select row",
       "required" : false,
       "locked" : false,
-      "table_name_or_id" : "109528608",
+      "table_name_or_id" : "110082091",
       "columns_to_fetch" : [ "image", "topics", "name", "link", "description" ],
       "type" : "hubdbrow",
       "display_width" : null,
@@ -598,7 +598,7 @@
   "display_width" : null,
   "default" : {
     "resource_type" : "recent",
-    "resource_table" : 109528608,
+    "resource_table" : 110082091,
     "count" : 2,
     "resources_items" : [ ],
     "read_more_text" : "Read More"
@@ -636,7 +636,7 @@
     "display_width" : null,
     "default" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Roadie-u4m/images/member.jpg",
+      "src" : "https://46302491.fs1.hubspotusercontent-na1.net/hubfs/46302491/Roadie-u4m/images/member.jpg",
       "alt" : "Member",
       "loading" : "lazy",
       "width" : 600,
@@ -717,7 +717,7 @@
   "default" : [ {
     "image" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Roadie-u4m/images/member.jpg",
+      "src" : "https://46302491.fs1.hubspotusercontent-na1.net/hubfs/46302491/Roadie-u4m/images/member.jpg",
       "alt" : "Member",
       "loading" : "lazy",
       "width" : 600,
@@ -741,7 +741,7 @@
   }, {
     "image" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Roadie-u4m/images/member.jpg",
+      "src" : "https://46302491.fs1.hubspotusercontent-na1.net/hubfs/46302491/Roadie-u4m/images/member.jpg",
       "alt" : "Member",
       "loading" : "lazy",
       "width" : 600,
@@ -765,7 +765,7 @@
   }, {
     "image" : {
       "size_type" : "auto",
-      "src" : "https://23543895.fs1.hubspotusercontent-na1.net/hubfs/23543895/Roadie-u4m/images/member.jpg",
+      "src" : "https://46302491.fs1.hubspotusercontent-na1.net/hubfs/46302491/Roadie-u4m/images/member.jpg",
       "alt" : "Member",
       "loading" : "lazy",
       "width" : 600,

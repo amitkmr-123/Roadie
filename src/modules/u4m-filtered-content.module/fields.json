@@ -355,7 +355,7 @@
     "locked" : false,
     "type" : "hubdbtable",
     "display_width" : null,
-    "default" : 109528608
+    "default" : 110082091
   }, {
     "id" : "2321c31b-85ef-304c-9a11-61ef9b39d82f",
     "name" : "read_more_text",
@@ -386,7 +386,7 @@
   "type" : "group",
   "display_width" : null,
   "default" : {
-    "select_hubdb_table" : 109528608,
+    "select_hubdb_table" : 110082091,
     "read_more_text" : "Read More",
     "show_post_per_page" : 9
   }

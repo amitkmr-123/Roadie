@@ -9,7 +9,7 @@
     "name" : "jquery.js"
   }, {
     "autoload" : true,
-    "path" : "../../../RampXchange/js/waypoint.js",
+    "path" : "../../js/waypoint.js",
     "name" : "waypoint.js"
   }, {
     "autoload" : true,

@@ -1,0 +1,149 @@
+[ {
+  "id" : "189be58e-c1d4-5ba9-c66a-0bd83d4ba1dd",
+  "name" : "items",
+  "label" : "Items",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "",
+    "default" : 4
+  },
+  "children" : [ {
+    "id" : "31cf9a3e-4b2f-a716-0986-18e8fb8defff",
+    "name" : "select_icon_type",
+    "label" : "Select Icon Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "icon", "Icon" ], [ "image", "Image" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "icon"
+  }, {
+    "id" : "c9dd1cd9-3a1b-40bd-2ad8-606d4e500a83",
+    "name" : "icon",
+    "label" : "Icon",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.select_icon_type",
+      "controlling_value_regex" : "icon",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "icon_set" : "fontawesome-6.4.2",
+    "type" : "icon",
+    "display_width" : null,
+    "default" : {
+      "name" : "X Twitter",
+      "unicode" : "e61b",
+      "type" : "REGULAR"
+    }
+  }, {
+    "id" : "23202685-fc39-f8c8-c35f-cd86ef2c4bf8",
+    "name" : "image",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.select_icon_type",
+      "controlling_value_regex" : "image",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "7dde4354-f109-9f86-bf12-bc9e913104d9",
+    "name" : "link",
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "https://x.com/"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "select_icon_type" : "icon",
+    "icon" : {
+      "name" : "X Twitter",
+      "unicode" : "e61b",
+      "type" : "REGULAR"
+    },
+    "image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "link" : "https://x.com/"
+  }, {
+    "select_icon_type" : "icon",
+    "icon" : {
+      "name" : "X Twitter",
+      "unicode" : "e61b",
+      "type" : "REGULAR"
+    },
+    "image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "link" : "https://x.com/"
+  }, {
+    "select_icon_type" : "icon",
+    "icon" : {
+      "name" : "X Twitter",
+      "unicode" : "e61b",
+      "type" : "REGULAR"
+    },
+    "image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "link" : "https://x.com/"
+  }, {
+    "select_icon_type" : "icon",
+    "icon" : {
+      "name" : "X Twitter",
+      "unicode" : "e61b",
+      "type" : "REGULAR"
+    },
+    "image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "link" : "https://x.com/"
+  } ]
+} ]
