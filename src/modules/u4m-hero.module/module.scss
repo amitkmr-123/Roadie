@@ -2,7 +2,7 @@
 
 .u4m-hero {
   overflow: hidden;
-  
+
   &.reverse-text {
     .page-center {
       .row {
@@ -97,11 +97,30 @@
           margin-bottom: 40px;
         }
       }
+      &.without_img:not(.bgimgvisibel) {
+        .left_content {
+          width: 100%;
+          .intro_content {
+            margin-left: auto;
+            margin-right: auto;
+            .intro_desc {
+              max-width: 600px;
+              margin: 0 auto;
+            }
+            &.left {
+              margin-left: 0;
+            }
+            &.right {
+              margin-right: 0;
+            }
+          }
+        }
+      }
     }
   }
 }
 @media (max-width: 991px) and (min-width: 768px) {
-  .u4m-hero  {
+  .u4m-hero {
     padding-top: 100rem !important;
   }
 }

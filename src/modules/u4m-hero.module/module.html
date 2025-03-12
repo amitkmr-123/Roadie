@@ -4,25 +4,25 @@
 {{ macros.topCurves(module.module_settings) }}
 
 <div class="page-center {% if module.media_section.full_width_image %}full_width_img{% endif %}  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}" {% if module.module_overrides.container_size == "custom" %} style="max-width:{{ module.module_overrides.custom_container_size }}rem" {% endif %}>
-	<div class="row {{ module.module_settings.intro_content_alignment }} {% if not module.module_settings.include_media_section %}without_img{% endif %}">
-		<div class="left_content">
-			{{ macros.introGroup(module.intro_content, module.module_settings) }}
-		</div>
-		{% if module.module_settings.include_media_section %}
-		<div class="media_content">
-			{% if module.media_section.image_field.src %}
-			{% set sizeAttrs = 'width="{{ module.media_section.image_field.width|escape_attr }}" height="{{ module.media_section.image_field.height|escape_attr }}"' %}
-			{% if module.media_section.image_field.size_type == 'auto' %}
-			{% set sizeAttrs = 'width="{{ module.media_section.image_field.width|escape_attr }}" height="{{ module.media_section.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
-			{% elif module.media_section.image_field.size_type == 'auto_custom_max' %}
-			{% set sizeAttrs = 'width="{{ module.media_section.image_field.max_width|escape_attr }}" height="{{ module.media_section.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
-			{% endif %}
-			{% set loadingAttr = module.media_section.image_field.loading != 'disabled' ? 'loading="{{ module.media_section.image_field.loading|escape_attr }}"' : '' %}
-			<img src="{{ module.media_section.image_field.src|escape_url }}" alt="{{ module.media_section.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
-			{% endif %}
-		</div>
-		{% endif %}
-	</div>
+  <div class="row {{ module.module_settings.intro_content_alignment }} {% if not module.module_settings.include_media_section %}without_img{% endif %}{% if module.module_overrides.enable_overrides %}{% if module.module_overrides.background_settings.background_type=="image"%} bgimgvisibel{% endif %}{% endif %}">
+    <div class="left_content">
+      {{ macros.introGroup(module.intro_content, module.module_settings) }}
+    </div>
+    {% if module.module_settings.include_media_section %}
+    <div class="media_content">
+      {% if module.media_section.image_field.src %}
+      {% set sizeAttrs = 'width="{{ module.media_section.image_field.width|escape_attr }}" height="{{ module.media_section.image_field.height|escape_attr }}"' %}
+      {% if module.media_section.image_field.size_type == 'auto' %}
+      {% set sizeAttrs = 'width="{{ module.media_section.image_field.width|escape_attr }}" height="{{ module.media_section.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+      {% elif module.media_section.image_field.size_type == 'auto_custom_max' %}
+      {% set sizeAttrs = 'width="{{ module.media_section.image_field.max_width|escape_attr }}" height="{{ module.media_section.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+      {% endif %}
+      {% set loadingAttr = module.media_section.image_field.loading != 'disabled' ? 'loading="{{ module.media_section.image_field.loading|escape_attr }}"' : '' %}
+      <img src="{{ module.media_section.image_field.src|escape_url }}" alt="{{ module.media_section.image_field.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+      {% endif %}
+    </div>
+    {% endif %}
+  </div>
 
 </div>
 
@@ -31,9 +31,9 @@
 
 {% if  module.module_overrides.background_settings.select_color == 'custom'%}
 <style>
-	.{{name}} .bg_overlay.custom{
-		background-color:{{ module.module_overrides.background_settings.custom_color.rgba }};
-	}
+  .{{name}} .bg_overlay.custom{
+    background-color:{{ module.module_overrides.background_settings.custom_color.rgba }};
+  }
 </style>
 {% endif %}	 
 

@@ -1,6 +1,5 @@
 @import "../../css/_module-imports";
 
-
 .cmMegaMenuWrap {
     display: flex;
     align-items: center;
@@ -19,14 +18,12 @@
         @include midlaptop {
             gap: 0;
         }
-
     }
 
     .menuItem {
-
         margin: 0;
 
-        >a {
+        > a {
             color: $Dark;
             display: flex;
             align-items: center;
@@ -62,7 +59,7 @@
 
         @include tabletMidmin {
             &:hover {
-                &>a {
+                & > a {
                     background-color: $white;
                     border-color: $MidTeal;
 
@@ -313,7 +310,6 @@
             width: 100%;
             position: relative;
 
-
             .cmTrigger {
                 display: none;
             }
@@ -413,6 +409,5 @@
                 }
             }
         }
-
     }
 }

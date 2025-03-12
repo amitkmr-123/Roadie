@@ -15,15 +15,15 @@ html {
   opacity: 1;
 }
 
-@font-face {
-  font-family: "Gibson";
-  src: url("{{ get_asset_url('../fonts/u4m-modules.eot') }}") format("embedded-opentype"),
-  url("{{ get_asset_url('../fonts/u4m-modules.woff') }}") format("woff"),
-  url("{{ get_asset_url('../fonts/u4m-modules.ttf') }}") format("truetype");
-  font-style: normal;
-  font-weight: 400;
-  font-display: block;
-}
+// @font-face {
+//   font-family: "Gibson";
+//   src: url("{{ get_asset_url('../fonts/u4m-modules.eot') }}") format("embedded-opentype"),
+//   url("{{ get_asset_url('../fonts/u4m-modules.woff') }}") format("woff"),
+//   url("{{ get_asset_url('../fonts/u4m-modules.ttf') }}") format("truetype");
+//   font-style: normal;
+//   font-weight: 400;
+//   font-display: block;
+// }
 
 /* make html visible after Firefox flash in hack */
 body {
@@ -33,7 +33,7 @@ body {
   color: $Dark;
   font-weight: normal;
   letter-spacing: 0.5rem;
-
+  -webkit-font-smoothing: antialiased;
   &.hide-header {
     margin-top: 0;
   }
@@ -433,7 +433,7 @@ code {
   border-radius: 0;
 }
 
-pre>code {
+pre > code {
   display: block;
   padding: 1rem 15rem;
   white-space: pre;
@@ -538,7 +538,7 @@ section[class*="u4m-"] {
   position: relative;
 }
 
-.bg_overlay~*:not(.bg_overlay) {
+.bg_overlay ~ *:not(.bg_overlay) {
   position: relative;
   z-index: 2;
 }
@@ -873,6 +873,6 @@ h6 {
   }
 }
 
-.MidTeal_bg+* :is(h1, h2, h3, h4, h5, h6) span {
+.MidTeal_bg + * :is(h1, h2, h3, h4, h5, h6) span {
   color: $white;
 }

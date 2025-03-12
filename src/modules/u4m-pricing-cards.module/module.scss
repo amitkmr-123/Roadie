@@ -10,6 +10,8 @@
 
             .pricingItem {
                 width: 100%;
+                border-bottom: 1px solid $BrightTeal;
+                box-shadow: 2px 2px 20px rgba($black, 0.15);
                 @include tabletvertmin {
                     width: calc((100% - 20px) / 2);
                 }

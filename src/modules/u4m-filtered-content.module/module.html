@@ -26,7 +26,7 @@
 			</div>
 			<div class="tag-col selctArrow">
 				<select name="type" id="type" class="tinynav tinynav1 resourceSelect" style="background-image: url({{ get_asset_url('../../templates/images/dropdownArrow.png') }});">
-					<option value="" selected>Select a Topics</option> 
+					<option value="" selected>Select a Topic</option> 
 					{% for topics in hubdb_table_column(table, 'topics').options %}
 					<option value="{{ topics.name|lower|replace(' ','-') }}">{{ topics.name }}</option>
 					{% endfor %}
