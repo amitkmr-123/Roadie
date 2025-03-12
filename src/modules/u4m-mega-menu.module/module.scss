@@ -35,7 +35,8 @@
             border-width: 1px;
             border-style: solid;
             border-color: transparent;
-
+            font-weight: 500;
+            letter-spacing: 1rem;
             @include midlaptop {
                 padding-left: 15px;
                 padding-right: 15px;
@@ -144,7 +145,8 @@
                     row-gap: 5px;
                     flex-direction: column;
                     position: relative;
-
+                    @include size14;
+                    line-height: 1.5714285714285714;
                     h6 {
                         font-size: 16rem;
                         margin-bottom: 0;
@@ -313,6 +315,10 @@
             .cmTrigger {
                 display: none;
             }
+            > a {
+                font-size: 18px;
+                font-weight: 600;
+            }
         }
 
         .cmSecondLevel {
@@ -362,6 +368,10 @@
             height: 35px;
             z-index: 1;
             cursor: pointer;
+            transition: 0.3s all ease-in;
+            &.childOpen {
+                transform: rotate(180deg);
+            }
         }
 
         span.cmMbTrigger {
@@ -378,6 +388,13 @@
         .cmSecondLevel {
             display: none;
             transition: unset;
+            .cmSecondLevelInner {
+                .secondMenuiItem {
+                    .cmImageWrap {
+                        display: none;
+                    }
+                }
+            }
         }
 
         .cmSecondLevel {
