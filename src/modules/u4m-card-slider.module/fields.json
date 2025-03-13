@@ -368,7 +368,7 @@
       "controlling_field_path" : "blog_cards.feed_type",
       "controlling_value_regex" : "recent|tag",
       "property" : null,
-      "operator" : "EQUAL",
+      "operator" : "MATCHES_REGEX",
       "access" : null
     },
     "type" : "blog",
@@ -645,6 +645,45 @@
       "max_height" : 900
     }
   }, {
+    "id" : "6236366a-8287-d5e9-87d6-314bcbb6df77",
+    "name" : "change_mobile_image",
+    "label" : "Change Mobile Image",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "ee60922c-85f7-ff49-fa3e-b6464a383a96",
+    "name" : "mobile_image",
+    "label" : "Mobile Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "items.change_mobile_image",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://46302491.fs1.hubspotusercontent-na1.net/hubfs/46302491/Roadie-u4m/images/member.jpg",
+      "alt" : "Member",
+      "loading" : "lazy",
+      "width" : 600,
+      "height" : 900,
+      "max_width" : 600,
+      "max_height" : 900
+    }
+  }, {
     "id" : "a3e855cb-45da-60f9-fb66-9c59b7c3060b",
     "name" : "topic",
     "label" : "Topic",
@@ -725,10 +764,21 @@
       "max_width" : 600,
       "max_height" : 900
     },
+    "image_copy" : {
+      "size_type" : "auto",
+      "src" : "https://46302491.fs1.hubspotusercontent-na1.net/hubfs/46302491/Roadie-u4m/images/member.jpg",
+      "alt" : "Member",
+      "loading" : "lazy",
+      "width" : 600,
+      "height" : 900,
+      "max_width" : 600,
+      "max_height" : 900
+    },
+    "change_mobile_image" : false,
     "topic" : "Success Story",
     "title" : "New “Paw-sibilities”: Roadie Brings Home Delivery to the Challenging Raw Dog Food Market",
-    "button_text" : "Read More",
     "content" : "<p>It’s no surprise that dog owners will do anything for their pooches, and for customers of Raw Dog Food and Company, that once meant rearranging their entire day to pick up their raw dog food deliveries.</p>",
+    "button_text" : "Read More",
     "link_field" : {
       "url" : {
         "content_id" : null,
@@ -749,10 +799,21 @@
       "max_width" : 600,
       "max_height" : 900
     },
+    "image_copy" : {
+      "size_type" : "auto",
+      "src" : "https://46302491.fs1.hubspotusercontent-na1.net/hubfs/46302491/Roadie-u4m/images/member.jpg",
+      "alt" : "Member",
+      "loading" : "lazy",
+      "width" : 600,
+      "height" : 900,
+      "max_width" : 600,
+      "max_height" : 900
+    },
+    "change_mobile_image" : false,
     "topic" : "Success Story",
     "title" : "New “Paw-sibilities”: Roadie Brings Home Delivery to the Challenging Raw Dog Food Market",
-    "button_text" : "Read More",
     "content" : "<p>It’s no surprise that dog owners will do anything for their pooches, and for customers of Raw Dog Food and Company, that once meant rearranging their entire day to pick up their raw dog food deliveries.</p>",
+    "button_text" : "Read More",
     "link_field" : {
       "url" : {
         "content_id" : null,
@@ -773,10 +834,21 @@
       "max_width" : 600,
       "max_height" : 900
     },
+    "image_copy" : {
+      "size_type" : "auto",
+      "src" : "https://46302491.fs1.hubspotusercontent-na1.net/hubfs/46302491/Roadie-u4m/images/member.jpg",
+      "alt" : "Member",
+      "loading" : "lazy",
+      "width" : 600,
+      "height" : 900,
+      "max_width" : 600,
+      "max_height" : 900
+    },
+    "change_mobile_image" : false,
     "topic" : "Success Story",
     "title" : "New “Paw-sibilities”: Roadie Brings Home Delivery to the Challenging Raw Dog Food Market",
-    "button_text" : "Read More",
     "content" : "<p>It’s no surprise that dog owners will do anything for their pooches, and for customers of Raw Dog Food and Company, that once meant rearranging their entire day to pick up their raw dog food deliveries.</p>",
+    "button_text" : "Read More",
     "link_field" : {
       "url" : {
         "content_id" : null,

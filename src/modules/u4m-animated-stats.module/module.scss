@@ -48,6 +48,16 @@ section.u4m-animated-stats {
 
     .content_col_inner {
       margin: auto;
+      max-width: 600px;
+      width: 100%;
+
+      @include tabletMid {
+        max-width: 100%;
+      }
+
+      .intro_content {
+        max-width: 500px;
+      }
     }
   }
 

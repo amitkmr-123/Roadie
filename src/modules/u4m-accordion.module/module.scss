@@ -1,6 +1,5 @@
 @import "../../css/_module-imports";
 
-
 .u4m-accordion {
   .intro_content {
     .intro__inner {
@@ -33,12 +32,15 @@
         padding: 0;
         padding: 0;
         position: relative;
-        transition: all .3s ease;
+        transition: all 0.3s ease;
 
         h4 {
           margin: 0;
           padding-right: 50px;
           color: $Dark;
+          @include phone {
+            @include size18;
+          }
         }
 
         .icon {
@@ -46,8 +48,11 @@
           height: 30px;
           position: absolute;
           right: 0;
-          transition: all .3s ease;
-
+          transition: all 0.3s ease;
+          @include phone {
+            height: 25px;
+            width: 25px;
+          }
           svg {
             fill: $Brown;
           }
@@ -62,10 +67,10 @@
             &:last-child {
               margin: 0;
             }
-
           }
 
           margin-bottom: 10px;
+          margin-bottom: 15px;
         }
 
         display: none;
@@ -88,7 +93,7 @@
       }
 
       padding: 23px 40px;
-      transition: all .3s ease;
+      transition: all 0.3s ease;
 
       .title.active {
         padding-bottom: 32px;
@@ -157,11 +162,10 @@
 
     .pd.accActive {
       padding: 34px 40px 40px 40px;
-      box-shadow: 2px 2px 20px rgba($Dark, .15);
+      box-shadow: 2px 2px 20px rgba($Dark, 0.15);
 
       .title {
         &.active {
-
           .icon {
             transform: rotate(45deg);
 

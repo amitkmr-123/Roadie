@@ -13,7 +13,7 @@
       }
 
       .intro_btn_wrap {
-        justify-self: start;
+        justify-content: flex-start;
       }
 
       .form-title {
@@ -78,7 +78,7 @@
             display: none;
           }
 
-          .input+.hs-error-msgs {
+          .input + .hs-error-msgs {
             position: absolute;
             top: auto;
           }
@@ -94,7 +94,7 @@
       .frm {
         form {
           .hs-form-field {
-            >label {
+            > label {
               color: $white;
             }
           }
@@ -103,7 +103,7 @@
             display: none;
           }
 
-          .input+.hs-error-msgs {
+          .input + .hs-error-msgs {
             position: absolute;
             top: auto;
           }

@@ -5,8 +5,8 @@
     .page-center {
       .tabber_section {
         .tab-nav {
-          >ul {
-            >li {
+          > ul {
+            > li {
               &.active {
                 a {
                   color: $white;
@@ -14,7 +14,7 @@
                 }
               }
 
-              >a {
+              > a {
                 color: $white;
 
                 &:hover {
@@ -39,7 +39,7 @@
       .tab-nav {
         margin: 0 0 30px;
 
-        >ul {
+        > ul {
           padding: 0;
           margin: 0;
           list-style: none;
@@ -52,9 +52,33 @@
             display: block;
           }
 
-          >li {
+          > li {
+            @include tabletMid {
+              padding: 23px;
+            }
+            > a {
+              @include tabletMid {
+                @include h4;
+                align-items: center;
+                border: none;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                padding: 0;
+                position: relative;
+                transition: all 0.3s ease;
+                color: #000;
+                margin: 0;
+                padding-right: 50px;
+                padding: 0;
+              }
+              @include tabletvert {
+                @include size18;
+              }
+            }
+
             &.active {
-              >a {
+              > a {
                 border-color: $MidTeal;
                 color: $DarkTeal !important;
 
@@ -99,6 +123,15 @@
                 .right_content {
                   @include tabletMid {
                     padding: 0 15px 30px;
+                    text-align: left;
+
+                    .intro_content {
+                      text-align: left;
+                    }
+
+                    .intro_btn_wrap {
+                      justify-content: flex-start;
+                    }
                   }
 
                   &.dard_theme {
@@ -161,7 +194,7 @@
               }
             }
 
-            >a {
+            > a {
               &:hover {
                 color: $Dark;
               }
@@ -297,6 +330,69 @@
                       }
                     }
                   }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .tabber_section {
+      .tab-nav {
+        > ul {
+          @include tabletMid {
+            display: flex;
+            flex-direction: column;
+            gap: 20rem;
+          }
+          > li {
+            margin-bottom: 0;
+            @include tabletMid {
+              transition: all 0.3s ease;
+            }
+
+            &.active {
+              @include tabletMid {
+                box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.15);
+                > a {
+                  border-bottom: 1px solid #0bb;
+                  padding-bottom: 32px;
+                  border-radius: 0;
+                }
+              }
+            }
+
+            > a {
+              @include tabletMid {
+                @include h4;
+                align-items: center;
+                border: none;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                padding: 0;
+                position: relative;
+                transition: all 0.3s ease;
+                color: #000;
+                margin: 0;
+                padding-right: 50px;
+                padding: 0;
+                border-radius: 0;
+              }
+              @include phone {
+                @include size18;
+              }
+            }
+
+            .toggle_content {
+              .tab_content {
+                @include tabletMid {
+                  padding-bottom: 0;
+                }
+                .right_content {
+                  padding-left: 0;
+                  padding-right: 0;
                 }
               }
             }
