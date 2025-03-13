@@ -177,6 +177,11 @@
       svg {
         fill: $white;
       }
+      &:hover {
+        svg {
+          fill: $Mustard;
+        }
+      }
     }
 
     .splide__arrow--next {

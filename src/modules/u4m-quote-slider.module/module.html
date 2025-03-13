@@ -69,19 +69,19 @@
 	{% endif %}
 </style>
 {% end_require_css %}
-
+  
 {% require_js %}
 <script>
 	document.addEventListener( 'DOMContentLoaded', function () {
 		new Splide('#splide', {
 			type: 'loop',
-			perPage:1.5,
+			perPage:1.30,
 			focus: 'center',
-			autoplay: true,
+			autoplay: false,
 			interval: 8000,
 			flickMaxPages: 3,
 			updateOnMove: true,
-			pagination: false,
+			pagination: true,
 			padding: '0',
 			throttle: 300,
 			breakpoints: {

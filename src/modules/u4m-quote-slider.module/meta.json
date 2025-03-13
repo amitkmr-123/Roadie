@@ -2,7 +2,7 @@
   "global" : false,
   "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
   "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
-  "module_id" : 186155090774,
+  "module_id" : 186574315059,
   "js_assets" : [ {
     "autoload" : true,
     "path" : "../../js/splide.js",
