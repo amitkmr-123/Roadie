@@ -3,12 +3,6 @@ header.header {
     z-index: 101;
     transition: all 0.3s ease;
 
-    &.stickyHeader {
-        position: fixed;
-        top: 0;
-        width: 100%;
-    }
-
     .topSection {
         padding-top: 10px;
         padding-bottom: 14px;
@@ -125,22 +119,39 @@ header.header {
     }
 
     @include tabletMidmin {
-        position: fixed;
-        left: 0;
-        right: 0;
-        top: 0;
+        .mainSection {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 40px;
+            transition: 0.3s background ease-in;
+        }
 
+        .topSection {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+        &.stickyHeader {
+            .mainSection {
+                position: fixed;
+                top: 0;
+                background-color: $white;
+            }
+        }
         .navTrigger {
             display: none;
         }
 
-        .mainSection {
-            position: relative;
-        }
+        // .mainSection {
+        //     position: relative;
+        // }
 
         .mainInnerWrap {
             .menuWrapper {
                 position: relative;
+                display: flex !important;
             }
         }
 

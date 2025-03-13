@@ -38,8 +38,8 @@
             font-weight: 500;
             letter-spacing: 1rem;
             @include midlaptop {
-                padding-left: 15px;
-                padding-right: 15px;
+                padding-left: 12px;
+                padding-right: 12px;
             }
 
             .cmTrigger {
@@ -72,6 +72,7 @@
                 }
 
                 .cmSecondLevel {
+                    display: block !important;
                     opacity: 1;
                     visibility: visible;
                 }
@@ -157,6 +158,13 @@
                         margin: 0;
                     }
                 }
+                &:hover {
+                    .cmCntWrap {
+                        h6 {
+                            color: $DarkTeal;
+                        }
+                    }
+                }
             }
         }
     }
@@ -238,48 +246,54 @@
         }
     }
 
-    .cmsingleTitle {
-        .cmCntWrap {
-            .hoverIcon {
-                position: absolute;
-                right: 0;
-                top: 50%;
-                transform: translateY(-50%);
-                display: flex;
-                width: 22px;
-                height: 22px;
-                transition: all 0.3s ease;
-                opacity: 0;
-                visibility: hidden;
-                border-radius: 50%;
-                border: 2px solid $Brown2;
-                align-items: center;
-                justify-content: center;
-
-                svg {
-                    display: inline-block;
-                    vertical-align: middle;
-                    width: 12px;
-                    height: auto;
-                    color: $Brown2;
-                    fill: $Brown2;
-
-                    path {
-                        color: inherit;
-                        fill: inherit;
-                    }
-                }
-            }
-        }
-    }
-
     .cmSecondLevel {
         &.cmsingleTitle {
+            .cmSecondLevelInner {
+                margin: 0;
+                gap: 30px 15px;
+            }
             .secondMenuiItem {
+                width: calc((100% - 15px) / 2);
+                padding: 0;
                 .cmCntWrap {
-                    h6 {
-                        padding-right: 23px;
-                        width: 100%;
+                    flex: unset;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 8px;
+                    flex: unset;
+                    .hoverIcon {
+                        display: flex;
+                        width: 22px;
+                        height: 22px;
+                        border-radius: 50%;
+                        border: 2px solid $Brown2;
+                        align-items: center;
+                        justify-content: center;
+
+                        svg {
+                            display: inline-block;
+                            vertical-align: middle;
+                            width: 12px;
+                            height: auto;
+                            color: $Brown2;
+                            fill: $Brown2;
+
+                            path {
+                                color: inherit;
+                                fill: inherit;
+                            }
+                        }
+                    }
+                }
+                &:hover {
+                    .cmCntWrap {
+                        .hoverIcon {
+                            border-color: $DarkTeal;
+                            svg {
+                                color: $DarkTeal;
+                                fill: $DarkTeal;
+                            }
+                        }
                     }
                 }
             }
@@ -390,6 +404,8 @@
             transition: unset;
             .cmSecondLevelInner {
                 .secondMenuiItem {
+                    padding-left: 15px;
+                    padding-right: 15px;
                     .cmImageWrap {
                         display: none;
                     }

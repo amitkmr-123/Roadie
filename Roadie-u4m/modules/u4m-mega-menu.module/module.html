@@ -1,0 +1,98 @@
+<div class="cmMegaMenuWrap">
+  <ul class="mainMenuWrap">
+    {% for item in module.first_level_menu %}
+    <li class="menuItem menuItem_{{loop.index}}">
+      {% if item.menu %}
+      {% set href = item.menu_link.url.href %}
+      {% if item.menu_link.url.type is equalto "EMAIL_ADDRESS" %}
+      {% set href = "mailto:" + href %}
+      {% endif %}
+      <a
+         {% if item.menu_link.url.type is equalto "CALL_TO_ACTION"  %}
+         href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+         {% else %}
+         href="{{ link.url ? link.url : "javascript:void(0);" }}"
+         {% endif %}
+         {% if item.menu_link.open_in_new_tab %}
+         target="_blank"
+         {% endif %}
+         {% if item.menu_link.rel %}
+         rel="{{ item.menu_link.rel|escape_attr }}"
+         {% endif %}
+         >
+        <span>{{ item.menu }}</span>
+        {% if item.enable_second_level_menu %}
+        <span class="cmTrigger"><svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 1.16667L1.20833 0L4.16667 2.95833L5 3.9445L5.83333 2.95833L8.79167 0L10 1.16667L5 6.16667L0 1.16667Z" fill="black"/></svg></span>
+        {% endif %}
+      </a>
+      {% endif %}
+      {% if item.enable_second_level_menu %}
+      <span class="cmMbTrigger"><svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 1.16667L1.20833 0L4.16667 2.95833L5 3.9445L5.83333 2.95833L8.79167 0L10 1.16667L5 6.16667L0 1.16667Z" fill="black"/></svg></span>
+      {% endif %}
+      {% if item.enable_second_level_menu %}
+      <div class="cmSecondLevel {{ item.select_second_level_menu_style }} {% if item.enable_single_title_menu_style %}cmsingleTitle{% endif %}">
+        <div class="cmSecondLevelInner">
+          {% for item2 in item.second_level_menu %}
+          <div class="secondMenuiItem secondMenuiItem_{{loop.index}}">
+            {% set href = item2.link.url.href %}
+            {% if item2.link.url.type is equalto "EMAIL_ADDRESS" %}
+            {% set href = "mailto:" + href %}
+            {% endif %}
+            <a class="overlayLink"
+               {% if item2.link.url.type is equalto "CALL_TO_ACTION"  %}
+               href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+               {% else %}
+               href="{{ link.url ? link.url : "javascript:void(0);" }}"
+               {% endif %}
+               {% if item2.link.open_in_new_tab %}
+               target="_blank"
+               {% endif %}
+               {% if item2.link.rel %}
+               rel="{{ item2.link.rel|escape_attr }}"
+               {% endif %}
+               >
+            </a>
+            {% if item.enable_single_title_menu_style == "true" %}
+            <div class="cmCntWrap">
+              {% if item2.title %}
+              <h6>
+                {{ item2.title }}
+              </h6>
+              {% if item2.add_title_icon %}
+              <span class="hoverIcon"><svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.5 9.5L6.45 8.4125L9.1125 5.75H0V4.25H9.1125L6.45 1.5875L7.5 0.5L12 5L7.5 9.5Z" />
+                </svg>
+              </span>
+              {% endif %}
+              {% endif %}
+            </div>
+            {% elif item.enable_single_title_menu_style == "false" %}
+            {% if item2.image.src %}
+            <div class="cmImageWrap">
+              <img src="{{ item2.image.src }}" alt="{{ item2.image.alt }}">
+            </div>
+            {% endif %}
+            <div class="cmCntWrap">
+              {% if item2.title %}
+              <h6>
+                {{ item2.title }}
+              </h6>
+              {% endif %}
+              {% if item2.decscription %}
+              <p>
+                {{ item2.decscription }}
+              </p>
+              {% endif %}
+            </div>
+            {% endif %}
+
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+    </li>
+    {% endfor %}
+  </ul>
+</div>
