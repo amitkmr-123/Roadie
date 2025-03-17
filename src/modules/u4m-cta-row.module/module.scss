@@ -87,6 +87,10 @@
       }
     }
   }
+  @include tabletvert {
+    padding-left: 20rem;
+    padding-right: 20rem;
+  }
 }
 
 .u4m-cta-row.reverse-text {
