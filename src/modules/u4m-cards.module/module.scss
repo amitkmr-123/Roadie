@@ -172,10 +172,17 @@
 
       .pdd {
         .innerCntt {
-          text-align: center;
+          // text-align: center;
 
-          .intro_btn_wrap {
-            justify-content: center;
+          // .intro_btn_wrap {
+          //   justify-content: center;
+          // }
+
+          h3.intro_title {
+            font-size: 26rem;
+          }
+          h4.intro_title {
+            font-size: 22rem;
           }
 
           .bdr {
@@ -185,6 +192,46 @@
         }
       }
 
+      //
+
+      &.mob_textAl_center {
+        .pdd {
+          .innerCntt {
+            text-align: center;
+
+            .intro_btn_wrap {
+              justify-content: center;
+            }
+          }
+        }
+      }
+
+      &.mob_textAl_left {
+        .pdd {
+          .innerCntt {
+            text-align: left;
+
+            .intro_btn_wrap {
+              justify-content: left;
+            }
+          }
+        }
+      }
+
+      &.mob_textAl_right {
+        .pdd {
+          .innerCntt {
+            text-align: right;
+
+            .intro_btn_wrap {
+              justify-content: right;
+            }
+          }
+        }
+      }
+
+      //
+
       .items {
         padding: 0;
       }
@@ -193,6 +240,17 @@
     .cards.flex_row.twoCol {
       row-gap: 40px;
       margin: 0;
+
+      .pdd {
+        .innerCntt {
+          h3.intro_title {
+            font-size: 26rem;
+          }
+          h4.intro_title {
+            font-size: 22rem;
+          }
+        }
+      }
 
       .items {
         padding: 0;

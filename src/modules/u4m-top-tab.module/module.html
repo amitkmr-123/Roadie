@@ -11,7 +11,7 @@
 		<div class="tab-nav">
 			<ul>
 				{% for item in module.tab_items %}
-				<li class="{% if loop.first %}active{% endif %}">
+				<li class="{% if loop.first %}active mobactive{% endif %}">
 					<a href="javascript:void(0);" tab-id="tab{{ loop.index }}">
 						{{ item.tab_title }}
 						<div class="icon">
@@ -29,7 +29,7 @@
 					</div>
 					</a>
 					<div class="toggle_content">
-						<div class="tab_content {% if loop.first %}active{% endif %}">
+						<div class="tab_content {% if loop.first %}active mobactive{% endif %}">
 						<div class="row {{ module.module_overrides.card_background_settings.select_color }}">
 							<div class="img_section">
 								{% if item.image_field.src %}

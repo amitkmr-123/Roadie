@@ -348,10 +348,10 @@
   "required" : false,
   "locked" : false,
   "occurrence" : {
-    "min" : 6,
+    "min" : null,
     "max" : null,
     "sorting_label_field" : null,
-    "default" : 6
+    "default" : 5
   },
   "children" : [ {
     "id" : "ffff9daf-38c7-0d64-1215-673d3e2b540b",
@@ -673,41 +673,6 @@
   "type" : "group",
   "display_width" : null,
   "default" : [ {
-    "tab_title" : "Lost Luggage Delivery",
-    "include_eyebrow_text" : true,
-    "eyebrow_text" : "OPTIONAL EYEBROW",
-    "include_heading" : true,
-    "heading_size" : "h3",
-    "heading" : "Slide Headline Here",
-    "include_content" : true,
-    "content_style" : "themeStyle",
-    "content" : "<p>Etiam nec feugiat lectus, pretium maximus tellus. Ut in arcu arcu. Ut id condimentum elit. Maecenas massa odio, rutrum eu felis a, malesuada scelerisque nisi. In vitae urna tincidunt, maximus lacus nec, euismod nulla. Sed varius varius.</p>",
-    "include_button" : true,
-    "button_group" : [ {
-      "button_type" : "std",
-      "button_style" : "hs-sec-btn",
-      "button_text" : "Learn More about Lost Luggage Delivery",
-      "link" : {
-        "url" : {
-          "content_id" : null,
-          "type" : "EXTERNAL",
-          "href" : ""
-        },
-        "open_in_new_tab" : false,
-        "no_follow" : false
-      }
-    } ],
-    "image_field" : {
-      "size_type" : "auto",
-      "src" : "https://46302491.fs1.hubspotusercontent-na1.net/hubfs/46302491/Roadie-u4m/images/tabber-image.png",
-      "alt" : "tabber image",
-      "loading" : "lazy",
-      "width" : 1240,
-      "height" : 940,
-      "max_width" : 1240,
-      "max_height" : 940
-    }
-  }, {
     "tab_title" : "Lost Luggage Delivery",
     "include_eyebrow_text" : true,
     "eyebrow_text" : "OPTIONAL EYEBROW",

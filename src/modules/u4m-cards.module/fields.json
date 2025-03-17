@@ -1032,6 +1032,28 @@
       "column_count" : "col3"
     }
   }, {
+    "id" : "9c392bae-956c-fb7d-ce5f-bfa05469f0ae",
+    "name" : "card_mobile_content_alignment",
+    "label" : "Card Mobile Content Alignment",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "module_settings.cards_items_group.card_type",
+      "controlling_value_regex" : "full_width",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "left", "Left" ], [ "right", "Right" ], [ "center", "Center" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "left"
+  }, {
     "id" : "0a83880d-e7a4-265e-44f8-4237a6ba4090",
     "name" : "intro_content_alignment",
     "label" : "Intro Content Alignment",
@@ -1205,6 +1227,7 @@
       "card_type" : "twoCol",
       "column_count" : "col3"
     },
+    "card_mobile_content_alignment" : "left",
     "intro_content_alignment" : "center",
     "include_curves" : false,
     "curves_group" : {

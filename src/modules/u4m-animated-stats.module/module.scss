@@ -102,11 +102,18 @@ section.u4m-animated-stats {
     justify-content: center;
   }
 
+  .content_col {
+    @media (max-width: 1440px) and (min-width: 1280px) {
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+    }
+  }
+
   .stats_group {
     .col4 {
-      @include laptop {
-        width: 50%;
-      }
+      // @include laptop {
+      //   width: 50%;
+      // }
 
       @include navbreak {
         width: 33.33%;

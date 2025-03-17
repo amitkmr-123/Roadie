@@ -28,6 +28,6 @@ $(".u4m-top-tab .page-center .tabber_section .tab-nav > ul > li > a").click(
       .siblings()
       .children(".toggle_content")
       .slideUp(250);
-    $(this).parent().toggleClass("active").siblings().removeClass("active");
+    $(this).parent().toggleClass("mobactive").siblings().removeClass("mobactive");
   }
 );

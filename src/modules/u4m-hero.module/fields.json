@@ -933,6 +933,92 @@
         "max_height" : 972.2222222222223
       }
     }, {
+      "id" : "716547ba-ab8a-bbea-d69f-d2890ff30cd8",
+      "name" : "change_mobile_background_image",
+      "label" : "Change Mobile Background Image",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "module_overrides.background_settings.background_type",
+        "controlling_value_regex" : "image",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : false
+    }, {
+      "id" : "38c1b824-18d1-d3c8-e97d-c2e0394ed48f",
+      "name" : "use_background_image_as_image_at_mobile",
+      "label" : "Use Background Image as Image at Mobile",
+      "inline_help_text" : "This field changes will reflect when \"Include Sedia Section\" is disabled.",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "module_overrides.background_settings.background_type",
+        "controlling_value_regex" : "image",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : false
+    }, {
+      "id" : "536e751d-74fa-c5ba-b3d0-74e4f94caa45",
+      "name" : "no_image_background_color",
+      "label" : "No Image Background Color",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "module_overrides.background_settings.use_background_image_as_image_at_mobile",
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : null,
+        "opacity" : null
+      }
+    }, {
+      "id" : "a0dd2948-9871-a065-4af6-71467780d440",
+      "name" : "mobile_background_image",
+      "label" : "Mobile Background Image",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "module_overrides.background_settings.change_mobile_background_image",
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "responsive" : true,
+      "resizable" : false,
+      "show_loading" : false,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "auto_custom_max",
+        "src" : "https://46302491.fs1.hubspotusercontent-na1.net/hubfs/46302491/Roadie-u4m/images/banner-bg-image.png",
+        "alt" : "Banner Bg Image",
+        "loading" : "lazy",
+        "width" : 2880,
+        "height" : 1400,
+        "max_width" : 2000,
+        "max_height" : 972.2222222222223
+      }
+    }, {
       "id" : "4ea36da9-c8a6-adf2-7460-cbf4d98190fd",
       "name" : "select_color",
       "label" : "Select Color",
@@ -1014,6 +1100,22 @@
         "max_width" : 2000,
         "max_height" : 972.2222222222223
       },
+      "change_mobile_background_image" : false,
+      "use_background_image_as_image_at_mobile" : false,
+      "no_image_background_color" : {
+        "color" : null,
+        "opacity" : null
+      },
+      "mobile_background_image" : {
+        "size_type" : "auto_custom_max",
+        "src" : "https://46302491.fs1.hubspotusercontent-na1.net/hubfs/46302491/Roadie-u4m/images/banner-bg-image.png",
+        "alt" : "Banner Bg Image",
+        "loading" : "lazy",
+        "width" : 2880,
+        "height" : 1400,
+        "max_width" : 2000,
+        "max_height" : 972.2222222222223
+      },
       "select_color" : "",
       "custom_color" : {
         "color" : null,
@@ -1069,7 +1171,7 @@
     "custom_bottom_margin" : 100,
     "custom_bottom_margin_mobile" : 50,
     "top_padding" : "top-padding-custom",
-    "custom_top_padding" : 186,
+    "custom_top_padding" : 225,
     "custom_top_padding_mobile" : 100,
     "bottom_padding" : "bottom-padding-custom",
     "custom_bottom_padding" : 150,
@@ -1078,6 +1180,22 @@
     "background_settings" : {
       "background_type" : "image",
       "background_image" : {
+        "size_type" : "auto_custom_max",
+        "src" : "https://46302491.fs1.hubspotusercontent-na1.net/hubfs/46302491/Roadie-u4m/images/banner-bg-image.png",
+        "alt" : "Banner Bg Image",
+        "loading" : "lazy",
+        "width" : 2880,
+        "height" : 1400,
+        "max_width" : 2000,
+        "max_height" : 972.2222222222223
+      },
+      "change_mobile_background_image" : false,
+      "use_background_image_as_image_at_mobile" : false,
+      "no_image_background_color" : {
+        "color" : null,
+        "opacity" : null
+      },
+      "mobile_background_image" : {
         "size_type" : "auto_custom_max",
         "src" : "https://46302491.fs1.hubspotusercontent-na1.net/hubfs/46302491/Roadie-u4m/images/banner-bg-image.png",
         "alt" : "Banner Bg Image",

@@ -47,6 +47,7 @@
           flex-wrap: wrap;
           justify-content: center;
           gap: 20px;
+          gap: 20px 5px;
 
           @include tabletMid {
             display: block;
@@ -74,6 +75,7 @@
               }
               @include tabletvert {
                 @include size18;
+                margin-bottom: 0;
               }
 
               .icon {
@@ -91,6 +93,8 @@
 
                 @include tabletMid {
                   display: block;
+                  width: 25px;
+                  height: 25px;
                 }
               }
 
@@ -213,6 +217,10 @@
               border-radius: 22px;
               font-weight: 600;
 
+              @include midlaptop {
+                padding: 8px 14px;
+              }
+
               @include tabletMid {
                 display: flex;
                 text-align: center;
@@ -231,12 +239,23 @@
             }
           }
 
-          > li:has(.toggle_content[style*="display: block"]) {
-            > a {
-              border-color: $MidTeal;
-              color: $DarkTeal !important;
+          > li {
+            @include tabletMidmin {
+              &.active {
+                > a {
+                  border-color: $MidTeal;
+                  color: $DarkTeal !important;
+                }
+              }
+            }
+          }
 
-              @include tabletMid {
+          > li:has(.toggle_content[style*="display: block"]) {
+            @include tabletMid {
+              > a {
+                border-color: $MidTeal;
+                color: $DarkTeal !important;
+
                 &:after {
                   content: "−";
                   position: relative;
@@ -377,7 +396,7 @@
               transition: all 0.3s ease;
             }
 
-            &.active {
+            &.mobactive {
               @include tabletMid {
                 box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.15);
                 > a {

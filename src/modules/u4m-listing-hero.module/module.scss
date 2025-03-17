@@ -1,112 +1,113 @@
 @import "../../css/_module-imports";
 
 .u4m-listing-hero {
-    .topSec {
-        text-align: center;
-        margin-bottom: 60px;
+  .topSec {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .btmSec {
+    > .flex_row {
+      row-gap: 50px;
     }
-    .btmSec {
-        > .flex_row {
-            row-gap: 50px;
-        }
+  }
+  .leftCol {
+    width: 100%;
+    @include tabletvertmin {
+      max-width: 60%;
+      padding-right: 30px;
     }
-    .leftCol {
-        width: 100%;
-        @include tabletvertmin {
-            max-width: 60%;
-            padding-right: 30px;
-        }
 
-        @include tabletMidmin {
-            max-width: calc(100% - 400px);
-            padding-right: 100px;
-        }
-        @include CardItems;
-        .cardItem {
-            width: 100%;
-            gap: 0;
-            .ItemImg {
-                margin-bottom: 17rem;
-                a {
-                    .itemImgBg {
-                        @include tabletMidmin {
-                            padding-bottom: 380rem;
-                        }
-                    }
-                }
+    @include tabletMidmin {
+      max-width: calc(100% - 400px);
+      padding-right: 100px;
+    }
+    @include CardItems;
+    .cardItem {
+      width: 100%;
+      gap: 0;
+      .ItemImg {
+        margin-bottom: 17rem;
+        a {
+          .itemImgBg {
+            @include tabletMidmin {
+              padding-bottom: 380rem;
             }
-            .itemContent {
-                .itemdesc {
-                    margin-bottom: 23rem;
-                }
-            }
+          }
         }
+      }
+      .itemContent {
+        .itemdesc {
+          margin-bottom: 23rem;
+        }
+      }
+    }
+  }
+  .rightCol {
+    width: 100%;
+
+    @include tabletvertmin {
+      max-width: 40%;
+    }
+
+    @include tabletMidmin {
+      max-width: 400px;
+    }
+    .rightColttl {
+      margin-bottom: 30px;
+    }
+    .postItems {
+      gap: 20px;
+      .postItem {
+        width: 100%;
+        padding-bottom: 20px;
+        .itemttl {
+          h6 {
+            margin: 0;
+            line-height: 1.3;
+            a {
+              color: inherit;
+            }
+          }
+        }
+        .itemtags {
+          @include eyebrow;
+          @include size14;
+          text-transform: uppercase;
+          margin-bottom: 8px;
+        }
+        &:not(:last-child) {
+          border-bottom: 1px solid $BrightTeal;
+        }
+      }
+    }
+  }
+  &.reverse-text {
+    .leftCol {
+      .cardItem {
+        .itemContent {
+          .itemtag {
+            color: $white;
+            a {
+              color: inherit;
+            }
+          }
+          .itemdesc {
+            color: $white;
+          }
+        }
+      }
     }
     .rightCol {
-        width: 100%;
-
-        @include tabletvertmin {
-            max-width: 40%;
-        }
-
-        @include tabletMidmin {
-            max-width: 400px;
-        }
-        .rightColttl {
-            margin-bottom: 30px;
-        }
-        .postItems {
-            gap: 20px;
-            .postItem {
-                width: 100%;
-                padding-bottom: 20px;
-                .itemttl {
-                    h6 {
-                        margin: 0;
-                        a {
-                            color: inherit;
-                        }
-                    }
-                }
-                .itemtags {
-                    @include eyebrow;
-                    @include size14;
-                    text-transform: uppercase;
-                    margin-bottom: 8px;
-                }
-                &:not(:last-child) {
-                    border-bottom: 1px solid $BrightTeal;
-                }
+      .postItems {
+        .postItem {
+          .itemtags {
+            color: $white;
+            a {
+              color: inherit;
             }
+          }
         }
+      }
     }
-    &.reverse-text {
-        .leftCol {
-            .cardItem {
-                .itemContent {
-                    .itemtag {
-                        color: $white;
-                        a {
-                            color: inherit;
-                        }
-                    }
-                    .itemdesc {
-                        color: $white;
-                    }
-                }
-            }
-        }
-        .rightCol {
-            .postItems {
-                .postItem {
-                    .itemtags {
-                        color: $white;
-                        a {
-                            color: inherit;
-                        }
-                    }
-                }
-            }
-        }
-    }
+  }
 }
