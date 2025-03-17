@@ -32,6 +32,9 @@
       .form_column_inner {
         @include form;
         max-width: 100%;
+        width: 100%;
+        box-shadow: 2px 2px 20px rgba($Dark, 0.15);
+        padding-bottom: 63rem;
         .form_content {
           color: $Dark;
 
@@ -55,10 +58,23 @@
 
           .hs-form-field > label {
             text-transform: uppercase;
+            display: inline-block;
           }
 
           .hs_submit {
+            margin: 0;
             margin-top: 30px;
+          }
+          .form-columns-1 {
+            select {
+              appearance: none;
+              background-image: url("https://46302491.fs1.hubspotusercontent-na1.net/hubfs/46302491/Roadie-u4m/images/selectArrow.png");
+              background-position: calc(100% - 20px) center;
+              background-size: 10px;
+              background-repeat: no-repeat;
+              outline: none;
+              color: $Dark;
+            }
           }
 
           .hs-form__virality-link {
@@ -67,6 +83,23 @@
           .hs-form-radio {
             input {
               top: 0 !important;
+            }
+            .hs-form-radio-display {
+              display: flex;
+              align-items: center;
+            }
+          }
+          .hs-form-checkbox {
+            margin-bottom: 8rem;
+            label {
+              align-items: start;
+              span {
+                top: 0;
+              }
+              input {
+                top: 2rem;
+                margin-bottom: 0;
+              }
             }
           }
         }
@@ -116,41 +149,44 @@
     }
 
     .intro_desc {
-      h1 {
-        span {
-          color: $BrightTeal;
-        }
+      :is(h1, h2, h3, h4, h5, h6) span {
+        color: $BrightTeal;
       }
+      // h1 {
+      //   span {
+      //     color: $BrightTeal;
+      //   }
+      // }
 
-      h2 {
-        span {
-          color: $BrightTeal;
-        }
-      }
+      // h2 {
+      //   span {
+      //     color: $BrightTeal;
+      //   }
+      // }
 
-      h3 {
-        span {
-          color: $BrightTeal;
-        }
-      }
+      // h3 {
+      //   span {
+      //     color: $BrightTeal;
+      //   }
+      // }
 
-      h4 {
-        span {
-          color: $BrightTeal;
-        }
-      }
+      // h4 {
+      //   span {
+      //     color: $BrightTeal;
+      //   }
+      // }
 
-      h5 {
-        span {
-          color: $BrightTeal;
-        }
-      }
+      // h5 {
+      //   span {
+      //     color: $BrightTeal;
+      //   }
+      // }
 
-      h6 {
-        span {
-          color: $BrightTeal;
-        }
-      }
+      // h6 {
+      //   span {
+      //     color: $BrightTeal;
+      //   }
+      // }
     }
   }
 

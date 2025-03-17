@@ -40,6 +40,7 @@
             input.hs-input {
               border-radius: 0 22px 22px 0;
               margin: 0;
+              border: none;
             }
           }
         }
@@ -74,7 +75,7 @@
             display: none;
           }
 
-          .input+.hs-error-msgs {
+          .input + .hs-error-msgs {
             position: absolute;
             top: auto;
           }
@@ -90,7 +91,7 @@
       .frm {
         form {
           .hs-form-field {
-            >label {
+            > label {
               color: $white;
             }
           }
@@ -99,7 +100,7 @@
             display: none;
           }
 
-          .input+.hs-error-msgs {
+          .input + .hs-error-msgs {
             position: absolute;
             top: auto;
           }

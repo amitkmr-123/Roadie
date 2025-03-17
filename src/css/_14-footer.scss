@@ -3,7 +3,9 @@
     z-index: 99;
     padding: 82px 0 39px 0;
     background-color: $Brown2;
-
+    @include phone {
+        padding-bottom: 0;
+    }
     .navWrapper {
         .hs-menu-wrapper {
             &.hs-menu-flow-horizontal {
@@ -21,7 +23,7 @@
                                     width: auto;
                                     white-space: normal;
                                     vertical-align: middle;
-                                    color: rgba($white, .7);
+                                    color: rgba($white, 0.7);
 
                                     &:hover {
                                         color: $white;
@@ -47,17 +49,17 @@
                     }
                 }
 
-                >ul {
+                > ul {
                     display: flex;
                     align-items: flex-start;
                     gap: 60px;
                     margin-bottom: 0;
 
-                    >li {
+                    > li {
                         margin: 0;
                         letter-spacing: 1px;
 
-                        >a {
+                        > a {
                             padding: 0;
                             color: $white;
                             font-size: 20rem;
@@ -81,6 +83,10 @@
         bottom: 0;
         right: 0;
         z-index: 1;
+        @include phone {
+            position: static;
+            text-align: right;
+        }
     }
 
     .ftrInner {
@@ -116,7 +122,9 @@
                 li {
                     margin: 0;
                     font-size: 15px;
-
+                    @include tabletMid {
+                        font-size: 12px;
+                    }
                     a {
                         padding: 0;
                         vertical-align: middle;
@@ -125,7 +133,7 @@
                         text-overflow: unset;
                         white-space: normal;
                         cursor: pointer;
-                        color: rgba($white, .7);
+                        color: rgba($white, 0.7);
 
                         &:hover {
                             color: $white;
@@ -175,10 +183,9 @@
     }
 
     @include tabletMid {
-
         .navWrapper {
             .hs-menu-wrapper {
-                >ul {
+                > ul {
                     flex-direction: column;
                     gap: 15px !important;
 
@@ -187,8 +194,8 @@
                         text-align: center;
                     }
 
-                    >li {
-                        >a {
+                    > li {
+                        > a {
                             margin-bottom: 5px !important;
                         }
                     }
@@ -229,7 +236,7 @@
     }
 
     .hs-menu-wrapper.hs-menu-flow-horizontal {
-        >ul {
+        > ul {
             &:before {
                 display: none;
             }
@@ -241,7 +248,7 @@
     }
 
     .hs-menu-wrapper.hs-menu-wrapper {
-        >ul {
+        > ul {
             li.hs-menu-depth-1 {
                 float: unset;
             }
@@ -250,7 +257,7 @@
 
     .hs-menu-wrapper {
         &.hs-menu-flow-horizontal {
-            >ul {
+            > ul {
                 li {
                     &.hs-item-has-children {
                         ul {
@@ -260,9 +267,7 @@
                         }
                     }
                 }
-
             }
         }
     }
-
 }
