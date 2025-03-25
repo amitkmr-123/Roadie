@@ -2,7 +2,7 @@
   "global" : false,
   "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
   "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
-  "module_id" : 186105358406,
+  "module_id" : 186571972242,
   "js_assets" : [ {
     "autoload" : true,
     "path" : "../../js/matchHeight.js",

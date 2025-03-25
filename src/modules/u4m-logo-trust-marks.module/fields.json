@@ -274,7 +274,8 @@
               "CONTENT",
               "FILE",
               "EMAIL_ADDRESS",
-              "PHONE_NUMBER"
+              "PHONE_NUMBER",
+              "BLOG"
             ],
             "show_advanced_rel_options": false,
             "type": "link",

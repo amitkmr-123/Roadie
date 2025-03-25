@@ -545,7 +545,10 @@ section[class*="u4m-"] {
 }
 
 //
-
+.btn_item a.cta_button,
+.btn_item .hs-web-interactive-inline a {
+  @include button;
+}
 .hs-button {
   @include button;
 }
@@ -876,4 +879,7 @@ h6 {
 
 .MidTeal_bg + * :is(h1, h2, h3, h4, h5, h6) span {
   color: $white;
+}
+.splide__arrow {
+  transition: $animation3;
 }

@@ -4,15 +4,16 @@
 {{macros.topCurves(module.module_settings)}}
 
 <div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}" {% if module.module_overrides.container_size == "custom" %} style="max-width:{{ module.module_overrides.custom_container_size }}rem" {% endif %}>
-	<div class="innerCntt">
-		<div class="flex_row custom_width">
-			<div class="col leftCntt">
-				{{ macros.introGroup(module.intro_content, module.module_settings) }}
-			</div>
-			<div class="col rightCntt">
-				{% if module.right_content_group.include_form %}
-				<div class="frm">
-					{% form
+  <div class="innerCntt">
+    <div class="flex_row custom_width">
+      <div class="col leftCntt">
+        {{ macros.introGroup(module.intro_content, module.module_settings) }}
+      </div>
+      <div class="col rightCntt">
+
+        {% if module.right_content_group.include_form %}
+        <div class="frm">
+          {% form
 	form_to_use="{{ module.right_content_group.select_form.form_id }}"
 	response_response_type="{{ module.right_content_group.select_form.response_type }}"
 	response_message="{{ module.right_content_group.select_form.message }}"
@@ -20,11 +21,15 @@
 	response_redirect_url="{{module.right_content_group.select_form.redirect_url}}"
 	gotowebinar_webinar_key="{{ module.right_content_group.select_form.gotowebinar_webinar_key }}"
 %}
-				</div>
-				{% endif %}
-			</div>
-		</div>
-	</div>
+        </div>
+        {% endif %}
+
+        {% if module.right_content_group.include_button %} 
+        {{ macros.buttonGroup(module.right_content_group.button_group) }}
+        {% endif %}
+      </div>
+    </div>
+  </div>
 </div>
 
 {{macros.bottomCurves(module.module_settings)}}
@@ -32,8 +37,8 @@
 
 {% if  module.module_overrides.background_settings.select_color == 'custom'%}
 <style>
-	.{{name}} .bg_overlay.custom{
-		background-color:{{ module.module_overrides.background_settings.custom_color.rgba }};
-	}
+  .{{name}} .bg_overlay.custom{
+    background-color:{{ module.module_overrides.background_settings.custom_color.rgba }};
+  }
 </style>
 {% endif %}	 

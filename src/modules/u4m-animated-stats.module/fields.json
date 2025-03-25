@@ -235,7 +235,7 @@
         "operator" : "EQUAL",
         "access" : null
       },
-      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "PHONE_NUMBER" ],
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "PHONE_NUMBER", "BLOG"  ],
       "show_advanced_rel_options" : false,
       "type" : "link",
       "display_width" : null,
@@ -445,16 +445,17 @@
     "type" : "text",
     "display_width" : null
   }, {
-    "id" : "f43623b0-bfce-7ba7-5a9c-86e7f6c3af4b",
+    "id" : "acc4c7fd-0977-ca00-17e5-cce36a9fcfd9",
     "name" : "number",
     "label" : "Number",
     "required" : false,
     "locked" : false,
-    "display" : "text",
-    "step" : 1,
-    "type" : "number",
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
     "display_width" : null,
-    "default" : 8000
+    "default" : "8,000"
   }, {
     "id" : "c1237124-ac9b-066a-2d64-9f05e261e7cb",
     "name" : "suffix",
@@ -535,7 +536,7 @@
       "max_height" : 35
     },
     "icon" : { },
-    "number" : 8000,
+    "number" : "8,000",
     "suffix" : "M",
     "label_text" : "Roadie Customers",
     "item_settings" : {
@@ -554,7 +555,7 @@
       "max_height" : 35
     },
     "icon" : { },
-    "number" : 8000,
+    "number" : "8,000",
     "suffix" : "M",
     "label_text" : "Roadie Customers",
     "item_settings" : {
@@ -573,7 +574,7 @@
       "max_height" : 35
     },
     "icon" : { },
-    "number" : 8000,
+    "number" : "8,000",
     "suffix" : "M",
     "label_text" : "Roadie Customers",
     "item_settings" : {
@@ -849,6 +850,17 @@
     "type" : "choice",
     "display_width" : null,
     "default" : "col4"
+  }, {
+    "id" : "3056a8be-cd43-de53-0059-6514941a1515",
+    "name" : "stat_count_font_size",
+    "label" : "Stat Count Font Size",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 42
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -869,7 +881,8 @@
         "curves_type" : "type1"
       }
     },
-    "statc_count_in_row" : "col4"
+    "statc_count_in_row" : "col4",
+    "stat_count_font_size" : 42
   }
 }, {
   "id" : "module_overrides",

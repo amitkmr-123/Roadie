@@ -235,7 +235,7 @@
         "operator" : "EQUAL",
         "access" : null
       },
-      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "PHONE_NUMBER" ],
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "PHONE_NUMBER", "BLOG"  ],
       "show_advanced_rel_options" : false,
       "type" : "link",
       "display_width" : null,
@@ -416,7 +416,7 @@
       "locked" : false,
       "visibility" : {
         "controlling_field" : null,
-        "controlling_field_path" : "intro_content.button_group.button_type",
+        "controlling_field_path" : "card_items.button_group.button_type",
         "controlling_value_regex" : "std|popup_content",
         "property" : null,
         "operator" : "MATCHES_REGEX",
@@ -439,7 +439,7 @@
       "validation_regex" : "",
       "visibility" : {
         "controlling_field" : null,
-        "controlling_field_path" : "intro_content.button_group.button_type",
+        "controlling_field_path" : "card_items.button_group.button_type",
         "controlling_value_regex" : "std",
         "property" : null,
         "operator" : "MATCHES_REGEX",
@@ -458,13 +458,13 @@
       "locked" : false,
       "visibility" : {
         "controlling_field" : null,
-        "controlling_field_path" : "intro_content.button_group.button_type",
+        "controlling_field_path" : "card_items.button_group.button_type",
         "controlling_value_regex" : "std",
         "property" : null,
         "operator" : "EQUAL",
         "access" : null
       },
-      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "PHONE_NUMBER" ],
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "PHONE_NUMBER", "BLOG"  ],
       "show_advanced_rel_options" : false,
       "type" : "link",
       "display_width" : null,
@@ -485,7 +485,7 @@
       "locked" : false,
       "visibility" : {
         "controlling_field" : null,
-        "controlling_field_path" : "intro_content.button_group.button_type",
+        "controlling_field_path" : "card_items.button_group.button_type",
         "controlling_value_regex" : "cta",
         "property" : null,
         "operator" : "EQUAL",
@@ -526,6 +526,20 @@
       "default" : 4
     },
     "children" : [ {
+      "id" : "d2a656e8-cbd1-e8ef-2e54-fb8a0f8f9e99",
+      "name" : "icon_field",
+      "label" : "Icon",
+      "required" : false,
+      "locked" : false,
+      "icon_set" : "fontawesome-5.14.0",
+      "type" : "icon",
+      "display_width" : null,
+      "default" : {
+        "name" : "Check Circle",
+        "unicode" : "f058",
+        "type" : "REGULAR"
+      }
+    }, {
       "id" : "0fec5909-f0c1-b798-5f48-8f650aa56320",
       "name" : "text",
       "label" : "Text",
@@ -544,13 +558,33 @@
     "type" : "group",
     "display_width" : null,
     "default" : [ {
-      "text" : "Eiusmod tempor incididunt ut labore et dolore magna aliqua"
+      "text" : "Eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "icon_field" : {
+        "name" : "Check Circle",
+        "unicode" : "f058",
+        "type" : "REGULAR"
+      }
     }, {
-      "text" : "Eiusmod tempor incididunt ut labore et dolore magna aliqua"
+      "text" : "Eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "icon_field" : {
+        "name" : "Check Circle",
+        "unicode" : "f058",
+        "type" : "REGULAR"
+      }
     }, {
-      "text" : "Eiusmod tempor incididunt ut labore et dolore magna aliqua"
+      "text" : "Eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "icon_field" : {
+        "name" : "Check Circle",
+        "unicode" : "f058",
+        "type" : "REGULAR"
+      }
     }, {
-      "text" : "Eiusmod tempor incididunt ut labore et dolore magna aliqua"
+      "text" : "Eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "icon_field" : {
+        "name" : "Check Circle",
+        "unicode" : "f058",
+        "type" : "REGULAR"
+      }
     } ]
   } ],
   "tab" : "CONTENT",
@@ -577,13 +611,33 @@
       }
     },
     "featured_items" : [ {
-      "text" : "Eiusmod tempor incididunt ut labore et dolore magna aliqua"
+      "text" : "Eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "icon_field" : {
+        "name" : "Check Circle",
+        "unicode" : "f058",
+        "type" : "REGULAR"
+      }
     }, {
-      "text" : "Eiusmod tempor incididunt ut labore et dolore magna aliqua"
+      "text" : "Eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "icon_field" : {
+        "name" : "Check Circle",
+        "unicode" : "f058",
+        "type" : "REGULAR"
+      }
     }, {
-      "text" : "Eiusmod tempor incididunt ut labore et dolore magna aliqua"
+      "text" : "Eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "icon_field" : {
+        "name" : "Check Circle",
+        "unicode" : "f058",
+        "type" : "REGULAR"
+      }
     }, {
-      "text" : "Eiusmod tempor incididunt ut labore et dolore magna aliqua"
+      "text" : "Eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "icon_field" : {
+        "name" : "Check Circle",
+        "unicode" : "f058",
+        "type" : "REGULAR"
+      }
     } ]
   }, {
     "title" : "Business",
@@ -604,13 +658,33 @@
       }
     },
     "featured_items" : [ {
-      "text" : "Eiusmod tempor incididunt ut labore et dolore magna aliqua"
+      "text" : "Eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "icon_field" : {
+        "name" : "Check Circle",
+        "unicode" : "f058",
+        "type" : "REGULAR"
+      }
     }, {
-      "text" : "Eiusmod tempor incididunt ut labore et dolore magna aliqua"
+      "text" : "Eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "icon_field" : {
+        "name" : "Check Circle",
+        "unicode" : "f058",
+        "type" : "REGULAR"
+      }
     }, {
-      "text" : "Eiusmod tempor incididunt ut labore et dolore magna aliqua"
+      "text" : "Eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "icon_field" : {
+        "name" : "Check Circle",
+        "unicode" : "f058",
+        "type" : "REGULAR"
+      }
     }, {
-      "text" : "Eiusmod tempor incididunt ut labore et dolore magna aliqua"
+      "text" : "Eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "icon_field" : {
+        "name" : "Check Circle",
+        "unicode" : "f058",
+        "type" : "REGULAR"
+      }
     } ]
   }, {
     "title" : "Business",
@@ -631,13 +705,33 @@
       }
     },
     "featured_items" : [ {
-      "text" : "Eiusmod tempor incididunt ut labore et dolore magna aliqua"
+      "text" : "Eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "icon_field" : {
+        "name" : "Check Circle",
+        "unicode" : "f058",
+        "type" : "REGULAR"
+      }
     }, {
-      "text" : "Eiusmod tempor incididunt ut labore et dolore magna aliqua"
+      "text" : "Eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "icon_field" : {
+        "name" : "Check Circle",
+        "unicode" : "f058",
+        "type" : "REGULAR"
+      }
     }, {
-      "text" : "Eiusmod tempor incididunt ut labore et dolore magna aliqua"
+      "text" : "Eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "icon_field" : {
+        "name" : "Check Circle",
+        "unicode" : "f058",
+        "type" : "REGULAR"
+      }
     }, {
-      "text" : "Eiusmod tempor incididunt ut labore et dolore magna aliqua"
+      "text" : "Eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "icon_field" : {
+        "name" : "Check Circle",
+        "unicode" : "f058",
+        "type" : "REGULAR"
+      }
     } ]
   } ]
 }, {

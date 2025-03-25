@@ -1,417 +1,428 @@
 header.header {
-    position: relative;
-    z-index: 101;
-    transition: all 0.3s ease;
+  position: relative;
+  z-index: 101;
+  transition: all 0.3s ease;
 
-    .topSection {
-        padding-top: 10px;
-        padding-bottom: 14px;
-        background-color: $white;
-    }
+  .topSection {
+    padding-top: 10px;
+    padding-bottom: 14px;
+    background-color: $white;
+  }
 
-    .topInnerWrap {
+  .topInnerWrap {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .hs-menu-wrapper {
+      ul {
+        margin: 0;
+        list-style: none;
+        padding: 0;
         display: flex;
         align-items: center;
-        justify-content: flex-end;
-
-        .hs-menu-wrapper {
-            ul {
-                margin: 0;
-                list-style: none;
-                padding: 0;
-                display: flex;
-                align-items: center;
-                column-gap: 30px;
-                row-gap: 10px;
-                flex-wrap: wrap;
-
-                .login {
-                    a {
-                        position: relative;
-
-                        &:after {
-                            content: "";
-                            background-image: url("{{ get_asset_url('../templates/images/Avatar.png') }}");
-                            background-repeat: no-repeat;
-                            background-size: cover;
-                            background-position: center;
-                            width: 16px;
-                            display: block;
-                            height: 16px;
-                            margin-right: 5px;
-                            top: -1px;
-                            position: absolute;
-                            right: 100%;
-                        }
-                    }
-                }
-
-                li {
-                    margin: 0;
-                    letter-spacing: normal;
-                    line-height: 1.1em;
-                    font-size: 14px;
-                    width: auto;
-
-                    a {
-                        padding: 0;
-                        max-width: unset;
-                        text-overflow: unset;
-                        white-space: nowrap;
-                        overflow: unset;
-                        letter-spacing: 1px;
-                        color: $Dark;
-                        cursor: pointer;
-                        width: auto;
-                    }
-                }
-            }
-        }
-    }
-
-    .mainInnerWrap {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        column-gap: 30px;
+        row-gap: 10px;
         flex-wrap: wrap;
-        column-gap: 20px;
 
-        .logoWrap {
-            a {
-                display: block;
-                max-width: 220px;
+        .login {
+          a {
+            position: relative;
+
+            &:after {
+              content: "";
+              background-image: url("{{ get_asset_url('../templates/images/Avatar.png') }}");
+              background-repeat: no-repeat;
+              background-size: cover;
+              background-position: center;
+              width: 16px;
+              display: block;
+              height: 16px;
+              margin-right: 5px;
+              top: -1px;
+              position: absolute;
+              right: 100%;
             }
+          }
         }
 
-        .menuWrapper {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            justify-content: flex-end;
+        li {
+          margin: 0;
+          letter-spacing: normal;
+          line-height: 1.1em;
+          font-size: 14px;
+          width: auto;
+
+          a {
+            padding: 0;
+            max-width: unset;
+            text-overflow: unset;
+            white-space: nowrap;
+            overflow: unset;
+            letter-spacing: 1px;
+            color: $Dark;
+            cursor: pointer;
+            width: auto;
+          }
         }
+      }
+    }
+  }
+
+  .mainInnerWrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 20px;
+
+    .logoWrap {
+      a {
+        display: block;
+        max-width: 220px;
+      }
     }
 
     .menuWrapper {
-        .navWrapper {
-            width: 100%;
-            width: calc(100% - 172px);
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      justify-content: flex-end;
+    }
+  }
 
-            > * {
-                width: 100%;
-            }
-        }
+  .menuWrapper {
+    .navWrapper {
+      width: 100%;
+      width: calc(100% - 172px);
+
+      > * {
+        width: 100%;
+      }
+    }
+  }
+
+  .cmMegaMenuWrap {
+    justify-content: flex-end;
+  }
+
+  .btnWrapper {
+    .hs-button {
+      white-space: nowrap;
+      margin: 0;
+    }
+  }
+
+  .mainInnerSection {
+    padding-top: 30px;
+    padding-bottom: 22px;
+  }
+
+  @include tabletMidmin {
+    .mainSection {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 40px;
+      transition: 0.3s background ease-in;
     }
 
-    .cmMegaMenuWrap {
-        justify-content: flex-end;
+    .topSection {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+    }
+    &.stickyHeader {
+      .mainSection {
+        position: fixed;
+        top: 0;
+        background-color: $white;
+      }
+    }
+    .navTrigger {
+      display: none;
+    }
+
+    // .mainSection {
+    //     position: relative;
+    // }
+
+    .mainInnerWrap {
+      .menuWrapper {
+        position: relative;
+        display: flex !important;
+      }
+    }
+
+    &.stickyHeader {
+      background-color: $white;
+      box-shadow: $shadow1;
+    }
+  }
+
+  @include midlaptop {
+    .mainInnerWrap {
+      .menuWrapper {
+        gap: 20px;
+      }
+    }
+
+    .menuWrapper {
+      .navWrapper {
+        width: calc(100% - 142px);
+      }
+    }
+  }
+
+  @include tabletMid {
+    .mainInnerSection {
+      padding-top: 22px;
+    }
+
+    &.stickyHeader {
+      position: relative;
+    }
+
+    .mainInnerWrap {
+      .menuWrapper {
+        order: 3;
+        display: none;
+        width: 100%;
+        padding-top: 20px;
+      }
+    }
+
+    .navTrigger {
+      width: 30px;
+      height: 25px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      .trigger_item {
+        height: 3px;
+        width: 80%;
+        background-color: $Dark;
+        display: block;
+        position: absolute;
+        transition: all 0.4s ease-in-out;
+      }
+
+      .trigger_item {
+        &:first-child {
+          top: 3px;
+        }
+
+        &:nth-child(2) {
+          top: 11px;
+        }
+
+        &:last-child {
+          top: 19px;
+        }
+      }
+    }
+
+    .cm_active {
+      .trigger_item {
+        &:first-child {
+          top: 10px;
+          transform: rotate(45deg);
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+          visibility: hidden;
+        }
+
+        &:last-child {
+          top: 10px;
+          transform: rotate(-45deg);
+        }
+      }
     }
 
     .btnWrapper {
-        .hs-button {
-            white-space: nowrap;
-            margin: 0;
-        }
+      margin-top: 15px;
     }
 
-    .mainInnerSection {
-        padding-top: 30px;
-        padding-bottom: 22px;
+    .cmMegaMenuWrap {
+      justify-content: unset;
     }
 
-    @include tabletMidmin {
-        .mainSection {
-            position: absolute;
-            width: 100%;
-            left: 0;
-            top: 40px;
-            transition: 0.3s background ease-in;
-        }
-
-        .topSection {
-            position: absolute;
-            width: 100%;
-            top: 0;
-            left: 0;
-        }
-        &.stickyHeader {
-            .mainSection {
-                position: fixed;
-                top: 0;
-                background-color: $white;
-            }
-        }
-        .navTrigger {
-            display: none;
-        }
-
-        // .mainSection {
-        //     position: relative;
-        // }
-
-        .mainInnerWrap {
-            .menuWrapper {
-                position: relative;
-                display: flex !important;
-            }
-        }
-
-        &.stickyHeader {
-            background-color: $white;
-            box-shadow: $shadow1;
-        }
+    .menuWrapper {
+      .navWrapper {
+        width: 100%;
+      }
     }
-
-    @include midlaptop {
-        .mainInnerWrap {
-            .menuWrapper {
-                gap: 20px;
-            }
-        }
-
-        .menuWrapper {
-            .navWrapper {
-                width: calc(100% - 142px);
-            }
-        }
-    }
-
-    @include tabletMid {
-        .mainInnerSection {
-            padding-top: 22px;
-        }
-
-        &.stickyHeader {
-            position: relative;
-        }
-
-        .mainInnerWrap {
-            .menuWrapper {
-                order: 3;
-                display: none;
-                width: 100%;
-                padding-top: 20px;
-            }
-        }
-
-        .navTrigger {
-            width: 30px;
-            height: 25px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-
-            .trigger_item {
-                height: 3px;
-                width: 80%;
-                background-color: $Dark;
-                display: block;
-                position: absolute;
-                transition: all 0.4s ease-in-out;
-            }
-
-            .trigger_item {
-                &:first-child {
-                    top: 3px;
-                }
-
-                &:nth-child(2) {
-                    top: 11px;
-                }
-
-                &:last-child {
-                    top: 19px;
-                }
-            }
-        }
-
-        .cm_active {
-            .trigger_item {
-                &:first-child {
-                    top: 10px;
-                    transform: rotate(45deg);
-                }
-
-                &:nth-child(2) {
-                    opacity: 0;
-                    visibility: hidden;
-                }
-
-                &:last-child {
-                    top: 10px;
-                    transform: rotate(-45deg);
-                }
-            }
-        }
-
-        .btnWrapper {
-            margin-top: 15px;
-        }
-
-        .cmMegaMenuWrap {
-            justify-content: unset;
-        }
-
-        .menuWrapper {
-            .navWrapper {
-                width: 100%;
-            }
-        }
-    }
+  }
 }
 
 .hs-menu-wrapper.hs-menu-flow-horizontal {
-    > ul {
-        &:before {
-            display: none;
-        }
-
-        &:after {
-            display: none;
-        }
+  > ul {
+    &:before {
+      display: none;
     }
+
+    &:after {
+      display: none;
+    }
+  }
 }
 
 .hs-menu-wrapper.hs-menu-wrapper {
-    > ul {
-        li.hs-menu-depth-1 {
-            float: unset;
-        }
+  > ul {
+    li.hs-menu-depth-1 {
+      float: unset;
     }
+  }
 }
 
 .light_logo {
-    display: none;
+  display: none;
 }
 
 @include tabletMidmin {
-    .light_cnt {
-        .mainSection {
-            .mainInnerSection {
-                .menuItem {
-                    > a {
-                        color: $white;
-                    }
+  .light_cnt {
+    .mainSection {
+      .mainInnerSection {
+        .menuItem {
+          > a {
+            color: $white;
+          }
 
-                    .cmTrigger {
-                        svg {
-                            fill: $white;
-                            color: $white;
+          .cmTrigger {
+            svg {
+              fill: $white;
+              color: $white;
 
-                            path {
-                                fill: $white;
-                                color: $white;
-                            }
-                        }
-                    }
+              path {
+                fill: $white;
+                color: $white;
+              }
+            }
+          }
 
-                    &:hover {
-                        > a {
-                            color: $Dark;
-                        }
+          &:hover {
+            > a {
+              color: $Dark;
+            }
 
-                        .cmTrigger {
-                            svg {
-                                fill: $Dark;
-                                color: $Dark;
+            .cmTrigger {
+              svg {
+                fill: $Dark;
+                color: $Dark;
 
-                                path {
-                                    fill: $Dark;
-                                    color: $Dark;
-                                }
-                            }
-                        }
-                    }
+                path {
+                  fill: $Dark;
+                  color: $Dark;
                 }
+              }
             }
+          }
         }
-
-        .stickyHeader {
-            .mainSection {
-                .mainInnerSection {
-                    .menuItem {
-                        > a {
-                            color: $Dark;
-                        }
-
-                        .cmTrigger {
-                            svg {
-                                fill: $Dark;
-                                color: $white;
-
-                                path {
-                                    fill: $Dark;
-                                    color: $Dark;
-                                }
-                            }
-                        }
-
-                        &:hover {
-                            > a {
-                                color: $Dark;
-                            }
-
-                            .cmTrigger {
-                                svg {
-                                    fill: $Dark;
-                                    color: $Dark;
-
-                                    path {
-                                        fill: $Dark;
-                                        color: $Dark;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        .light_logo {
-            display: block;
-        }
-
-        .dark_logo {
-            display: none;
-        }
-
-        .stickyHeader {
-            .light_logo {
-                display: none;
-            }
-
-            .dark_logo {
-                display: block;
-            }
-        }
+      }
     }
+
+    .stickyHeader {
+      .mainSection {
+        .mainInnerSection {
+          .menuItem {
+            > a {
+              color: $Dark;
+            }
+
+            .cmTrigger {
+              svg {
+                fill: $Dark;
+                color: $white;
+
+                path {
+                  fill: $Dark;
+                  color: $Dark;
+                }
+              }
+            }
+
+            &:hover {
+              > a {
+                color: $Dark;
+              }
+
+              .cmTrigger {
+                svg {
+                  fill: $Dark;
+                  color: $Dark;
+
+                  path {
+                    fill: $Dark;
+                    color: $Dark;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .light_logo {
+      display: block;
+    }
+
+    .dark_logo {
+      display: none;
+    }
+
+    .stickyHeader {
+      .light_logo {
+        display: none;
+      }
+
+      .dark_logo {
+        display: block;
+      }
+    }
+  }
 }
 
 .no-banner .headerOuterWrapper {
-    min-height: 145px;
+  min-height: 145px;
 }
 
 @include tabletMid {
-    .headerOuterWrapper,
-    .no-banner .headerOuterWrapper {
-        min-height: auto !important;
-    }
+  .headerOuterWrapper,
+  .no-banner .headerOuterWrapper {
+    min-height: auto !important;
+  }
 }
 
 .headerOverlay {
-    background: linear-gradient(0deg, $white 0%, $LightestTeal 100%);
-    height: 292px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    pointer-events: none;
-    z-index: 1;
-    width: 100%;
+  background: linear-gradient(0deg, $white 0%, $LightestTeal 100%);
+  height: 292px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  z-index: 1;
+  width: 100%;
 }
 
 .headerOverlay + .body-container-wrapper {
-    position: relative;
-    z-index: 2;
+  position: relative;
+  z-index: 2;
+}
+
+.no-banner header.header .mainSection {
+  position: relative;
+  top: 0;
+}
+.no-banner header.header .topSection {
+  position: relative;
+}
+.no-banner header.header.stickyHeader .mainSection {
+  position: fixed;
 }

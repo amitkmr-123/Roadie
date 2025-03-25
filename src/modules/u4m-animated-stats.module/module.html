@@ -8,95 +8,95 @@
 <div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}" {% if module.module_overrides.container_size == "custom" %} style="max-width:{{ module.module_overrides.custom_container_size }}rem" {% endif %}>
 
 
-	<div class="flex_row">
-		<div class="col6 content_col">
-		<div class="content_col_inner">
-		{{ macros.introGroup(module.intro_content, module.module_settings) }}
+  <div class="flex_row">
+    <div class="col6 content_col">
+      <div class="content_col_inner">
+        {{ macros.introGroup(module.intro_content, module.module_settings) }}
 
-		<div class="stats_group">
-			<div class="flex_row stats_row {{ module.module_settings.statc_count_in_row }}_row">
+        <div class="stats_group">
+          <div class="flex_row stats_row {{ module.module_settings.statc_count_in_row }}_row">
 
-				{% for item in module.stats_group %}
-				<div class="stt_item {{ module.module_settings.statc_count_in_row }} col">
-					<div class="icon_box ">
+            {% for item in module.stats_group %}
+            <div class="stt_item {{ module.module_settings.statc_count_in_row }} col">
+              <div class="icon_box ">
 
-						{% if item.icon_type == "image"%}
-						{% if item.image.src %}
-						<span class="img_icon icon_wrap">
-							<img src="{{ item.image.src }}" alt="{{ item.image.alt }}">
-						</span>
-						{% endif %}
-						{% endif %}
+                {% if item.icon_type == "image"%}
+                {% if item.image.src %}
+                <span class="img_icon icon_wrap">
+                  <img src="{{ item.image.src }}" alt="{{ item.image.alt }}">
+                </span>
+                {% endif %}
+                {% endif %}
 
-						{% if item.icon_type == "icon"%}
-						<span class="text_icon icon_wrap">
-							{% icon
+                {% if item.icon_type == "icon"%}
+                <span class="text_icon icon_wrap">
+                  {% icon
 								name="{{ item.icon.name }}"
 								style="{{ item.icon.type }}"
 								unicode="{{ item.icon.unicode }}"
 								icon_set="{{ item.icon.icon_set }}"
 							%}				
-						</span>
-						{% endif %}
+                </span>
+                {% endif %}
 
-						{% if item.icon_type == "custom_class"%}
-						<span class="text_icon icon_wrap {{ item.custom_class }}">
-						</span>
-						{% endif %}
-					</div>
+                {% if item.icon_type == "custom_class"%}
+                <span class="text_icon icon_wrap {{ item.custom_class }}">
+                </span>
+                {% endif %}
+              </div>
 
-					<div class="stat {{ item.item_settings.select_color }}_clr">
-						{{ item.prefix }}<span class="counter">{{ item.number }}</span>{{ item.suffix }}
-					</div>
-					<div class="stat_label">
-						{{ item.label_text }}
-					</div>
-				</div>
-				{% endfor %}			
+              <div class="stat {{ item.item_settings.select_color }}_clr">
+                {{ item.prefix }}<span class="counter">{{ item.number }}</span>{{ item.suffix }}
+              </div>
+              <div class="stat_label">
+                {{ item.label_text }}
+              </div>
+            </div>
+            {% endfor %}			
 
-			</div>
-		</div>
-		</div>
-		</div>
-
-
-		<div class="col6 img_col">
-
-			<div class="media_bg">
-
-				{% if module.module_overrides.image_column_background_settings.background_type == "color" %}
-				<div class="bg_color bg_overlay {{ module.module_overrides.image_column_background_settings.select_color }}">
-				</div>
-				{% endif %}
-
-				{% if module.module_overrides.image_column_background_settings.background_type == "image" %}
-				<div class="bg_image bg_overlay" style="background-image: url({{ module.module_overrides.image_column_background_settings.background_image.src }})">
-				</div>
-				{% endif %}
-
-				{% if module.module_overrides.image_column_background_settings.background_type == "gradient" %}
-				<div class="bg_gradient bg_overlay {{ module.module_overrides.image_column_background_settings.select_gradient }}">
-				</div>
-				{% endif %}
-			</div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
-			<div class="img_col_inner">
-				{% if module.image_column.image_type == "image" %}
-				{% if module.image_column.image.src %}
-				<img src="{{ module.image_column.image.src }}" alt="{{ module.image_column.image.alt }}">
-				{% endif %}
-				{% endif %}
+    <div class="col6 img_col">
 
-				{% if module.image_column.image_type == "svg" %}
-				<div class="svg_wrap">
-					{{ module.image_column.animated_svg }}
-				</div>
-				{% endif %}
+      <div class="media_bg">
 
-			</div>
-		</div>
-	</div>
+        {% if module.module_overrides.image_column_background_settings.background_type == "color" %}
+        <div class="bg_color bg_overlay {{ module.module_overrides.image_column_background_settings.select_color }}">
+        </div>
+        {% endif %}
+
+        {% if module.module_overrides.image_column_background_settings.background_type == "image" %}
+        <div class="bg_image bg_overlay" style="background-image: url({{ module.module_overrides.image_column_background_settings.background_image.src }})">
+        </div>
+        {% endif %}
+
+        {% if module.module_overrides.image_column_background_settings.background_type == "gradient" %}
+        <div class="bg_gradient bg_overlay {{ module.module_overrides.image_column_background_settings.select_gradient }}">
+        </div>
+        {% endif %}
+      </div>
+
+
+      <div class="img_col_inner">
+        {% if module.image_column.image_type == "image" %}
+        {% if module.image_column.image.src %}
+        <img src="{{ module.image_column.image.src }}" alt="{{ module.image_column.image.alt }}">
+        {% endif %}
+        {% endif %}
+
+        {% if module.image_column.image_type == "svg" %}
+        <div class="svg_wrap">
+          {{ module.image_column.animated_svg }}
+        </div>
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
 
 
 </div>
@@ -113,67 +113,70 @@
 
 {% require_css%}
 <style>
-	{% if  module.module_overrides.background_settings.select_color == 'custom'%}
-	.{{name}} .bg_overlay.custom{
-		background-color:{{ module.module_overrides.background_settings.custom_color.rgba }};
-	}
-	{% endif %}	 
+  {% if  module.module_overrides.background_settings.select_color == 'custom'%}
+  .{{name}} .bg_overlay.custom{
+    background-color:{{ module.module_overrides.background_settings.custom_color.rgba }};
+  }
+  {% endif %}	 
 
-	{% if module.module_overrides.image_column_background_settings.background_type == "color" %}
-	{% if module.module_overrides.image_column_background_settings.select_color == "custom" %}
-	.{{name}}.img_col .bg_color.custom{
-		background-color: {{ module.module_overrides.image_column_background_settings.custom_color.rgba }}
-	}
-	{% endif %}	 
-	{% endif %}	 
+  {% if module.module_overrides.image_column_background_settings.background_type == "color" %}
+  {% if module.module_overrides.image_column_background_settings.select_color == "custom" %}
+  .{{name}}.img_col .bg_color.custom{
+    background-color: {{ module.module_overrides.image_column_background_settings.custom_color.rgba }}
+  }
+  {% endif %}	 
+  {% endif %}	 
 
 
   .{{name}}.{{moduleName}} .flex_row .content_col{
-		padding-top:	{{ content_spacing.spacing.top }}px;
-		padding-bottom:	{{ content_spacing.spacing.bottom }}px;
-		padding-left:	{{ content_spacing.spacing.left }}px;
-		padding-right:	{{ content_spacing.spacing.right }}px;
-	}
+    padding-top:	{{ content_spacing.spacing.top }}px;
+    padding-bottom:	{{ content_spacing.spacing.bottom }}px;
+    padding-left:	{{ content_spacing.spacing.left }}px;
+    padding-right:	{{ content_spacing.spacing.right }}px;
+  }
 
   .{{name}}.{{moduleName}} .flex_row .img_col{
-		padding-top:	{{ image_spacing.spacing.top }}px;
-		padding-bottom:	{{ image_spacing.spacing.bottom }}px;
-		padding-left:	{{ image_spacing.spacing.left }}px;
-		padding-right:	{{ image_spacing.spacing.right }}px;
-	}
+    padding-top:	{{ image_spacing.spacing.top }}px;
+    padding-bottom:	{{ image_spacing.spacing.bottom }}px;
+    padding-left:	{{ image_spacing.spacing.left }}px;
+    padding-right:	{{ image_spacing.spacing.right }}px;
+  }
 
-	@media(max-width: 767px){
+  @media(max-width: 767px){
 
-		{% if content_spacing.change_mobile_spacing %}
+    {% if content_spacing.change_mobile_spacing %}
     .{{name}}.{{moduleName}} .flex_row .content_col{
-			padding-top:	{{ content_spacing.mobile_spacing.top }}px;
-			padding-bottom:	{{ content_spacing.mobile_spacing.bottom }}px;
-			padding-left:	{{ content_spacing.mobile_spacing.left }}px;
-			padding-right:	{{ content_spacing.mobile_spacing.right }}px;
-		}
-		{% endif %}
+      padding-top:	{{ content_spacing.mobile_spacing.top }}px;
+      padding-bottom:	{{ content_spacing.mobile_spacing.bottom }}px;
+      padding-left:	{{ content_spacing.mobile_spacing.left }}px;
+      padding-right:	{{ content_spacing.mobile_spacing.right }}px;
+    }
+    {% endif %}
 
-		{% if image_spacing.change_mobile_spacing %}
+    {% if image_spacing.change_mobile_spacing %}
     .{{name}}.{{moduleName}} .flex_row .img_col{
-			padding-top:	{{ image_spacing.mobile_spacing.top }}px;
-			padding-bottom:	{{ image_spacing.mobile_spacing.bottom }}px;
-			padding-left:	{{ image_spacing.mobile_spacing.left }}px;
-			padding-right:	{{ image_spacing.mobile_spacing.right }}px;
-		}
-		{% endif %}
-	}
-
-
+      padding-top:	{{ image_spacing.mobile_spacing.top }}px;
+      padding-bottom:	{{ image_spacing.mobile_spacing.bottom }}px;
+      padding-left:	{{ image_spacing.mobile_spacing.left }}px;
+      padding-right:	{{ image_spacing.mobile_spacing.right }}px;
+    }
+    {% endif %}
+  }
+  {% if module.module_settings.stat_count_font_size %}
+  section.u4m-animated-stats .stt_item .stat{
+    font-size:{{ module.module_settings.stat_count_font_size }}px;
+  }
+  {% endif %}
 </style>
 {% end_require_css%}
 
 {% require_js %}
 <script>
-	$(document).ready(function(){
-		$('.counter').counterUp({
-			delay: 10,
-			time: 1000
-		});
-	})
+  $(document).ready(function(){
+    $('.counter').counterUp({
+      delay: 10,
+      time: 1000
+    });
+  })
 </script>
 {% end_require_js %}
