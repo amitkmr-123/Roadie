@@ -10,8 +10,6 @@
     row-gap: 50px;
     flex-wrap: nowrap;
     display: flex;
-    -moz-column-gap: 138px;
-    column-gap: 138px;
     padding-left: 333px;
     align-items: center;
 
@@ -31,7 +29,7 @@
       width: 100%;
       text-align: left;
       flex-shrink: 0;
-      padding-left: 15px;
+      padding-left: 10rem;
       padding-right: 15px;
 
       .intro_btn_wrap {

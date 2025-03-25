@@ -42,6 +42,21 @@
       display: none;
     }
   }
+  &.bg_image:has(.noMediaContent):after {
+    background: radial-gradient(50% 50% at 50% 50%, #d9d9d9 0%, #737373 100%);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    content: "";
+    opacity: 20%;
+
+    @include tabletMid {
+      display: none;
+    }
+  }
 
   &.bg_image:has(.noMediaContent) .page-center {
     z-index: 5;
@@ -249,9 +264,9 @@
           width: 100%;
           padding-left: 0px;
           margin-top: 40px;
-          width: calc(100% + 20px);
-          margin-left: -10px;
-          margin-right: -10px;
+          width: calc(100% + 40px);
+          margin-left: -20px;
+          margin-right: -20px;
         }
       }
     }

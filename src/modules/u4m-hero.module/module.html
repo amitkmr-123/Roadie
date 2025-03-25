@@ -89,7 +89,7 @@
   {% if module.module_overrides.background_settings.change_mobile_background_image %}
   @media (max-width: 1024px){
     section.{{ moduleName}}.{{ name }} .bg_image{
-      background-image : {{ module.module_overrides.background_settings.background_image.src }};
+      background-image : url({{ module.module_overrides.background_settings.mobile_background_image.src}});
     }
   }
   {% endif %}

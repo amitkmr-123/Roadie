@@ -17,7 +17,7 @@
   "master_language" : "en",
   "categories" : [ "functionality" ],
   "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
-  "module_id" : 186052637076,
+  "module_id" : 186571554113,
   "js_assets" : [ {
     "autoload" : true,
     "path" : "../../js/masonry.pkgd.min.js",

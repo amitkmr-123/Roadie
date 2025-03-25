@@ -1,262 +1,265 @@
 <div class='u4m-blog-listing'>
-<div class="top_curves section_decoration">
-	<svg width="1440" height="90" viewBox="0 0 1440 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-		<path  class="fill-LightestTeal_clr" d="M0 90V0H1440V17.5188C576 -33.6153 129 64.7816 0 90Z"/>
-	</svg> 
-</div>
-	<div class="page-center">
-		{% if blog_author %}
-		<div class="topSec">
-			<h2>Author: {{ blog_author.display_name }}</h2>
-		</div>
-		{% elif topic %}
-		<div class="topSec">
-			<h2>Tags: {{ topic|replace('-',' ')|capitalize }}</h2>
-		</div>
-		{% else %}
-		{% if module.title  %}
-		<div class="topSec">
-			<h2>{{ module.title }}</h2>
-		</div>
-		{% endif %}
+  <div class="top_curves section_decoration">
+    <svg width="1440" height="90" viewBox="0 0 1440 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path  class="fill-LightestTeal_clr" d="M0 90V0H1440V17.5188C576 -33.6153 129 64.7816 0 90Z"/>
+    </svg> 
+  </div>
+  <div class="page-center">
+    {% if blog_author %}
+    <div class="topSec">
+      <h2>Author: {{ blog_author.display_name }}</h2>
+    </div>
+    {% elif topic %}
+    <div class="topSec">
+      <h2>Tags: {{ topic|replace('-',' ')|capitalize }}</h2>
+    </div>
+    {% else %}
+    {% if module.title  %}
+    <div class="topSec">
+      <h2>{{ module.title }}</h2>
+    </div>
+    {% endif %}
 
-		{% endif %}
+    {% endif %}
 
-		<div class='site-search-wrap'>
-			<div class='page-center'>
-				<div class='search-col'>
-					{# Need help setting up site search?
+    <div class='site-search-wrap'>
+      <div class='page-center'>
+        <div class='search-col'>
+          {# Need help setting up site search?
 			   Start here: https://knowledge.hubspot.com/articles/kcs_article/cos-general/how-do-i-set-up-a-results-page-for-my-search-field-in-hubspot #}
 
-					{% set search_page = module.site_search.results.use_custom_search_results_template is truthy and module.site_search.results.path_id ? content_by_id(module.site_search.results.path_id).absolute_url : site_settings.content_search_results_page_path %}
+          {% set search_page = module.site_search.results.use_custom_search_results_template is truthy and module.site_search.results.path_id ? content_by_id(module.site_search.results.path_id).absolute_url : site_settings.content_search_results_page_path %}
 
-					{% unless (search_page is string_containing "//") %}
-					{% set search_page = "/" ~ search_page %}
-					{% endunless %}
+          {% unless (search_page is string_containing "//") %}
+          {% set search_page = "/" ~ search_page %}
+          {% endunless %}
 
-					{% set search_page = search_page|regex_replace("http:", "") %}
+          {% set search_page = search_page|regex_replace("http:", "") %}
 
-					<div class="hs-search-field">
-						<div class="hs-search-field__bar">
-							<form data-hs-do-not-collect="true" action="{{ search_page|escape_url }}">
-								{% if module.site_search.field_label %}
-								<label for="term">{{ module.site_search.field_label|sanitize_html }}</label>
-								{% endif %}
-								<input type="text" class="hs-search-field__input" name="term" autocomplete="off" aria-label="{{ module.site_search.field_label|escape_attr || "Search" }}" placeholder="{{ module.site_search.placeholder|escape_attr }}">
+          <div class="hs-search-field">
+            <div class="hs-search-field__bar">
+              <form data-hs-do-not-collect="true" action="{{ search_page|escape_url }}">
+                {% if module.site_search.field_label %}
+                <label for="term">{{ module.site_search.field_label|sanitize_html }}</label>
+                {% endif %}
+                <input type="text" class="hs-search-field__input" name="term" autocomplete="off" aria-label="{{ module.site_search.field_label|escape_attr || "Search" }}" placeholder="{{ module.site_search.placeholder|escape_attr }}">
 
-								{% if module.site_search.content_types.website_pages %}
-								<input type="hidden" name="type" value="SITE_PAGE">
-								{% endif %}
-								{% if module.site_search.content_types.landing_pages %}
-								<input type="hidden" name="type" value="LANDING_PAGE">
-								{% endif %}
-								{% if module.site_search.content_types.blog_posts %}
-								<input type="hidden" name="type" value="BLOG_POST">
-								<input type="hidden" name="type" value="LISTING_PAGE">
-								{% endif %}
-								{% if module.site_search.content_types.knowledge_articles %}
-								<input type="hidden" name="type" value="KNOWLEDGE_ARTICLE">
-								{% endif %}
-								{% if module.site_search.content_types.case_studies %}
-								<input type="hidden" name="type" value="HS_CASE_STUDY">
-								{% endif %}
-								{% if module.site_search.include_search_button %}
-								<button aria-label="Search"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-									<path d="M16.6 18L10.3 11.7C9.8 12.1 9.225 12.4167 8.575 12.65C7.925 12.8833 7.23333 13 6.5 13C4.68333 13 3.14583 12.3708 1.8875 11.1125C0.629167 9.85417 0 8.31667 0 6.5C0 4.68333 0.629167 3.14583 1.8875 1.8875C3.14583 0.629167 4.68333 0 6.5 0C8.31667 0 9.85417 0.629167 11.1125 1.8875C12.3708 3.14583 13 4.68333 13 6.5C13 7.23333 12.8833 7.925 12.65 8.575C12.4167 9.225 12.1 9.8 11.7 10.3L18 16.6L16.6 18ZM6.5 11C7.75 11 8.8125 10.5625 9.6875 9.6875C10.5625 8.8125 11 7.75 11 6.5C11 5.25 10.5625 4.1875 9.6875 3.3125C8.8125 2.4375 7.75 2 6.5 2C5.25 2 4.1875 2.4375 3.3125 3.3125C2.4375 4.1875 2 5.25 2 6.5C2 7.75 2.4375 8.8125 3.3125 9.6875C4.1875 10.5625 5.25 11 6.5 11Z" fill="#351C15"/>
-									</svg></button>
-								{% endif %}
-							</form>
-						</div>
-						<ul class="hs-search-field__suggestions"></ul>
-					</div>
-				</div>
-				<div class="tag-col">
-					{% set my_topics = blog_topics(group.id, 50) %}
-					<select id="tinynav1" class="tinynav tinynav1" style="background-image: url({{ get_asset_url('../../templates/images/dropdownArrow.png') }});">
-						<option value="{{ group.absolute_url }}">Filter by Topic</option>
-						{% for item in my_topics %}
-						{% if item=="Featured"%}
-						{% else %}
-						<option value="{{ blog_tag_url(group.id, item.slug) }}" {% if content.absolute_url == blog_tag_url(group.id, item.slug) %} selected{% endif %}>{{ item|capitalize}}</option>
-						{% endif %}
-						{% endfor %}
-					</select>  
-				</div>
-			</div>
-		</div>
-		<div class='listing-wrap'>
-			<div class='page-center'>
-				<div class='cardItems flex-row'>
-					{% for content in contents %}
-					<div class="cardItem">
-						{% if module.blog_listing.featured_image %}
-						{% if content.featured_image %}
-						<div class="ItemImg">
-							<a href="{{content.absolute_url}}">
-								<div class="itemImgBg" style="background-image:url({{ content.featured_image }})"></div>
-							</a>
-						</div>
-						{% endif %}
-						{% endif %}
-						<div class="itemContent">
-							{% if module.blog_listing.tag %}
-							{% if content.topic_list %}
-							<div class="itemtag">
-								{% set included_topics = content.topic_list | rejectattr("slug", "equalto", "featured") | list %}
-								{% for topic in included_topics %}
-								{% if loop.first %}
-								<a class="{{ topic.slug }}" href="{{ blog_tag_url(group.id, topic.slug) }}">{{ topic.name }}</a>
-								{% endif %}
-								{% endfor %}
-							</div>
-							{% endif %}
-							{% endif %}
-							{% if module.blog_listing.title %}
-							<div class="itemTtl">
-								<h4><a href="{{content.absolute_url}}">{{ content.name }}</a></h4>
-							</div>
-							{% endif %}
-							{% if module.blog_listing.description %}
-							<div class="itemdesc">
-								{{ content.post_list_content|striptags|truncatehtml(80, '...' , false) }}
-							</div>
-							{% endif %}
-						</div>
-						{% if module.blog_listing.read_more %}
-						<div class="itemBtn">
-							<a class="hs-sec-btn" href="{{content.absolute_url}}">
-								<span>Read More</span>
-								<div class="icon">
-									<div class="inner">
-										<svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10" fill="currentColor">
-											<path d="M7.5 9.5L6.45 8.4125L9.1125 5.75H0V4.25H9.1125L6.45 1.5875L7.5 0.5L12 5L7.5 9.5Z"/>
-										</svg>
-									</div>
-								</div>
-							</a>
-						</div>
-						{% endif %}
-					</div>
-					{% endfor %}
-				</div>
-				{% if not simple_list_page %}
-				<div class="blog-pagination">
-					{% if next_page_num %}
-					<a class="next-posts-link nav-previous load-more hs-button" href="{{ blog_page_link(next_page_num) }}" data-total-page-count="{{ contents.total_page_count }}">Load More Posts</a>
-					{% endif %}
-				</div>
-				{% endif %}
+                {% if module.site_search.content_types.website_pages %}
+                <input type="hidden" name="type" value="SITE_PAGE">
+                {% endif %}
+                {% if module.site_search.content_types.landing_pages %}
+                <input type="hidden" name="type" value="LANDING_PAGE">
+                {% endif %}
+                {% if module.site_search.content_types.blog_posts %}
+                <input type="hidden" name="type" value="BLOG_POST">
+                <input type="hidden" name="type" value="LISTING_PAGE">
+                {% endif %}
+                {% if module.site_search.content_types.knowledge_articles %}
+                <input type="hidden" name="type" value="KNOWLEDGE_ARTICLE">
+                {% endif %}
+                {% if module.site_search.content_types.case_studies %}
+                <input type="hidden" name="type" value="HS_CASE_STUDY">
+                {% endif %}
+                {% if module.site_search.include_search_button %}
+                <button aria-label="Search"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                  <path d="M16.6 18L10.3 11.7C9.8 12.1 9.225 12.4167 8.575 12.65C7.925 12.8833 7.23333 13 6.5 13C4.68333 13 3.14583 12.3708 1.8875 11.1125C0.629167 9.85417 0 8.31667 0 6.5C0 4.68333 0.629167 3.14583 1.8875 1.8875C3.14583 0.629167 4.68333 0 6.5 0C8.31667 0 9.85417 0.629167 11.1125 1.8875C12.3708 3.14583 13 4.68333 13 6.5C13 7.23333 12.8833 7.925 12.65 8.575C12.4167 9.225 12.1 9.8 11.7 10.3L18 16.6L16.6 18ZM6.5 11C7.75 11 8.8125 10.5625 9.6875 9.6875C10.5625 8.8125 11 7.75 11 6.5C11 5.25 10.5625 4.1875 9.6875 3.3125C8.8125 2.4375 7.75 2 6.5 2C5.25 2 4.1875 2.4375 3.3125 3.3125C2.4375 4.1875 2 5.25 2 6.5C2 7.75 2.4375 8.8125 3.3125 9.6875C4.1875 10.5625 5.25 11 6.5 11Z" fill="#351C15"/>
+                  </svg></button>
+                {% endif %}
+              </form>
+            </div>
+            <ul class="hs-search-field__suggestions"></ul>
+          </div>
+        </div>
+        <div class="tag-col">
+          {% set my_topics = blog_topics(group.id, 50) %}
+          <select id="tinynav1" class="tinynav tinynav1" style="background-image: url({{ get_asset_url('../../templates/images/dropdownArrow.png') }});">
+            <option value="{{ group.absolute_url }}">Filter by Topic</option>
+            {% for item in my_topics %}
+            {% if item=="Featured"%}
+            {% else %}
+            <option value="{{ blog_tag_url(group.id, item.slug) }}" {% if content.absolute_url == blog_tag_url(group.id, item.slug) %} selected{% endif %}>{{ item|capitalize}}</option>
+            {% endif %}
+            {% endfor %}
+          </select>  
+        </div>
+      </div>
+    </div>
+    <div class='listing-wrap'>
+      <div class='page-center'>
+        <div class='cardItems flex-row'>
+          {% for content in contents %}
+          <div class="cardItem">
+            {% if module.blog_listing.featured_image %}
 
-			</div>
-		</div>
-	</div>
-	<div class="btm_curves  section_decoration">
-		<svg width="1440" height="90" viewBox="0 0 1440 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<path  class="fill-LightestTeal_clr" d="M0 90V0H1440V17.5188C576 -33.6153 129 64.7816 0 90Z"/>
-		</svg>  	 
-	</div>
+            <div class="ItemImg">
+              <a href="{{content.absolute_url}}">
+                {% if content.featured_image %}
+                <div class="itemImgBg" style="background-image:url({{ content.featured_image }})"></div>
+                {% else %}
+                <div class="itemImgBg" style="background-image:url({{ get_asset_url('../../templates/images/blog-default-roadie.jpg') }})"></div>
+                {% endif %} 
+              </a>
+            </div> 
+            {% endif %}
+            <div class="itemContent">
+              {% if module.blog_listing.tag %}
+              {% if content.topic_list %}
+              <div class="itemtag">
+                {% set included_topics = content.topic_list | rejectattr("slug", "equalto", "featured") | list %}
+                {% for topic in included_topics %}
+                {% if loop.first %}
+                <a class="{{ topic.slug }}" href="{{ blog_tag_url(group.id, topic.slug) }}">{{ topic.name }}</a>
+                {% endif %}
+                {% endfor %}
+              </div>
+              {% endif %}
+              {% endif %}
+              {% if module.blog_listing.title %}
+              <div class="itemTtl">
+                <h4><a href="{{content.absolute_url}}">{{ content.name }}</a></h4>
+              </div>
+              {% endif %}
+              {% if module.blog_listing.description %}
+              <div class="itemdesc">
+                {{ content.post_list_content|striptags|truncatehtml(80, '...' , false) }}
+              </div>
+              {% endif %}
+            </div>
+            {% if module.blog_listing.read_more %}
+            <div class="itemBtn">
+              <a class="hs-sec-btn" href="{{content.absolute_url}}">
+                <span>Read More</span>
+                <div class="icon">
+                  <div class="inner">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10" fill="currentColor">
+                      <path d="M7.5 9.5L6.45 8.4125L9.1125 5.75H0V4.25H9.1125L6.45 1.5875L7.5 0.5L12 5L7.5 9.5Z"/>
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            </div>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+        {% if not simple_list_page %}
+        <div class="blog-pagination">
+          {% if next_page_num %}
+          <a class="next-posts-link nav-previous load-more hs-button" href="{{ blog_page_link(next_page_num) }}" data-total-page-count="{{ contents.total_page_count }}">Load More Posts</a>
+          {% endif %}
+        </div>
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+  <div class="btm_curves  section_decoration">
+    <svg width="1440" height="90" viewBox="0 0 1440 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path  class="fill-LightestTeal_clr" d="M0 90V0H1440V17.5188C576 -33.6153 129 64.7816 0 90Z"/>
+    </svg>  	 
+  </div>
 </div>
 {% require_js %}
 <script>
-	(function($, undefined) {
-		$.extend($.infinitescroll.prototype,{
+  (function($, undefined) {
+    $.extend($.infinitescroll.prototype,{
 
-			_setup_twitter: function infscr_setup_twitter () {
-				var opts = this.options,
-						instance = this;
+      _setup_twitter: function infscr_setup_twitter () {
+        var opts = this.options,
+            instance = this;
 
-				// Bind nextSelector link to retrieve
-				$(opts.nextSelector).click(function(e) {
-					if (e.which == 1 && !e.metaKey && !e.shiftKey) {
-						e.preventDefault();
-						instance.retrieve();
+        // Bind nextSelector link to retrieve
+        $(opts.nextSelector).click(function(e) {
+          if (e.which == 1 && !e.metaKey && !e.shiftKey) {
+            e.preventDefault();
+            instance.retrieve();
 
-						setTimeout(function(){
-							$('body').find('#infscr-loading').remove();
-						},1);
-					}
-				});
+            setTimeout(function(){
+              $('body').find('#infscr-loading').remove();
+            },1);
+          }
+        });
 
-				// Define loadingStart to never hide pager
-				instance.options.loading.start = function (opts) {
-					opts.loading.msg
-						.appendTo(opts.loading.selector)
-						.show(opts.loading.speed, function () {
-						instance.beginAjax(opts);
-					});
-				}
-			},
-			_showdonemsg_twitter: function infscr_showdonemsg_twitter () {
-				var opts = this.options,
-						instance = this;
+        // Define loadingStart to never hide pager
+        instance.options.loading.start = function (opts) {
+          opts.loading.msg
+            .appendTo(opts.loading.selector)
+            .show(opts.loading.speed, function () {
+            instance.beginAjax(opts);
+          });
+        }
+      },
+      _showdonemsg_twitter: function infscr_showdonemsg_twitter () {
+        var opts = this.options,
+            instance = this;
 
-				//Do all the usual stuff
-				opts.loading.msg
-					.find('img')
-					.hide()
-					.parent()
-					.find('div').html(opts.loading.finishedMsg).animate({ opacity: 1 }, 2000, function () {
-					$(this).parent().fadeOut('normal');
-				});
+        //Do all the usual stuff
+        opts.loading.msg
+          .find('img')
+          .hide()
+          .parent()
+          .find('div').html(opts.loading.finishedMsg).animate({ opacity: 1 }, 2000, function () {
+          $(this).parent().fadeOut('normal');
+        });
 
-				//And also hide the navSelector
-				$(opts.navSelector).fadeOut('normal');
+        //And also hide the navSelector
+        $(opts.navSelector).fadeOut('normal');
 
-				// user provided callback when done
-				opts.errorCallback.call($(opts.contentSelector)[0],'done');
+        // user provided callback when done
+        opts.errorCallback.call($(opts.contentSelector)[0],'done');
 
-			}
+      }
 
-		});
-	})(jQuery);
+    });
+  })(jQuery);
 
-	/**
+  /**
  * Infinite Scroll + Masonry + ImagesLoaded
  */
 
-	(function() {
+  (function() {
 
-		// Main content container
-		var $container =  $('.listing-wrap .cardItems');
+    // Main content container
+    var $container =  $('.listing-wrap .cardItems');
 
-		// Infinite Scroll
-		$container.infinitescroll({
+    // Infinite Scroll
+    $container.infinitescroll({
 
-			// selector for the paged navigation (it will be hidden)
-			navSelector  : ".blog-pagination",
-			// selector for the NEXT link (to page 2)
-			nextSelector : ".load-more",
-			// selector for all items you'll retrieve
-			itemSelector : ".listing-wrap .cardItems > .cardItem",
-			behavior     : 'twitter',
+      // selector for the paged navigation (it will be hidden)
+      navSelector  : ".blog-pagination",
+      // selector for the NEXT link (to page 2)
+      nextSelector : ".load-more",
+      // selector for all items you'll retrieve
+      itemSelector : ".listing-wrap .cardItems > .cardItem",
+      behavior     : 'twitter',
 
-			// finished message
-			loading: {
-				finishedMsg: 'No more pages to load.'
-			}
-		},
+      // finished message
+      loading: {
+        finishedMsg: 'No more pages to load.'
+      }
+    },
 
-															// Trigger Masonry as a callback
-															function( newElements ) {
-			// hide new items while they are loading
-			var $newElems = $( newElements ).css({ opacity: 0 });
-			// ensure that images load before adding to masonry layout
-			$newElems.imagesLoaded(function(){
-				// show elems now they're ready
-				$newElems.animate({ opacity: 1 });
-				$container.masonry( 'appended', $newElems, true );
-			});
+                              // Trigger Masonry as a callback
+                              function( newElements ) {
+      // hide new items while they are loading
+      var $newElems = $( newElements ).css({ opacity: 0 });
+      // ensure that images load before adding to masonry layout
+      $newElems.imagesLoaded(function(){
+        // show elems now they're ready
+        $newElems.animate({ opacity: 1 });
+        $container.masonry( 'appended', $newElems, true );
+      });
 
-		});
+    });
 
-		nx= $('a.next-posts-link').attr('data-total-page-count'); 
-		nx = parseInt(nx);
-		nxc = 2;
-		$('a.load-more').click( function(){
-			nxc < nx ? nxc+=1 : $(this).fadeOut()
-		})
+    nx= $('a.next-posts-link').attr('data-total-page-count'); 
+    nx = parseInt(nx);
+    nxc = 2;
+    $('a.load-more').click( function(){
+      nxc < nx ? nxc+=1 : $(this).fadeOut()
+    })
 
 
-	})();
+  })();
 </script>
 {% end_require_js %}

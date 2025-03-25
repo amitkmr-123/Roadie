@@ -235,7 +235,7 @@
         "operator" : "EQUAL",
         "access" : null
       },
-      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "PHONE_NUMBER", "BLOG"  ],
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "PHONE_NUMBER", "BLOG" ],
       "show_advanced_rel_options" : false,
       "type" : "link",
       "display_width" : null,
@@ -953,7 +953,7 @@
     }, {
       "id" : "38c1b824-18d1-d3c8-e97d-c2e0394ed48f",
       "name" : "use_background_image_as_image_at_mobile",
-      "label" : "Use Background Image as Image at Mobile",
+      "label" : "Use Background Image as Static Image at Mobile",
       "inline_help_text" : "This field changes will reflect when \"Include Sedia Section\" is disabled.",
       "required" : false,
       "locked" : false,
