@@ -168,6 +168,24 @@
         "open_in_new_tab" : false,
         "no_follow" : false
       }
+    }, {
+      "id" : "3413cbe6-c439-99bf-1cf8-47652da17f44",
+      "name" : "add_title_icon",
+      "label" : "Add Title Icon",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "first_level_menu.enable_single_title_menu_style",
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : false
     } ],
     "tab" : "CONTENT",
     "expanded" : false,
