@@ -199,7 +199,25 @@ section.u4m-password-prompt {
     font-weight: bold;
   }
 }
-
+.hs-search-results__listing__item {
+  margin-bottom: 20px !important;
+}
+.hs-search-results__pagination {
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+#hs_cos_wrapper_search_results .hs-search-results__pagination__link {
+  padding: 5px;
+  line-height: 1;
+  margin: 0 5px;
+}
+.hs-search-results__featured-image-wrapper {
+  padding-right: 30px;
+  @include tabletvert {
+    padding-right: 0px;
+    padding-bottom: 20px;
+  }
+}
 section.u4m-password-prompt {
   form {
     padding-top: 30rem;
@@ -208,12 +226,14 @@ section.u4m-password-prompt {
 
 section.u4m-search-results {
   @include center;
-  max-width: 1000rem;
-  margin: 100rem auto;
+  max-width: 1040rem;
+  padding: 100rem 20rem;
 
   ul.hs-search-results__listing {
     a {
       font-size: 20rem;
+      font-weight: bold;
+      line-height: 1;
     }
   }
 }

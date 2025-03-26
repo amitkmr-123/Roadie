@@ -8,10 +8,6 @@
     padding-bottom: 20px;
   }
 
-  .page-center {
-    overflow: hidden;
-  }
-
   .quoteTrack {
     overflow: visible;
   }
@@ -288,9 +284,5 @@
 
   .splide__slide.is-prev .rightOverlay {
     left: -20rem;
-  }
-
-  .splide__slide.is-next .rightOverlay {
-    left: 20rem;
   }
 }

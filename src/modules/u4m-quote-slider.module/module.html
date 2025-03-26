@@ -5,11 +5,12 @@
 
 <div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}" {% if module.module_overrides.container_size == "custom" %} style="max-width:{{ module.module_overrides.custom_container_size }}rem" {% endif %}>
 	{{ macros.introGroup(module.intro_content, module.module_settings) }}
-
+{% set lnt = module.items|length %} 
 	<div class="cmQuoteSliderWrap">
 		<div id="splide" class="splide quoteItemWrap">
 			<div class="splide__track quoteTrack">
 				<div class="splide__list quoteList">
+				
 					{% for item in module.items %}
 					<div class="splide__slide  quoteItem quoteItem_{{loop.index}}">
 					<div class="rightOverlay"></div>
@@ -74,16 +75,24 @@
 <script>
 	document.addEventListener( 'DOMContentLoaded', function () {
 		new Splide('#splide', {
+		{% if lnt == 1 %}
+			type: 'slide',
+		{% else %}
 			type: 'loop',
-			perPage:1.32,
+		{% endif %}
+			perPage:1.29,
 			focus: 'center',
 			autoplay: false,
+			{% if lnt == 1 %}
+			arrows:false,
+			{% endif %}
 			interval: 8000,
 			flickMaxPages: 3,
 			updateOnMove: true,
 			pagination: true,
 			padding: '0',
 			throttle: 300,
+			rewind : false,
 			breakpoints: {
 			991: {
 				perPage: 1.3,

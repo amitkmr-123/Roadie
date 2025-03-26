@@ -4,16 +4,22 @@
  label: Roadie - Blog Listing
 -->
 {% extends './base.html' %} {% block body %}
-<main id="main-content" class="body-container-wrapper">
-  {% dnd_area 'dnd_area__blog' label='Main Content' class="main-dnd-area" %} {%
+<main
+  id="main-content"
+  class="body-container-wrapper {% if tag %}tag_page{% endif %}"
+>
+  {% dnd_area 'dnd__area_blog_new' label='Banner' class="main-dnd-area" %} {%
   dnd_section full_width=true %} {% dnd_column padding={ "default":{ "left":"0",
   "right":"0" } } %} {% dnd_row %} {% dnd_module
   path='../modules/u4m-listing-hero' %} {% end_dnd_module %} {% end_dnd_row %}
-  {% dnd_row %} {% dnd_module path="../modules/u4m-card-slider", offset=0,
-  width=12, intro_content={ "button_group" : [ { "button_style" : "hs-sec-btn",
-  "button_text" : "View All", "button_type" : "std", "link" : { "no_follow" :
-  false, "open_in_new_tab" : false, "url" : { "href" : "", "type" : "EXTERNAL" }
-  } } ], "content" : "
+  {% end_dnd_column %} {% end_dnd_section %} {% end_dnd_area %} {% if not topic
+  %} {% dnd_area 'dnd__area_blog1' label='Card Slider' class="main-dnd-area" %}
+  {% dnd_section full_width=true %} {% dnd_column padding={ "default":{
+  "left":"0", "right":"0" } } %} {% dnd_row %} {% dnd_module
+  path="../modules/u4m-card-slider", offset=0, width=12, intro_content={
+  "button_group" : [ { "button_style" : "hs-sec-btn", "button_text" : "View
+  All", "button_type" : "std", "link" : { "no_follow" : false, "open_in_new_tab"
+  : false, "url" : { "href" : "", "type" : "EXTERNAL" } } } ], "content" : "
   <p>
     Donec varius est in erat congue pellentesque. Nullam volutpat tempus ligula,
     eu rhoncus quam. Sed finibus lacus magna, eu laoreet justo tempus vel.
@@ -24,16 +30,19 @@
   "include_button" : true, "include_content" : true, "include_eyebrow_text" :
   true, "include_heading" : true }, module_overrides={ "background_settings" : {
   "select_color" : "LightestTeal_bg" } }, module_settings={
-  "inactive_cards_overlay_color" : {
-    "color" : "#F5F5F5",
-    "opacity" : 60
-  },
-  "include_curves" : true
-}, select_content_type="blog" %} {%
-  end_dnd_module %} {% end_dnd_row %} {% dnd_row %} {% dnd_module
-  path='../modules/u4m-blog-listing' %} {% end_dnd_module %} {% end_dnd_row %}
-  {% dnd_row %} {% dnd_module path="../modules/u4m-card-slider", offset=0,
-  width=12, intro_content={ "button_group" : [ { "button_style" : "hs-sec-btn",
+  "inactive_cards_overlay_color" : { "color" : "#F5F5F5", "opacity" : 60 },
+  "include_curves" : true }, select_content_type="blog" %} {% end_dnd_module %}
+  {% end_dnd_row %} {% end_dnd_column %} {% end_dnd_section %} {% end_dnd_area
+  %} {% endif %} {% dnd_area 'dnd__area_blog2' label='Main Content'
+  class="main-dnd-area" %} {% dnd_section full_width=true %} {% dnd_column
+  padding={ "default":{ "left":"0", "right":"0" } } %} {% dnd_row %} {%
+  dnd_module path='../modules/u4m-blog-listing' %} {% end_dnd_module %} {%
+  end_dnd_row %} {% end_dnd_column %} {% end_dnd_section %} {% end_dnd_area %}
+  {% if not topic %} {% dnd_area 'dnd__area_blog3' label='Card Slider2'
+  class="main-dnd-area" %} {% dnd_section full_width=true %} {% dnd_column
+  padding={ "default":{ "left":"0", "right":"0" } } %} {% dnd_row %} {%
+  dnd_module path="../modules/u4m-card-slider", offset=0, width=12,
+  intro_content={ "button_group" : [ { "button_style" : "hs-sec-btn",
   "button_text" : "View All", "button_type" : "std", "link" : { "no_follow" :
   false, "open_in_new_tab" : false, "url" : { "href" : "", "type" : "EXTERNAL" }
   } } ], "content" : "
@@ -47,14 +56,13 @@
   "include_button" : true, "include_content" : true, "include_eyebrow_text" :
   true, "include_heading" : true }, module_overrides={ "background_settings" : {
   "select_color" : "LightestTeal_bg" } },module_settings={
-  "inactive_cards_overlay_color" : {
-    "color" : "#F5F5F5",
-    "opacity" : 60
-  },
-  "include_curves" : true
-}, select_content_type="blog" %} {%
-  end_dnd_module %} {% end_dnd_row %} {% dnd_row %} {% dnd_module
-  path='../modules/u4m-cta-row', module_settings={ "curves_group" : {
+  "inactive_cards_overlay_color" : { "color" : "#F5F5F5", "opacity" : 60 },
+  "include_curves" : true }, select_content_type="blog" %} {% end_dnd_module %}
+  {% end_dnd_row %} {% end_dnd_column %} {% end_dnd_section %} {% end_dnd_area
+  %} {% endif %} {% dnd_area 'dnd__area_blog4' label='Bottom Pane'
+  class="main-dnd-area" %} {% dnd_section full_width=true %} {% dnd_column
+  padding={ "default":{ "left":"0", "right":"0" } } %} {% dnd_row %} {%
+  dnd_module path='../modules/u4m-cta-row', module_settings={ "curves_group" : {
   "theme_color" : "LightestTeal_clr" } } %} {% end_dnd_module %} {% end_dnd_row
   %} {% end_dnd_column %} {% end_dnd_section %} {% end_dnd_area %}
 </main>
