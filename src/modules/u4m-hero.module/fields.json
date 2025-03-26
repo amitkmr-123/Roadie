@@ -953,8 +953,8 @@
     }, {
       "id" : "38c1b824-18d1-d3c8-e97d-c2e0394ed48f",
       "name" : "use_background_image_as_image_at_mobile",
-      "label" : "Use Background Image as Static Image at Mobile",
-      "inline_help_text" : "This field changes will reflect when \"Include Sedia Section\" is disabled.",
+      "label" : "Use Background Image as Static Image in Mobile",
+      "inline_help_text" : "This field changes will reflect when \"Include Media Section\" is disabled.",
       "required" : false,
       "locked" : false,
       "visibility" : {
@@ -972,7 +972,7 @@
     }, {
       "id" : "536e751d-74fa-c5ba-b3d0-74e4f94caa45",
       "name" : "no_image_background_color",
-      "label" : "No Image Background Color",
+      "label" : "Mobile Background Color",
       "required" : false,
       "locked" : false,
       "visibility" : {
