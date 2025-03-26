@@ -3,6 +3,12 @@
 section.u4m-animated-stats {
   padding: 0;
 
+  svg {
+    g.hide-me {
+      display: none !important;
+    }
+  }
+
   &.reverse-text {
     .eyebrow_text {
       color: $BrightTeal;
@@ -137,6 +143,7 @@ section.u4m-animated-stats {
   }
 
   .flex_row {
+
     .img_col,
     .content_col {
       padding-left: 20rem;
