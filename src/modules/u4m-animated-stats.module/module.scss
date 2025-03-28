@@ -76,6 +76,19 @@ section.u4m-animated-stats {
       max-width: 560px;
       width: 100%;
       margin: auto;
+
+      &.with_svg {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        h3 {
+          @include b3;
+          color: $white;
+          text-align: center;
+          text-transform: uppercase;
+        }
+      }
     }
   }
 

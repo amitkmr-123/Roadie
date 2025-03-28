@@ -80,7 +80,7 @@
       </div>
 
 
-      <div class="img_col_inner">
+      <div class="img_col_inner{{ ' with_svg' if module.image_column.image_type == 'svg' else ' with_img'}}">
         {% if module.image_column.image_type == "image" %}
         {% if module.image_column.image.src %}
         <img src="{{ module.image_column.image.src }}" alt="{{ module.image_column.image.alt }}">
@@ -88,9 +88,10 @@
         {% endif %}
 
         {% if module.image_column.image_type == "svg" %}
-        <div class="svg_wrap">
-          {{ module.image_column.animated_svg }}
-        </div>
+          {{ '<h3>{{ module.image_column.animation_heading }}</h3>' if module.image_column.animation_heading }}
+          <div class="svg_wrap">
+            {{ module.image_column.animated_svg }}
+          </div>
         {% endif %}
 
       </div>
