@@ -419,10 +419,15 @@ header.header {
 .no-banner header.header .mainSection {
   position: relative;
   top: 0;
+  background: $white;
 }
 .no-banner header.header .topSection {
   position: relative;
 }
 .no-banner header.header.stickyHeader .mainSection {
   position: fixed;
+}
+
+.no-banner .headerOverlay {
+  display: none;
 }
