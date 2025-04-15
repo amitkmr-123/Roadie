@@ -1,6 +1,10 @@
 @import "../../css/_module-imports";
 
 .u4m-cards {
+  .top_curves.section_decoration.type3 {
+    bottom: auto;
+    top: -6vw;
+  }
   .intro_content {
     margin-bottom: 45rem;
     &.left {
@@ -79,7 +83,7 @@
     }
   }
 
-  overflow: hidden;
+  overflow: visible;
 
   .cards.flex_row.full_width {
     margin: 0 -20px;
