@@ -2,7 +2,14 @@
 
 .cmCardSlider {
   overflow: hidden;
-
+  .intro_content {
+    .intro__inner {
+      margin-top: -70px;
+      @include tablet {
+        margin-top: 0;
+      }
+    }
+  }
   .flx {
     display: flex;
     -moz-column-gap: 168px;
