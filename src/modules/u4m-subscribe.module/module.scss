@@ -1,11 +1,18 @@
 @import "../../css/_module-imports";
 
 .u4m-subscribe {
+  .page-center {
+    @include tabletvert {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
   .innerCntt {
     .flex_row {
-      margin: 0 -15px;
       align-items: flex-end;
-
+      margin: 0;
+      column-gap: 50px;
+      flex-wrap: nowrap;
       .intro_content {
         margin: 0;
         text-align: left;
@@ -52,15 +59,21 @@
 
     .flex_row.custom_width {
       .col.leftCntt {
-        width: 60%;
+        width: auto;
+        max-width: 656px;
+        padding-left: 0;
+        padding-right: 0;
 
         .intro_content {
-          padding-right: 70px;
+          padding-right: 0px;
         }
       }
 
       .col.rightCntt {
-        width: 40%;
+        width: auto;
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
       }
     }
   }
@@ -121,7 +134,7 @@
         .col.leftCntt {
           width: 100%;
           padding: 0;
-
+          max-width: 100%;
           .intro_content {
             padding: 0;
           }
@@ -136,7 +149,7 @@
       .flex_row {
         gap: 26px;
         margin: 0;
-
+        flex-wrap: wrap;
         .frm {
           form {
             max-width: 100%;
