@@ -1,9 +1,11 @@
 @import "../../css/_module-imports";
 
-
 .u4m-alternating-content {
-  overflow: hidden;
-
+  overflow: visible;
+  .top_curves.section_decoration.type3 {
+    bottom: auto;
+    top: -6vw;
+  }
   .main-wrpp {
     .flex_row {
       margin: 0 -15px;
@@ -110,6 +112,5 @@
         }
       }
     }
-
   }
 }

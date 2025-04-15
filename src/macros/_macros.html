@@ -135,7 +135,7 @@
 {% macro topCurves(group)%}
 {% if group.include_curves %}
 {% if group.curves_group.include_top_section_curves %}
-<div class="top_curves section_decoration">
+<div class="top_curves section_decoration {% if group.curves_group.top_curves_group.curves_type == "type3" %} type3{% endif %}">
 	{% if group.curves_group.top_curves_group.curves_type == "type1" %}
 	<svg width="1440" height="90" viewBox="0 0 1440 90" fill="none" xmlns="http://www.w3.org/2000/svg">
 		<path class="fill-{{ group.curves_group.theme_color }}" d="M1440 90V0H0V17.5188C864 -33.6153 1311 64.7816 1440 90Z"/>
@@ -143,9 +143,15 @@
 	{% endif %}	 
 	{% if group.curves_group.top_curves_group.curves_type == "type2" %}
 	<svg width="1440" height="90" viewBox="0 0 1440 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-		<path  class="fill-{{ group.curves_group.theme_color }}" d="M0 90V0H1440V17.5188C576 -33.6153 129 64.7816 0 90Z"/>
+		<path class="fill-{{ group.curves_group.theme_color }}" d="M0 90V0H1440V17.5188C576 -33.6153 129 64.7816 0 90Z"/>
 	</svg> 
-	{% endif %}	 
+	{% endif %}	
+	{% if group.curves_group.top_curves_group.curves_type == "type3" %}
+		<svg width="1440" height="90" viewBox="0 0 1440 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path class="fill-{{ group.curves_group.theme_color }}" d="M0 0V90H1440V72.4812C576 123.615 129 25.2184 0 0Z" fill="#F2F7F7"/>
+</svg>
+
+		{% endif %}	  
 </div>
 {% endif %}
 {% endif %}
