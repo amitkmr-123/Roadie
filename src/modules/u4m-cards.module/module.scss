@@ -90,6 +90,31 @@
     margin: 0 -40px;
     row-gap: 50px;
     justify-content: center;
+    &.col4_row {
+      column-gap: 84px;
+      margin: 0;
+      justify-content: flex-start;
+      @include tablet {
+        column-gap: 40px;
+      }
+      .items {
+        padding: 0;
+        width: calc(33.333333333% - 84px);
+        max-width: 325px;
+        @include tablet {
+          width: calc(50% - 40px);
+          max-width: 100%;
+        }
+        @include tabletvert {
+          width: 100%;
+        }
+        .intro_content {
+          .intro_desc {
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
     .items {
       padding: 0 40px;
     }
