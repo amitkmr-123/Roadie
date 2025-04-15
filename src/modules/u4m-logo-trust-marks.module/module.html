@@ -71,33 +71,76 @@
 {% require_js %}
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  new Splide(".MainsliderCnntt.splide", {
-    type: "loop",
-    drag: "free",
-    focus: "center",
-    perPage: 6,
-    autoScroll: {
-      speed: 2,
-    },
-    arrows: false,
-    pagination: false,
-    breakpoints: {
-      680: {
-        perPage: 2,
-      },
-      768: {
-        perPage: 3,
-      },
-      992: {
-        perPage: 4,
-      },
-      1200: {
-        perPage: 5,
-      },
-    },
-  }).mount(window.splide.Extensions);
-});
+  const sliderContainer = document.querySelector(".{{name}} .MainsliderCnntt.splide");
+  const slides = sliderContainer.querySelectorAll('.splide__slide');
+  let splideInstance = null;
 
+  // Function to check if we need loop mode (>6 items) - for desktop/tablet
+  function shouldLoop() {
+    return slides.length > 6;
+  }
+
+  // Function to check if mobile view (<768px)
+  function isMobileView() {
+    return window.innerWidth < 768;
+  }
+
+  // Function to check if slider is needed
+  function isSliderNeeded() {
+    const containerWidth = sliderContainer.clientWidth;
+    const slideWidth = slides[0]?.clientWidth || 0;
+    const totalSlidesWidth = slideWidth * slides.length;
+    return totalSlidesWidth > containerWidth;
+  }
+
+  // Function to initialize/destroy slider
+  function handleSlider() {
+    const needsSlider = isSliderNeeded();
+    const mobileView = isMobileView();
+    
+    // Enable loop and autoplay for mobile, follow rules for tablet/desktop
+    const useLoopMode = mobileView ? true : shouldLoop();
+    const useAutoplay = mobileView ? { speed: 2 } : (shouldLoop() ? { speed: 2 } : false);
+
+    if (needsSlider && !splideInstance) {
+      splideInstance = new Splide(".{{name}} .MainsliderCnntt.splide", {
+        type: useLoopMode ? "loop" : "slide",
+        drag: "free",
+        focus: "center",
+        perPage: Math.min(6, slides.length),
+        autoScroll: useAutoplay,
+        arrows: false,
+        pagination: false,
+        breakpoints: {
+          680: { 
+            perPage: Math.min(2, slides.length),
+            // Force loop+autoplay below 768px
+            type: "loop",
+            autoScroll: { speed: 2 }
+          },
+          768: { 
+            perPage: Math.min(3, slides.length),
+            // Switch to normal rules at 768px+
+            type: shouldLoop() ? "loop" : "slide",
+            autoScroll: shouldLoop() ? { speed: 2 } : false
+          },
+          992: { perPage: Math.min(4, slides.length) },
+          1200: { perPage: Math.min(5, slides.length) },
+        },
+      }).mount(window.splide.Extensions);
+      
+      sliderContainer.classList.remove('no-slider');
+    } 
+    else if (!needsSlider && splideInstance) {
+      splideInstance.destroy();
+      splideInstance = null;
+      sliderContainer.classList.add('no-slider');
+    }
+  }
+
+  // Initial check
+  handleSlider();
+});
 </script>
 {% end_require_js %}
 {% endif %}
