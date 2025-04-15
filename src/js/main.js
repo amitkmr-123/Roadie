@@ -53,7 +53,9 @@ $("header.header .topInnerWrap .hs-menu-wrapper ul li").each(function () {
 
 // ------
 
-var banner = document.querySelector(".u4m-hero.bg_image, .split_form_wrapper");
+var banner = document.querySelector(
+  ".u4m-hero.bg_image, .split_form_wrapper,.u4m-hero.bg_color"
+);
 var bannerv2 = document.querySelector(".u4m-hero.bg_gradient");
 if (banner) {
   document.body.classList.remove("no-banner");
