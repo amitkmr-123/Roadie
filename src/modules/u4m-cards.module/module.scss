@@ -2,7 +2,7 @@
 
 .u4m-cards {
   .intro_content {
-    margin-bottom: 67rem;
+    margin-bottom: 45rem;
     &.left {
       max-width: 780rem;
       margin-left: 0;
@@ -10,6 +10,9 @@
     &.right {
       max-width: 780rem;
       margin-left: 0;
+    }
+    .eyebrow_text {
+      margin-bottom: 10rem;
     }
   }
 
@@ -81,7 +84,7 @@
   .cards.flex_row.full_width {
     margin: 0 -20px;
     margin: 0 -40px;
-    row-gap: 80px;
+    row-gap: 50px;
 
     .items {
       padding: 0 40px;
@@ -109,7 +112,7 @@
         }
 
         .topCnntWrp {
-          margin-bottom: 24px;
+          margin-bottom: 0;
           .intro_title {
             font-size: 24rem;
           }
