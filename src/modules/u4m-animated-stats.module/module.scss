@@ -25,6 +25,8 @@ section.u4m-animated-stats {
 
   .stt_item {
     text-align: center;
+    flex: auto;
+    width: auto;
   }
 
   .stt_item .stat {
@@ -156,7 +158,6 @@ section.u4m-animated-stats {
   }
 
   .flex_row {
-
     .img_col,
     .content_col {
       padding-left: 20rem;
