@@ -109,11 +109,11 @@
 
   {% if module.module_overrides.top_padding == 'top-padding-custom' %}
   section.{{ moduleName}}.{{ name }}.dnd_padd {padding-top:{{ module.module_overrides.custom_top_padding }}rem; }
-  @media (max-width: 1024px) { section.{{ moduleName}}.{{ name }}.dnd_padd { padding-top:{{ module.module_overrides.custom_top_padding_mobile }}rem !important;  } }
+  @media (max-width: 991px) { section.{{ moduleName}}.{{ name }}.dnd_padd { padding-top:{{ module.module_overrides.custom_top_padding_mobile }}rem !important;  } }
   {% endif %}
   {% if module.module_overrides.bottom_padding == 'bottom-padding-custom' %}
   section.{{ moduleName}}.{{ name }}.dnd_padd {padding-bottom:{{ module.module_overrides.custom_bottom_padding }}rem; }
-  @media (max-width: 1024px) { section.{{ moduleName}}.{{ name }} { padding-bottom:{{ module.module_overrides.custom_bottom_padding_mobile }}rem !important;  } }
+  @media (max-width: 991px) { section.{{ moduleName}}.{{ name }} { padding-bottom:{{ module.module_overrides.custom_bottom_padding_mobile }}rem !important;  } }
   {% endif %}
 </style>
 {% end_require_css %}
