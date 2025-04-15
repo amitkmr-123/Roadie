@@ -164,7 +164,32 @@
             .intro_btn_wrap {
               margin-top: 29px;
               .btn_item {
-                a.hs-button {
+                &.cta_btn {
+                  a {
+                    align-items: center;
+                    display: flex;
+                    transition: 0.1s ease-in;
+                    gap: 7px;
+                    background: transparent;
+                    color: $white;
+                    padding: 0;
+                    &:hover .icon {
+                      background: $Mustard;
+                      border-color: $Mustard;
+                    }
+                    .icon {
+                      border-radius: 50px;
+                      border: 1px solid $white;
+                      width: 22px;
+                      height: 22px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      line-height: 0;
+                    }
+                  }
+                }
+                a {
                   font-weight: 600;
                 }
               }

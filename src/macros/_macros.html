@@ -7,7 +7,7 @@
 {% if items %}
 <div class="intro_btn_wrap">
 	{% for item in items %}
-	<div class="btn_item">
+	<div class="btn_item {% if item.button_style == 'hs-sec-btn' %} cta_btn{% endif %}">
 		{% if item.button_type == "std" %}
 		{% set href = item.link.url.href %}
 		{% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
@@ -39,6 +39,15 @@
 		{% endif %}
 		{% if item.button_type == "cta" %}
 		{% cta guid="{{ item.cta }}" %}
+		{% if item.button_style == 'hs-sec-btn' %}
+		<div class="icon">
+			<div class="inner">
+				<svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 12 10" fill="currentColor">
+					<path d="M7.5 9.5L6.45 8.4125L9.1125 5.75H0V4.25H9.1125L6.45 1.5875L7.5 0.5L12 5L7.5 9.5Z"/>
+				</svg>
+			</div>
+		</div>
+	{% endif %}
 		{% endif %}
 	</div>
 	{% endfor %}
