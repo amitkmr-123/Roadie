@@ -262,10 +262,13 @@ section.u4m-blog-post {
     .leftSec {
       width: 50%;
       padding-top: 62px;
-
+      padding-bottom: 62px;
+      padding-right: 15px;
       @include tabletvert {
         width: 100%;
         margin-bottom: 40px;
+        padding-bottom: 0;
+        padding-right: 0;
       }
 
       .leftSecLogo {
@@ -326,6 +329,37 @@ section.u4m-blog-post {
       .postbodyWrap {
         .postbody {
           margin-bottom: 47px;
+
+          .u4m-cta-row {
+            .rightCntt {
+              > .intro_btn_wrap {
+                margin-top: 0;
+              }
+            }
+            .innerCntt {
+              .flex_row {
+                align-items: center;
+                .intro_btn_wrap {
+                  justify-content: center;
+                  a {
+                    text-decoration: none;
+                  }
+                }
+              }
+              .flex_row.custom_width {
+                .col.leftCntt {
+                  .intro_content {
+                    padding-right: 0;
+                  }
+                }
+              }
+            }
+          }
+          .intro_content {
+            .intro_title {
+              margin-bottom: 0;
+            }
+          }
 
           a {
             text-decoration: underline;
