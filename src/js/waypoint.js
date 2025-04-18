@@ -1,3 +1,4 @@
+{% raw%}
 /*!
 Waypoints - 4.0.0
 Copyright © 2011-2015 Caleb Troughton
@@ -297,3 +298,4 @@ https://github.com/imakewebthings/waypoints/blog/master/licenses.txt
 	var e = window.Waypoint;
 	window.jQuery && (window.jQuery.fn.waypoint = t(window.jQuery)), window.Zepto && (window.Zepto.fn.waypoint = t(window.Zepto))
 }();
+{% endraw %}

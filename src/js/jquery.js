@@ -1,3 +1,4 @@
+{% raw%}
 /*! jQuery v3.7.1 | (c) OpenJS Foundation and other contributors | jquery.org/license */
 !
 function(e, t) {
@@ -3090,3 +3091,5 @@ function(e, t) {
     return ie.$ === ce && (ie.$ = nn), e && ie.jQuery === ce && (ie.jQuery = tn), ce
   }, "undefined" == typeof e && (ie.jQuery = ie.$ = ce), ce
 });
+
+{% endraw %}

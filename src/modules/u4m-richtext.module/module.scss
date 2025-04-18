@@ -1,0 +1,11 @@
+@import "../../css/_module-imports";
+
+.u4m-richtext {
+    .intro_content {
+        max-width: 100%;
+        iframe {
+            width: 100%;
+            border: none;
+        }
+    }
+}

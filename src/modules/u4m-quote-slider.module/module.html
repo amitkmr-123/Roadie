@@ -4,52 +4,52 @@
 {{macros.topCurves(module.module_settings)}}
 
 <div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}" {% if module.module_overrides.container_size == "custom" %} style="max-width:{{ module.module_overrides.custom_container_size }}rem" {% endif %}>
-	{{ macros.introGroup(module.intro_content, module.module_settings) }}
-{% set lnt = module.items|length %} 
-	<div class="cmQuoteSliderWrap">
-		<div id="splide" class="splide quoteItemWrap">
-			<div class="splide__track quoteTrack">
-				<div class="splide__list quoteList">
-				
-					{% for item in module.items %}
-					<div class="splide__slide  quoteItem quoteItem_{{loop.index}}">
-					<div class="rightOverlay"></div>
-						<div class="quoteItemInner  {% if module.module_settings.dark_theme %} light_theme {% endif %} {{ module.module_settings.select_color }}">
-							{% if item.enable_image %}
-							{% if item.image.src %}
-							<div class="imageWrapper">
-								<div class="cmImage" style="background-image:url({{ item.image.src }});"></div>
-							</div>
-							{% endif %}
-							{% endif %}
-							{% if item.quote %}
-							<div class="conteWrapper">
-								{% if item.quote %}
-								<div class="quoteText">
-									<div class="cmQuote">{{ item.quote }}</div>
-								</div>
-								{% endif %}
-								{% if item.member_name || item.designation %}
-								<div class="adminWrap">
-									{% if item.member_name %}
-									<h6 class="cmName">{{ item.member_name }}</h6>
-									{% endif %}
-									{% if item.designation %}
-									<p class="cmDesignation">
-										{{ item.designation }}
-									</p>
-									{% endif %}
-								</div>
-								{% endif %}
-							</div>
-							{% endif %}
-						</div>
-					</div>
-					{% endfor %}
-				</div>
-			</div>
-		</div>
-	</div>
+  {{ macros.introGroup(module.intro_content, module.module_settings) }}
+  {% set lnt = module.items|length %} 
+  <div class="cmQuoteSliderWrap {{ name }}">
+    <div id="splide" class="splide quoteItemWrap">
+      <div class="splide__track quoteTrack">
+        <div class="splide__list quoteList">
+
+          {% for item in module.items %}
+          <div class="splide__slide  quoteItem quoteItem_{{loop.index}}">
+            <div class="rightOverlay"></div>
+            <div class="quoteItemInner  {% if module.module_settings.dark_theme %} light_theme {% endif %} {{ module.module_settings.select_color }}">
+              {% if item.enable_image %}
+              {% if item.image.src %}
+              <div class="imageWrapper">
+                <div class="cmImage" style="background-image:url({{ item.image.src }});"></div>
+              </div>
+              {% endif %}
+              {% endif %}
+              {% if item.quote %}
+              <div class="conteWrapper">
+                {% if item.quote %}
+                <div class="quoteText">
+                  <div class="cmQuote">{{ item.quote }}</div>
+                </div>
+                {% endif %}
+                {% if item.member_name || item.designation %}
+                <div class="adminWrap">
+                  {% if item.member_name %}
+                  <h6 class="cmName">{{ item.member_name }}</h6>
+                  {% endif %}
+                  {% if item.designation %}
+                  <p class="cmDesignation">
+                    {{ item.designation }}
+                  </p>
+                  {% endif %}
+                </div>
+                {% endif %}
+              </div>
+              {% endif %}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
 
 </div>
 
@@ -58,53 +58,54 @@
 
 {% require_css %}
 <style>
-	{% if  module.module_overrides.background_settings.select_color == 'custom'%}
-	.{{name}} .bg_overlay.custom{
-		background-color:{{ module.module_overrides.background_settings.custom_color.rgba }};
-	}
-	{% endif %}	
-	{% if  module.module_settings.select_color == 'custom'%}
-	.cmQuoteSlider.{{name}} .quoteItem .quoteItemInner{
-		background-color:{{ module.module_settings.custom_color.rgba }};
-	}
-	{% endif %}
+  {% if  module.module_overrides.background_settings.select_color == 'custom'%}
+  .{{name}} .bg_overlay.custom{
+    background-color:{{ module.module_overrides.background_settings.custom_color.rgba }};
+  }
+  {% endif %}	
+  {% if  module.module_settings.select_color == 'custom'%}
+  .cmQuoteSlider.{{name}} .quoteItem .quoteItemInner{
+    background-color:{{ module.module_settings.custom_color.rgba }};
+  }
+  {% endif %}
 </style>
 {% end_require_css %}
-  
+
 {% require_js %}
 <script>
-	document.addEventListener( 'DOMContentLoaded', function () {
-		new Splide('#splide', {
-		{% if lnt == 1 %}
-			type: 'slide',
-		{% else %}
-			type: 'loop',
-		{% endif %}
-			perPage:1.29,
-			focus: 'center',
-			autoplay: false,
-			{% if lnt == 1 %}
-			arrows:false,
-			{% endif %}
-			interval: 8000,
-			flickMaxPages: 3,
-			updateOnMove: true,
-			pagination: true,
-			padding: '0',
-			throttle: 300,
-			rewind : false,
-			breakpoints: {
-			991: {
-				perPage: 1.3,
-				snap: true
-			},
-			768: {
-				perPage: 1.2,
-				snap: true
-			}
-		}
-		}).mount();
-	});
+  document.addEventListener( 'DOMContentLoaded', function () {
+    new Splide('.{{ name }} #splide', {
+
+      {% if lnt == 1 %}
+      type: 'slide',
+      {% else %}
+      type: 'loop',
+      {% endif %}
+      perPage:1.29,
+      focus: 'center',
+      autoplay: false,
+      {% if lnt == 1 %}
+      arrows:false,
+      {% endif %}
+      interval: 8000,
+      flickMaxPages: 2,
+      updateOnMove: true,
+      pagination: true,
+      padding: '0',
+      throttle: 300,
+      rewind : false,
+      breakpoints: {
+        991: {
+          perPage: 1.3,
+          snap: true
+        },
+        768: {
+          perPage: 1.2,
+          snap: true
+        }
+      }
+    }).mount();
+  });
 </script>
 
 {% end_require_js %}

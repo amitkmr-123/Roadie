@@ -2,13 +2,13 @@
   "global" : false,
   "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
   "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
-  "module_id" : 186574315059,
+  "module_id" : 189039517590,
   "js_assets" : [ {
     "autoload" : true,
-    "path" : "../../js/splide-new.js",
-    "name" : "splide-new.js"
+    "path" : "../../js/jquery.js",
+    "name" : "jquery.js"
   } ],
-  "label" : "Quote Slider",
+  "label" : "Richtext",
   "icon" : "https://8292614.fs1.hubspotusercontent-na1.net/hubfs/8292614/4.svg",
   "is_available_for_new_content" : true
 }

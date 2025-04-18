@@ -20,6 +20,10 @@
     padding-left: 333px;
     align-items: center;
 
+    @include tabbreakpoint (1200px, 1440px) {
+      -moz-column-gap: 90px;
+      column-gap: 90px;
+    }
     @include midlaptop {
       -moz-column-gap: 50px;
       column-gap: 50px;
@@ -63,6 +67,10 @@
         height: 300px;
         max-width: 500px;
         margin-bottom: 25px;
+
+        @include tabbreakpoint (1200px, 1440px) {
+          max-width: 550px;
+        }
 
         a {
           display: block;
@@ -153,6 +161,11 @@
       }
       button.splide__arrow.splide__arrow--prev {
         display: none;
+      }
+      .quoteItemWrap {
+        .splide__pagination {
+          display: flex !important;
+        }
       }
 
       @include tablet {

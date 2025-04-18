@@ -49,7 +49,11 @@
                 {% endif %}
                 {% if item.include_content %}
                 <div class="intro_desc {{ item.content_style }} {{item.select_content_bg_color}}">
-              {{ item.content }}
+                {% if item.include_eyebrow_text%}
+                  {{ item.content|truncatehtml(80, "" , false) }}
+                {% else %}
+                  {{ item.content|truncatehtml(90, "" , false) }}
+                {% endif %}
             </div>
             {% endif %}
           </div>

@@ -48,7 +48,7 @@
                   <h4><a class="restitle" href="{{row.link}}">{{ item.title }}</a></h4>
                 </div>
                 <div class="itemdesc">
-                  {{ item.content }}
+                  {{ item.content | truncatehtml(150, '.' , false) }}
                 </div>
               </div>
               {% if item.button_text %}
@@ -117,7 +117,7 @@
                   <h4><a class="restitle" href="{{row.link}}">{{ row.name }}</a></h4>
                 </div>
                 <div class="itemdesc">
-                  {{ row.description|striptags|truncatehtml(100, '...' , false) }}
+                  {{ row.description|striptags|truncatehtml(90, '...' , false) }}
                 </div>
               </div>
               {% if module.resources.read_more_text %}
@@ -156,7 +156,7 @@
                   <h4><a class="restitle" href="{{row.link}}">{{ row.name }}</a></h4>
                 </div>
                 <div class="itemdesc">
-                  {{ row.description|striptags|truncatehtml(100, '...' , false) }}
+                  {{ row.description|striptags|truncatehtml(90, '...' , false) }}
                 </div>
               </div>
               {% if module.resources.read_more_text %}

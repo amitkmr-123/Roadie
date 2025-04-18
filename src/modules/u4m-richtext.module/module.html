@@ -1,0 +1,17 @@
+{% set moduleName = 'u4m-richtext' %}
+{% include "../partials/u4-module-includes.html" %}
+{{macros.topCurves(module.module_settings)}}
+<div class="page-center  {{ module.module_settings.theme }} {{ module.module_overrides.container_size }}" {% if module.module_overrides.container_size == "custom" %} style="max-width:{{ module.module_overrides.custom_container_size }}rem" {% endif %}>
+	{{ macros.introGroup(module.intro_content, module.module_settings) }}
+
+</div>
+{{macros.bottomCurves(module.module_settings)}}
+</section>
+
+{% if  module.module_overrides.background_settings.select_color == 'custom'%}
+<style>
+	.{{name}} .bg_overlay.custom{
+		background-color:{{ module.module_overrides.background_settings.custom_color.rgba }};
+	}
+</style>
+{% endif %}	 
